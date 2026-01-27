@@ -1,0 +1,27 @@
+[35m[1mConsolidate compiler generated dependencies of target test_motion_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/test_motion_node.dir/src/test_motion_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable test_motion_node[0m
+[100%] Built target test_motion_node
+-- Install configuration: ""
+-- Installing: /home/jamal/FYP_ws2/install/control_arm/lib/control_arm/test_motion_node
+-- Set runtime path of "/home/jamal/FYP_ws2/install/control_arm/lib/control_arm/test_motion_node" to ""
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/include
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/include/control_arm
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/include/control_arm/test_motion_node.hpp
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/launch
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/launch/test_motion.launch.py
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/ament_index/resource_index/package_run_dependencies/control_arm
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/ament_index/resource_index/parent_prefix_path/control_arm
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/environment/ament_prefix_path.sh
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/environment/path.sh
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/environment/path.dsv
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/local_setup.bash
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/local_setup.sh
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/local_setup.zsh
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/local_setup.dsv
+-- Installing: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/package.dsv
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/ament_index/resource_index/packages/control_arm
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/cmake/control_armConfig.cmake
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/cmake/control_armConfig-version.cmake
+-- Up-to-date: /home/jamal/FYP_ws2/install/control_arm/share/control_arm/package.xml

@@ -1,0 +1,42 @@
+[0.011s] Invoking command in '/home/jamal/FYP_ws2/build/robot_arm_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jamal/FYP_ws2/build/robot_arm_description -- -j16 -l16
+[0.041s] Invoked command in '/home/jamal/FYP_ws2/build/robot_arm_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jamal/FYP_ws2/build/robot_arm_description -- -j16 -l16
+[0.049s] Invoking command in '/home/jamal/FYP_ws2/build/robot_arm_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jamal/FYP_ws2/build/robot_arm_description
+[0.057s] -- Install configuration: ""
+[0.057s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/launch
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/launch/robot_state_publisher.launch.py
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/d435.stl
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/link_6.STL
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/base_link.STL
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/link_2.STL
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/link_4.STL
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/link_3.STL
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/link_1.STL
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/meshes/link_5.STL
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/control
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/control/gazebo_sim_ros2_control.urdf.xacro
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/control/robot_arm_ros2_control.urdf.xacro
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/sensors
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/sensors/intel_rgbd_cam_d435.urdf.xacro
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/robot
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/robot/arm.urdf.xacro
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/urdf/robot/arm.urdf
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/rviz
+[0.058s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/rviz/robot_arm_description.rviz
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/ament_index/resource_index/package_run_dependencies/robot_arm_description
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/ament_index/resource_index/parent_prefix_path/robot_arm_description
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/environment/ament_prefix_path.sh
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/environment/ament_prefix_path.dsv
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/environment/path.sh
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/environment/path.dsv
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/local_setup.bash
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/local_setup.sh
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/local_setup.zsh
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/local_setup.dsv
+[0.059s] -- Installing: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/package.dsv
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/ament_index/resource_index/packages/robot_arm_description
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/cmake/robot_arm_descriptionConfig.cmake
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/cmake/robot_arm_descriptionConfig-version.cmake
+[0.059s] -- Up-to-date: /home/jamal/FYP_ws2/install/robot_arm_description/share/robot_arm_description/package.xml
+[0.072s] Invoked command in '/home/jamal/FYP_ws2/build/robot_arm_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jamal/FYP_ws2/build/robot_arm_description

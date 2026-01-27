@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <xacro:macro name="robot_arm_ros2_control" params="prefix flange_link use_gazebo">
+        <ros2_control name="RobotSystem" type="system">
+            <hardware>
+                <xacro:if value="${use_gazebo}">
+                    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+                </xacro:if>
+            </hardware>
+
+            <!-- Joint 1: Base to Link 1 -->
+            <joint name="joint_1">
+                <command_interface name="effort"/>
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+            </joint>
+
+            <!-- Joint 2: Link 1 to Link 2 -->
+            <joint name="joint_2">
+                <command_interface name="effort"/>
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+            </joint>
+
+            <!-- Joint 3: Link 2 to Link 3 -->
+            <joint name="joint_3">
+                <command_interface name="effort"/>
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+            </joint>
+
+            <!-- Joint 4: Link 3 to Link 4 -->
+            <joint name="joint_4">
+                <command_interface name="effort"/>
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+            </joint>
+
+            <!-- Joint 5: Link 4 to Link 5 -->
+            <joint name="joint_5">
+                <command_interface name="effort"/>
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+            </joint>
+
+            <!-- Joint 6: Link 5 to Link 6 (End Effector) -->
+            <joint name="joint_6">
+                <command_interface name="effort"/>
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+            </joint>
+
+        </ros2_control>
+    </xacro:macro>
+
+</robot>
