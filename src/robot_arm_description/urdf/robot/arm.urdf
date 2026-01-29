@@ -283,7 +283,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0.0639420416 0.0759886404 0.0116150426"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -297,7 +297,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="0.0639420416 0.0759886404 0.0116150426"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -309,14 +309,14 @@
     name="joint_5"
     type="continuous">
     <origin
-      xyz="0.0658770416469138 0.0497166404170352 0.006958042593945"
+      xyz="0.001935 -0.026272 -0.004657"
       rpy="0 0 0" />
     <parent
       link="link_4" />
     <child
       link="link_5" />
     <axis
-      xyz="-0.759313420493717 0.650673886413552 0.00816229119891543" />
+      xyz="-0.7748550616 0.6320449991 0.00816229119891543" />
   </joint>
   <link
     name="link_6">
@@ -336,7 +336,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0.0639420416 0.0759886404 0.0116150426"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -350,7 +350,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="0.0639420416 0.0759886404 0.0116150426"
         rpy="0 0 0" />
       <geometry>
         <mesh
