@@ -1,9 +1,0 @@
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/uninstall.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/robot_arm_description_uninstall.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/test.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/edit_cache.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/rebuild_cache.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/list_install_components.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/install.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/install/local.dir
-/home/jamal/FYP_ws2/build/robot_arm_description/CMakeFiles/install/strip.dir

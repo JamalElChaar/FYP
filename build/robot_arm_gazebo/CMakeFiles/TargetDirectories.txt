@@ -1,9 +1,0 @@
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/uninstall.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/robot_arm_gazebo_uninstall.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/test.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/edit_cache.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/rebuild_cache.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/list_install_components.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/install.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/install/local.dir
-/home/jamal/FYP_ws2/build/robot_arm_gazebo/CMakeFiles/install/strip.dir
