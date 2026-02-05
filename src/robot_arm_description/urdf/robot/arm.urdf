@@ -336,7 +336,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0.0639420416 0.0759886404 0.0116150426"
+        xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -358,19 +358,12 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="joint_6"
-    type="continuous">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="link_5" />
-    <child
-      link="link_6" />
-    <axis
-      xyz="0.65067 0.75931 0.0081623" />
-  </joint>
+<joint name="joint_6" type="continuous">
+  <origin xyz="0.0639420416 0.0759886404 0.0116150426" rpy="0 0 0"/>
+  <parent link="link_5"/>
+  <child link="link_6"/>
+  <axis xyz="0.65067 0.75931 0.0081623"/>
+</joint>
   
   <!-- ros2_control configuration -->
   <ros2_control name="arm_controller" type="system">
