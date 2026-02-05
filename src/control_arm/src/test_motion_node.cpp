@@ -119,7 +119,8 @@ bool TestMotionNode::executeTestMotion() {
 
   // Get current end effector pose
   geometry_msgs::msg::PoseStamped current_pose = arm_->getCurrentPose();
-  RCLCPP_INFO(this->get_logger(), "=== Current End Effector Pose ===");
+  RCLCPP_INFO(this->get_logger(),
+              "=== Current End Effector Pose (Before Planning) ===");
   RCLCPP_INFO(this->get_logger(), "Position: [x: %.4f, y: %.4f, z: %.4f]",
               current_pose.pose.position.x, current_pose.pose.position.y,
               current_pose.pose.position.z);
@@ -128,64 +129,27 @@ bool TestMotionNode::executeTestMotion() {
               current_pose.pose.orientation.w, current_pose.pose.orientation.x,
               current_pose.pose.orientation.y, current_pose.pose.orientation.z);
 
-  // Get current joint values
-  std::vector<double> current_joints = arm_->getCurrentJointValues();
-  std::vector<std::string> joint_names = arm_->getJointNames();
-  RCLCPP_INFO(this->get_logger(), "=== Current Joint Values ===");
-  for (size_t i = 0; i < joint_names.size() && i < current_joints.size(); ++i) {
-    RCLCPP_INFO(this->get_logger(), "%s: %.4f rad (%.2f deg)",
-                joint_names[i].c_str(), current_joints[i],
-                current_joints[i] * 180.0 / M_PI);
-  }
+  // Create target pose in world frame at (0.168, 0.199, 0.137)
+  RCLCPP_INFO(
+      this->get_logger(),
+      "=== Moving to Target Position: [0.168, 0.199, 0.137] (world frame) ===");
 
-  // Step 1: Move to a slightly different joint configuration (very small
-  // change)
-  RCLCPP_INFO(this->get_logger(), "Step 1: Moving joints by small offset...");
-  std::map<std::string, double> small_offset_joints;
-  for (size_t i = 0; i < joint_names.size() && i < current_joints.size(); ++i) {
-    // Add a small offset of 0.1 radians (~5.7 degrees) to joint 1 only
-    if (i == 0) {
-      small_offset_joints[joint_names[i]] = current_joints[i] + 0.1;
-    } else {
-      small_offset_joints[joint_names[i]] = current_joints[i];
-    }
-  }
-
-  if (moveToJointValues(small_offset_joints)) {
-    RCLCPP_INFO(this->get_logger(), "Small joint motion SUCCESS!");
-  } else {
-    RCLCPP_ERROR(this->get_logger(), "Small joint motion FAILED!");
-  }
-
-  rclcpp::sleep_for(std::chrono::seconds(2));
-
-  // Step 2: Move back to original position
-  RCLCPP_INFO(this->get_logger(),
-              "Step 2: Moving back to original joint position...");
-  std::map<std::string, double> original_joints;
-  for (size_t i = 0; i < joint_names.size() && i < current_joints.size(); ++i) {
-    original_joints[joint_names[i]] = current_joints[i];
-  }
-
-  if (moveToJointValues(original_joints)) {
-    RCLCPP_INFO(this->get_logger(), "Return motion SUCCESS!");
-  } else {
-    RCLCPP_ERROR(this->get_logger(), "Return motion FAILED!");
-  }
-
-  rclcpp::sleep_for(std::chrono::seconds(2));
-
-  // Step 3: Try Cartesian motion - move end effector by tiny amount (1cm in Z)
-  RCLCPP_INFO(this->get_logger(),
-              "Step 3: Attempting small Cartesian motion (1cm in Z)...");
-  Pose target_pose = current_pose;
-  target_pose.pose.position.z -= 0.1; // Move 1cm up
+  Pose target_pose;
+  target_pose.header.frame_id = "world";
+  target_pose.pose.position.x = 0.168;
+  target_pose.pose.position.y = 0.199;
+  target_pose.pose.position.z = 0.137;
+  // Keep current orientation
+  target_pose.pose.orientation.w = 1.0;
+  target_pose.pose.orientation.x = 0.0;
+  target_pose.pose.orientation.y = 0.0;
+  target_pose.pose.orientation.z = 0.0;
 
   if (moveToPose(target_pose)) {
-    RCLCPP_INFO(this->get_logger(), "Small Cartesian motion SUCCESS!");
+    RCLCPP_INFO(this->get_logger(), "Motion to target position SUCCESS!");
   } else {
-    RCLCPP_WARN(this->get_logger(),
-                "Small Cartesian motion FAILED - IK may not have solution");
+    RCLCPP_ERROR(this->get_logger(),
+                 "Motion to target position FAILED - IK may not have solution");
   }
 
   // Print final pose
