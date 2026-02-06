@@ -129,16 +129,15 @@ bool TestMotionNode::executeTestMotion() {
               current_pose.pose.orientation.w, current_pose.pose.orientation.x,
               current_pose.pose.orientation.y, current_pose.pose.orientation.z);
 
-  // Create target pose in world frame at (0.168, 0.199, 0.137)
-  RCLCPP_INFO(
-      this->get_logger(),
-      "=== Moving to Target Position: [0.168, 0.199, 0.137] (world frame) ===");
+  // Create target pose in world frame at (0.15938, 0.20112, 0.10196)
+  RCLCPP_INFO(this->get_logger(), "=== Moving to Target Position: [0.15938, "
+                                  "0.20112, 0.10196] (world frame) ===");
 
   Pose target_pose;
   target_pose.header.frame_id = "world";
-  target_pose.pose.position.x = 0.168;
-  target_pose.pose.position.y = 0.199;
-  target_pose.pose.position.z = 0.137;
+  target_pose.pose.position.x = 0.15938;
+  target_pose.pose.position.y = 0.20112;
+  target_pose.pose.position.z = 0.10196;
   // Keep current orientation
   target_pose.pose.orientation.w = 1.0;
   target_pose.pose.orientation.x = 0.0;

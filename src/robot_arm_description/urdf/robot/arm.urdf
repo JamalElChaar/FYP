@@ -350,7 +350,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0.0639420416 0.0759886404 0.0116150426"
+        xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -366,37 +366,40 @@
 </joint>
   
   <!-- ros2_control configuration -->
-  <ros2_control name="arm_controller" type="system">
+  <ros2_control name="RobotArmSystem" type="system">
     <hardware>
-      <plugin>mock_components/GenericSystem</plugin>
+      <plugin>custom_hardware/CustomHardwareInterface</plugin>
+      <param name="serial_port">/dev/ttyUSB0</param>
+      <param name="baud_rate">115200</param>
+      <param name="timeout_ms">1000</param>
     </hardware>
     <joint name="joint_1">
-      <command_interface name="effort"/>
+      <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
     <joint name="joint_2">
-      <command_interface name="effort"/>
+      <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
     <joint name="joint_3">
-      <command_interface name="effort"/>
+      <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
     <joint name="joint_4">
-      <command_interface name="effort"/>
+      <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
     <joint name="joint_5">
-      <command_interface name="effort"/>
+      <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
     <joint name="joint_6">
-      <command_interface name="effort"/>
+      <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>

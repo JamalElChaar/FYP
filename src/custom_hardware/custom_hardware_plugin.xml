@@ -1,0 +1,10 @@
+<library path="custom_hardware">
+  <class name="custom_hardware/CustomHardwareInterface"
+         type="custom_hardware::CustomHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Custom hardware interface for the 6-DOF robot arm.
+      Supports effort command interface with position and velocity state feedback.
+    </description>
+  </class>
+</library>

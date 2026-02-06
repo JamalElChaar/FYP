@@ -7,46 +7,52 @@
                 <xacro:if value="${use_gazebo}">
                     <plugin>gz_ros2_control/GazeboSimSystem</plugin>
                 </xacro:if>
+                <xacro:unless value="${use_gazebo}">
+                    <plugin>custom_hardware/CustomHardwareInterface</plugin>
+                    <param name="serial_port">/dev/ttyUSB0</param>
+                    <param name="baud_rate">115200</param>
+                    <param name="timeout_ms">1000</param>
+                </xacro:unless>
             </hardware>
 
             <!-- Joint 1: Base to Link 1 -->
             <joint name="joint_1">
-                <command_interface name="effort"/>
+                <command_interface name="position"/>
                 <state_interface name="position"/>
                 <state_interface name="velocity"/>
             </joint>
 
             <!-- Joint 2: Link 1 to Link 2 -->
             <joint name="joint_2">
-                <command_interface name="effort"/>
+                <command_interface name="position"/>
                 <state_interface name="position"/>
                 <state_interface name="velocity"/>
             </joint>
 
             <!-- Joint 3: Link 2 to Link 3 -->
             <joint name="joint_3">
-                <command_interface name="effort"/>
+                <command_interface name="position"/>
                 <state_interface name="position"/>
                 <state_interface name="velocity"/>
             </joint>
 
             <!-- Joint 4: Link 3 to Link 4 -->
             <joint name="joint_4">
-                <command_interface name="effort"/>
+                <command_interface name="position"/>
                 <state_interface name="position"/>
                 <state_interface name="velocity"/>
             </joint>
 
             <!-- Joint 5: Link 4 to Link 5 -->
             <joint name="joint_5">
-                <command_interface name="effort"/>
+                <command_interface name="position"/>
                 <state_interface name="position"/>
                 <state_interface name="velocity"/>
             </joint>
 
             <!-- Joint 6: Link 5 to Link 6 (End Effector) -->
             <joint name="joint_6">
-                <command_interface name="effort"/>
+                <command_interface name="position"/>
                 <state_interface name="position"/>
                 <state_interface name="velocity"/>
             </joint>

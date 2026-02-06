@@ -1,0 +1,68 @@
+# ros2_controllers.yaml for custom hardware interface
+# Configuration for ROS 2 Control with the real robot
+
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz - Control loop frequency
+
+    # Joint State Broadcaster - publishes joint states to /joint_states
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # Arm Controller - Joint Trajectory Controller for the 6-DOF arm
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    # Forward Command Controller for direct effort control (alternative)
+    effort_controller:
+      type: effort_controllers/JointGroupEffortController
+
+# Joint State Broadcaster Configuration
+joint_state_broadcaster:
+  ros__parameters:
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+
+# Arm Controller Configuration (Joint Trajectory Controller)
+arm_controller:
+  ros__parameters:
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+
+    command_interfaces:
+      - effort
+
+    state_interfaces:
+      - position
+      - velocity
+
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+
+    allow_partial_joints_goal: false
+    open_loop_control: false
+
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 0.0
+
+# Effort Controller Configuration (for direct effort control)
+effort_controller:
+  ros__parameters:
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
