@@ -15,7 +15,7 @@ git clone https://github.com/JamalElChaar/FYP.git
 ```
 ### 2. Build the Docker Image
 
-From the **workspace root** (`FYP_ws2/`):
+From the **workspace root** (`FYP/`):
 
 ```sh
 ./docker/build_image.sh
