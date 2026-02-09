@@ -1,0 +1,46 @@
+ARG ros_distro="humble"
+
+FROM osrf/ros:${ros_distro}-desktop-full
+ARG ros_distro
+ARG UID=1000
+ARG GID=1000
+ENV DEBIAN_FRONTEND=noninteractive
+
+# ---- Install system tools ----
+ADD ./docker/install_tools.sh /scripts/install_tools.sh
+RUN chmod +x /scripts/install_tools.sh \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get update \
+    && /scripts/install_tools.sh
+
+# ---- Install ROS 2 dependencies ----
+ADD ./docker/install_rosdeps.sh /scripts/install_rosdeps.sh
+RUN chmod +x /scripts/install_rosdeps.sh \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get update \
+    && apt-get upgrade -y \
+    && /scripts/install_rosdeps.sh
+
+# ---- Create non-root user ----
+RUN groupadd -g "${GID}" user \
+    && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" user \
+    && chown -R user:user /tmp \
+    && apt-get update && apt-get install -y acl sudo \
+    && echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+USER user
+
+# ---- Environment variables ----
+ENV HISTFILE="/home/user/.bash_history"
+ENV RCUTILS_COLORIZED_OUTPUT=1
+ENV GZ_SIM_SYSTEM_PLUGIN_PATH=/opt/ros/${ros_distro}/lib
+ENV LD_LIBRARY_PATH=/opt/ros/${ros_distro}/lib
+
+# ---- Shell configuration ----
+RUN echo "PS1='\[\033[01;33m\][humble-fyp] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /home/user/.bashrc \
+    && echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/user/.bashrc \
+    && echo 'if [ -f "/home/user/ros2_ws/install/setup.bash" ]; then source /home/user/ros2_ws/install/setup.bash; fi' >> /home/user/.bashrc
+
+WORKDIR /home/user/ros2_ws/
+
+CMD [ "/bin/bash" ]
