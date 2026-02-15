@@ -1,6 +1,11 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
+    <!-- ESP32 Connection Parameters (set these to match your setup) -->
+    <xacro:property name="esp32_ip" value="192.168.1.100"/>
+    <xacro:property name="esp32_port" value="5000"/>
+    <xacro:property name="use_simulation" value="true"/>
+
     <xacro:macro name="robot_arm_ros2_control" params="prefix flange_link use_gazebo">
         <ros2_control name="RobotSystem" type="system">
             <hardware>
@@ -9,9 +14,11 @@
                 </xacro:if>
                 <xacro:unless value="${use_gazebo}">
                     <plugin>custom_hardware/CustomHardwareInterface</plugin>
-                    <param name="serial_port">/dev/ttyUSB0</param>
-                    <param name="baud_rate">115200</param>
-                    <param name="timeout_ms">1000</param>
+                    <!-- ESP32 WiFi/TCP connection parameters -->
+                    <param name="esp32_ip">${esp32_ip}</param>
+                    <param name="esp32_port">${esp32_port}</param>
+                    <param name="timeout_ms">100</param>
+                    <param name="use_simulation">${use_simulation}</param>
                 </xacro:unless>
             </hardware>
 

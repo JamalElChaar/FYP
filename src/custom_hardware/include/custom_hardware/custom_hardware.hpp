@@ -15,8 +15,16 @@
 #ifndef CUSTOM_HARDWARE__CUSTOM_HARDWARE_HPP_
 #define CUSTOM_HARDWARE__CUSTOM_HARDWARE_HPP_
 
+#include <arpa/inet.h>
+#include <cerrno>
+#include <cmath>
+#include <cstring>
+#include <fcntl.h>
 #include <memory>
+#include <netinet/in.h>
 #include <string>
+#include <sys/socket.h>
+#include <unistd.h>
 #include <vector>
 
 #include "hardware_interface/handle.hpp"
@@ -70,13 +78,17 @@ public:
 
 private:
   // Parameters for the robot hardware interface
-  // Store the command and state interface types
   std::vector<std::string> joint_names_;
 
-  // Hardware communication parameters (can be loaded from URDF)
-  std::string serial_port_;
-  int baud_rate_;
-  double timeout_ms_;
+  // ESP32 TCP connection parameters
+  std::string esp32_ip_;
+  int esp32_port_;
+  int timeout_ms_;
+  bool use_simulation_; // Fallback to simulation if ESP32 not available
+
+  // TCP socket
+  int socket_fd_;
+  bool connected_;
 
   // Store the commands and states
   std::vector<double> hw_commands_effort_;
@@ -86,14 +98,33 @@ private:
   std::vector<double> hw_states_velocity_;
   std::vector<double> hw_states_effort_;
 
+  // Previous commands (for change detection - only send when changed)
+  std::vector<double> prev_commands_position_;
+
+  // Joint configuration (for servo mapping)
+  std::vector<double> joint_offsets_;    // Offset from ROS angle to servo angle
+  std::vector<double> joint_directions_; // Direction multiplier (1.0 or -1.0)
+  std::vector<double> servo_min_angle_;  // Servo minimum angle (degrees)
+  std::vector<double> servo_max_angle_;  // Servo maximum angle (degrees)
+
   // Logger for debugging
   rclcpp::Logger logger_{rclcpp::get_logger("CustomHardwareInterface")};
 
-  // Communication helpers (implement based on your hardware)
+  // Communication helpers
   bool connect_to_hardware();
   void disconnect_from_hardware();
   bool send_commands_to_hardware();
   bool read_states_from_hardware();
+
+  // Helper methods
+  double radians_to_degrees(double radians);
+  double degrees_to_radians(double degrees);
+  double ros_to_servo_angle(double ros_angle_rad, size_t joint_index);
+  double servo_to_ros_angle(double servo_angle_deg, size_t joint_index);
+  double clamp_servo_angle(double angle, size_t joint_index);
+  bool send_tcp_message(const std::string &message);
+  std::string receive_tcp_message(int timeout_ms = 100);
+  void simulate_states();
 };
 
 } // namespace custom_hardware
