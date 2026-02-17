@@ -25,6 +25,7 @@ from launch.substitutions import (
     PathJoinSubstitution,
 )
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -87,13 +88,13 @@ def generate_launch_description():
         description='Absolute path to ros2_controllers.yaml file')
 
     # Get robot description from xacro
-    robot_description_content = Command([
+    robot_description_content = ParameterValue(Command([
         PathJoinSubstitution([FindExecutable(name='xacro')]),
         ' ',
         urdf_model,
         ' use_gazebo:=false',  # Use custom hardware interface, not Gazebo
         ' use_camera:=false',
-    ])
+    ]), value_type=str)
 
     robot_description = {'robot_description': robot_description_content}
 

@@ -11,6 +11,7 @@ and processing of URDF/XACRO files and controller configurations.
 """
 import os
 from pathlib import Path
+from ament_index_python.packages import get_package_share_directory, get_package_prefix
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.conditions import IfCondition, UnlessCondition
@@ -38,17 +39,23 @@ def process_ros2_controllers_config(context):
     prefix = LaunchConfiguration('prefix').perform(context)
     flange_link = LaunchConfiguration('flange_link').perform(context)
 
-    home = str(Path.home())
-
-    # Define both source and install paths
-    src_config_path = os.path.join(
-        home,
-        'FYP_ws2/src/robot_arm_movit_config/config'
-    )
-    install_config_path = os.path.join(
-        home,
-        'FYP_ws2/install/robot_arm_movit_config/share/robot_arm_movit_config/config'
-    )
+    # Use ROS2 package utilities to find paths (workspace-agnostic)
+    package_name = 'robot_arm_movit_config'
+    try:
+        # Get install path using ament_index
+        install_config_path = os.path.join(
+            get_package_share_directory(package_name), 'config'
+        )
+        
+        # Derive source path from install path
+        # Install path: <ws>/install/<pkg>/share/<pkg>/config
+        # Source path:  <ws>/src/<pkg>/config
+        package_prefix = get_package_prefix(package_name)  # <ws>/install/<pkg>
+        ws_root = os.path.dirname(os.path.dirname(package_prefix))  # <ws>
+        src_config_path = os.path.join(ws_root, 'src', package_name, 'config')
+    except Exception:
+        # Fallback: skip if package not found
+        return []
 
     # Read from source template
     template_path = os.path.join(src_config_path, 'ros2_controllers_template.yaml')
