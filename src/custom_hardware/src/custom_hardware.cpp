@@ -431,54 +431,39 @@ void CustomHardwareInterface::disconnect_from_hardware() {
 }
 
 bool CustomHardwareInterface::send_commands_to_hardware() {
-  // Check if any command has changed significantly
-  bool changed = false;
+  // Send individual joint commands for joints that have changed
+  // Format: "J1:90.0\n" (joint number is 1-indexed, same as echo test)
+
   for (size_t i = 0; i < hw_commands_position_.size(); ++i) {
+    // Only send if this joint's position has changed significantly
     if (std::abs(hw_commands_position_[i] - prev_commands_position_[i]) >
         0.001) {
-      changed = true;
-      break;
+      double servo_angle = ros_to_servo_angle(hw_commands_position_[i], i);
+
+      // Build command: "J<n>:<angle>\n" where n is 1-indexed
+      std::stringstream ss;
+      ss << "J" << (i + 1) << ":" << std::fixed << std::setprecision(1)
+         << servo_angle << "\n";
+
+      // Update previous command for this joint
+      prev_commands_position_[i] = hw_commands_position_[i];
+
+      // Send to ESP32 or simulate
+      if (connected_) {
+        if (!send_tcp_message(ss.str())) {
+          RCLCPP_WARN_THROTTLE(logger_, *rclcpp::Clock::make_shared(), 1000,
+                               "Failed to send command to ESP32");
+          disconnect_from_hardware();
+          return use_simulation_;
+        }
+        RCLCPP_DEBUG(logger_, "Sent: %s", ss.str().c_str());
+      } else if (use_simulation_) {
+        RCLCPP_DEBUG_THROTTLE(logger_, *rclcpp::Clock::make_shared(), 1000,
+                              "SIM: %s", ss.str().c_str());
+      } else {
+        return false;
+      }
     }
-  }
-
-  if (!changed) {
-    return true; // No need to send if nothing changed
-  }
-
-  // Build command string: "POS:angle1,angle2,angle3,angle4,angle5,angle6\n"
-  // Angles are in degrees for the servo driver
-  std::stringstream ss;
-  ss << "POS:";
-  for (size_t i = 0; i < hw_commands_position_.size(); ++i) {
-    double servo_angle = ros_to_servo_angle(hw_commands_position_[i], i);
-    ss << std::fixed << std::setprecision(1) << servo_angle;
-    if (i < hw_commands_position_.size() - 1) {
-      ss << ",";
-    }
-  }
-  ss << "\n";
-
-  // Update previous commands
-  for (size_t i = 0; i < hw_commands_position_.size(); ++i) {
-    prev_commands_position_[i] = hw_commands_position_[i];
-  }
-
-  // Send to ESP32 or simulate
-  if (connected_) {
-    if (!send_tcp_message(ss.str())) {
-      RCLCPP_WARN_THROTTLE(logger_, *rclcpp::Clock::make_shared(), 1000,
-                           "Failed to send command to ESP32");
-      // Try to reconnect on next cycle
-      disconnect_from_hardware();
-      return use_simulation_; // Continue if simulation fallback is enabled
-    }
-    RCLCPP_DEBUG(logger_, "Sent: %s", ss.str().c_str());
-  } else if (use_simulation_) {
-    // Simulation mode - just log the command
-    RCLCPP_DEBUG_THROTTLE(logger_, *rclcpp::Clock::make_shared(), 1000,
-                          "SIM: %s", ss.str().c_str());
-  } else {
-    return false; // Not connected and not in simulation mode
   }
 
   return true;
