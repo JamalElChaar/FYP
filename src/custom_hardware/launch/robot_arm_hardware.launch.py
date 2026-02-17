@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Launch real robot with custom hardware interface.
+Launch real robot with custom hardware interface using micro-ROS.
 
 This launch file sets up the ROS 2 control environment for the real robot_arm
-using the custom hardware interface for communication with physical hardware.
+using the custom hardware interface that communicates with ESP32 via micro-ROS.
 
 :author: Jamal
 :date: February 2026
@@ -15,6 +15,7 @@ from launch.actions import (
     DeclareLaunchArgument,
     RegisterEventHandler,
     TimerAction,
+    ExecuteProcess,
 )
 from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessStart
@@ -60,6 +61,7 @@ def generate_launch_description():
     urdf_model = LaunchConfiguration('urdf_model')
     rviz_config_file = LaunchConfiguration('rviz_config_file')
     controllers_file = LaunchConfiguration('controllers_file')
+    agent_port = LaunchConfiguration('agent_port')
 
     # Declare launch arguments
     declare_use_rviz_cmd = DeclareLaunchArgument(
@@ -86,6 +88,11 @@ def generate_launch_description():
         name='controllers_file',
         default_value=default_controllers_file,
         description='Absolute path to ros2_controllers.yaml file')
+
+    declare_serial_port_cmd = DeclareLaunchArgument(
+        name='agent_port',
+        default_value='8888',
+        description='UDP port for micro-ROS agent (ESP32 WiFi connection)')
 
     # Get robot description from xacro
     robot_description_content = ParameterValue(Command([
@@ -169,6 +176,19 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
+    # micro-ROS Agent - bridges ESP32 to ROS2 over WiFi UDP
+    # NOTE: You need to install micro_ros_agent package first:
+    #   sudo apt install ros-humble-micro-ros-agent
+    # Or build from source: https://github.com/micro-ROS/micro-ROS-Agent
+    micro_ros_agent = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'micro_ros_agent', 'micro_ros_agent',
+            'udp4', '--port', agent_port
+        ],
+        output='screen',
+        shell=False,
+    )
+
     # Create the launch description
     ld = LaunchDescription()
 
@@ -178,8 +198,10 @@ def generate_launch_description():
     ld.add_action(declare_urdf_model_path_cmd)
     ld.add_action(declare_rviz_config_file_cmd)
     ld.add_action(declare_controllers_file_cmd)
+    ld.add_action(declare_serial_port_cmd)
 
-    # Add nodes
+    # Add nodes - micro-ROS agent first
+    ld.add_action(micro_ros_agent)
     ld.add_action(robot_state_publisher_node)
     ld.add_action(controller_manager_node)
     ld.add_action(joint_state_broadcaster_spawner)

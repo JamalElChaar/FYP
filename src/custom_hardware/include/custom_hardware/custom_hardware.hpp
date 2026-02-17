@@ -15,16 +15,12 @@
 #ifndef CUSTOM_HARDWARE__CUSTOM_HARDWARE_HPP_
 #define CUSTOM_HARDWARE__CUSTOM_HARDWARE_HPP_
 
-#include <arpa/inet.h>
-#include <cerrno>
+#include <atomic>
 #include <cmath>
-#include <cstring>
-#include <fcntl.h>
 #include <memory>
-#include <netinet/in.h>
+#include <mutex>
 #include <string>
-#include <sys/socket.h>
-#include <unistd.h>
+#include <thread>
 #include <vector>
 
 #include "hardware_interface/handle.hpp"
@@ -35,6 +31,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
 
 #include "custom_hardware/visibility_control.h"
 
@@ -80,15 +77,18 @@ private:
   // Parameters for the robot hardware interface
   std::vector<std::string> joint_names_;
 
-  // ESP32 TCP connection parameters
-  std::string esp32_ip_;
-  int esp32_port_;
-  int timeout_ms_;
+  // micro-ROS communication parameters
   bool use_simulation_; // Fallback to simulation if ESP32 not available
+  bool esp32_connected_;
 
-  // TCP socket
-  int socket_fd_;
-  bool connected_;
+  // ROS2 node for publishing/subscribing to ESP32 topics
+  std::shared_ptr<rclcpp::Node> node_;
+  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr cmd_publisher_;
+  rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr
+      state_subscriber_;
+  std::shared_ptr<rclcpp::executors::SingleThreadedExecutor> executor_;
+  std::thread executor_thread_;
+  std::atomic<bool> executor_running_{false};
 
   // Store the commands and states
   std::vector<double> hw_commands_effort_;
@@ -101,6 +101,11 @@ private:
   // Previous commands (for change detection - only send when changed)
   std::vector<double> prev_commands_position_;
 
+  // Thread-safe state storage (updated by subscriber callback)
+  std::vector<double> latest_esp32_states_;
+  std::mutex state_mutex_;
+  std::atomic<bool> states_received_{false};
+
   // Joint configuration (for servo mapping)
   std::vector<double> joint_offsets_;    // Offset from ROS angle to servo angle
   std::vector<double> joint_directions_; // Direction multiplier (1.0 or -1.0)
@@ -111,10 +116,9 @@ private:
   rclcpp::Logger logger_{rclcpp::get_logger("CustomHardwareInterface")};
 
   // Communication helpers
-  bool connect_to_hardware();
-  void disconnect_from_hardware();
-  bool send_commands_to_hardware();
-  bool read_states_from_hardware();
+  void publish_commands_to_esp32();
+  void state_callback(const std_msgs::msg::Float64MultiArray::SharedPtr msg);
+  void simulate_states();
 
   // Helper methods
   double radians_to_degrees(double radians);
@@ -122,9 +126,6 @@ private:
   double ros_to_servo_angle(double ros_angle_rad, size_t joint_index);
   double servo_to_ros_angle(double servo_angle_deg, size_t joint_index);
   double clamp_servo_angle(double angle, size_t joint_index);
-  bool send_tcp_message(const std::string &message);
-  std::string receive_tcp_message(int timeout_ms = 100);
-  void simulate_states();
 };
 
 } // namespace custom_hardware

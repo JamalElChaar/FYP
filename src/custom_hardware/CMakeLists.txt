@@ -11,6 +11,7 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(std_msgs REQUIRED)
 
 # Compile the hardware interface as a shared library
 add_library(${PROJECT_NAME} SHARED
@@ -29,6 +30,7 @@ ament_target_dependencies(${PROJECT_NAME} PUBLIC
   pluginlib
   rclcpp
   rclcpp_lifecycle
+  std_msgs
 )
 
 # Export hardware plugins
