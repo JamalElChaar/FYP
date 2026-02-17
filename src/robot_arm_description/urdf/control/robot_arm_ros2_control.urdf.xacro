@@ -2,9 +2,9 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
     <!-- ESP32 Connection Parameters (set these to match your setup) -->
-    <xacro:property name="esp32_ip" value="192.168.1.100"/>
+    <xacro:property name="esp32_ip" value="172.20.10.4"/>
     <xacro:property name="esp32_port" value="5000"/>
-    <xacro:property name="use_simulation" value="true"/>
+    <xacro:property name="use_simulation" value="false"/>
 
     <xacro:macro name="robot_arm_ros2_control" params="prefix flange_link use_gazebo">
         <ros2_control name="RobotSystem" type="system">

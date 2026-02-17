@@ -77,7 +77,7 @@ CustomHardwareInterface::on_init(const hardware_interface::HardwareInfo &info) {
   // Get ESP32 connection parameters from URDF
   esp32_ip_ = info_.hardware_parameters.count("esp32_ip") > 0
                   ? info_.hardware_parameters.at("esp32_ip")
-                  : "192.168.1.100";
+                  : "172.20.10.4";
 
   esp32_port_ = info_.hardware_parameters.count("esp32_port") > 0
                     ? std::stoi(info_.hardware_parameters.at("esp32_port"))

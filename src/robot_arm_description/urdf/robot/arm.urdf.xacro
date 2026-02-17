@@ -14,16 +14,18 @@
     <!-- Import arm urdf file -->
     <xacro:include filename="$(find robot_arm_description)/urdf/robot/arm.urdf" />
 
-    <!-- Include ROS 2 control configuration for Gazebo -->
+    <!-- Include ROS 2 control configuration -->
+    <xacro:include filename="$(find robot_arm_description)/urdf/control/robot_arm_ros2_control.urdf.xacro" />
+    
+    <!-- Load ROS 2 control macro (works for both Gazebo and real hardware) -->
+    <xacro:robot_arm_ros2_control 
+        prefix="$(arg prefix)" 
+        flange_link="$(arg flange_link)" 
+        use_gazebo="$(arg use_gazebo)"/>
+    
+    <!-- Include Gazebo-specific plugins only when using Gazebo -->
     <xacro:if value="$(arg use_gazebo)">
-        <xacro:include filename="$(find robot_arm_description)/urdf/control/robot_arm_ros2_control.urdf.xacro" />
         <xacro:include filename="$(find robot_arm_description)/urdf/control/gazebo_sim_ros2_control.urdf.xacro" />
-        
-        <!-- Load ROS 2 control macro -->
-        <xacro:robot_arm_ros2_control 
-            prefix="$(arg prefix)" 
-            flange_link="$(arg flange_link)" 
-            use_gazebo="$(arg use_gazebo)"/>
         
         <!-- Load Gazebo ROS 2 control plugin -->
         <xacro:load_gazebo_sim_ros2_control_plugin 
