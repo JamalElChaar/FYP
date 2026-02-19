@@ -26,6 +26,7 @@
 #include <micro_ros_arduino.h>
 
 #include <rcl/error_handling.h>
+#include <rcl/init_options.h>
 #include <rcl/rcl.h>
 #include <rclc/executor.h>
 #include <rclc/rclc.h>
@@ -33,14 +34,18 @@
 
 #include <std_msgs/msg/float64_multi_array.h>
 
+// ========== LED PIN (ESP32 built-in LED) ==========
+#define LED_PIN 2 // GPIO 2 is the built-in LED on most ESP32 boards
+
 // ========== WIFI CONFIGURATION - EDIT THESE ==========
 const char *WIFI_SSID = "YOUR_WIFI_SSID";         // Your WiFi network name
 const char *WIFI_PASSWORD = "YOUR_WIFI_PASSWORD"; // Your WiFi password
 
 // micro-ROS Agent IP (your laptop's IP address on the network)
 // Find it with: hostname -I (Linux) or ipconfig (Windows)
-IPAddress agent_ip(192, 168, 1, 100); // CHANGE THIS to your laptop's IP
+char agent_ip[] = "192.168.1.100"; // CHANGE THIS to your laptop's IP
 const uint16_t agent_port = 8888;
+const size_t ROS_DOMAIN_ID = 0; // Must match ROS_DOMAIN_ID in your ROS2 shell
 
 // ========== GPIO PIN MAPPING ==========
 // Set to -1 to disable a joint
@@ -89,7 +94,7 @@ float currentPositions[6] = {90.0, 90.0, 90.0, 90.0, 90.0, 90.0};
 
 void error_loop() {
   while (1) {
-    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
     delay(100);
   }
 }
@@ -108,7 +113,7 @@ void setupWiFi() {
   while (WiFi.status() != WL_CONNECTED && attempts < 30) {
     delay(500);
     Serial.print(".");
-    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
     attempts++;
   }
 
@@ -188,8 +193,8 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time) {
 
 // ========== SETUP ==========
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, HIGH);
 
   // Initialize servos first
   initServos();
@@ -205,8 +210,13 @@ void setup() {
 
   allocator = rcl_get_default_allocator();
 
-  // Create init_options
-  RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
+  // Create init options and set ROS domain explicitly
+  rcl_init_options_t init_options = rcl_get_zero_initialized_init_options();
+  RCCHECK(rcl_init_options_init(&init_options, allocator));
+  RCCHECK(rcl_init_options_set_domain_id(&init_options, ROS_DOMAIN_ID));
+  RCCHECK(rclc_support_init_with_options(&support, 0, NULL, &init_options,
+                                         &allocator));
+  RCCHECK(rcl_init_options_fini(&init_options));
 
   // Create node
   RCCHECK(rclc_node_init_default(&node, "esp32_servo_node", "", &support));
@@ -248,7 +258,7 @@ void setup() {
     state_msg.data.data[i] = currentPositions[i];
   }
 
-  digitalWrite(LED_BUILTIN, LOW); // LED off = ready
+  digitalWrite(LED_PIN, LOW); // LED off = ready
 }
 
 // ========== MAIN LOOP ==========

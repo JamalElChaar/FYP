@@ -62,6 +62,7 @@ def generate_launch_description():
     rviz_config_file = LaunchConfiguration('rviz_config_file')
     controllers_file = LaunchConfiguration('controllers_file')
     agent_port = LaunchConfiguration('agent_port')
+    start_agent = LaunchConfiguration('start_agent')
 
     # Declare launch arguments
     declare_use_rviz_cmd = DeclareLaunchArgument(
@@ -93,6 +94,11 @@ def generate_launch_description():
         name='agent_port',
         default_value='8888',
         description='UDP port for micro-ROS agent (ESP32 WiFi connection)')
+
+    declare_start_agent_cmd = DeclareLaunchArgument(
+        name='start_agent',
+        default_value='true',
+        description='Whether to start micro-ROS agent from this launch file')
 
     # Get robot description from xacro
     robot_description_content = ParameterValue(Command([
@@ -187,6 +193,7 @@ def generate_launch_description():
         ],
         output='screen',
         shell=False,
+        condition=IfCondition(start_agent),
     )
 
     # Create the launch description
@@ -202,10 +209,25 @@ def generate_launch_description():
 
     # Add nodes - micro-ROS agent first
     ld.add_action(micro_ros_agent)
-    ld.add_action(robot_state_publisher_node)
-    ld.add_action(controller_manager_node)
-    ld.add_action(joint_state_broadcaster_spawner)
+    # Give agent a short head start before controllers/nodes come up.
+    delayed_robot_state_publisher = TimerAction(
+        period=1.0,
+        actions=[robot_state_publisher_node],
+    )
+    delayed_controller_manager = TimerAction(
+        period=1.0,
+        actions=[controller_manager_node],
+    )
+    delayed_joint_state_broadcaster = TimerAction(
+        period=2.0,
+        actions=[joint_state_broadcaster_spawner],
+    )
+
+    ld.add_action(delayed_robot_state_publisher)
+    ld.add_action(delayed_controller_manager)
+    ld.add_action(delayed_joint_state_broadcaster)
     ld.add_action(delayed_arm_controller_spawner)
     ld.add_action(rviz_node)
+    ld.add_action(declare_start_agent_cmd)
 
     return ld
