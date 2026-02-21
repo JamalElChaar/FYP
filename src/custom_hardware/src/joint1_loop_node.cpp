@@ -10,7 +10,7 @@ class Joint1LoopNode : public rclcpp::Node {
 public:
   Joint1LoopNode() : Node("joint1_loop_node") {
     low_angle_ = this->declare_parameter<double>("low_angle_deg", 60.0);
-    high_angle_ = this->declare_parameter<double>("high_angle_deg", 90.0);
+    high_angle_ = this->declare_parameter<double>("high_angle_deg", 120.0);
     period_sec_ = this->declare_parameter<double>("period_sec", 1.0);
 
     if (period_sec_ <= 0.0) {
@@ -41,15 +41,18 @@ public:
 
 private:
   void timer_callback() {
-    const double joint1 = use_high_ ? high_angle_ : low_angle_;
+    const double target_angle = use_high_ ? high_angle_ : low_angle_;
     use_high_ = !use_high_;
 
     std_msgs::msg::Float64MultiArray msg;
-    msg.data = {joint1, 90.0, 90.0, 90.0, 90.0, 90.0};
+    msg.data = {target_angle, target_angle, target_angle,
+                target_angle, target_angle, target_angle};
     cmd_publisher_->publish(msg);
 
     RCLCPP_INFO(this->get_logger(),
-                "Published command: [%.1f, 90, 90, 90, 90, 90]", joint1);
+                "Published command: [%.1f, %.1f, %.1f, %.1f, %.1f, %.1f]",
+                target_angle, target_angle, target_angle, target_angle,
+                target_angle, target_angle);
   }
 
   void state_callback(const std_msgs::msg::Float64MultiArray::SharedPtr msg) {
@@ -60,7 +63,7 @@ private:
   }
 
   double low_angle_ = 60.0;
-  double high_angle_ = 90.0;
+  double high_angle_ = 120.0;
   double period_sec_ = 1.0;
   bool use_high_ = false;
 

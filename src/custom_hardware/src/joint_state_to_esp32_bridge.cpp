@@ -1,0 +1,133 @@
+#include <algorithm>
+#include <cmath>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "rclcpp/rclcpp.hpp"
+#include "sensor_msgs/msg/joint_state.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
+
+class JointStateToEsp32Bridge : public rclcpp::Node {
+public:
+  JointStateToEsp32Bridge() : Node("joint_state_to_esp32_bridge") {
+    joint_names_ = this->declare_parameter<std::vector<std::string>>(
+        "joint_names", {"joint_1", "joint_2", "joint_3",
+                        "joint_4", "joint_5", "joint_6"});
+    servo_offsets_deg_ = this->declare_parameter<std::vector<double>>(
+        "servo_offsets_deg", {90.0, 90.0, 90.0, 90.0, 90.0, 90.0});
+    servo_directions_ = this->declare_parameter<std::vector<double>>(
+        "servo_directions", {1.0, 1.0, 1.0, 1.0, 1.0, 1.0});
+    servo_min_deg_ = this->declare_parameter<double>("servo_min_deg", 0.0);
+    servo_max_deg_ = this->declare_parameter<double>("servo_max_deg", 180.0);
+    publish_on_change_only_ =
+        this->declare_parameter<bool>("publish_on_change_only", true);
+    epsilon_deg_ = this->declare_parameter<double>("epsilon_deg", 0.1);
+
+    const std::size_t n = joint_names_.size();
+    if (n == 0) {
+      RCLCPP_FATAL(this->get_logger(), "joint_names must not be empty");
+      throw std::runtime_error("joint_names empty");
+    }
+
+    if (servo_offsets_deg_.size() != n) {
+      RCLCPP_WARN(this->get_logger(),
+                  "servo_offsets_deg size (%zu) != joint_names size (%zu), "
+                  "using default 90 deg",
+                  servo_offsets_deg_.size(), n);
+      servo_offsets_deg_.assign(n, 90.0);
+    }
+    if (servo_directions_.size() != n) {
+      RCLCPP_WARN(this->get_logger(),
+                  "servo_directions size (%zu) != joint_names size (%zu), "
+                  "using default direction +1",
+                  servo_directions_.size(), n);
+      servo_directions_.assign(n, 1.0);
+    }
+
+    last_command_deg_.assign(n, 90.0);
+
+    cmd_publisher_ = this->create_publisher<std_msgs::msg::Float64MultiArray>(
+        "/esp32/joint_commands", 10);
+
+    joint_state_sub_ = this->create_subscription<sensor_msgs::msg::JointState>(
+        "/joint_states", 10,
+        std::bind(&JointStateToEsp32Bridge::joint_state_callback, this,
+                  std::placeholders::_1));
+
+    RCLCPP_INFO(this->get_logger(),
+                "Bridge ready: /joint_states -> /esp32/joint_commands (%zu joints)",
+                n);
+  }
+
+private:
+  static double rad_to_deg(double rad) { return rad * 180.0 / M_PI; }
+
+  double clamp_deg(double value) const {
+    return std::clamp(value, servo_min_deg_, servo_max_deg_);
+  }
+
+  void joint_state_callback(const sensor_msgs::msg::JointState::SharedPtr msg) {
+    std::vector<double> command_deg(joint_names_.size(), 90.0);
+
+    for (std::size_t i = 0; i < joint_names_.size(); ++i) {
+      const auto it = std::find(msg->name.begin(), msg->name.end(), joint_names_[i]);
+      if (it == msg->name.end()) {
+        command_deg[i] = last_command_deg_[i];
+        continue;
+      }
+
+      const auto idx = static_cast<std::size_t>(std::distance(msg->name.begin(), it));
+      if (idx >= msg->position.size()) {
+        command_deg[i] = last_command_deg_[i];
+        continue;
+      }
+
+      const double ros_deg = rad_to_deg(msg->position[idx]);
+      const double servo_deg =
+          servo_offsets_deg_[i] + servo_directions_[i] * ros_deg;
+      command_deg[i] = clamp_deg(servo_deg);
+    }
+
+    bool changed = false;
+    for (std::size_t i = 0; i < command_deg.size(); ++i) {
+      if (std::abs(command_deg[i] - last_command_deg_[i]) > epsilon_deg_) {
+        changed = true;
+        break;
+      }
+    }
+
+    if (publish_on_change_only_ && !changed) {
+      return;
+    }
+
+    std_msgs::msg::Float64MultiArray out;
+    out.data = command_deg;
+    cmd_publisher_->publish(out);
+    last_command_deg_ = command_deg;
+
+    RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
+                         "Published ESP32 command [%.1f, %.1f, %.1f, %.1f, %.1f, %.1f]",
+                         command_deg[0], command_deg[1], command_deg[2],
+                         command_deg[3], command_deg[4], command_deg[5]);
+  }
+
+  std::vector<std::string> joint_names_;
+  std::vector<double> servo_offsets_deg_;
+  std::vector<double> servo_directions_;
+  std::vector<double> last_command_deg_;
+  double servo_min_deg_{0.0};
+  double servo_max_deg_{180.0};
+  bool publish_on_change_only_{true};
+  double epsilon_deg_{0.1};
+
+  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr cmd_publisher_;
+  rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr joint_state_sub_;
+};
+
+int main(int argc, char **argv) {
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<JointStateToEsp32Bridge>());
+  rclcpp::shutdown();
+  return 0;
+}

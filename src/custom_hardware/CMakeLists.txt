@@ -11,6 +11,7 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 
 # Compile the hardware interface as a shared library
@@ -22,10 +23,20 @@ add_executable(joint1_loop_node
   src/joint1_loop_node.cpp
 )
 
+add_executable(joint_state_to_esp32_bridge
+  src/joint_state_to_esp32_bridge.cpp
+)
+
 target_compile_features(joint1_loop_node PUBLIC cxx_std_17)
 
 ament_target_dependencies(joint1_loop_node
   rclcpp
+  std_msgs
+)
+
+ament_target_dependencies(joint_state_to_esp32_bridge
+  rclcpp
+  sensor_msgs
   std_msgs
 )
 
@@ -77,6 +88,11 @@ install(
 
 install(
   TARGETS joint1_loop_node
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
+  TARGETS joint_state_to_esp32_bridge
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 

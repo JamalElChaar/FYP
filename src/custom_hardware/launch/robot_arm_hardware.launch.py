@@ -1,24 +1,20 @@
 #!/usr/bin/env python3
 """
-Launch real robot with custom hardware interface using micro-ROS.
+Launch manual hardware control with micro-ROS and slider GUI.
 
-This launch file sets up the ROS 2 control environment for the real robot_arm
-using the custom hardware interface that communicates with ESP32 via micro-ROS.
-
-:author: Jamal
-:date: February 2026
+This launch file starts:
+1) micro-ROS agent (UDP)
+2) robot_state_publisher
+3) joint_state_publisher_gui (manual sliders)
+4) bridge node: /joint_states -> /esp32/joint_commands
+5) RViz
 """
 
 import os
+
 from launch import LaunchDescription
-from launch.actions import (
-    DeclareLaunchArgument,
-    RegisterEventHandler,
-    TimerAction,
-    ExecuteProcess,
-)
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, TimerAction
 from launch.conditions import IfCondition
-from launch.event_handlers import OnProcessStart
 from launch.substitutions import (
     Command,
     FindExecutable,
@@ -31,44 +27,24 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    """
-    Generate a launch description for the real robot.
-
-    Returns:
-        LaunchDescription: A complete launch description for the real robot
-    """
-    # Package names
     package_name_description = 'robot_arm_description'
-    package_name_moveit = 'robot_arm_movit_config'
-
-    # Find package shares
     pkg_share_description = FindPackageShare(
         package=package_name_description).find(package_name_description)
-    pkg_share_moveit = FindPackageShare(
-        package=package_name_moveit).find(package_name_moveit)
 
-    # Paths to files
     default_urdf_model_path = os.path.join(
         pkg_share_description, 'urdf', 'robot', 'arm.urdf.xacro')
     default_rviz_config_path = os.path.join(
-        pkg_share_description, 'rviz', 'view_robot.rviz')
-    default_controllers_file = os.path.join(
-        pkg_share_moveit, 'config', 'ros2_controllers.yaml')
+        pkg_share_description, 'rviz', 'robot_arm_description.rviz')
 
-    # Launch configuration variables
     use_rviz = LaunchConfiguration('use_rviz')
     use_sim_time = LaunchConfiguration('use_sim_time')
     urdf_model = LaunchConfiguration('urdf_model')
     rviz_config_file = LaunchConfiguration('rviz_config_file')
-    controllers_file = LaunchConfiguration('controllers_file')
     agent_port = LaunchConfiguration('agent_port')
     start_agent = LaunchConfiguration('start_agent')
-    start_joint1_test = LaunchConfiguration('start_joint1_test')
-    test_low_angle = LaunchConfiguration('test_low_angle')
-    test_high_angle = LaunchConfiguration('test_high_angle')
-    test_period_sec = LaunchConfiguration('test_period_sec')
+    start_slider_bridge = LaunchConfiguration('start_slider_bridge')
+    start_jsp_gui = LaunchConfiguration('start_jsp_gui')
 
-    # Declare launch arguments
     declare_use_rviz_cmd = DeclareLaunchArgument(
         name='use_rviz',
         default_value='true',
@@ -89,127 +65,35 @@ def generate_launch_description():
         default_value=default_rviz_config_path,
         description='Absolute path to RViz config file')
 
-    declare_controllers_file_cmd = DeclareLaunchArgument(
-        name='controllers_file',
-        default_value=default_controllers_file,
-        description='Absolute path to ros2_controllers.yaml file')
-
-    declare_serial_port_cmd = DeclareLaunchArgument(
+    declare_agent_port_cmd = DeclareLaunchArgument(
         name='agent_port',
         default_value='8888',
-        description='UDP port for micro-ROS agent (ESP32 WiFi connection)')
+        description='UDP port for micro-ROS agent')
 
     declare_start_agent_cmd = DeclareLaunchArgument(
         name='start_agent',
         default_value='true',
         description='Whether to start micro-ROS agent from this launch file')
 
-    declare_start_joint1_test_cmd = DeclareLaunchArgument(
-        name='start_joint1_test',
+    declare_start_slider_bridge_cmd = DeclareLaunchArgument(
+        name='start_slider_bridge',
         default_value='true',
-        description='Whether to start joint1 loop test publisher node')
+        description='Whether to start slider-to-ESP32 bridge node')
 
-    declare_test_low_angle_cmd = DeclareLaunchArgument(
-        name='test_low_angle',
-        default_value='60.0',
-        description='Joint 1 low angle (deg) for test loop node')
+    declare_start_jsp_gui_cmd = DeclareLaunchArgument(
+        name='start_jsp_gui',
+        default_value='true',
+        description='Whether to start joint_state_publisher_gui')
 
-    declare_test_high_angle_cmd = DeclareLaunchArgument(
-        name='test_high_angle',
-        default_value='90.0',
-        description='Joint 1 high angle (deg) for test loop node')
-
-    declare_test_period_cmd = DeclareLaunchArgument(
-        name='test_period_sec',
-        default_value='1.0',
-        description='Seconds between command updates in test loop node')
-
-    # Get robot description from xacro
     robot_description_content = ParameterValue(Command([
         PathJoinSubstitution([FindExecutable(name='xacro')]),
         ' ',
         urdf_model,
-        ' use_gazebo:=false',  # Use custom hardware interface, not Gazebo
+        ' use_gazebo:=false',
         ' use_camera:=false',
     ]), value_type=str)
-
     robot_description = {'robot_description': robot_description_content}
 
-    # Robot State Publisher
-    robot_state_publisher_node = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='screen',
-        parameters=[
-            robot_description,
-            {'use_sim_time': use_sim_time}
-        ]
-    )
-
-    # Controller Manager
-    controller_manager_node = Node(
-        package='controller_manager',
-        executable='ros2_control_node',
-        parameters=[
-            robot_description,
-            controllers_file,
-            {'use_sim_time': use_sim_time}
-        ],
-        output='screen',
-    )
-
-    # Joint State Broadcaster Spawner
-    joint_state_broadcaster_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=[
-            'joint_state_broadcaster',
-            '--controller-manager',
-            '/controller_manager'
-        ],
-        output='screen',
-    )
-
-    # Arm Controller Spawner (delayed to wait for controller manager)
-    arm_controller_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=[
-            'arm_controller',
-            '--controller-manager',
-            '/controller_manager'
-        ],
-        output='screen',
-    )
-
-    # Delay arm controller spawner after joint state broadcaster
-    delayed_arm_controller_spawner = RegisterEventHandler(
-        event_handler=OnProcessStart(
-            target_action=joint_state_broadcaster_spawner,
-            on_start=[
-                TimerAction(
-                    period=2.0,
-                    actions=[arm_controller_spawner],
-                ),
-            ],
-        )
-    )
-
-    # RViz
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', rviz_config_file],
-        condition=IfCondition(use_rviz),
-        parameters=[{'use_sim_time': use_sim_time}]
-    )
-
-    # micro-ROS Agent - bridges ESP32 to ROS2 over WiFi UDP
-    # NOTE: You need to install micro_ros_agent package first:
-    #   sudo apt install ros-humble-micro-ros-agent
-    # Or build from source: https://github.com/micro-ROS/micro-ROS-Agent
     micro_ros_agent = ExecuteProcess(
         cmd=[
             'ros2', 'run', 'micro_ros_agent', 'micro_ros_agent',
@@ -220,57 +104,73 @@ def generate_launch_description():
         condition=IfCondition(start_agent),
     )
 
-    # C++ test node: publishes 60<->90 loop on joint 1 to /esp32/joint_commands
-    joint1_loop_test_node = Node(
-        package='custom_hardware',
-        executable='joint1_loop_node',
-        name='joint1_loop_node',
+    robot_state_publisher_node = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_state_publisher',
         output='screen',
-        parameters=[{
-            'low_angle_deg': test_low_angle,
-            'high_angle_deg': test_high_angle,
-            'period_sec': test_period_sec,
-        }],
-        condition=IfCondition(start_joint1_test),
+        parameters=[robot_description, {'use_sim_time': use_sim_time}],
     )
 
-    # Create the launch description
-    ld = LaunchDescription()
+    joint_state_publisher_gui_node = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        name='joint_state_publisher_gui',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+        condition=IfCondition(start_jsp_gui),
+    )
 
-    # Declare launch arguments
-    ld.add_action(declare_use_rviz_cmd)
-    ld.add_action(declare_use_sim_time_cmd)
-    ld.add_action(declare_urdf_model_path_cmd)
-    ld.add_action(declare_rviz_config_file_cmd)
-    ld.add_action(declare_controllers_file_cmd)
-    ld.add_action(declare_serial_port_cmd)
-    ld.add_action(declare_start_agent_cmd)
-    ld.add_action(declare_start_joint1_test_cmd)
-    ld.add_action(declare_test_low_angle_cmd)
-    ld.add_action(declare_test_high_angle_cmd)
-    ld.add_action(declare_test_period_cmd)
+    slider_bridge_node = Node(
+        package='custom_hardware',
+        executable='joint_state_to_esp32_bridge',
+        name='joint_state_to_esp32_bridge',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+        condition=IfCondition(start_slider_bridge),
+    )
 
-    # Add nodes - micro-ROS agent first
-    ld.add_action(micro_ros_agent)
-    # Give agent a short head start before controllers/nodes come up.
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        arguments=['-d', rviz_config_file],
+        parameters=[{'use_sim_time': use_sim_time}],
+        condition=IfCondition(use_rviz),
+    )
+
     delayed_robot_state_publisher = TimerAction(
         period=1.0,
         actions=[robot_state_publisher_node],
     )
-    delayed_controller_manager = TimerAction(
-        period=1.0,
-        actions=[controller_manager_node],
+    delayed_joint_state_publisher_gui = TimerAction(
+        period=1.2,
+        actions=[joint_state_publisher_gui_node],
     )
-    delayed_joint_state_broadcaster = TimerAction(
+    delayed_slider_bridge = TimerAction(
         period=2.0,
-        actions=[joint_state_broadcaster_spawner],
+        actions=[slider_bridge_node],
+    )
+    delayed_rviz = TimerAction(
+        period=2.0,
+        actions=[rviz_node],
     )
 
+    ld = LaunchDescription()
+    ld.add_action(declare_use_rviz_cmd)
+    ld.add_action(declare_use_sim_time_cmd)
+    ld.add_action(declare_urdf_model_path_cmd)
+    ld.add_action(declare_rviz_config_file_cmd)
+    ld.add_action(declare_agent_port_cmd)
+    ld.add_action(declare_start_agent_cmd)
+    ld.add_action(declare_start_slider_bridge_cmd)
+    ld.add_action(declare_start_jsp_gui_cmd)
+
+    ld.add_action(micro_ros_agent)
     ld.add_action(delayed_robot_state_publisher)
-    ld.add_action(delayed_controller_manager)
-    ld.add_action(delayed_joint_state_broadcaster)
-    ld.add_action(delayed_arm_controller_spawner)
-    ld.add_action(joint1_loop_test_node)
-    ld.add_action(rviz_node)
+    ld.add_action(delayed_joint_state_publisher_gui)
+    ld.add_action(delayed_slider_bridge)
+    ld.add_action(delayed_rviz)
 
     return ld
