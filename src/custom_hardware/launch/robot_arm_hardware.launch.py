@@ -63,6 +63,10 @@ def generate_launch_description():
     controllers_file = LaunchConfiguration('controllers_file')
     agent_port = LaunchConfiguration('agent_port')
     start_agent = LaunchConfiguration('start_agent')
+    start_joint1_test = LaunchConfiguration('start_joint1_test')
+    test_low_angle = LaunchConfiguration('test_low_angle')
+    test_high_angle = LaunchConfiguration('test_high_angle')
+    test_period_sec = LaunchConfiguration('test_period_sec')
 
     # Declare launch arguments
     declare_use_rviz_cmd = DeclareLaunchArgument(
@@ -99,6 +103,26 @@ def generate_launch_description():
         name='start_agent',
         default_value='true',
         description='Whether to start micro-ROS agent from this launch file')
+
+    declare_start_joint1_test_cmd = DeclareLaunchArgument(
+        name='start_joint1_test',
+        default_value='true',
+        description='Whether to start joint1 loop test publisher node')
+
+    declare_test_low_angle_cmd = DeclareLaunchArgument(
+        name='test_low_angle',
+        default_value='60.0',
+        description='Joint 1 low angle (deg) for test loop node')
+
+    declare_test_high_angle_cmd = DeclareLaunchArgument(
+        name='test_high_angle',
+        default_value='90.0',
+        description='Joint 1 high angle (deg) for test loop node')
+
+    declare_test_period_cmd = DeclareLaunchArgument(
+        name='test_period_sec',
+        default_value='1.0',
+        description='Seconds between command updates in test loop node')
 
     # Get robot description from xacro
     robot_description_content = ParameterValue(Command([
@@ -196,6 +220,20 @@ def generate_launch_description():
         condition=IfCondition(start_agent),
     )
 
+    # C++ test node: publishes 60<->90 loop on joint 1 to /esp32/joint_commands
+    joint1_loop_test_node = Node(
+        package='custom_hardware',
+        executable='joint1_loop_node',
+        name='joint1_loop_node',
+        output='screen',
+        parameters=[{
+            'low_angle_deg': test_low_angle,
+            'high_angle_deg': test_high_angle,
+            'period_sec': test_period_sec,
+        }],
+        condition=IfCondition(start_joint1_test),
+    )
+
     # Create the launch description
     ld = LaunchDescription()
 
@@ -206,6 +244,11 @@ def generate_launch_description():
     ld.add_action(declare_rviz_config_file_cmd)
     ld.add_action(declare_controllers_file_cmd)
     ld.add_action(declare_serial_port_cmd)
+    ld.add_action(declare_start_agent_cmd)
+    ld.add_action(declare_start_joint1_test_cmd)
+    ld.add_action(declare_test_low_angle_cmd)
+    ld.add_action(declare_test_high_angle_cmd)
+    ld.add_action(declare_test_period_cmd)
 
     # Add nodes - micro-ROS agent first
     ld.add_action(micro_ros_agent)
@@ -227,7 +270,7 @@ def generate_launch_description():
     ld.add_action(delayed_controller_manager)
     ld.add_action(delayed_joint_state_broadcaster)
     ld.add_action(delayed_arm_controller_spawner)
+    ld.add_action(joint1_loop_test_node)
     ld.add_action(rviz_node)
-    ld.add_action(declare_start_agent_cmd)
 
     return ld

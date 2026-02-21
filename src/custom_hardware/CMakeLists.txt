@@ -18,6 +18,17 @@ add_library(${PROJECT_NAME} SHARED
   src/custom_hardware.cpp
 )
 
+add_executable(joint1_loop_node
+  src/joint1_loop_node.cpp
+)
+
+target_compile_features(joint1_loop_node PUBLIC cxx_std_17)
+
+ament_target_dependencies(joint1_loop_node
+  rclcpp
+  std_msgs
+)
+
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
@@ -62,6 +73,11 @@ install(
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
+)
+
+install(
+  TARGETS joint1_loop_node
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)
