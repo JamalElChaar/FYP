@@ -64,6 +64,7 @@ public:
     }
 
     last_command_deg_.assign(n, 90.0);
+    last_slider_command_deg_.assign(n, 90.0);
 
     cmd_publisher_ = this->create_publisher<std_msgs::msg::Float64MultiArray>(
         "/esp32/joint_commands", 10);
@@ -128,13 +129,15 @@ private:
     for (std::size_t i = 0; i < joint_names_.size(); ++i) {
       const auto it = std::find(msg->name.begin(), msg->name.end(), joint_names_[i]);
       if (it == msg->name.end()) {
-        command_deg[i] = last_command_deg_[i];
+        command_deg[i] =
+            slider_command_initialized_ ? last_slider_command_deg_[i] : 90.0;
         continue;
       }
 
       const auto idx = static_cast<std::size_t>(std::distance(msg->name.begin(), it));
       if (idx >= msg->position.size()) {
-        command_deg[i] = last_command_deg_[i];
+        command_deg[i] =
+            slider_command_initialized_ ? last_slider_command_deg_[i] : 90.0;
         continue;
       }
 
@@ -144,18 +147,22 @@ private:
       command_deg[i] = clamp_deg(servo_deg);
     }
 
-    bool changed = false;
-    for (std::size_t i = 0; i < command_deg.size(); ++i) {
-      if (std::abs(command_deg[i] - last_command_deg_[i]) > epsilon_deg_) {
-        changed = true;
-        break;
+    bool slider_changed = !slider_command_initialized_;
+    if (!slider_changed) {
+      for (std::size_t i = 0; i < command_deg.size(); ++i) {
+        if (std::abs(command_deg[i] - last_slider_command_deg_[i]) > epsilon_deg_) {
+          slider_changed = true;
+          break;
+        }
       }
     }
 
-    if (publish_on_change_only_ && !changed) {
+    if (publish_on_change_only_ && !slider_changed) {
       return;
     }
 
+    last_slider_command_deg_ = command_deg;
+    slider_command_initialized_ = true;
     publish_command(command_deg);
 
     RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
@@ -180,6 +187,7 @@ private:
   std::vector<double> servo_offsets_deg_;
   std::vector<double> servo_directions_;
   std::vector<double> last_command_deg_;
+  std::vector<double> last_slider_command_deg_;
   double servo_min_deg_{0.0};
   double servo_max_deg_{180.0};
   bool publish_on_change_only_{true};
@@ -187,6 +195,7 @@ private:
   bool auto_return_to_neutral_{true};
   double neutral_delay_sec_{2.0};
   std::vector<double> neutral_command_deg_;
+  bool slider_command_initialized_{false};
 
   rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr cmd_publisher_;
   rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr joint_state_sub_;
