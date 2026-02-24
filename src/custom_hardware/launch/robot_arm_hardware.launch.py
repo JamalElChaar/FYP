@@ -44,8 +44,6 @@ def generate_launch_description():
     start_agent = LaunchConfiguration('start_agent')
     start_slider_bridge = LaunchConfiguration('start_slider_bridge')
     start_jsp_gui = LaunchConfiguration('start_jsp_gui')
-    auto_return_to_neutral = LaunchConfiguration('auto_return_to_neutral')
-    neutral_delay_sec = LaunchConfiguration('neutral_delay_sec')
 
     declare_use_rviz_cmd = DeclareLaunchArgument(
         name='use_rviz',
@@ -86,16 +84,6 @@ def generate_launch_description():
         name='start_jsp_gui',
         default_value='true',
         description='Whether to start joint_state_publisher_gui')
-
-    declare_auto_return_to_neutral_cmd = DeclareLaunchArgument(
-        name='auto_return_to_neutral',
-        default_value='true',
-        description='Auto-return ESP32 command to neutral after delay')
-
-    declare_neutral_delay_sec_cmd = DeclareLaunchArgument(
-        name='neutral_delay_sec',
-        default_value='2.0',
-        description='Delay before neutral auto-return command (seconds)')
 
     robot_description_content = ParameterValue(Command([
         PathJoinSubstitution([FindExecutable(name='xacro')]),
@@ -138,12 +126,7 @@ def generate_launch_description():
         executable='joint_state_to_esp32_bridge',
         name='joint_state_to_esp32_bridge',
         output='screen',
-        parameters=[{
-            'use_sim_time': use_sim_time,
-            'auto_return_to_neutral': auto_return_to_neutral,
-            'neutral_delay_sec': neutral_delay_sec,
-            'neutral_command_deg': [90.0, 90.0, 90.0, 90.0, 90.0, 90.0],
-        }],
+        parameters=[{'use_sim_time': use_sim_time}],
         condition=IfCondition(start_slider_bridge),
     )
 
@@ -183,8 +166,6 @@ def generate_launch_description():
     ld.add_action(declare_start_agent_cmd)
     ld.add_action(declare_start_slider_bridge_cmd)
     ld.add_action(declare_start_jsp_gui_cmd)
-    ld.add_action(declare_auto_return_to_neutral_cmd)
-    ld.add_action(declare_neutral_delay_sec_cmd)
 
     ld.add_action(micro_ros_agent)
     ld.add_action(delayed_robot_state_publisher)
