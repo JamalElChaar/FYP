@@ -364,44 +364,7 @@
   <child link="link_6"/>
   <axis xyz="0.65067 0.75931 0.0081623"/>
 </joint>
-  
-  <!-- ros2_control configuration -->
-  <ros2_control name="RobotArmSystem" type="system">
-    <hardware>
-      <plugin>custom_hardware/CustomHardwareInterface</plugin>
-      <param name="serial_port">/dev/ttyUSB0</param>
-      <param name="baud_rate">115200</param>
-      <param name="timeout_ms">1000</param>
-    </hardware>
-    <joint name="joint_1">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="joint_2">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="joint_3">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="joint_4">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="joint_5">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="joint_6">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  </ros2_control>
+
+  <!-- ros2_control is added via arm.urdf.xacro + robot_arm_ros2_control.urdf.xacro -->
+
 </robot>

@@ -26,9 +26,20 @@ ament_target_dependencies(test_motion_node
   geometry_msgs
 )
 
+# MoveIt hardware execution node (interactive, real hardware)
+add_executable(moveit_hardware_node src/moveit_hardware_node.cpp)
+ament_target_dependencies(moveit_hardware_node
+  rclcpp
+  moveit_ros_planning_interface
+  moveit_core
+  moveit_msgs
+  geometry_msgs
+)
+
 # Install executables
 install(TARGETS
   test_motion_node
+  moveit_hardware_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

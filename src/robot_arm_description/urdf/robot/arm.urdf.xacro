@@ -10,6 +10,7 @@
     <xacro:arg name="flange_link" default="link_6"/>
     <xacro:arg name="use_camera" default="false"/>
     <xacro:arg name="use_gazebo" default="false"/>
+    <xacro:arg name="use_simulation" default="false"/>
 
     <!-- Import arm urdf file -->
     <xacro:include filename="$(find robot_arm_description)/urdf/robot/arm.urdf" />
@@ -21,7 +22,8 @@
     <xacro:robot_arm_ros2_control 
         prefix="$(arg prefix)" 
         flange_link="$(arg flange_link)" 
-        use_gazebo="$(arg use_gazebo)"/>
+        use_gazebo="$(arg use_gazebo)"
+        use_simulation="$(arg use_simulation)"/>
     
     <!-- Include Gazebo-specific plugins only when using Gazebo -->
     <xacro:if value="$(arg use_gazebo)">

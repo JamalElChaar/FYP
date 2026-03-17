@@ -74,10 +74,13 @@ CustomHardwareInterface::on_init(const hardware_interface::HardwareInfo &info) {
   }
 
   // Get simulation parameter from URDF
-  use_simulation_ =
-      info_.hardware_parameters.count("use_simulation") > 0
-          ? (info_.hardware_parameters.at("use_simulation") == "true")
-          : false;
+  // Note: xacro may output "True" (Python-style), so check both cases
+  if (info_.hardware_parameters.count("use_simulation") > 0) {
+    auto val = info_.hardware_parameters.at("use_simulation");
+    use_simulation_ = (val == "true" || val == "True" || val == "1");
+  } else {
+    use_simulation_ = false;
+  }
 
   esp32_connected_ = false;
 
