@@ -47,8 +47,11 @@ def launch_setup(context, *args, **kwargs):
     demo_ld = generate_demo_launch(moveit_config)
     actions = list(demo_ld.entities)
 
-    # Add micro-ROS agent when using real hardware (not in test mode)
-    if use_simulation == 'false':
+    # Add micro-ROS agent when using real hardware (not in test mode).
+    # Set start_agent:=false when the agent is already running separately,
+    # for example from the official micro-ROS Docker image.
+    start_agent = LaunchConfiguration('start_agent').perform(context)
+    if use_simulation == 'false' and start_agent.lower() == 'true':
         agent_port = LaunchConfiguration('agent_port').perform(context)
         micro_ros_agent = ExecuteProcess(
             cmd=[
@@ -70,5 +73,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'agent_port', default_value='8888',
             description='UDP port for micro-ROS agent'),
+        DeclareLaunchArgument(
+            'start_agent', default_value='true',
+            description='Start a local micro-ROS agent (false if it is already running)'),
         OpaqueFunction(function=launch_setup),
     ])
