@@ -1,0 +1,32 @@
+capture:
+  id: "1786723591-115552643"
+  rgb_stamp_sec: 1786723591.115552664
+  depth_stamp_sec: 1786723591.115921974
+  rgb_frame_id: "camera_color_optical_frame"
+  depth_frame_id: "camera_depth_optical_frame"
+rgb:
+  file: latest_rgb.jpg
+  width: 640
+  height: 480
+  source_encoding: "rgb8"
+depth:
+  file: latest_depth.png
+  stored_encoding: 16UC1
+  stored_unit: millimeters
+  source_encoding: "16UC1"
+camera_intrinsics:
+  fx: 570.342204742
+  fy: 570.342204742
+  cx: 319.500000000
+  cy: 239.500000000
+diagnostic_center_sample:
+  note: "Scene-center diagnostic only; not a fruit detection"
+  pixel_u: 320
+  pixel_v: 240
+  roi_radius_px: 10
+  valid_depth_pixels: 0
+  median_depth_m: nan
+  point_in_camera_optical_frame_m:
+    x: nan
+    y: nan
+    z: nan
