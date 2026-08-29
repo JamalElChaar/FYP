@@ -525,6 +525,52 @@ large RViz motions until realistic joint position limits are configured.
 
 In an emergency, disconnect servo power first.
 
+## Testing
+
+### Build
+
+```bash
+cd /home/jamal/FYP_ws2
+source /opt/ros/humble/setup.bash
+colcon build --packages-select control_arm
+source install/setup.bash
+```
+
+### Terminal 1: micro-ROS Agent
+
+```bash
+export ROS_DOMAIN_ID=0
+source /opt/ros/humble/setup.bash
+ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888 -v6
+```
+
+### ESP32
+
+```bash
+# Upload with Arduino IDE, then reset the ESP32:
+# src/custom_hardware/esp32_firmware/esp32_moveit_direct_tests/esp32_moveit_direct_tests.ino
+```
+
+### Terminal 2: final angles, one joint at a time
+
+```bash
+cd /home/jamal/FYP_ws2
+export ROS_DOMAIN_ID=0
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch control_arm final_angles_sequential.launch.py
+```
+
+### Terminal 2: full MoveIt path at 0.2-second intervals
+
+```bash
+cd /home/jamal/FYP_ws2
+export ROS_DOMAIN_ID=0
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch control_arm slow_moveit_trajectory.launch.py
+```
+
 ## Troubleshooting
 
 ### `Package 'micro_ros_agent' not found`

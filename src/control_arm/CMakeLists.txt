@@ -12,6 +12,8 @@ find_package(moveit_ros_planning_interface REQUIRED)
 find_package(moveit_core REQUIRED)
 find_package(moveit_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(trajectory_msgs REQUIRED)
 
 # Include directories
 include_directories(include)
@@ -36,10 +38,23 @@ ament_target_dependencies(moveit_hardware_node
   geometry_msgs
 )
 
+# Direct MoveIt-to-ESP32 hardware experiments
+add_executable(direct_esp32_moveit_node src/direct_esp32_moveit_node.cpp)
+ament_target_dependencies(direct_esp32_moveit_node
+  rclcpp
+  moveit_ros_planning_interface
+  moveit_core
+  moveit_msgs
+  geometry_msgs
+  std_msgs
+  trajectory_msgs
+)
+
 # Install executables
 install(TARGETS
   test_motion_node
   moveit_hardware_node
+  direct_esp32_moveit_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
