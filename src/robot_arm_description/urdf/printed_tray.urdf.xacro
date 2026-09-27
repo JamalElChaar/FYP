@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- The printable STL uses base_link coordinates in millimetres.
+       This display geometry includes the floor, arm locator, mast and cradle.
+       Collision geometry must be validated separately before motion planning. -->
+  <link name="tray_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_arm_description/meshes/arm_mast_astra_tray.stl"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="printed_tray_blue"><color rgba="0.36 0.52 0.72 1"/></material>
+    </visual>
+  </link>
+  <joint name="base_to_tray" type="fixed">
+    <parent link="$(arg prefix)base_link"/>
+    <child link="tray_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>

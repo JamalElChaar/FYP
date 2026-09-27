@@ -114,8 +114,8 @@ def generate_launch_description():
 
     declare_use_camera_cmd = DeclareLaunchArgument(
         name='use_camera',
-        default_value='false',
-        description='Flag to enable the RGBD camera for Gazebo point cloud simulation')
+        default_value='true',
+        description='Enable the fixed RGB-D camera and its TF frames')
 
     declare_use_gazebo_cmd = DeclareLaunchArgument(
         name='use_gazebo',
@@ -168,6 +168,14 @@ def generate_launch_description():
         default_value='0.0',
         description='yaw angle of initial orientation, radians')
 
+    camera_arguments = [
+        DeclareLaunchArgument('use_tray', default_value='true', choices=['true', 'false']),
+        DeclareLaunchArgument('camera_x', default_value='0.22'),
+        DeclareLaunchArgument('camera_y', default_value='-0.30'),
+        DeclareLaunchArgument('camera_z', default_value='0.50'),
+        DeclareLaunchArgument('camera_pitch', default_value='0.872664626'),
+    ]
+
     # Include Robot State Publisher launch file if enabled
     robot_state_publisher_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -176,7 +184,12 @@ def generate_launch_description():
         launch_arguments={
             'jsp_gui': jsp_gui,
             'use_camera': use_camera,
+            'use_tray': LaunchConfiguration('use_tray'),
             'use_gazebo': use_gazebo,
+            'camera_x': LaunchConfiguration('camera_x'),
+            'camera_y': LaunchConfiguration('camera_y'),
+            'camera_z': LaunchConfiguration('camera_z'),
+            'camera_pitch': LaunchConfiguration('camera_pitch'),
             'use_rviz': use_rviz,
             'use_sim_time': use_sim_time
         }.items(),
@@ -186,7 +199,7 @@ def generate_launch_description():
     # Include ROS 2 Controllers launch file if enabled
     load_controllers_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
-            os.path.join(pkg_share_moveit, 'launch', 'load_ros2_controllers.launch.py')
+            os.path.join(pkg_share_moveit, 'launch', 'spawn_controllers.launch.py')
         ]),
         launch_arguments={
             'use_sim_time': use_sim_time
@@ -220,21 +233,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Includes optimizations to minimize latency and bandwidth when streaming image data
-    start_gazebo_ros_image_bridge_cmd = Node(
-        package='ros_gz_image',
-        executable='image_bridge',
-        arguments=[
-            '/camera_head/depth_image',
-            '/camera_head/image',
-        ],
-        remappings=[
-            ('/camera_head/depth_image', '/camera_head/depth/image_rect_raw'),
-            ('/camera_head/image', '/camera_head/color/image_raw'),
-        ],
-        condition=IfCondition(use_camera)
-    )
-
     # Spawn the robot
     start_gazebo_ros_spawner_cmd = Node(
         package='ros_gz_sim',
@@ -260,6 +258,8 @@ def generate_launch_description():
     ld.add_action(declare_jsp_gui_cmd)
     ld.add_action(declare_load_controllers_cmd)
     ld.add_action(declare_use_camera_cmd)
+    for camera_argument in camera_arguments:
+        ld.add_action(camera_argument)
     ld.add_action(declare_use_gazebo_cmd)
     ld.add_action(declare_use_rviz_cmd)
     ld.add_action(declare_use_robot_state_pub_cmd)
@@ -281,7 +281,6 @@ def generate_launch_description():
     ld.add_action(load_controllers_cmd)
     ld.add_action(start_gazebo_cmd)
     ld.add_action(start_gazebo_ros_bridge_cmd)
-    ld.add_action(start_gazebo_ros_image_bridge_cmd)
     ld.add_action(start_gazebo_ros_spawner_cmd)
 
     return ld

@@ -59,26 +59,25 @@
   direction: ROS_TO_GZ
   lazy: true
 
-# ==================== Camera Bridges (D435 RGBD Camera) ====================
+# ==================== Camera Bridges (fixed RGB-D camera) ====================
 # Camera info from Gazebo to ROS
-- ros_topic_name: "camera_head/camera_info"
+- ros_topic_name: "/camera/color/camera_info"
   gz_topic_name: "camera_head/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
   lazy: true
 
-# Depth image from Gazebo to ROS
-- ros_topic_name: "camera_head/depth/image_raw"
-  gz_topic_name: "camera_head/depth_image"
+# Image bridge through ros_gz_bridge (no separate ros_gz_image package needed).
+- ros_topic_name: "/camera/color/image_raw"
+  gz_topic_name: "camera_head/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
   lazy: true
 
-# RGB image from Gazebo to ROS
-- ros_topic_name: "camera_head/color/image_raw"
-  gz_topic_name: "camera_head/image"
+- ros_topic_name: "/camera/depth/image_raw"
+  gz_topic_name: "camera_head/depth_image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS

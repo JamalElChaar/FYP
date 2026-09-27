@@ -9,6 +9,7 @@
     <xacro:arg name="base_type" default="fixed"/>
     <xacro:arg name="flange_link" default="link_6"/>
     <xacro:arg name="use_camera" default="false"/>
+    <xacro:arg name="use_tray" default="false"/>
     <xacro:arg name="use_gazebo" default="false"/>
     <xacro:arg name="use_simulation" default="false"/>
 
@@ -35,9 +36,13 @@
             use_gazebo="$(arg use_gazebo)"/>
     </xacro:if>
 
+    <xacro:if value="$(arg use_tray)">
+        <xacro:include filename="$(find robot_arm_description)/urdf/printed_tray.urdf.xacro" />
+    </xacro:if>
+
     <!-- Include camera if use_camera is true -->
     <xacro:if value="$(arg use_camera)">
-        <xacro:include filename="$(find robot_arm_description)/urdf/sensors/intel_rgbd_cam_d435.urdf.xacro" />
+        <xacro:include filename="$(find robot_arm_description)/urdf/sensors/fixed_rgbd_camera.urdf.xacro" />
     </xacro:if>
 
 </robot>
