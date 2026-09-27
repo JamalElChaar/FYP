@@ -665,6 +665,51 @@ ros2 launch control_arm fk_pose.launch.py ros_degrees:="0,45,-25,90,-110,0"
 It flags any joint that falls outside its position limits, so an unreachable
 configuration is caught before it ever reaches MoveIt.
 
+## CV test
+
+### Build
+
+```bash
+cd /home/jamal/FYP_ws2
+source /opt/ros/humble/setup.bash
+colcon build --packages-select computer_vision_model
+source install/setup.bash
+```
+
+### Terminal 1: live camera
+
+Connect the Astra Pro camera, then run:
+
+```bash
+cd /home/jamal/FYP_ws2
+export ROS_DOMAIN_ID=0
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+read -rsp "Roboflow API key: " ROBOFLOW_API_KEY
+echo
+export ROBOFLOW_API_KEY
+ros2 launch computer_vision_model fruit_plane_pipeline.launch.py
+```
+
+### Terminal 1: saved image
+
+Place `fruit.jpg` and its matching calibration `fruit.yaml` in
+`src/computer_vision_model/input_images/`. No camera connection needed.
+
+```bash
+cd /home/jamal/FYP_ws2
+export ROS_DOMAIN_ID=0
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+read -rsp "Roboflow API key: " ROBOFLOW_API_KEY
+echo
+export ROBOFLOW_API_KEY
+ros2 launch computer_vision_model fruit_image_pipeline.launch.py
+```
+
+Run one mode at a time. Both calculate poses and joint angles without moving the arm.
+Logs: `src/computer_vision_model/logs/<timestamp>/launch.log` and `phases.txt`.
+
 ## Troubleshooting
 
 ### `Package 'micro_ros_agent' not found`

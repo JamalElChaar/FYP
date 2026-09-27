@@ -3,11 +3,14 @@
   <!-- Eye-to-hand mount. Measure these values on the physical rig before motion. -->
   <xacro:arg name="camera_x" default="0.22"/>
   <xacro:arg name="camera_y" default="-0.30"/>
-  <xacro:arg name="camera_z" default="0.50"/>
+  <xacro:arg name="camera_z" default="0.434"/>
   <xacro:arg name="camera_pitch" default="0.872664626"/>
   <xacro:arg name="prefix" default=""/>
   <xacro:arg name="use_gazebo" default="false"/>
   <xacro:arg name="use_tray" default="false"/>
+
+  <!-- camera_link is 0.434 m above base_link = 0.440 m above the base support plane. -->
+  <xacro:property name="mast_height" value="$(arg camera_z)"/>
 
   <!-- The camera's +X axis points toward the work area (+Y of base_link).
        Positive pitch points it downward. The Astra driver owns its internal
@@ -16,8 +19,8 @@
     <!-- The printed tray supplies the complete mast and cradle geometry. -->
     <xacro:unless value="$(arg use_tray)">
       <visual>
-        <origin xyz="0 0 0.25"/>
-        <geometry><cylinder radius="0.005" length="0.5"/></geometry>
+        <origin xyz="0 0 ${mast_height / 2}"/>
+        <geometry><cylinder radius="0.005" length="${mast_height}"/></geometry>
         <material name="LightGrey"><color rgba="0.7 0.7 0.7 1"/></material>
       </visual>
       <visual>
@@ -25,17 +28,17 @@
         <material name="LightGrey"/>
       </visual>
       <collision>
-        <origin xyz="0 0 0.25"/>
-        <geometry><cylinder radius="0.005" length="0.5"/></geometry>
+        <origin xyz="0 0 ${mast_height / 2}"/>
+        <geometry><cylinder radius="0.005" length="${mast_height}"/></geometry>
       </collision>
       <collision>
         <geometry><box size="0.15 0.10 0.06"/></geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0.25"/>
+        <origin xyz="0 0 ${mast_height / 2}"/>
         <mass value="0.25"/>
-        <inertia ixx="0.00521" ixy="0" ixz="0"
-                 iyy="0.00521" iyz="0" izz="0.0001"/>
+        <inertia ixx="${0.25 * (3 * 0.005**2 + mast_height**2) / 12}" ixy="0" ixz="0"
+                 iyy="${0.25 * (3 * 0.005**2 + mast_height**2) / 12}" iyz="0" izz="0.0001"/>
       </inertial>
     </xacro:unless>
   </link>

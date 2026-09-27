@@ -42,6 +42,8 @@ public:
       "camera_info_topic", "/camera/color/camera_info");
     output_directory_ = declare_parameter<std::string>(
       "output_directory", "/tmp/computer_vision_captures");
+    require_depth_ = declare_parameter<bool>("require_depth", true);
+    maximum_rgb_age_ms_ = declare_parameter<double>("maximum_rgb_age_ms", 0.0);
     capture_on_start_ = declare_parameter<bool>("capture_on_start", true);
     exit_after_capture_ =
       declare_parameter<bool>("exit_after_capture", false);
@@ -98,7 +100,7 @@ public:
 
     status_timer_ = create_wall_timer(5s, [this]() {report_waiting_status();});
 
-    RCLCPP_INFO(get_logger(), "RGB-D capture node ready");
+    RCLCPP_INFO(get_logger(), "%s capture node ready", require_depth_ ? "RGB-D" : "RGB-only");
     RCLCPP_INFO(get_logger(), "  RGB:        %s", rgb_topic_.c_str());
     RCLCPP_INFO(get_logger(), "  Depth:      %s", depth_topic_.c_str());
     RCLCPP_INFO(get_logger(), "  CameraInfo: %s", camera_info_topic_.c_str());
@@ -127,9 +129,31 @@ private:
   bool get_snapshot(Snapshot & snapshot, std::string & error)
   {
     std::lock_guard<std::mutex> lock(data_mutex_);
-    if (!latest_rgb_ || !latest_depth_ || !latest_camera_info_) {
-      error = "Waiting for RGB, depth, and CameraInfo messages";
+    if (!latest_rgb_ || (require_depth_ && !latest_depth_) || !latest_camera_info_) {
+      error = require_depth_ ? "Waiting for RGB, depth, and CameraInfo messages" :
+        "Waiting for RGB and CameraInfo messages";
       return false;
+    }
+
+    if (!require_depth_) {
+      const double age_ms = (now().seconds() - stamp_seconds(latest_rgb_->header.stamp)) * 1000.0;
+      if (maximum_rgb_age_ms_ > 0.0 && (age_ms > maximum_rgb_age_ms_ || age_ms < -100.0)) {
+        error = "Waiting for a fresh RGB image with a matching ROS clock";
+        return false;
+      }
+      if (latest_rgb_->width != latest_camera_info_->width ||
+        latest_rgb_->height != latest_camera_info_->height ||
+        latest_rgb_->header.frame_id != latest_camera_info_->header.frame_id)
+      {
+        error = "RGB and CameraInfo dimensions/frame do not match";
+        return false;
+      }
+      if (latest_camera_info_->k[0] <= 0 || latest_camera_info_->k[4] <= 0) {
+        error = "CameraInfo has no calibrated intrinsics";
+        return false;
+      }
+      snapshot = {latest_rgb_, nullptr, latest_camera_info_};
+      return true;
     }
 
     const double delta_ms =
@@ -339,6 +363,34 @@ private:
     try {
       fs::create_directories(output_directory_);
       const cv::Mat rgb_bgr = color_to_bgr(*snapshot.rgb);
+      if (!require_depth_) {
+        const fs::path output(output_directory_);
+        write_image_atomically(output / "latest_rgb.jpg", rgb_bgr,
+          {cv::IMWRITE_JPEG_QUALITY, jpeg_quality_});
+        const auto & info = *snapshot.camera_info;
+        std::ostringstream meta;
+        meta << std::setprecision(17);
+        meta << "capture:\n  rgb_stamp_sec: " << stamp_seconds(snapshot.rgb->header.stamp)
+             << "\n  rgb_stamp: [" << snapshot.rgb->header.stamp.sec << ", "
+             << snapshot.rgb->header.stamp.nanosec << "]\n  rgb_frame_id: \""
+             << snapshot.rgb->header.frame_id << "\"\n  require_depth: false\n";
+        meta << "rgb:\n  width: " << snapshot.rgb->width
+             << "\n  height: " << snapshot.rgb->height << "\n";
+        meta << "camera_intrinsics:\n  fx: " << info.k[0] << "\n  fy: " << info.k[4]
+             << "\n  cx: " << info.k[2] << "\n  cy: " << info.k[5] << "\n";
+        meta << "  distortion_model: \"" << info.distortion_model << "\"\n  d: [";
+        for (std::size_t i = 0; i < info.d.size(); ++i) {
+          if (i) {meta << ", ";}
+          meta << info.d[i];
+        }
+        meta << "]\n  binning: [" << info.binning_x << ", " << info.binning_y << "]\n";
+        meta << "  roi: [" << info.roi.x_offset << ", " << info.roi.y_offset
+             << ", " << info.roi.width << ", " << info.roi.height << "]\n";
+        write_text_atomically(output / "latest_capture.yaml", meta.str());
+        result_message = (output / "latest_rgb.jpg").string();
+        RCLCPP_INFO(get_logger(), "Saved RGB-only capture: %s", result_message.c_str());
+        return true;
+      }
       const cv::Mat depth_m = depth_to_meters(*snapshot.depth);
 
       cv::Mat depth_mm(depth_m.size(), CV_16UC1, cv::Scalar(0));
@@ -509,6 +561,8 @@ private:
   std::string depth_topic_;
   std::string camera_info_topic_;
   std::string output_directory_;
+  double maximum_rgb_age_ms_{0.0};
+  bool require_depth_{true};
   bool capture_on_start_{true};
   bool exit_after_capture_{false};
   bool require_matching_dimensions_{true};

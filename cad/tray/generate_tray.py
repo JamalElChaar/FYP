@@ -89,6 +89,7 @@ def capsule_sdf(x, y, z, a, b, radius):
 def field_slice(x, y, z, arm_inner_radius, mount):
     mast_x, camera_y, camera_z, pitch = mount
     mast_y = camera_y - 10.0
+    mast_top = camera_z - 25.0
 
     # 420 x 480 mm tray, 4 mm floor, 4 mm perimeter rim.
     solid = box_sdf(x, y, z, 110, -130, -8, 210, 240, 2)
@@ -114,8 +115,8 @@ def field_slice(x, y, z, arm_inner_radius, mount):
         box_sdf(x, y, z, mast_x, mast_y, 35, 30, 30, 43),
         out=solid,
     )
-    mast_outer = box_sdf(x, y, z, mast_x, mast_y, 267.5, 17, 17, 207.5)
-    mast_inner = box_sdf(x, y, z, mast_x, mast_y, 279, 12, 12, 201)
+    mast_outer = box_sdf(x, y, z, mast_x, mast_y, (60.0 + mast_top) / 2, 17, 17, (mast_top - 60.0) / 2)
+    mast_inner = box_sdf(x, y, z, mast_x, mast_y, (78.0 + mast_top + 5.0) / 2, 12, 12, (mast_top + 5.0 - 78.0) / 2)
     np.minimum(solid, np.maximum(mast_outer, -mast_inner), out=solid)
     for ox, oy in ((-48, 0), (48, 0), (0, -48), (0, 48)):
         brace = capsule_sdf(
@@ -136,7 +137,7 @@ def field_slice(x, y, z, arm_inner_radius, mount):
         np.minimum(
             solid,
             capsule_sdf(x, y, z,
-                        (mast_x, mast_y, 375),
+                        (mast_x, mast_y, camera_z - 125.0),
                         (end_x, end_y, end_z), 7),
             out=solid,
         )
@@ -160,7 +161,7 @@ def field_slice(x, y, z, arm_inner_radius, mount):
             out=solid,
         )
     # Open the hollow mast through the underside, avoiding a sealed cavity.
-    bore = box_sdf(x, y, z, mast_x, mast_y, 232.5, 12, 12, 247.5)
+    bore = box_sdf(x, y, z, mast_x, mast_y, (mast_top + 5.0 - 15.0) / 2, 12, 12, (mast_top + 5.0 + 15.0) / 2)
     np.maximum(solid, -bore, out=solid)
     return solid
 
@@ -170,7 +171,7 @@ def write_stl(output: Path, resolution: float):
     arm_inner_radius = base_radius_mm() + 1.5
     x_min, x_max = -104.0, 324.0
     y_min, y_max = -374.0, 114.0
-    z_min, z_max = -14.0, 542.0
+    z_min, z_max = -14.0, mount[2] + 42.0
     nx = int(np.ceil((x_max - x_min) / resolution)) + 1
     ny = int(np.ceil((y_max - y_min) / resolution)) + 1
     nz = int(np.ceil((z_max - z_min) / resolution)) + 1
@@ -229,7 +230,7 @@ def write_stl(output: Path, resolution: float):
     print("Envelope (mm): " +
           " x ".join(f"{bounds[i+1]-bounds[i]:.1f}" for i in (0, 2, 4)))
     print(f"Arm base radius measured: {arm_inner_radius-1.5:.2f} mm")
-    print(f"Camera optical origin (mm): {mount[:3]}")
+    print(f"Camera body reference (mm): {mount[:3]}")
 
 
 def main():

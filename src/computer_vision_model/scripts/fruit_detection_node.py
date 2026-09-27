@@ -13,6 +13,7 @@ from rclpy.node import Node
 from rclpy.qos import DurabilityPolicy, QoSProfile, ReliabilityPolicy
 from std_msgs.msg import String
 from std_srvs.srv import Trigger
+from vision_pipeline_support import phase_log
 
 
 class FruitDetectionNode(Node):
@@ -42,6 +43,19 @@ class FruitDetectionNode(Node):
         self.minimum_confidence = float(self.declare_parameter(
             "minimum_confidence", 0.25
         ).value)
+
+        self.phase_log_path = self.declare_parameter("phase_log_path", "").value
+        self.one_shot = self.declare_parameter("one_shot", False).value
+        self.capture_timeout = float(self.declare_parameter("capture_timeout", 45.0).value)
+        self._capture_started = None
+        self._completed = False
+        self._next_capture_at = 0.0
+        self._capture_future = None
+        self._phase = "STARTUP"
+        self._inference_started = None
+        self._inference_active = False
+        self._inference_timed_out = False
+        self.inference_timeout = float(self.declare_parameter("inference_timeout", 60.0).value)
 
         result_qos = QoSProfile(depth=1)
         result_qos.durability = DurabilityPolicy.TRANSIENT_LOCAL
@@ -86,10 +100,11 @@ class FruitDetectionNode(Node):
     def _publish_status(self, status, detail=""):
         message = {"status": status, "detail": detail}
         self.status_publisher.publish(String(data=json.dumps(message)))
+        phase_log(self.phase_log_path, self._phase, status, detail)
 
     def _queue_detection(self):
         with self._state_lock:
-            if self._busy or self._request_pending:
+            if self._busy or self._inference_active or self._request_pending or (self.one_shot and self._completed):
                 return False
             self._request_pending = True
         return True
@@ -103,10 +118,27 @@ class FruitDetectionNode(Node):
             )
         else:
             response.success = False
-            response.message = "A capture or inference request is already active"
+            response.message = ("This one-shot run is complete; relaunch for a new capture"
+                                if self.one_shot and self._completed else
+                                "A capture or inference request is already active")
         return response
 
     def _tick(self):
+        if self._inference_started is not None and time.monotonic() - self._inference_started > self.inference_timeout:
+            self._inference_timed_out = True
+            self._inference_started = None
+            self._fail("Roboflow inference timed out; any late response will be discarded")
+            return
+        if self._capture_started is not None and time.monotonic() - self._capture_started > self.capture_timeout:
+            if self._capture_future is not None:
+                self._capture_future.cancel()
+            self._capture_started = None
+            with self._state_lock:
+                self._request_pending = False
+            self._fail("Camera capture timed out waiting for a calibrated image")
+            return
+        if time.monotonic() < self._next_capture_at:
+            return
         if (
             self.run_on_start
             and not self._startup_request_sent
@@ -121,6 +153,9 @@ class FruitDetectionNode(Node):
         if not should_start:
             return
 
+        if self._capture_started is None:
+            self._capture_started = time.monotonic()
+            self._phase = "CAPTURE"
         if not self.capture_client.service_is_ready():
             now = time.monotonic()
             if now - self._last_service_warning_at >= 5.0:
@@ -140,12 +175,15 @@ class FruitDetectionNode(Node):
         with self._state_lock:
             self._request_pending = False
             self._busy = True
-        self.get_logger().info("Requesting a synchronized RGB-D snapshot...")
+        self.get_logger().info("Requesting a camera snapshot...")
         self._publish_status("capturing")
         future = self.capture_client.call_async(Trigger.Request())
+        self._capture_future = future
         future.add_done_callback(self._capture_finished)
 
     def _capture_finished(self, future):
+        if future.cancelled():
+            return
         try:
             response = future.result()
         except Exception as exception:  # ROS service exceptions vary by RMW.
@@ -154,6 +192,13 @@ class FruitDetectionNode(Node):
 
         if response is None or not response.success:
             detail = response.message if response else "no service response"
+            # The driver may need several seconds to produce its first calibrated frame.
+            if detail.startswith("Waiting for"):
+                with self._state_lock:
+                    self._busy = False
+                    self._request_pending = True
+                self._next_capture_at = time.monotonic() + 0.5
+                return
             self._fail(f"Camera capture failed: {detail}")
             return
 
@@ -162,6 +207,14 @@ class FruitDetectionNode(Node):
             self._fail(f"Captured image does not exist: {image_path}")
             return
 
+        self._capture_started = None
+        phase_log(self.phase_log_path, "CAPTURE", "SUCCESS",
+                  "RGB image and CameraInfo saved; passing image to Roboflow.",
+                  {"image_path": str(image_path), "metadata_path": str(image_path.parent / "latest_capture.yaml")})
+        self._phase = "DETECTION"
+        self._inference_started = time.monotonic()
+        self._inference_active = True
+        self._inference_timed_out = False
         self.get_logger().info(f"Captured {image_path}; starting inference...")
         self._publish_status("inferencing", str(image_path))
         worker = threading.Thread(
@@ -260,8 +313,13 @@ class FruitDetectionNode(Node):
             raw_result = client.infer(
                 str(image_path), model_id=self.model_id
             )
+            if self._inference_timed_out:
+                return
+            self._inference_started = None
             result = self._format_results(raw_result, image_path)
             result_path = self._save_results(result, image_path)
+            phase_log(self.phase_log_path, "DETECTION", "SUCCESS",
+                      "Passing all retained detections to plane transformation (pixel units).", result)
             self.detection_publisher.publish(
                 String(data=json.dumps(result, separators=(",", ":")))
             )
@@ -287,19 +345,29 @@ class FruitDetectionNode(Node):
                     )
             self.get_logger().info(f"Saved detections to {result_path}")
             self.get_logger().info(
-                "Results are ready; awaiting the future user-confirmation step"
+                "Results published for downstream processing"
             )
             self._publish_status("results_ready", str(result_path))
             with self._state_lock:
                 self._busy = False
+                self._completed = True
         except ModuleNotFoundError:
             self._fail(
                 "inference-sdk is not installed for this Python environment"
             )
         except Exception as exception:  # Network and SDK errors vary by version.
-            self._fail(f"Roboflow inference failed: {exception}")
+            if not self._inference_timed_out:
+                self._fail(f"Roboflow inference failed: {exception}")
+        finally:
+            self._inference_active = False
 
     def _fail(self, detail):
+        key = os.environ.get("ROBOFLOW_API_KEY", "")
+        if key:
+            detail = detail.replace(key, "[REDACTED]")
+        self._capture_started = None
+        self._inference_started = None
+        self._completed = True
         self.get_logger().error(detail)
         self._publish_status("error", detail)
         with self._state_lock:

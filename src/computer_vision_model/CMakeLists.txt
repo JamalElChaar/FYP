@@ -38,11 +38,21 @@ install(PROGRAMS
   RENAME fruit_localization_node
 )
 
+install(PROGRAMS scripts/camera_to_base_node.py
+  DESTINATION lib/${PROJECT_NAME} RENAME camera_to_base_node)
+install(PROGRAMS scripts/saved_image_capture_node.py
+  DESTINATION lib/${PROJECT_NAME} RENAME saved_image_capture_node)
+install(FILES scripts/vision_pipeline_support.py scripts/saved_image_input.py
+  DESTINATION lib/${PROJECT_NAME})
+
 install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
   PATTERN "__pycache__" EXCLUDE
   PATTERN "*.pyc" EXCLUDE
 )
+
+install(FILES input_images/README.md input_images/camera_calibration.example.yaml
+  DESTINATION share/${PROJECT_NAME}/input_images)
 
 install(FILES README.md
   DESTINATION share/${PROJECT_NAME}

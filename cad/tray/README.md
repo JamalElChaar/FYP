@@ -8,10 +8,11 @@ one-piece model in **millimetres**. It contains:
   60.63 mm maximum radius. The ring has 1.5 mm nominal radial clearance.
 - A braced, hollow mast at the URDF mount position (X +220, Y -300 mm).
 - An open-front U cradle for a 165 x 30 x 40 mm Astra Pro camera. The camera
-  optical origin corresponds to (X +220, Y -290, Z +500 mm), pitched 50°
-  downward. The camera envelope was checked for clearance in the cradle.
+  body reference corresponds to (X +220, Y -290, Z +434 mm), pitched 50°
+  downward. This is 440 mm above the base support plane (Z = -6 mm).
+  The camera envelope was checked for clearance in the cradle.
 
-The STL's bounding box is **420 x 480 x 545 mm**. It needs a printer with a
+The STL's bounding box is **420 x 480 x 479 mm**. It needs a printer with a
 build volume larger than that, including a little margin for brim and travel.
 Print with the tray floor on the bed, a wide brim, and supports under the
 camera cradle; check the mast and cradle strength in the slicer preview.

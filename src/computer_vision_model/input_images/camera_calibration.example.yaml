@@ -1,0 +1,22 @@
+# Schema only. Replace null values using the calibration of the actual image.
+# Prefer a latest_capture.yaml produced by a completed live TRANSFORM phase.
+capture:
+  rgb_frame_id: camera_color_optical_frame
+  rgb_stamp: [0, 0]
+rgb:
+  width: null
+  height: null
+camera_intrinsics:
+  fx: null
+  fy: null
+  cx: null
+  cy: null
+  distortion_model: plumb_bob
+  d: []  # Use the actual distortion coefficients; [] only for zero distortion.
+  binning: [0, 0]
+  roi: [0, 0, 0, 0]
+transform_camera_to_base:
+  parent_frame: base_link
+  child_frame: camera_color_optical_frame
+  translation_m: [null, null, null]
+  quaternion_xyzw: [null, null, null, null]

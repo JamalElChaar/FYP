@@ -11,15 +11,16 @@ the full housing size.
 ## Placement
 
 Mount the Astra Pro on a rigid stand beside the arm. The example pose in the
-robot description is measured from `base_link`: 0.22 m in +X, 0.30 m in -Y,
-and 0.50 m up. Its optical axis points toward +Y and 50 degrees downward.
+robot description is measured from `base_link`: 0.22 m in +X, 0.29 m in -Y,
+and 0.434 m up at `camera_link` (0.440 m above the base support plane).
+The mast is at Y = -0.30 m; the camera holder adds +0.01 m in Y. Its optical axis points toward +Y and 50 degrees downward.
 This is a starting layout for a nearby tabletop, not a calibrated measurement.
 The camera should see the full reachable work area and the gripper without
 being struck by the arm. A rigid external stand is preferable to a wrist camera
 for the first version because the camera-to-base transform stays fixed.
 
 Adjust `camera_x`, `camera_y`, `camera_z` (metres), and `camera_pitch`
-(radians) to the **measured optical mount pose**. Keep the mount physically
+(radians) to the **measured body reference pose** (the driver supplies the optical offset). Keep the mount physically
 fixed between calibration and operation.
 
 ## Simulation

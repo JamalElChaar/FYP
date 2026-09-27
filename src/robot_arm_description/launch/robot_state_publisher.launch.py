@@ -107,7 +107,7 @@ ARGUMENTS = [
                           description='Show the printed tray, mast and camera cradle'),
     DeclareLaunchArgument('camera_x', default_value='0.22'),
     DeclareLaunchArgument('camera_y', default_value='-0.30'),
-    DeclareLaunchArgument('camera_z', default_value='0.50'),
+    DeclareLaunchArgument('camera_z', default_value='0.434'),
     DeclareLaunchArgument('camera_pitch', default_value='0.872664626'),
 ]
 

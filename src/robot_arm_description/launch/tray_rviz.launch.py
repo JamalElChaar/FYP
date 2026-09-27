@@ -24,7 +24,7 @@ def generate_launch_description():
                 # The printed cradle is generated at this fixed pose.
                 'camera_x': '0.22',
                 'camera_y': '-0.30',
-                'camera_z': '0.50',
+                'camera_z': '0.434',
                 'camera_pitch': '0.872664626',
             }.items(),
         ),
