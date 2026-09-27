@@ -1,9 +1,14 @@
 # Default initial positions for robot_arm's ros2_control fake system
+#
+# These correspond to servo 90 deg on every joint -- the position the ESP32
+# firmware drives every servo to at boot -- converted through the calibrated
+# offset/direction. Note this is NOT all-zeros: with the calibration applied,
+# ROS 0 is not the servo centre, and for joint_5 ROS 0 is not even reachable.
 
 initial_positions:
-  joint_1: 0
-  joint_2: 0
-  joint_3: 0
-  joint_4: 0
-  joint_5: 0
-  joint_6: 0
+  joint_1: 0.000000   # servo 90 deg = ROS 0 deg
+  joint_2: 0.785398   # servo 90 deg = ROS 45 deg
+  joint_3: -0.436332   # servo 90 deg = ROS -25 deg
+  joint_4: 1.570796   # servo 90 deg = ROS 90 deg
+  joint_5: -1.919862   # servo 90 deg = ROS -110 deg
+  joint_6: 0.000000   # servo 90 deg = ROS 0 deg

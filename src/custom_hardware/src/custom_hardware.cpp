@@ -108,10 +108,32 @@ CustomHardwareInterface::on_init(const hardware_interface::HardwareInfo &info) {
   servo_min_angle_.resize(num_joints);
   servo_max_angle_.resize(num_joints);
 
-  // Default servo configuration (MG995: 0-180° range)
+  // Measured servo calibration: servo_deg = offset + direction * ros_deg.
+  //
+  // Joints 2-5 were calibrated against the real arm by matching the RViz pose
+  // to the physical pose at two points, servo 0 deg and servo 90 deg:
+  //   joint_2: ros  60 -> servo 90, ros  -60 -> servo 0
+  //   joint_3: ros -30 -> servo 90, ros -110 -> servo 0
+  //   joint_4: ros  90 -> servo 90, ros    0 -> servo 0
+  //   joint_5: ros -110 -> servo 90, ros -20 -> servo 0
+  //
+  // The servos are direct drive, so 180 deg of servo must equal 180 deg of
+  // joint: direction is +-1 by construction. The offsets are the
+  // least-squares fit of the two measured points at that fixed slope, so the
+  // pose estimates land within +-15 deg (joint_2) and +-5 deg (joint_3);
+  // joints 4 and 5 fit exactly. Re-measure joint_2 to tighten it.
+  //
+  // joint_1 and joint_6 are NOT calibrated yet and keep the old placeholder
+  // (offset 90, direction +1). joint_1 is still disabled in the firmware.
+  //
+  // These values must stay in sync with servo_offsets_deg/servo_directions in
+  // control_arm's direct_esp32_moveit_node and joint_target_node.
+  static constexpr double kJointOffsets[6] = {90.0, 45.0, 115.0, 0.0, -20.0, 90.0};
+  static constexpr double kJointDirections[6] = {1.0, 1.0, 1.0, 1.0, -1.0, 1.0};
+
   for (size_t i = 0; i < num_joints; ++i) {
-    joint_offsets_[i] = 90.0;    // Servo 90° = ROS 0 rad
-    joint_directions_[i] = 1.0;  // Normal direction
+    joint_offsets_[i] = (i < 6) ? kJointOffsets[i] : 90.0;
+    joint_directions_[i] = (i < 6) ? kJointDirections[i] : 1.0;
     servo_min_angle_[i] = 0.0;   // Servo min
     servo_max_angle_[i] = 180.0; // Servo max
   }
@@ -132,13 +154,24 @@ hardware_interface::CallbackReturn CustomHardwareInterface::on_configure(
     const rclcpp_lifecycle::State & /*previous_state*/) {
   RCLCPP_INFO(logger_, "Configuring CustomHardwareInterface...");
 
-  // Reset all states and commands
+  // Reset all states and commands to the servo centre (90 deg), which is the
+  // position the ESP32 firmware drives every servo to at boot.
+  //
+  // Zero is NOT a safe default any more. With the calibrated offsets, ROS 0
+  // is outside some joints' position limits -- joint_5's range is -200..-20
+  // deg -- so a zeroed start state is rejected by OMPL ("Skipping invalid
+  // start state (invalid bounds)") and MoveIt cannot plan at all until a real
+  // /esp32/joint_states message arrives. latest_esp32_states_ is initialised
+  // to 90 deg in on_init, so this is in bounds by construction.
+  //
+  // Commands are seeded to match the states so that simulate_states() holds
+  // this pose instead of driving back toward zero.
   for (size_t i = 0; i < hw_states_position_.size(); ++i) {
-    hw_states_position_[i] = 0.0;
+    hw_states_position_[i] = servo_to_ros_angle(latest_esp32_states_[i], i);
     hw_states_velocity_[i] = 0.0;
     hw_states_effort_[i] = 0.0;
     hw_commands_effort_[i] = 0.0;
-    hw_commands_position_[i] = 0.0;
+    hw_commands_position_[i] = hw_states_position_[i];
     hw_commands_velocity_[i] = 0.0;
   }
 
@@ -286,6 +319,19 @@ CustomHardwareInterface::read(const rclcpp::Time & /*time*/,
     }
     esp32_connected_ = true;
   } else if (use_simulation_ || !esp32_connected_) {
+    // On real hardware this branch means no /esp32/joint_states has arrived,
+    // so /joint_states is an assumption, not feedback. Say so out loud --
+    // silently reporting a fabricated pose makes MoveIt look healthy while
+    // the arm is not actually being tracked.
+    if (!use_simulation_) {
+      static int no_state_warn_counter = 0;
+      if (no_state_warn_counter++ % 500 == 0) {  // ~5 s at 100 Hz
+        RCLCPP_WARN(logger_,
+                    "No /esp32/joint_states received yet. Reporting the assumed "
+                    "servo-90 pose; joint feedback is NOT live. Check that the "
+                    "ESP32 state publisher and micro-ROS Agent are running.");
+      }
+    }
     // Simulation: positions track commands
     simulate_states();
   }

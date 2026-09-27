@@ -571,6 +571,100 @@ source install/setup.bash
 ros2 launch control_arm slow_moveit_trajectory.launch.py
 ```
 
+### Terminal 2: final angles, pose 2 (180 degrees about world Z)
+
+`final_angles_sequential_pose2.launch.py` targets the pose from
+`final_angles_sequential.launch.py` rotated 180 degrees about the
+world/base_link Z axis (the base rotation joint's own axis, through the
+origin): position `(x, y, z) -> (-x, -y, z)` and orientation
+`q_new = q_z180 * q_original` with `q_z180 = (0, 0, 1, 0)`. This mirrors the
+target to the other side of the base -- where joint_1 has room to swing to --
+instead of just spinning the wrist in place. It exists as a separate file,
+rather than overwriting the original, to try an alternate reach when the
+original pose's planned joints fall outside the servo angle limits.
+
+```bash
+cd /home/jamal/FYP_ws2
+export ROS_DOMAIN_ID=0
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch control_arm final_angles_sequential_pose2.launch.py
+```
+
+#### Reaching pose 2 without rotating the base
+
+Since pose 2's `(x, y)` is exactly 180 degrees of azimuth from the original
+`(x, y)` -- collinear through the origin -- the target can sometimes be
+reached by bending the shoulder/elbow backward within the same vertical
+plane instead of rotating `joint_1`. Both `final_angles_sequential.launch.py`
+and `final_angles_sequential_pose2.launch.py` accept `freeze_joint_1`, which
+locks `joint_1` to its current value for the entire plan (a MoveIt path
+constraint, not just the goal):
+
+```bash
+ros2 launch control_arm final_angles_sequential_pose2.launch.py freeze_joint_1:=true
+```
+
+If joints 2-6 cannot geometrically reach the target with the base pinned,
+planning fails outright (a clear `MoveIt planning failed` error) rather than
+silently falling back to rotating the base.
+
+Each run of either `final_angles_sequential*.launch.py` file mirrors its full
+terminal output into a timestamped `.txt` file under
+`src/custom_hardware/logs/`.
+
+### Terminal 2: pure-simulation joint-target test
+
+`simulate_joint_target.launch.py` starts MoveIt with mock hardware only (no
+ESP32, no micro-ROS Agent) and plans + executes straight to a joint-space
+target given in servo degrees, using `joint_target_node`. Unlike
+`direct_esp32_moveit_node`, it executes through MoveIt's own
+`arm_controller`, so the simulated robot state actually moves and RViz shows
+the result. The default target is 90 degrees (servo) on every joint, i.e.
+0 rad ROS with the standard offset=90/direction=+1 convention -- the
+calibrated home pose. Edit `servo_degrees` in the launch file to try a
+different joint-space target.
+
+```bash
+cd /home/jamal/FYP_ws2
+export ROS_DOMAIN_ID=0
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch control_arm simulate_joint_target.launch.py
+```
+
+Terminal 3 (watch the joints converge):
+
+```bash
+ros2 topic echo /joint_states
+```
+
+### Derive a pose from a joint configuration (forward kinematics)
+
+When a Cartesian target keeps failing to plan, work the other way round: pick
+joint angles the servos can actually reach and compute the pose they produce.
+Forward kinematics always has exactly one answer, so a pose obtained this way
+is reachable by construction -- unlike a guessed pose, which IK may not be
+able to solve inside the joint limits.
+
+`fk_pose.launch.py` loads only the robot model (no RViz, no controllers, no
+ESP32) and prints the resulting pose plus a ready-to-paste launch command.
+Angles are servo degrees (0-180) by default:
+
+```bash
+ros2 launch control_arm fk_pose.launch.py servo_degrees:="90,45,90,90,90,90"
+```
+
+To give ROS joint degrees instead -- the numbers shown in RViz's
+MotionPlanning "Joints" tab:
+
+```bash
+ros2 launch control_arm fk_pose.launch.py ros_degrees:="0,45,-25,90,-110,0"
+```
+
+It flags any joint that falls outside its position limits, so an unreachable
+configuration is caught before it ever reaches MoveIt.
+
 ## Troubleshooting
 
 ### `Package 'micro_ros_agent' not found`

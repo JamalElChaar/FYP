@@ -50,11 +50,32 @@ ament_target_dependencies(direct_esp32_moveit_node
   trajectory_msgs
 )
 
+# Joint-space target test (simulation only; moves the arm via MoveIt's own
+# trajectory execution instead of streaming to the ESP32)
+add_executable(joint_target_node src/joint_target_node.cpp)
+ament_target_dependencies(joint_target_node
+  rclcpp
+  moveit_ros_planning_interface
+  moveit_core
+  moveit_msgs
+)
+
+# Forward kinematics helper: joint configuration -> end-effector pose
+add_executable(fk_pose_node src/fk_pose_node.cpp)
+ament_target_dependencies(fk_pose_node
+  rclcpp
+  moveit_ros_planning_interface
+  moveit_core
+  moveit_msgs
+)
+
 # Install executables
 install(TARGETS
   test_motion_node
   moveit_hardware_node
   direct_esp32_moveit_node
+  joint_target_node
+  fk_pose_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

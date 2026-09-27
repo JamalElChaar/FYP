@@ -1,0 +1,1163 @@
+[final_angles_sequential_pose3] Writing this run's full output to /home/user/ros2_ws/src/custom_hardware/logs/final_angles_sequential_pose3_20260926_215051.txt
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [robot_state_publisher-1]: process started with pid [8154]
+[INFO] [move_group-2]: process started with pid [8156]
+[INFO] [rviz2-3]: process started with pid [8158]
+[INFO] [joint_state_publisher-4]: process started with pid [8160]
+[INFO] [ros2_control_node-5]: process started with pid [8162]
+[INFO] [spawner-6]: process started with pid [8165]
+[INFO] [spawner-7]: process started with pid [8174]
+[rviz2-3] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-user'
+[ros2_control_node-5] [33m[WARN] [1790459451.896467430] [controller_manager]: [Deprecated] Passing the robot description parameter directly to the control_manager node is deprecated. Use '~/robot_description' topic from 'robot_state_publisher' instead.[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.899625641] [resource_manager]: Loading hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790459451.906999785] [resource_manager]: Initialize hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790459451.909601268] [CustomHardwareInterface]: Hardware parameters:[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.909654426] [CustomHardwareInterface]:   Simulation mode: false[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.909660007] [CustomHardwareInterface]:   Communication: micro-ROS (ROS2 topics)[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910162231] [CustomHardwareInterface]: Joint 0: 'joint_1'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910177605] [CustomHardwareInterface]: Joint 1: 'joint_2'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910181792] [CustomHardwareInterface]: Joint 2: 'joint_3'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910185611] [CustomHardwareInterface]: Joint 3: 'joint_4'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910189422] [CustomHardwareInterface]: Joint 4: 'joint_5'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910193249] [CustomHardwareInterface]: Joint 5: 'joint_6'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910197250] [CustomHardwareInterface]: CustomHardwareInterface initialized with 6 joints[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910219060] [resource_manager]: Successful initialization of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910336791] [CustomHardwareInterface]: Exported 12 state interfaces[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910432090] [CustomHardwareInterface]: Exported 6 command interfaces[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910475738] [resource_manager]: 'configure' hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910482735] [CustomHardwareInterface]: Configuring CustomHardwareInterface...[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910491707] [CustomHardwareInterface]: CustomHardwareInterface configured successfully[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910500236] [resource_manager]: Successful 'configure' of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910509308] [resource_manager]: 'activate' hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790459451.910514420] [CustomHardwareInterface]: Activating CustomHardwareInterface...[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.960812975] [CustomHardwareInterface]: micro-ROS communication initialized[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.960837244] [CustomHardwareInterface]:   Publishing to: /esp32/joint_commands[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.960841855] [CustomHardwareInterface]:   Subscribing to: /esp32/joint_states[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.960846150] [CustomHardwareInterface]: CustomHardwareInterface activated successfully[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.960856896] [resource_manager]: Successful 'activate' of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.993166846] [controller_manager]: update rate is 100 Hz[0m
+[ros2_control_node-5] [0m[INFO] [1790459451.993204123] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50[0m
+[ros2_control_node-5] [33m[WARN] [1790459451.993588838] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.[0m
+[ros2_control_node-5] [33m[WARN] [1790459451.993675254] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002137488] [robot_state_publisher]: got segment base_link[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002253328] [robot_state_publisher]: got segment link_1[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002265226] [robot_state_publisher]: got segment link_2[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002271822] [robot_state_publisher]: got segment link_3[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002277714] [robot_state_publisher]: got segment link_4[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002283523] [robot_state_publisher]: got segment link_5[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002289345] [robot_state_publisher]: got segment link_6[0m
+[robot_state_publisher-1] [0m[INFO] [1790459452.002295187] [robot_state_publisher]: got segment world[0m
+[move_group-2] [0m[INFO] [1790459452.163067184] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.117119 seconds[0m
+[move_group-2] [0m[INFO] [1790459452.164733663] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[move_group-2] [0m[INFO] [1790459452.164750158] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[move_group-2] [33m[WARN] [1790459452.223233923] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[move_group-2] [0m[INFO] [1790459452.363347106] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-2] [0m[INFO] [1790459452.364138843] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states[0m
+[move_group-2] [0m[INFO] [1790459452.373422020] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[move_group-2] [0m[INFO] [1790459452.376468973] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects[0m
+[move_group-2] [0m[INFO] [1790459452.376493553] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[move_group-2] [0m[INFO] [1790459452.380367617] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'[0m
+[move_group-2] [0m[INFO] [1790459452.380393370] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.[0m
+[move_group-2] [0m[INFO] [1790459452.384088091] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'[0m
+[move_group-2] [0m[INFO] [1790459452.387408831] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry[0m
+[move_group-2] [33m[WARN] [1790459452.388957388] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead[0m
+[move_group-2] [31m[ERROR] [1790459452.389012284] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates[0m
+[move_group-2] [0m[INFO] [1790459452.408406234] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'[0m
+[move_group-2] [0m[INFO] [1790459452.414570993] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'[0m
+[move_group-2] [0m[INFO] [1790459452.422007867] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790459452.422748601] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790459452.422759237] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790459452.422836752] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790459452.422862095] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790459452.422869347] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790459452.422883039] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790459452.422890333] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790459452.422898279] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790459452.422912794] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790459452.422919402] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790459452.422924237] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790459452.422928611] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790459452.422932674] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790459452.422980706] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[move_group-2] [0m[INFO] [1790459452.429379994] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'[0m
+[move_group-2] [0m[INFO] [1790459452.436251737] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-2] [0m[INFO] [1790459452.438926739] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP [0m
+[move_group-2] [0m[INFO] [1790459452.438947668] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC[0m
+[move_group-2] [0m[INFO] [1790459452.440948225] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC][0m
+[move_group-2] [0m[INFO] [1790459452.440970439] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN[0m
+[move_group-2] [0m[INFO] [1790459452.442156040] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN][0m
+[move_group-2] [0m[INFO] [1790459452.442171892] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP[0m
+[move_group-2] [0m[INFO] [1790459452.443623506] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP][0m
+[move_group-2] [0m[INFO] [1790459452.443643984] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'[0m
+[move_group-2] [0m[INFO] [1790459452.444696841] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.457653344] [controller_manager]: Loading controller 'arm_controller'[0m
+[move_group-2] [0m[INFO] [1790459452.472033390] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'[0m
+[move_group-2] [0m[INFO] [1790459452.476523836] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790459452.476623240] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790459452.476632377] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790459452.476667186] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790459452.476694406] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790459452.476704789] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790459452.476724697] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790459452.476734065] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790459452.476741695] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790459452.476759438] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790459452.476765825] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790459452.476771005] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790459452.476776488] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790459452.476780774] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790459452.476785413] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[rviz2-3] [0m[INFO] [1790459452.508518814] [rviz2]: Stereo is NOT SUPPORTED[0m
+[rviz2-3] [0m[INFO] [1790459452.509134849] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)[0m
+[ros2_control_node-5] [33m[WARN] [1790459452.549424904] [arm_controller]: [Deprecated]: "allow_nonzero_velocity_at_trajectory_end" is set to true. The default behavior will change to false.[0m
+[move_group-2] [0m[INFO] [1790459452.562510298] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller[0m
+[move_group-2] [0m[INFO] [1790459452.563223749] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459452.563659454] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459452.564956420] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers[0m
+[move_group-2] [0m[INFO] [1790459452.565020763] [move_group.move_group]: MoveGroup debug mode is ON[0m
+[rviz2-3] [0m[INFO] [1790459452.589325135] [rviz2]: Stereo is NOT SUPPORTED[0m
+[move_group-2] [0m[INFO] [1790459452.606384816] [move_group.move_group]: 
+[move_group-2] 
+[move_group-2] ********************************************************
+[move_group-2] * MoveGroup using: 
+[move_group-2] *     - ApplyPlanningSceneService
+[move_group-2] *     - ClearOctomapService
+[move_group-2] *     - CartesianPathService
+[move_group-2] *     - ExecuteTrajectoryAction
+[move_group-2] *     - GetPlanningSceneService
+[move_group-2] *     - KinematicsService
+[move_group-2] *     - MoveAction
+[move_group-2] *     - MotionPlanService
+[move_group-2] *     - QueryPlannersService
+[move_group-2] *     - StateValidationService
+[move_group-2] ********************************************************
+[move_group-2] [0m
+[move_group-2] [0m[INFO] [1790459452.606472055] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner[0m
+[move_group-2] [0m[INFO] [1790459452.606487934] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete[0m
+[move_group-2] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupMoveAction'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-2] [0m[92m
+[move_group-2] You can start planning now!
+[move_group-2] 
+[ros2_control_node-5] [0m[INFO] [1790459452.611765260] [controller_manager]: Loading controller 'joint_state_broadcaster'[0m
+[spawner-6] [0m[INFO] [1790459452.647961089] [spawner_arm_controller]: [94mLoaded [1marm_controller[0m[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.658317343] [controller_manager]: Configuring controller 'arm_controller'[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.658531802] [arm_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.658563370] [arm_controller]: Command interfaces are [position] and state interfaces are [position velocity].[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.658588114] [arm_controller]: Using 'splines' interpolation method.[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.664490393] [arm_controller]: Controller state will be published at 50.00 Hz.[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.676275390] [arm_controller]: Action status changes will be monitored at 20.00 Hz.[0m
+[spawner-7] [0m[INFO] [1790459452.715819035] [spawner_joint_state_broadcaster]: [94mLoaded [1mjoint_state_broadcaster[0m[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.734867914] [controller_manager]: Configuring controller 'joint_state_broadcaster'[0m
+[ros2_control_node-5] [0m[INFO] [1790459452.734964638] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published[0m
+[spawner-6] [0m[INFO] [1790459452.736640766] [spawner_arm_controller]: [92mConfigured and activated [1marm_controller[0m[0m
+[spawner-7] [0m[INFO] [1790459452.775818417] [spawner_joint_state_broadcaster]: [92mConfigured and activated [1mjoint_state_broadcaster[0m[0m
+[rviz2-3] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-3]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[INFO] [spawner-6]: process has finished cleanly [pid 8165]
+[INFO] [spawner-7]: process has finished cleanly [pid 8174]
+[joint_state_publisher-4] [0m[INFO] [1790459453.075150890] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...[0m
+[rviz2-3] [31m[ERROR] [1790459455.827534838] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available[0m
+[rviz2-3] [0m[INFO] [1790459455.871029211] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.[0m
+[rviz2-3] [0m[INFO] [1790459456.049790393] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.118886 seconds[0m
+[rviz2-3] [0m[INFO] [1790459456.049832794] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[rviz2-3] [0m[INFO] [1790459456.049848059] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[rviz2-3] [33m[WARN] [1790459456.069967601] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[rviz2-3] [0m[INFO] [1790459456.141348953] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[rviz2-3] [0m[INFO] [1790459456.142903762] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'[0m
+[rviz2-3] [0m[INFO] [1790459456.183421178] [interactive_marker_display_106831222846912]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic[0m
+[rviz2-3] [0m[INFO] [1790459456.193505491] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[rviz2-3] [0m[INFO] [1790459456.193529622] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''[0m
+[rviz2-3] [0m[INFO] [1790459456.203302184] [interactive_marker_display_106831222846912]: Sending request for interactive markers[0m
+[rviz2-3] [0m[INFO] [1790459456.214277024] [interactive_marker_display_106831222846912]: Service response received for initialization[0m
+[rviz2-3] [0m[INFO] [1790459456.221363673] [move_group_interface]: Ready to take commands for planning group arm.[0m
+[rviz2-3] [0m[INFO] [1790459456.224986645] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[INFO] [direct_esp32_moveit_node-8]: process started with pid [8275]
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459457.823614274] [final_angles_sequential_pose3]: Waiting for an ESP32 subscriber on /esp32/joint_commands ...[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459457.823791977] [final_angles_sequential_pose3]: ESP32 command subscriber discovered[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790459457.824619491] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.655264980] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.831184 seconds[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.655297217] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.655305502] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790459458.674970353] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790459458.679244354] [moveit_ros.robot_model_loader]: No kinematics plugins defined. Fill and load kinematics.yaml![0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.694555269] [move_group_interface]: Ready to take commands for planning group arm.[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.695352730] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.754018399] [final_angles_sequential_pose3]: Planning to the full pose (-0.174, -0.047, 0.064); Pilz descent is disabled[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.754047336] [final_angles_sequential_pose3]: Replanning up to 10 times until every joint is within 15.0 deg of the desired configuration[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.754135869] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459458.754891563] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459458.755068607] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.755728575] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459458.764052271] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459458.764074463] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790459458.764490508] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790459458.765259916] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459458.803608642] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804353913] [move_group_interface]: Planning request complete![0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804664014] [move_group_interface]: time taken to generate plan: 0.0187795 seconds[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804713863] [final_angles_sequential_pose3]: Attempt 1/10 accepted: worst joint is joint_3 at 5.78 deg from the desired angle (tolerance 15.0 deg)[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804750208] [final_angles_sequential_pose3]:   joint      desired      planned        error[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804755359] [final_angles_sequential_pose3]:   joint_1       50.00        50.13         0.13[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804762761] [final_angles_sequential_pose3]:   joint_2      173.00       170.72        -2.28[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804770281] [final_angles_sequential_pose3]:   joint_3      132.00       126.22        -5.78[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804777663] [final_angles_sequential_pose3]:   joint_4        4.00         4.67         0.67[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804783413] [final_angles_sequential_pose3]:   joint_5      139.00       136.21        -2.79[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804790202] [final_angles_sequential_pose3]:   joint_6        8.00         9.03         1.03[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804795450] [final_angles_sequential_pose3]: Sending final target one joint at a time, joint_1 through joint_6[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459458.804862729] [final_angles_sequential_pose3]: Commanded joint_1 = 50.13 deg; ESP32 retains the other five positions[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459459.805054171] [final_angles_sequential_pose3]: Commanded joint_2 = 170.72 deg; ESP32 retains the other five positions[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459460.805357240] [final_angles_sequential_pose3]: Commanded joint_3 = 126.22 deg; ESP32 retains the other five positions[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459461.805699105] [final_angles_sequential_pose3]: Commanded joint_4 = 4.67 deg; ESP32 retains the other five positions[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459462.805981050] [final_angles_sequential_pose3]: Commanded joint_5 = 136.21 deg; ESP32 retains the other five positions[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459463.806253493] [final_angles_sequential_pose3]: Commanded joint_6 = 9.03 deg; ESP32 retains the other five positions[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790459463.806319609] [final_angles_sequential_pose3]: Sequential final-angle test completed[0m
+[INFO] [direct_esp32_moveit_node-8]: process has finished cleanly [pid 8275]
+[move_group-2] [0m[INFO] [1790459581.522802687] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459581.523028968] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459581.523667610] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459581.524720558] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459581.524879814] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459581.524916981] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459581.528225545] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459581.569178046] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459581.569204335] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459581.569287950] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459581.574017391] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459581.574069547] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459581.574088730] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459581.574200451] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459581.574860814] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459581.574921969] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459581.576444176] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459581.576489641] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[move_group-2] [0m[INFO] [1790459594.774962696] [moveit_ros.trajectory_execution_manager]: Received event 'stop'[0m
+[move_group-2] [0m[INFO] [1790459594.775036744] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Cancelling execution for arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459594.776872568] [arm_controller]: Got request to cancel goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459594.777012489] [arm_controller]: Canceling active action goal because cancel callback received.[0m
+[move_group-2] [0m[INFO] [1790459594.777783139] [moveit_ros.trajectory_execution_manager]: Stopped trajectory execution.[0m
+[move_group-2] [0m[INFO] [1790459594.826574368] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459594.826790371] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status PREEMPTED ...[0m
+[move_group-2] [0m[INFO] [1790459594.835083737] [moveit_move_group_default_capabilities.move_action_capability]: Solution found but controller failed during execution[0m
+[rviz2-3] [0m[INFO] [1790459594.838171040] [move_group_interface]: Plan and Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459594.838276047] [move_group_interface]: MoveGroupInterface::move() failed or timeout reached[0m
+[rviz2-3] [0m[INFO] [1790459596.976763187] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459596.977358690] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459596.977592103] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459596.977938945] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459596.982468195] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459596.982520906] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459596.983238142] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459596.998442215] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459597.000676110] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459597.001096169] [move_group_interface]: time taken to generate plan: 0.0145467 seconds[0m
+[move_group-2] [0m[INFO] [1790459612.158067748] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790459612.158339355] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790459612.158422369] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459612.158476953] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459612.158745290] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790459612.158939571] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790459612.164801045] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: 0.253136[0m
+[move_group-2] [0m[INFO] [1790459612.164915249] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790459612.165678075] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459612.165908550] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[move_group-2] [0m[INFO] [1790459614.241731841] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459614.241948669] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459614.242225120] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459614.244908631] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459614.245028148] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459614.245055866] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459614.245704272] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459614.275542825] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459614.275621257] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459614.275674472] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [31m[ERROR] [1790459614.280947799] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0.253136, current: 0[0m
+[move_group-2] [0m[INFO] [1790459614.281123598] [moveit_move_group_default_capabilities.move_action_capability]: Solution found but controller failed during execution[0m
+[rviz2-3] [0m[INFO] [1790459614.281795790] [move_group_interface]: Plan and Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459614.282692435] [move_group_interface]: MoveGroupInterface::move() failed or timeout reached[0m
+[rviz2-3] [0m[INFO] [1790459615.800089700] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459615.800742346] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459615.800943499] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459615.801619052] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459615.805970649] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459615.806220209] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459615.806933953] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459615.825018621] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459615.826273877] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459615.826448640] [move_group_interface]: time taken to generate plan: 0.0175897 seconds[0m
+[rviz2-3] [0m[INFO] [1790459617.015798702] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459617.016974837] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459617.017244382] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459617.018366833] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459617.025442683] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459617.025502506] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459617.026403588] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459617.042386928] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459617.042781406] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459617.043214265] [move_group_interface]: time taken to generate plan: 0.0152086 seconds[0m
+[move_group-2] [0m[INFO] [1790459617.626064832] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790459617.626465335] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790459617.626522276] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459617.626588276] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459617.626698405] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790459617.626588783] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790459617.634584326] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: 0.253136[0m
+[move_group-2] [0m[INFO] [1790459617.634678727] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790459617.635485128] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459617.635641868] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[move_group-2] [0m[INFO] [1790459619.245370401] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459619.245605257] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459619.246047301] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459619.254569050] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459619.254689826] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459619.254794789] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459619.255445583] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459619.281655699] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459619.281694889] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459619.281736240] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459619.284174704] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459619.284245642] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459619.284271887] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459619.284359251] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[move_group-2] [0m[INFO] [1790459619.285376104] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459619.285397455] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459619.284748543] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459619.284804346] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459620.546193116] [moveit_ros.trajectory_execution_manager]: Received event 'stop'[0m
+[move_group-2] [0m[INFO] [1790459620.546260491] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Cancelling execution for arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459620.546902642] [arm_controller]: Got request to cancel goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459620.546982346] [arm_controller]: Canceling active action goal because cancel callback received.[0m
+[move_group-2] [0m[INFO] [1790459620.547921224] [moveit_ros.trajectory_execution_manager]: Stopped trajectory execution.[0m
+[move_group-2] [0m[INFO] [1790459620.586466622] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459620.587464496] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status PREEMPTED ...[0m
+[move_group-2] [0m[INFO] [1790459620.594391468] [moveit_move_group_default_capabilities.move_action_capability]: Solution found but controller failed during execution[0m
+[rviz2-3] [0m[INFO] [1790459620.596948055] [move_group_interface]: Plan and Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459620.597529827] [move_group_interface]: MoveGroupInterface::move() failed or timeout reached[0m
+[rviz2-3] [0m[INFO] [1790459633.271118250] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459633.272706458] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459633.272942740] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459633.274293429] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459633.276198628] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459633.276287077] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459633.277490676] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459633.294116235] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459633.294537496] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459633.294781266] [move_group_interface]: time taken to generate plan: 0.0160508 seconds[0m
+[move_group-2] [0m[INFO] [1790459646.124282004] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790459646.124537697] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790459646.124650340] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459646.124690025] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459646.124794008] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790459646.126971988] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790459646.134501300] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: 0.103132[0m
+[move_group-2] [0m[INFO] [1790459646.134613700] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790459646.135812636] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459646.136531971] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[move_group-2] [0m[INFO] [1790459648.122148107] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459648.122365023] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459648.122963484] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459648.124867311] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459648.124975500] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459648.125003990] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459648.127372502] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459648.162781859] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459648.162809220] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459648.162852577] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459648.164078442] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459648.164124535] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459648.164142663] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459648.164207814] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459648.165231010] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459648.165285651] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459648.166801884] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459648.166826760] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459658.653799665] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790459658.666199616] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459658.714381322] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790459658.724631912] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790459658.727036297] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790459668.048856860] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459668.049531092] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459668.049771336] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459668.050144526] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459668.055251194] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459668.055309476] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459668.056012950] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459668.099247123] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459668.099604517] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459668.100672534] [move_group_interface]: time taken to generate plan: 0.0242623 seconds[0m
+[rviz2-3] [0m[INFO] [1790459671.907709339] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459671.908913804] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459671.909151255] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459671.910757835] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459671.914904233] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459671.914970015] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459671.917372443] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459671.952215552] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459671.952734844] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459671.953632444] [move_group_interface]: time taken to generate plan: 0.0132436 seconds[0m
+[move_group-2] [0m[INFO] [1790459673.841977995] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459673.842882424] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459673.844532199] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459673.847305140] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459673.847436444] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459673.847464149] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459673.848168746] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459673.872603055] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459673.872662358] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459673.872779203] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459673.874410059] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459673.874484888] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459673.874523888] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459673.874668125] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[move_group-2] [0m[INFO] [1790459673.875495525] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459673.875524172] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459673.875103894] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459673.875189027] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459676.943811127] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790459676.977965126] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459677.015877209] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790459677.024658846] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790459677.026262586] [move_group_interface]: Plan and Execute request complete![0m
+[move_group-2] [0m[INFO] [1790459711.767318744] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459711.767564950] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459711.768920270] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459711.774379277] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459711.774497762] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459711.774524269] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459711.775196420] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459711.792938418] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459711.792994040] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459711.793079920] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459711.794243210] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459711.794792885] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459711.794821979] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459711.794903766] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459711.795143190] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459711.795195576] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459711.795506233] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459711.795524773] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459715.283832303] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790459715.295959536] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459715.324421777] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790459715.334495892] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790459715.336295007] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790459728.665421286] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459728.665915297] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459728.666126021] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459728.666523153] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459728.675914181] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459728.675982611] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459728.676603945] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459728.722176295] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459728.722556440] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459728.722720655] [move_group_interface]: time taken to generate plan: 0.0220535 seconds[0m
+[move_group-2] [0m[INFO] [1790459824.185316147] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[rviz2-3] [0m[INFO] [1790459824.185841863] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459824.185902249] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790459824.185961061] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459824.185998670] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459824.186286095] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [31m[ERROR] [1790459824.194628752] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: 0.459874[0m
+[move_group-2] [0m[INFO] [1790459824.194764723] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790459824.196639966] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459824.196958325] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[rviz2-3] [0m[INFO] [1790459827.004089681] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459827.004835287] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459827.005038464] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459827.005449896] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459827.015883636] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459827.015943943] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459827.016630918] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459827.033618287] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459827.035514485] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459827.035816518] [move_group_interface]: time taken to generate plan: 0.0158499 seconds[0m
+[move_group-2] [0m[INFO] [1790459833.996369273] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459833.996963706] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459833.999025490] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459834.004406525] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459834.004512938] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459834.004540067] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459834.005193690] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459834.042136836] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459834.042168267] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459834.042218894] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459834.044039888] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459834.044103974] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459834.044123190] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459834.044188801] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459834.044617759] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459834.044666189] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459834.044933561] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459834.044948305] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459845.013796835] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790459845.045368937] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459845.074810668] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790459845.084337967] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790459845.086699088] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790459866.254821213] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459866.255929473] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459866.256117570] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459866.256999329] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459866.264451382] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459866.264504292] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459866.265151377] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459866.297116014] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459866.297496117] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459866.297898381] [move_group_interface]: time taken to generate plan: 0.0201183 seconds[0m
+[move_group-2] [0m[INFO] [1790459868.912525679] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790459868.912805360] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790459868.912856580] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459868.912890660] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[rviz2-3] [0m[INFO] [1790459868.913390587] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459868.913510268] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [31m[ERROR] [1790459868.915961250] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0.785398, current: 0.00632514[0m
+[move_group-2] [0m[INFO] [1790459868.916097946] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790459868.918665299] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459868.918810060] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[move_group-2] [0m[INFO] [1790459871.299528328] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459871.299804244] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459871.301144558] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459871.305839876] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459871.305960480] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459871.305990221] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459871.306849727] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459871.352884975] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459871.352912466] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459871.352993375] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459871.354132211] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459871.354172407] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459871.354190391] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459871.354255891] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459871.354766441] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459871.354821093] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459871.355088071] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459871.355101330] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459887.343805964] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790459887.355481075] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459887.414779455] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790459887.424619748] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790459887.426322305] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790459936.846071620] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459936.847953163] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459936.848180984] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459936.848562289] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459936.854445556] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459936.854509509] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459936.855252202] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459936.886124071] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459936.886572690] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459936.887018747] [move_group_interface]: time taken to generate plan: 0.0156763 seconds[0m
+[move_group-2] [0m[INFO] [1790459938.863034997] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790459938.863261004] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790459938.863315750] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459938.863351072] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459938.863586289] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790459938.863932570] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790459938.866610963] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0.785398, current: 1.37884[0m
+[move_group-2] [0m[INFO] [1790459938.866727571] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790459938.869441944] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459938.870507658] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[move_group-2] [0m[INFO] [1790459939.758236294] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459939.758430664] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459939.758825559] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459939.764784114] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459939.764883455] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459939.764907133] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459939.765470636] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459939.803402946] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459939.803460117] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459939.803504609] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459939.804403563] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459939.804448156] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459939.804467405] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459939.804534588] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459939.804829680] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459939.804906906] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459939.805176692] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459939.805194385] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459948.244178471] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790459948.255949043] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459948.314418709] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790459948.314788366] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790459948.316909392] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790459958.266594317] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459958.268214041] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459958.268782388] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459958.270048942] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459958.275779199] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459958.275838229] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459958.276512177] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459958.324184851] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459958.324562584] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459958.324690064] [move_group_interface]: time taken to generate plan: 0.0273342 seconds[0m
+[rviz2-3] [0m[INFO] [1790459960.045898940] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459960.046934318] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459960.047151405] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459960.048124222] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459960.055118391] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459960.055178814] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459960.055919554] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459960.092005320] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459960.092363212] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459960.093327396] [move_group_interface]: time taken to generate plan: 0.0199425 seconds[0m
+[move_group-2] [0m[INFO] [1790459965.806418457] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459965.806660606] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459965.807137690] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459965.814759294] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459965.814866579] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459965.814894923] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459965.815590028] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459965.867499141] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459965.867528864] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459965.867619543] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459965.874254373] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459965.874303482] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459965.874322344] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459965.874389593] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459965.874734844] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459965.874784074] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459965.875133897] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459965.875148422] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790459977.033786689] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790459977.075214466] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790459977.114879436] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790459977.124577982] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790459977.125915175] [move_group_interface]: Plan and Execute request complete![0m
+[move_group-2] [0m[INFO] [1790459980.879193797] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459980.879436605] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459980.882179382] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459980.883923369] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459980.884020539] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459980.884048919] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459980.885247732] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459980.943254228] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459980.943281876] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459980.943370208] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [31m[ERROR] [1790459980.944371372] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: 0.488466[0m
+[move_group-2] [0m[INFO] [1790459980.944513725] [moveit_move_group_default_capabilities.move_action_capability]: Solution found but controller failed during execution[0m
+[rviz2-3] [0m[INFO] [1790459980.945844209] [move_group_interface]: Plan and Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790459980.946789643] [move_group_interface]: MoveGroupInterface::move() failed or timeout reached[0m
+[rviz2-3] [0m[INFO] [1790459986.619718762] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790459986.620487714] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459986.620727198] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459986.624107820] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790459986.628195675] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790459986.628294632] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459986.630360183] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459986.692379839] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790459986.693421651] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790459986.694399544] [move_group_interface]: time taken to generate plan: 0.0280607 seconds[0m
+[move_group-2] [0m[INFO] [1790459989.553484036] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790459989.553797613] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790459989.554428650] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790459989.556797903] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790459989.556939256] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790459989.556966287] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790459989.557739889] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790459989.613418206] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459989.613446048] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459989.613503636] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790459989.614557204] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790459989.614603394] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459989.614621688] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790459989.614688063] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790459989.615072142] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790459989.615159920] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790459989.615583838] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790459989.615613489] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790460005.283812092] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460005.316193189] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460005.344854727] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460005.355096170] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790460005.357297327] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790460026.701738416] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460026.702385066] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460026.702644909] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460026.703247847] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460026.705853960] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460026.705908626] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460026.707403136] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460026.744875179] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460026.745448031] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460026.745860879] [move_group_interface]: time taken to generate plan: 0.0138557 seconds[0m
+[move_group-2] [0m[INFO] [1790460030.532312564] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460030.533322086] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460030.534295444] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460030.536403701] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460030.536500855] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460030.536528450] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460030.537401384] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460030.588878997] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460030.588931611] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460030.589006025] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460030.594128239] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460030.594176274] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460030.594195496] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460030.594264457] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460030.594572069] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460030.594624826] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460030.595412399] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460030.595429705] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790460044.743976763] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460044.745980344] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460044.776922927] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460044.784587813] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790460044.786992046] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790460051.801530419] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460051.802972202] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460051.803222088] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460051.803597497] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460051.805055276] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460051.805238744] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460051.806195587] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460051.870836180] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460051.871240359] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460051.871596797] [move_group_interface]: time taken to generate plan: 0.024507 seconds[0m
+[move_group-2] [0m[INFO] [1790460059.792288766] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460059.792535088] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460059.792835668] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460059.796047013] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460059.796466024] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460059.796496762] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460059.797153096] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460059.837166273] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460059.837196148] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460059.837272039] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460059.844165896] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460059.844208797] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460059.844227213] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460059.844293062] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460059.844672806] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460059.844720288] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460059.844843482] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460059.844878981] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[rviz2-3] [0m[INFO] [1790460065.710393132] [move_group_interface]: MoveGroup action client/server ready[0m
+[ros2_control_node-5] [0m[INFO] [1790460069.814020744] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460069.845624271] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460069.874397828] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460069.884681509] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[move_group-2] [0m[INFO] [1790460069.886430932] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460069.887691587] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460069.888039360] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460069.895141555] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460069.895202927] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460069.895917893] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460069.995906443] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460069.996650458] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790460069.996907659] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460069.996961453] [move_group_interface]: time taken to generate plan: 0.0230124 seconds[0m
+[move_group-2] [0m[INFO] [1790460073.152359905] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[rviz2-3] [0m[INFO] [1790460073.152808489] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460073.153223949] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790460073.156126488] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460073.156223368] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460073.156251001] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460073.156945979] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460073.200524672] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460073.200589907] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460073.200730312] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460073.204186409] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460073.204254067] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460073.204284890] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460073.204382416] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460073.204741365] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460073.204803950] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460073.205504641] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460073.205527289] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[rviz2-3] [0m[INFO] [1790460079.523102179] [move_group_interface]: MoveGroup action client/server ready[0m
+[ros2_control_node-5] [0m[INFO] [1790460083.173957109] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460083.205713347] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460083.234325108] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460083.245163595] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[move_group-2] [0m[INFO] [1790460083.247052116] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460083.247419380] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460083.247641937] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460083.254779952] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460083.254845805] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460083.255628326] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460083.341234560] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460083.342257329] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790460083.343318450] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460083.344407453] [move_group_interface]: time taken to generate plan: 0.0254997 seconds[0m
+[rviz2-3] [0m[INFO] [1790460090.478059990] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460090.479282162] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460090.479543076] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790460090.482657246] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460090.482711384] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460090.483508143] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[rviz2-3] [0m[INFO] [1790460090.482944242] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460090.527854796] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460090.528302586] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460090.528920159] [move_group_interface]: time taken to generate plan: 0.0156998 seconds[0m
+[rviz2-3] [0m[INFO] [1790460092.599331717] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460092.600623537] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460092.600873772] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460092.601539631] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460092.604831777] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460092.604897602] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460092.605659203] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460092.660826649] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460092.661407466] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460092.661701216] [move_group_interface]: time taken to generate plan: 0.0207133 seconds[0m
+[rviz2-3] [0m[INFO] [1790460096.429918393] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460096.432140874] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460096.432468521] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790460096.435187880] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460096.435247892] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460096.435970082] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[rviz2-3] [0m[INFO] [1790460096.435268036] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460096.481001775] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460096.481498547] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460096.481630798] [move_group_interface]: time taken to generate plan: 0.0155867 seconds[0m
+[rviz2-3] [0m[INFO] [1790460097.662150908] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460097.663231697] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460097.663959221] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460097.664119032] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460097.664290821] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460097.664302878] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460097.664574911] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460097.697393023] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460097.697892523] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460097.698363575] [move_group_interface]: time taken to generate plan: 0.00660443 seconds[0m
+[rviz2-3] [0m[INFO] [1790460097.856530974] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460097.856952637] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460097.857564868] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460097.857146982] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460097.864197413] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460097.864232954] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460097.864819691] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460097.914017575] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460097.914475196] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460097.914522601] [move_group_interface]: time taken to generate plan: 0.0164611 seconds[0m
+[rviz2-3] [0m[INFO] [1790460098.013321970] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460098.015303080] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460098.015619409] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460098.017311736] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460098.024836687] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460098.024903176] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460098.025851514] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460098.069717153] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460098.072290199] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460098.073271901] [move_group_interface]: time taken to generate plan: 0.0153303 seconds[0m
+[rviz2-3] [0m[INFO] [1790460098.189953666] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460098.192477685] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460098.192784717] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790460098.194916149] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460098.194964749] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[rviz2-3] [0m[INFO] [1790460098.195870414] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460098.197681502] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460098.267008352] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460098.267421835] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460098.268229152] [move_group_interface]: time taken to generate plan: 0.0263673 seconds[0m
+[rviz2-3] [0m[INFO] [1790460098.334468966] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460098.338174494] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460098.338461743] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460098.341207663] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460098.345589274] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460098.345638918] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460098.346371182] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460098.422712051] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460098.423187614] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460098.423647596] [move_group_interface]: time taken to generate plan: 0.0190817 seconds[0m
+[rviz2-3] [0m[INFO] [1790460098.497604867] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460098.498272300] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460098.498431795] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460098.498731208] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460098.504289385] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460098.504395285] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460098.504901371] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460098.565641468] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460098.566424161] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460098.566737953] [move_group_interface]: time taken to generate plan: 0.0209872 seconds[0m
+[move_group-2] [0m[INFO] [1790460099.567013641] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790460099.567242487] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790460099.567296113] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460099.567331164] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460099.567628345] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790460099.568075048] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790460099.575042941] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: 0.751919[0m
+[move_group-2] [0m[INFO] [1790460099.575210670] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790460099.576084059] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790460099.577281984] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[rviz2-3] [0m[INFO] [1790460101.998395013] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460101.998710123] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460101.998810253] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460101.999379002] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460102.004111242] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460102.004144275] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460102.004483701] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460102.039787323] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460102.040167439] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460102.040768965] [move_group_interface]: time taken to generate plan: 0.00674063 seconds[0m
+[rviz2-3] [0m[INFO] [1790460108.220326834] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460108.221725315] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460108.222388114] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460108.222292031] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460108.226779975] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460108.226828584] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460108.227513470] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460108.293235276] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460108.294482804] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460108.295984603] [move_group_interface]: time taken to generate plan: 0.0201013 seconds[0m
+[rviz2-3] [0m[INFO] [1790460116.706269717] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460116.706987138] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[rviz2-3] [0m[INFO] [1790460116.707487899] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460116.707815762] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790460116.714497853] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460116.714574760] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460116.715284077] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460116.793078730] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460116.793786600] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460116.793895476] [move_group_interface]: time taken to generate plan: 0.029518 seconds[0m
+[move_group-2] [0m[INFO] [1790460118.331739234] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790460118.331987932] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790460118.332040661] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460118.332075027] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460118.332337916] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790460118.332661707] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790460118.335986796] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: 0.751919[0m
+[move_group-2] [0m[INFO] [1790460118.336109817] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790460118.337238638] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790460118.338343138] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[move_group-2] [0m[INFO] [1790460119.684177671] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460119.684457236] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460119.688996324] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460119.694686155] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460119.694805266] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460119.694851899] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460119.695523383] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460119.740287607] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460119.740322898] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460119.740372419] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460119.744194769] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460119.744234012] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460119.744251605] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460119.744337510] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460119.744589202] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460119.744636321] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460119.745083962] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460119.745098145] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790460130.203812479] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460130.245383111] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460130.274405272] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460130.285941937] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790460130.289121475] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790460218.248418884] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460218.248834631] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460218.248940821] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460218.250245803] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460218.254126933] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460218.254650547] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460218.254928705] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460218.299496540] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460218.300015273] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460218.300917793] [move_group_interface]: time taken to generate plan: 0.0150364 seconds[0m
+[move_group-2] [0m[INFO] [1790460236.336537741] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460236.336700588] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460236.337718747] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460236.344012145] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460236.344057142] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460236.344066570] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460236.344342888] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460236.352883349] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460236.352910630] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460236.352963368] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460236.354043623] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460236.354475081] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460236.354496560] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460236.354574910] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460236.354773979] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460236.354814677] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460236.354981122] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460236.354994199] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790460241.213815496] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460241.255681411] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460241.314360895] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460241.324313660] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790460241.326667290] [move_group_interface]: Plan and Execute request complete![0m
+[move_group-2] [0m[INFO] [1790460247.125952562] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460247.126178719] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460247.126526069] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460247.134616867] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460247.135893265] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460247.135944303] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460247.136671675] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460247.164484661] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460247.164518983] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460247.164598916] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460247.174169553] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460247.174217815] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460247.174238986] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460247.174337145] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460247.174593691] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460247.174641497] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460247.175508903] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460247.175619655] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790460252.033862269] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460252.076597188] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460252.114760346] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460252.124404169] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790460252.125348501] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790460256.640945218] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460256.642121905] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460256.642359959] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460256.643366953] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460256.645332490] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460256.645818037] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460256.646498207] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460256.720503178] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460256.721110154] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460256.722186368] [move_group_interface]: time taken to generate plan: 0.0250956 seconds[0m
+[move_group-2] [0m[INFO] [1790460259.601349070] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460259.601598557] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460259.601938433] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460259.606652763] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460259.606764860] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460259.606790773] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460259.607439443] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460259.632763949] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460259.632803138] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460259.632890865] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460259.634148692] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460259.634195568] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460259.634217978] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460259.634295572] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460259.634527696] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460259.634607987] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460259.634735949] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460259.634753141] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[rviz2-3] [0m[INFO] [1790460261.687716608] [move_group_interface]: MoveGroup action client/server ready[0m
+[ros2_control_node-5] [0m[INFO] [1790460264.493808211] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460264.535252647] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460264.564382204] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460264.574428278] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[move_group-2] [0m[INFO] [1790460264.575159531] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460264.576061530] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460264.576729467] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460264.582341456] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460264.582405803] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460264.583144774] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460264.676512303] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460264.677681432] [move_group_interface]: Plan and Execute request complete![0m
+[rviz2-3] [0m[INFO] [1790460264.677903067] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460264.678436168] [move_group_interface]: time taken to generate plan: 0.0223072 seconds[0m
+[rviz2-3] [0m[INFO] [1790460264.678623486] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460264.678842013] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460264.678933557] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460264.679560040] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460264.681942619] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460264.682409960] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460264.682723835] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460264.727153934] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460264.727901567] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460264.728152043] [move_group_interface]: time taken to generate plan: 0.0155876 seconds[0m
+[rviz2-3] [0m[INFO] [1790460264.728361746] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460264.728628706] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460264.728891316] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460264.729071218] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460264.734125625] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460264.734146608] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460264.734415634] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460264.767711034] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460264.768143284] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460264.769126934] [move_group_interface]: time taken to generate plan: 0.00472902 seconds[0m
+[rviz2-3] [0m[INFO] [1790460264.769304077] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460264.769887653] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460264.769971593] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460264.770284621] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460264.775124708] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460264.775153707] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460264.775669335] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460264.819601162] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460264.820286694] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460264.820504843] [move_group_interface]: time taken to generate plan: 0.0156261 seconds[0m
+[move_group-2] [0m[INFO] [1790460267.070489367] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790460267.070733966] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790460267.070788005] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460267.070823367] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460267.071129538] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790460267.071787039] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790460267.076945643] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: -0.74033[0m
+[move_group-2] [0m[INFO] [1790460267.077084955] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790460267.079618053] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790460267.080755895] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[rviz2-3] [0m[INFO] [1790460272.341227967] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790460272.342027873] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460272.342537956] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460272.343527524] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790460272.344975060] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790460272.345027320] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460272.346020246] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460272.421688517] [moveit_move_group_default_capabilities.move_action_capability]: Motion plan was computed successfully.[0m
+[rviz2-3] [0m[INFO] [1790460272.422789669] [move_group_interface]: Planning request complete![0m
+[rviz2-3] [0m[INFO] [1790460272.423143760] [move_group_interface]: time taken to generate plan: 0.0262615 seconds[0m
+[move_group-2] [0m[INFO] [1790460282.063906417] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request[0m
+[move_group-2] [0m[INFO] [1790460282.065631167] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received[0m
+[move_group-2] [0m[INFO] [1790460282.065701407] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460282.065738101] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460282.065972296] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[rviz2-3] [0m[INFO] [1790460282.066085306] [move_group_interface]: Execute request accepted[0m
+[move_group-2] [31m[ERROR] [1790460282.074463970] [moveit_ros.trajectory_execution_manager]: 
+[move_group-2] Invalid Trajectory: start point deviates from current robot state more than 0.01
+[move_group-2] joint 'joint_2': expected: 0, current: -0.740343[0m
+[move_group-2] [0m[INFO] [1790460282.074639138] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: ABORTED[0m
+[rviz2-3] [0m[INFO] [1790460282.077614055] [move_group_interface]: Execute request aborted[0m
+[rviz2-3] [31m[ERROR] [1790460282.078440190] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached[0m
+[move_group-2] [0m[INFO] [1790460288.398962432] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790460288.399204795] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[rviz2-3] [0m[INFO] [1790460288.399579141] [move_group_interface]: Plan and Execute request accepted[0m
+[move_group-2] [0m[INFO] [1790460288.404988465] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.[0m
+[move_group-2] [0m[INFO] [1790460288.405096923] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1[0m
+[move_group-2] [0m[INFO] [1790460288.405126554] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790460288.406307740] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-2] [0m[INFO] [1790460288.451878457] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460288.451905617] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460288.451978113] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-2] [0m[INFO] [1790460288.454092967] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-2] [0m[INFO] [1790460288.454139380] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460288.454159560] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790460288.454229249] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1790460288.454606184] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1790460288.454690240] [arm_controller]: Accepted new action goal[0m
+[move_group-2] [0m[INFO] [1790460288.455518143] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-2] [0m[INFO] [1790460288.455588213] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[ros2_control_node-5] [0m[INFO] [1790460305.623756655] [arm_controller]: Goal reached, success![0m
+[move_group-2] [0m[INFO] [1790460305.655281015] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[move_group-2] [0m[INFO] [1790460305.714038095] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-2] [0m[INFO] [1790460305.714332100] [moveit_move_group_default_capabilities.move_action_capability]: Solution was found and executed.[0m
+[rviz2-3] [0m[INFO] [1790460305.715127937] [move_group_interface]: Plan and Execute request complete![0m

@@ -1,14 +1,3 @@
-/*
- * ESP32 micro-ROS firmware for the two direct MoveIt hardware tests.
- *
- * /esp32/joint_commands contains six servo angles in degrees.
- * A finite value updates that joint. NaN means "retain currentPositions[joint]".
- * This supports both one-joint-at-a-time commands and complete trajectory samples.
- *
- * /esp32/joint_states republishes the remembered commanded angles at 50 Hz.
- * These are not encoder measurements.
- */
-
 #include <ESP32Servo.h>
 #include <WiFi.h>
 #include <math.h>
@@ -25,14 +14,14 @@
 #define NUM_JOINTS 6
 
 // Edit these before uploading.
-const char * WIFI_SSID = "YOUR_WIFI_SSID";
-const char * WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
-char agent_ip[] = "192.168.1.100";
+const char * WIFI_SSID = "VUZ.HOTEL";
+const char * WIFI_PASSWORD = "Vuz@1324";
+char agent_ip[] = "10.5.50.141";
 const uint16_t agent_port = 8888;
 const size_t ROS_DOMAIN_ID = 0;
 
 // Replace -1 with the verified GPIO for joint 1 before testing that joint.
-const int SERVO_PINS[NUM_JOINTS] = {-1, 13, 12, 14, 27, 26};
+const int SERVO_PINS[NUM_JOINTS] = {-1, 13, 32, 33, 27, 26};
 const int SERVO_MIN_US = 500;
 const int SERVO_MAX_US = 2400;
 

@@ -95,7 +95,7 @@
   </link>
   <joint
     name="joint_1"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.05"
       rpy="0 0 0" />
@@ -105,6 +105,7 @@
       link="link_1" />
     <axis
       xyz="0 0 1" />
+  <limit lower="-1.570796" upper="1.570796" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_2">
@@ -148,7 +149,7 @@
   </link>
   <joint
     name="joint_2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.00873499271692548 0.0108362687265375 0.040276480175933"
       rpy="0 0 0" />
@@ -158,6 +159,7 @@
       link="link_2" />
     <axis
       xyz="0.778551124052 -0.627581187765668 0" />
+  <limit lower="-0.785398" upper="2.356194" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_3">
@@ -201,7 +203,7 @@
   </link>
   <joint
     name="joint_3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.0452765198294633 0.0561681677105227 0.0958914682762493"
       rpy="0 0 0" />
@@ -211,6 +213,7 @@
       link="link_3" />
     <axis
       xyz="-0.778551124051999 0.62758118776567 0" />
+  <limit lower="-2.007129" upper="1.134464" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_4">
@@ -254,7 +257,7 @@
   </link>
   <joint
     name="joint_4"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.066053819111936 0.100267943565289 0.0584895163370014"
       rpy="0 0 0" />
@@ -264,6 +267,7 @@
       link="link_4" />
     <axis
       xyz="0.552264856359974 0.685116815282897 0.474993134525457" />
+  <limit lower="0.000000" upper="3.141593" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_5">
@@ -307,7 +311,7 @@
   </link>
   <joint
     name="joint_5"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.001935 -0.026272 -0.004657"
       rpy="0 0 0" />
@@ -317,6 +321,7 @@
       link="link_5" />
     <axis
       xyz="-0.7748550616 0.6320449991 0.00816229119891543" />
+  <limit lower="-3.490659" upper="-0.349066" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_6">
@@ -358,12 +363,13 @@
       </geometry>
     </collision>
   </link>
-<joint name="joint_6" type="continuous">
+<joint name="joint_6" type="revolute">
   <origin xyz="0.0639420416 0.0759886404 0.0116150426" rpy="0 0 0"/>
   <parent link="link_5"/>
   <child link="link_6"/>
   <axis xyz="0.65067 0.75931 0.0081623"/>
-</joint>
+<limit lower="-1.570796" upper="1.570796" effort="10" velocity="1.5"/>
+  </joint>
 
   <!-- ros2_control is added via arm.urdf.xacro + robot_arm_ros2_control.urdf.xacro -->
 

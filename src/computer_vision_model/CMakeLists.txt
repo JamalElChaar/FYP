@@ -32,6 +32,12 @@ install(PROGRAMS
   RENAME fruit_detection_node
 )
 
+install(PROGRAMS
+  scripts/fruit_localization_node.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME fruit_localization_node
+)
+
 install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
   PATTERN "__pycache__" EXCLUDE

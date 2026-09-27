@@ -8,6 +8,7 @@
 #include <chrono>
 #include <cmath>
 #include <limits>
+#include <map>
 #include <memory>
 #include <stdexcept>
 #include <string>
@@ -18,6 +19,8 @@
 #include <geometry_msgs/msg/pose.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit/robot_state/robot_state.h>
+#include <moveit_msgs/msg/constraints.hpp>
+#include <moveit_msgs/msg/joint_constraint.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/float64_multi_array.hpp>
 #include <trajectory_msgs/msg/joint_trajectory.hpp>
@@ -92,14 +95,35 @@ public:
     target_oz_ = declare_parameter<double>("oz", 0.006);
     target_ow_ = declare_parameter<double>("ow", 0.707);
     pre_final_offset_ = declare_parameter<double>("pre_final_offset", 0.03);
+    freeze_joint_1_ = declare_parameter<bool>("freeze_joint_1", false);
+    freeze_tolerance_rad_ = declare_parameter<double>("freeze_tolerance_rad", 0.01);
+
+    // Optional: the arm configuration the plan is expected to land on, in
+    // servo degrees. Leave empty to accept whatever IK solution MoveIt finds.
+    desired_servo_degrees_ = declare_parameter<std::vector<double>>(
+      "desired_servo_degrees", std::vector<double>{});
+    angle_tolerance_deg_ = declare_parameter<double>("angle_tolerance_deg", 15.0);
+    max_plan_attempts_ = declare_parameter<int>("max_plan_attempts", 10);
+    // Plan straight to desired_servo_degrees as a joint-space goal instead of
+    // going through IK on the Cartesian pose. Deterministic: the final
+    // configuration is exactly the one requested.
+    use_joint_target_ = declare_parameter<bool>("use_joint_target", false);
+    // Reach the target POSITION and let the planner choose the wrist
+    // orientation. Pinning the orientation as well removes most IK solutions,
+    // which is usually what makes an otherwise reachable point unplannable.
+    position_only_ = declare_parameter<bool>("position_only", false);
 
     joint_names_ = declare_parameter<std::vector<std::string>>(
       "joint_names",
       {"joint_1", "joint_2", "joint_3", "joint_4", "joint_5", "joint_6"});
+    // Measured calibration: servo_deg = offset + direction * ros_deg.
+    // Joints 2-5 calibrated against the real arm; joint_1 and joint_6 are
+    // still the uncalibrated placeholder. Keep in sync with joint_offsets_/
+    // joint_directions_ in custom_hardware.cpp and with joint_target_node.
     servo_offsets_deg_ = declare_parameter<std::vector<double>>(
-      "servo_offsets_deg", {90.0, 90.0, 90.0, 90.0, 90.0, 90.0});
+      "servo_offsets_deg", {90.0, 45.0, 115.0, 0.0, -20.0, 90.0});
     servo_directions_ = declare_parameter<std::vector<double>>(
-      "servo_directions", {1.0, 1.0, 1.0, 1.0, 1.0, 1.0});
+      "servo_directions", {1.0, 1.0, 1.0, 1.0, -1.0, 1.0});
     servo_min_deg_ = declare_parameter<double>("servo_min_deg", 0.0);
     servo_max_deg_ = declare_parameter<double>("servo_max_deg", 180.0);
 
@@ -111,6 +135,19 @@ public:
     }
     if (command_interval_seconds_ <= 0.0 || joint_delay_seconds_ <= 0.0) {
       throw std::runtime_error("Command intervals must be greater than zero");
+    }
+    if (!desired_servo_degrees_.empty() &&
+      desired_servo_degrees_.size() != joint_names_.size())
+    {
+      throw std::runtime_error(
+              "desired_servo_degrees must be empty or contain six values");
+    }
+    if (max_plan_attempts_ < 1) {
+      throw std::runtime_error("max_plan_attempts must be at least one");
+    }
+    if (use_joint_target_ && desired_servo_degrees_.size() != joint_names_.size()) {
+      throw std::runtime_error(
+              "use_joint_target requires desired_servo_degrees to contain six values");
     }
 
     command_publisher_ = create_publisher<std_msgs::msg::Float64MultiArray>(
@@ -196,7 +233,12 @@ private:
   {
     arm.setPlanningPipelineId(pipeline);
     arm.setPlannerId(planner);
-    arm.setPoseTarget(pose);
+    arm.clearPoseTargets();
+    if (position_only_) {
+      arm.setPositionTarget(pose.position.x, pose.position.y, pose.position.z);
+    } else {
+      arm.setPoseTarget(pose);
+    }
     const auto result = arm.plan(plan);
     arm.clearPoseTargets();
 
@@ -204,6 +246,48 @@ private:
       RCLCPP_ERROR(
         get_logger(), "MoveIt planning failed with pipeline '%s' and planner '%s'",
         pipeline.c_str(), planner.c_str());
+      return false;
+    }
+    if (plan.trajectory_.joint_trajectory.points.empty()) {
+      RCLCPP_ERROR(get_logger(), "MoveIt returned a successful but empty trajectory");
+      return false;
+    }
+    return true;
+  }
+
+  /// Plan to an exact joint configuration instead of a Cartesian pose.
+  ///
+  /// A pose target goes through IK, which usually has several solutions, so
+  /// the planner may reach the right point through a quite different arm
+  /// configuration. A joint target is a goal constraint on the joints
+  /// themselves: there is nothing for IK to choose between, so the final
+  /// configuration is exactly the one asked for. When the pose was derived
+  /// from these very angles by forward kinematics, the end-effector ends up
+  /// at the identical pose either way.
+  bool plan_to_joint_target(
+    MoveGroupInterface & arm, const std::vector<double> & servo_degrees, Plan & plan)
+  {
+    std::map<std::string, double> joint_targets;
+    for (std::size_t i = 0; i < joint_names_.size(); ++i) {
+      const double ros_degrees =
+        (servo_degrees[i] - servo_offsets_deg_[i]) / servo_directions_[i];
+      joint_targets[joint_names_[i]] = ros_degrees * M_PI / 180.0;
+    }
+
+    arm.setPlanningPipelineId("ompl");
+    arm.setPlannerId("RRTConnectkConfigDefault");
+    arm.clearPoseTargets();
+    if (!arm.setJointValueTarget(joint_targets)) {
+      RCLCPP_ERROR(
+        get_logger(),
+        "The requested joint configuration is outside the joint limits; "
+        "check desired_servo_degrees against the servo range");
+      return false;
+    }
+
+    const auto result = arm.plan(plan);
+    if (result != moveit::core::MoveItErrorCode::SUCCESS) {
+      RCLCPP_ERROR(get_logger(), "MoveIt could not plan to the joint configuration");
       return false;
     }
     if (plan.trajectory_.joint_trajectory.points.empty()) {
@@ -239,9 +323,17 @@ private:
       if (!std::isfinite(servo_angle) || servo_angle < servo_min_deg_ ||
         servo_angle > servo_max_deg_)
       {
-        throw std::runtime_error(
-                joint_names_[i] + " produces unsafe servo angle " +
-                std::to_string(servo_angle) + " deg");
+        // TESTING ONLY: joint limits are not enforced here. Out-of-range
+        // joints are skipped (marked NaN) instead of aborting the whole
+        // command. Restore the throw below before running on hardware
+        // with real joint limits.
+        RCLCPP_WARN(
+          get_logger(),
+          "%s produces unsafe servo angle %.2f deg (limits %.1f-%.1f); "
+          "skipping this joint, ESP32 will hold its current position",
+          joint_names_[i].c_str(), servo_angle, servo_min_deg_, servo_max_deg_);
+        servo_degrees[i] = std::numeric_limits<double>::quiet_NaN();
+        continue;
       }
       servo_degrees[i] = servo_angle;
     }
@@ -265,38 +357,180 @@ private:
 
   bool run_sequential_final(MoveGroupInterface & arm)
   {
-    RCLCPP_INFO(
-      get_logger(),
-      "Planning directly to final pose (%.3f, %.3f, %.3f); Pilz descent is disabled",
-      target_x_, target_y_, target_z_);
+    if (use_joint_target_) {
+      RCLCPP_INFO(
+        get_logger(),
+        "Planning to the joint configuration directly (joint-space goal); the "
+        "Cartesian pose is not used and IK is bypassed");
+    } else {
+      RCLCPP_INFO(
+        get_logger(),
+        "Planning to %s (%.3f, %.3f, %.3f); Pilz descent is disabled",
+        position_only_ ? "position only, orientation free" : "the full pose",
+        target_x_, target_y_, target_z_);
+    }
 
     arm.setStartStateToCurrentState();
-    Plan plan;
-    if (!plan_to_pose(
-        arm, target_pose(target_z_), "ompl", "RRTConnectkConfigDefault", plan))
+
+    bool constraints_applied = false;
+    if (freeze_joint_1_) {
+      const auto current_state = arm.getCurrentState(10.0);
+      if (!current_state) {
+        RCLCPP_ERROR(get_logger(), "Cannot freeze joint_1: no current robot state available");
+        return false;
+      }
+      const double joint_1_value = current_state->getVariablePosition(joint_names_[0]);
+
+      moveit_msgs::msg::Constraints path_constraints;
+      moveit_msgs::msg::JointConstraint joint_1_constraint;
+      joint_1_constraint.joint_name = joint_names_[0];
+      joint_1_constraint.position = joint_1_value;
+      joint_1_constraint.tolerance_above = freeze_tolerance_rad_;
+      joint_1_constraint.tolerance_below = freeze_tolerance_rad_;
+      joint_1_constraint.weight = 1.0;
+      path_constraints.joint_constraints.push_back(joint_1_constraint);
+      arm.setPathConstraints(path_constraints);
+      constraints_applied = true;
+
+      RCLCPP_INFO(
+        get_logger(),
+        "Freezing %s at %.4f rad (+/- %.4f rad) for the whole plan; only the remaining "
+        "joints may move",
+        joint_names_[0].c_str(), joint_1_value, freeze_tolerance_rad_);
+    }
+
+    // A pose generally has several IK solutions, and OMPL is randomised, so
+    // each plan can land on a different arm configuration that reaches the
+    // same pose. When a desired configuration is given, replan until every
+    // joint lands within angle_tolerance_deg of it, or give up.
+    const bool check_desired = desired_servo_degrees_.size() == joint_names_.size();
+    if (check_desired) {
+      RCLCPP_INFO(
+        get_logger(),
+        "Replanning up to %d times until every joint is within %.1f deg of the "
+        "desired configuration",
+        max_plan_attempts_, angle_tolerance_deg_);
+    }
+
+    std::vector<double> servo_degrees;
+    bool accepted = false;
+
+    for (int attempt = 1;
+      attempt <= max_plan_attempts_ && rclcpp::ok() && !accepted; ++attempt)
     {
+      Plan plan;
+      const bool planned = use_joint_target_
+        ? plan_to_joint_target(arm, desired_servo_degrees_, plan)
+        : plan_to_pose(
+        arm, target_pose(target_z_), "ompl", "RRTConnectkConfigDefault", plan);
+      if (!planned) {
+        RCLCPP_WARN(
+          get_logger(), "Attempt %d/%d: planning failed", attempt, max_plan_attempts_);
+        continue;
+      }
+
+      try {
+        const auto & trajectory = plan.trajectory_.joint_trajectory;
+        servo_degrees = to_servo_degrees(
+          trajectory.joint_names, trajectory.points.back().positions);
+      } catch (const std::exception & error) {
+        RCLCPP_ERROR(
+          get_logger(), "Attempt %d/%d: cannot convert the final angles: %s",
+          attempt, max_plan_attempts_, error.what());
+        continue;
+      }
+
+      if (!check_desired) {
+        accepted = true;
+        break;
+      }
+
+      bool within_tolerance = true;
+      double worst_error = 0.0;
+      std::size_t worst_joint = 0;
+      for (std::size_t i = 0; i < servo_degrees.size(); ++i) {
+        if (!std::isfinite(servo_degrees[i])) {
+          // Skipped as unsafe: it cannot match the desired angle.
+          within_tolerance = false;
+          continue;
+        }
+        const double error = std::abs(servo_degrees[i] - desired_servo_degrees_[i]);
+        if (error > worst_error) {
+          worst_error = error;
+          worst_joint = i;
+        }
+        if (error > angle_tolerance_deg_) {
+          within_tolerance = false;
+        }
+      }
+
+      if (within_tolerance) {
+        RCLCPP_INFO(
+          get_logger(),
+          "Attempt %d/%d accepted: worst joint is %s at %.2f deg from the desired "
+          "angle (tolerance %.1f deg)",
+          attempt, max_plan_attempts_, joint_names_[worst_joint].c_str(), worst_error,
+          angle_tolerance_deg_);
+        accepted = true;
+      } else {
+        RCLCPP_WARN(
+          get_logger(),
+          "Attempt %d/%d rejected: %s is %.2f deg from the desired angle "
+          "(tolerance %.1f deg); replanning",
+          attempt, max_plan_attempts_, joint_names_[worst_joint].c_str(), worst_error,
+          angle_tolerance_deg_);
+      }
+    }
+
+    if (constraints_applied) {
+      arm.clearPathConstraints();
+    }
+
+    if (!accepted) {
+      if (check_desired) {
+        RCLCPP_ERROR(
+          get_logger(),
+          "No plan landed within %.1f deg of the desired configuration after %d "
+          "attempts. The pose may only be reachable through a different arm "
+          "configuration; widen angle_tolerance_deg, or command the joints "
+          "directly instead of going through a Cartesian pose.",
+          angle_tolerance_deg_, max_plan_attempts_);
+      } else if (freeze_joint_1_) {
+        RCLCPP_ERROR(
+          get_logger(),
+          "No plan reaches the target with %s frozen; the target may not lie in the "
+          "reachable plane at its current heading",
+          joint_names_[0].c_str());
+      }
       return false;
     }
 
-    try {
-      const auto & trajectory = plan.trajectory_.joint_trajectory;
-      const auto servo_degrees = to_servo_degrees(
-        trajectory.joint_names, trajectory.points.back().positions);
+    if (check_desired) {
+      RCLCPP_INFO(get_logger(), "  joint      desired      planned        error");
+      for (std::size_t i = 0; i < servo_degrees.size(); ++i) {
+        RCLCPP_INFO(
+          get_logger(), "  %-9s %9.2f %12.2f %12.2f",
+          joint_names_[i].c_str(), desired_servo_degrees_[i], servo_degrees[i],
+          servo_degrees[i] - desired_servo_degrees_[i]);
+      }
+    }
 
-      RCLCPP_INFO(
-        get_logger(), "Sending final target one joint at a time, joint_1 through joint_6");
-      for (std::size_t joint = 0; joint < servo_degrees.size() && rclcpp::ok(); ++joint) {
+    RCLCPP_INFO(
+      get_logger(), "Sending final target one joint at a time, joint_1 through joint_6");
+    for (std::size_t joint = 0; joint < servo_degrees.size() && rclcpp::ok(); ++joint) {
+      if (std::isnan(servo_degrees[joint])) {
+        RCLCPP_WARN(
+          get_logger(), "Not sending %s: unsafe angle, ESP32 keeps its current position",
+          joint_names_[joint].c_str());
+      } else {
         publish_one_joint(joint, servo_degrees[joint]);
         RCLCPP_INFO(
           get_logger(), "Commanded %s = %.2f deg; ESP32 retains the other five positions",
           joint_names_[joint].c_str(), servo_degrees[joint]);
-        if (joint + 1 < servo_degrees.size()) {
-          std::this_thread::sleep_for(std::chrono::duration<double>(joint_delay_seconds_));
-        }
       }
-    } catch (const std::exception & error) {
-      RCLCPP_ERROR(get_logger(), "Cannot send final joint angles: %s", error.what());
-      return false;
+      if (joint + 1 < servo_degrees.size()) {
+        std::this_thread::sleep_for(std::chrono::duration<double>(joint_delay_seconds_));
+      }
     }
 
     RCLCPP_INFO(get_logger(), "Sequential final-angle test completed");
@@ -403,6 +637,13 @@ private:
   double target_oz_{0.006};
   double target_ow_{0.707};
   double pre_final_offset_{0.03};
+  bool freeze_joint_1_{false};
+  double freeze_tolerance_rad_{0.01};
+  std::vector<double> desired_servo_degrees_;
+  double angle_tolerance_deg_{15.0};
+  int max_plan_attempts_{10};
+  bool use_joint_target_{false};
+  bool position_only_{false};
   std::vector<std::string> joint_names_;
   std::vector<double> servo_offsets_deg_;
   std::vector<double> servo_directions_;
