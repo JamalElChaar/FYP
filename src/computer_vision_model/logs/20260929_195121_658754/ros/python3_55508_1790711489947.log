@@ -1,0 +1,17 @@
+[INFO] [1790711491.080094146] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[INFO] [1790711492.326785134] [camera_to_base_node]: HOME: SENT: Homing: servo angles published to /esp32/joint_commands, settling for 3 s before the pipeline runs. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived.
+[INFO] [1790711495.427221275] [camera_to_base_node]: HOME: SUCCESS: Arm commanded home; starting the pipeline.
+[INFO] [1790711502.987647074] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.
+[INFO] [1790711503.038807741] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+[INFO] [1790711503.041374760] [camera_to_base_node]: TRANSFORM: OVERRIDE: Target point replaced by override_point_base; the projected point below was NOT used. Detection and everything downstream ran normally.
+[INFO] [1790711503.044281848] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+[INFO] [1790711503.128706771] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790711503.227084846] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).
+[INFO] [1790711503.230222310] [camera_to_base_node]: EXECUTE: SENT: Servo angles published to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived. Sent NaN (hold, no servo) for: joint_1, joint_6.
+[INFO] [1790711504.234635116] [camera_to_base_node]: STAB_POSE: SUCCESS: Descending 5.0 cm from the hover pose; solving IK for the stab target.
+[INFO] [1790711504.241064805] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790711504.327110632] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).
+[INFO] [1790711504.428179616] [camera_to_base_node]: STAB_PLAN: STARTED: Planning the descent with pilz_industrial_motion_planner/LIN via /plan_kinematic_path (attempt 1 of 10). LIN is a straight line in Cartesian space, so the fork tip descends vertically rather than following a joint-space curve. Planning only; MoveIt does not execute.
+[INFO] [1790711504.528455921] [camera_to_base_node]: STAB_PLAN: SUCCESS: 11 waypoints; streaming them over 2.0 s.
+[INFO] [1790711507.554665767] [camera_to_base_node]: STAB_EXECUTE: SENT: Descent complete: 11 waypoints sent to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the fork arrived.
+[INFO] [1790711507.580957474] [camera_to_base_node]: PIPELINE: COMPLETE: Hover reached and stab descent streamed to the arm.

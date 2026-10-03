@@ -1,0 +1,109 @@
+{
+  "selected_detection": {
+    "id": 0,
+    "label": "Apple",
+    "confidence": 0.5356377363204956,
+    "center_x": 494.5,
+    "center_y": 570.5,
+    "width": 305.0,
+    "height": 85.0,
+    "x_min": 342.0,
+    "y_min": 528.0,
+    "x_max": 647.0,
+    "y_max": 613.0,
+    "class_id": 0
+  },
+  "plane_z_m": -0.006,
+  "base_frame": "base_link",
+  "camera_frame": "camera_color_optical_frame",
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_173601_690857/captures/latest_rgb.jpg",
+  "pixel_uv": [
+    494.5,
+    570.5
+  ],
+  "ray_camera": [
+    -0.16948888906174236,
+    0.24663555580708718,
+    1.0
+  ],
+  "point_camera_m": [
+    -0.07296129691988863,
+    0.10617126655238968,
+    0.4304783477181792
+  ],
+  "point_base_m": [
+    -0.03219465172844957,
+    -0.18901179643255595,
+    -0.006
+  ],
+  "transform_camera_to_base": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.2469,
+      -0.5069,
+      0.228
+    ],
+    "quaternion_xyzw": [
+      -0.7474342424304403,
+      0.3095974004360107,
+      -0.22493567804925013,
+      0.5430427640860549
+    ]
+  },
+  "transform_source": "tf",
+  "target_pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      -0.006
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  },
+  "moveit_error_code": 1,
+  "joint_angles_radians": {
+    "joint_1": -2.60777270750085,
+    "joint_2": -0.15662973523840382,
+    "joint_3": 1.1100984030436463,
+    "joint_4": 0.0627367544911782,
+    "joint_5": 0.31084858539967,
+    "joint_6": -2.65548589570892
+  },
+  "joint_angles_degrees": {
+    "joint_1": -149.41437006920242,
+    "joint_2": -8.974222775412045,
+    "joint_3": 63.60395333861355,
+    "joint_4": 3.5945512526929235,
+    "joint_5": 17.810312011013032,
+    "joint_6": -152.1481343806382
+  },
+  "ik_orientation_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "ik_orientation_attempts": 1,
+  "servo_degrees_sent": {
+    "joint_1": null,
+    "joint_2": 94.66217722458795,
+    "joint_3": 174.97525333861356,
+    "joint_4": 3.5945512526929235,
+    "joint_5": 72.18968798898698,
+    "joint_6": null
+  },
+  "held_joints": [
+    "joint_1",
+    "joint_6"
+  ],
+  "status": "success",
+  "stage": "IK_RESULT",
+  "detail": ""
+}

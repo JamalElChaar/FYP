@@ -1,0 +1,87 @@
+{
+  "class_filter": {
+    "allowed_classes": [],
+    "class_aliases": {
+      "apple": "banana",
+      "cucumber": "banana"
+    },
+    "excluded_classes": [
+      "carrot"
+    ],
+    "rejected_by_class": []
+  },
+  "detection_count": 2,
+  "detections": [
+    {
+      "center_x": 129.0,
+      "center_y": 297.0,
+      "class_id": 2,
+      "confidence": 0.8117201924324036,
+      "height": 68.0,
+      "id": 0,
+      "label": "banana",
+      "original_label": "Cucumber",
+      "width": 122.0,
+      "x_max": 190.0,
+      "x_min": 68.0,
+      "y_max": 331.0,
+      "y_min": 263.0
+    },
+    {
+      "center_x": 322.5,
+      "center_y": 384.0,
+      "class_id": 2,
+      "confidence": 0.5160939693450928,
+      "height": 190.0,
+      "id": 1,
+      "label": "banana",
+      "original_label": "Cucumber",
+      "width": 633.0,
+      "x_max": 639.0,
+      "x_min": 6.0,
+      "y_max": 479.0,
+      "y_min": 289.0
+    }
+  ],
+  "detections_by_label": {
+    "banana": [
+      {
+        "center_x": 129.0,
+        "center_y": 297.0,
+        "class_id": 2,
+        "confidence": 0.8117201924324036,
+        "height": 68.0,
+        "id": 0,
+        "label": "banana",
+        "original_label": "Cucumber",
+        "width": 122.0,
+        "x_max": 190.0,
+        "x_min": 68.0,
+        "y_max": 331.0,
+        "y_min": 263.0
+      },
+      {
+        "center_x": 322.5,
+        "center_y": 384.0,
+        "class_id": 2,
+        "confidence": 0.5160939693450928,
+        "height": 190.0,
+        "id": 1,
+        "label": "banana",
+        "original_label": "Cucumber",
+        "width": 633.0,
+        "x_max": 639.0,
+        "x_min": 6.0,
+        "y_max": 479.0,
+        "y_min": 289.0
+      }
+    ]
+  },
+  "image": {
+    "height": 480,
+    "width": 640
+  },
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_195121_658754/captures/latest_rgb.jpg",
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "schema_version": 1
+}

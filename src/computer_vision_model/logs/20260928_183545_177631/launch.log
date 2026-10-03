@@ -1,0 +1,271 @@
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [launch.user]: Vision run logs: /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183545_177631
+[INFO] [robot_state_publisher-1]: process started with pid [34557]
+[INFO] [move_group-2]: process started with pid [34559]
+[INFO] [solution_joint_state_node-3]: process started with pid [34561]
+[INFO] [rviz2-4]: process started with pid [34563]
+[INFO] [static_transform_publisher-5]: process started with pid [34565]
+[INFO] [static_transform_publisher-6]: process started with pid [34567]
+[INFO] [saved_image_capture_node-7]: process started with pid [34569]
+[INFO] [fruit_detection_node-8]: process started with pid [34571]
+[INFO] [camera_to_base_node-9]: process started with pid [34573]
+[move_group-2] [0m[INFO] [1790620545.559936358] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0445752 seconds[0m
+[move_group-2] [0m[INFO] [1790620545.560007659] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[move_group-2] [0m[INFO] [1790620545.560018423] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[move_group-2] [33m[WARN] [1790620545.582211279] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[static_transform_publisher-6] [0m[INFO] [1790620545.615589170] [vision_camera_optical_tf]: Spinning until stopped - publishing transform
+[static_transform_publisher-6] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-6] rotation: ('-0.500000', '0.500000', '-0.500000', '0.500000')
+[static_transform_publisher-6] from 'camera_link' to 'camera_color_optical_frame'[0m
+[rviz2-4] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-user'
+[static_transform_publisher-5] [0m[INFO] [1790620545.646873901] [vision_camera_mount_tf]: Spinning until stopped - publishing transform
+[static_transform_publisher-5] translation: ('-0.246900', '-0.506900', '0.228000')
+[static_transform_publisher-5] rotation: ('-0.059865', '0.144527', '0.377972', '0.912505')
+[static_transform_publisher-5] from 'base_link' to 'camera_link'[0m
+[move_group-2] [0m[INFO] [1790620545.654548628] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-2] [0m[INFO] [1790620545.654709637] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states[0m
+[move_group-2] [0m[INFO] [1790620545.656180132] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[move_group-2] [0m[INFO] [1790620545.657492083] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects[0m
+[move_group-2] [0m[INFO] [1790620545.657530432] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[move_group-2] [0m[INFO] [1790620545.658625795] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'[0m
+[move_group-2] [0m[INFO] [1790620545.658651614] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.[0m
+[move_group-2] [0m[INFO] [1790620545.659818506] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'[0m
+[move_group-2] [0m[INFO] [1790620545.660965110] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry[0m
+[move_group-2] [33m[WARN] [1790620545.661397902] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead[0m
+[move_group-2] [31m[ERROR] [1790620545.661421386] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates[0m
+[move_group-2] [0m[INFO] [1790620545.672394667] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'[0m
+[move_group-2] [0m[INFO] [1790620545.678396845] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'[0m
+[move_group-2] [0m[INFO] [1790620545.683197251] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620545.684619927] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620545.684633513] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790620545.684671430] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790620545.684698087] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790620545.684704758] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620545.684717712] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620545.684724807] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790620545.684732592] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790620545.684745448] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790620545.684750289] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790620545.684754399] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790620545.684758450] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790620545.684762275] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790620545.686569010] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[move_group-2] [0m[INFO] [1790620545.692608953] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'[0m
+[move_group-2] [0m[INFO] [1790620545.697233212] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-2] [0m[INFO] [1790620545.700237918] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP [0m
+[move_group-2] [0m[INFO] [1790620545.701091229] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC[0m
+[move_group-2] [0m[INFO] [1790620545.703909378] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC][0m
+[move_group-2] [0m[INFO] [1790620545.704576421] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN[0m
+[move_group-2] [0m[INFO] [1790620545.705781470] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN][0m
+[move_group-2] [0m[INFO] [1790620545.705800193] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP[0m
+[move_group-2] [0m[INFO] [1790620545.707717038] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP][0m
+[move_group-2] [0m[INFO] [1790620545.708166889] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'[0m
+[move_group-2] [0m[INFO] [1790620545.710226858] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790620545.729271516] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'[0m
+[move_group-2] [0m[INFO] [1790620545.738469682] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620545.738495216] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620545.738502082] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790620545.738527215] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790620545.738544544] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790620545.738550866] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620545.738564775] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620545.738571373] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790620545.738577076] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790620545.738590752] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790620545.738595644] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790620545.738599666] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790620545.738603623] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790620545.738607458] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790620545.738611258] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773662206] [robot_state_publisher]: got segment base_link[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773773129] [robot_state_publisher]: got segment link_1[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773784869] [robot_state_publisher]: got segment link_2[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773791206] [robot_state_publisher]: got segment link_3[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773797366] [robot_state_publisher]: got segment link_4[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773803145] [robot_state_publisher]: got segment link_5[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773809037] [robot_state_publisher]: got segment link_6[0m
+[robot_state_publisher-1] [0m[INFO] [1790620545.773814823] [robot_state_publisher]: got segment world[0m
+[move_group-2] [0m[INFO] [1790620545.823587996] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller[0m
+[move_group-2] [0m[INFO] [1790620545.823760224] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790620545.825756791] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790620545.828048959] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers[0m
+[move_group-2] [0m[INFO] [1790620545.828075175] [move_group.move_group]: MoveGroup debug mode is ON[0m
+[move_group-2] [0m[INFO] [1790620545.899262180] [move_group.move_group]: 
+[move_group-2] 
+[move_group-2] ********************************************************
+[move_group-2] * MoveGroup using: 
+[move_group-2] *     - ApplyPlanningSceneService
+[move_group-2] *     - ClearOctomapService
+[move_group-2] *     - CartesianPathService
+[move_group-2] *     - GetPlanningSceneService
+[move_group-2] *     - KinematicsService
+[move_group-2] *     - MotionPlanService
+[move_group-2] *     - QueryPlannersService
+[move_group-2] *     - StateValidationService
+[move_group-2] ********************************************************
+[move_group-2] [0m
+[move_group-2] [0m[INFO] [1790620545.899398271] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner[0m
+[move_group-2] [0m[INFO] [1790620545.899447377] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete[0m
+[move_group-2] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-2] [0m[92m
+[move_group-2] You can start planning now!
+[move_group-2] 
+[rviz2-4] [0m[INFO] [1790620546.597436088] [rviz2]: Stereo is NOT SUPPORTED[0m
+[rviz2-4] [0m[INFO] [1790620546.597526231] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)[0m
+[fruit_detection_node-8] [0m[INFO] [1790620546.639273283] [fruit_detection_node]: Fruit detection node ready[0m
+[fruit_detection_node-8] [0m[INFO] [1790620546.639852168] [fruit_detection_node]:   Model: sliced-fruits-and-vegetables-rnw8f/1[0m
+[fruit_detection_node-8] [0m[INFO] [1790620546.640324629] [fruit_detection_node]:   API: https://serverless.roboflow.com[0m
+[fruit_detection_node-8] [0m[INFO] [1790620546.640794689] [fruit_detection_node]:   API key source: ROBOFLOW_API_KEY environment variable[0m
+[fruit_detection_node-8] [0m[INFO] [1790620546.641253884] [fruit_detection_node]:   Detection results: /computer_vision/detections[0m
+[rviz2-4] [0m[INFO] [1790620546.646322891] [rviz2]: Stereo is NOT SUPPORTED[0m
+[solution_joint_state_node-3] Traceback (most recent call last):
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 122, in <module>
+[solution_joint_state_node-3]     main()
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 110, in main
+[solution_joint_state_node-3]     node = SolutionJointStateNode()
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 48, in __init__
+[solution_joint_state_node-3]     self.held = [str(n) for n in param('held_joints', [])]
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 38, in param
+[solution_joint_state_node-3]     return self.declare_parameter(name, default).value
+[solution_joint_state_node-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 367, in declare_parameter
+[solution_joint_state_node-3]     return self.declare_parameters('', [args], ignore_override)[0]
+[solution_joint_state_node-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 493, in declare_parameters
+[solution_joint_state_node-3]     self._set_parameters(
+[solution_joint_state_node-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 738, in _set_parameters
+[solution_joint_state_node-3]     raise InvalidParameterTypeException(
+[solution_joint_state_node-3] rclpy.exceptions.InvalidParameterTypeException: Trying to set parameter 'held_joints' to '['joint_1']' of type 'STRING_ARRAY', expecting type 'BYTE_ARRAY'
+[camera_to_base_node-9] [0m[INFO] [1790620547.193989865] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.[0m
+[rviz2-4] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-4]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[saved_image_capture_node-7] [0m[INFO] [1790620547.319107660] [saved_image_capture_node]: Saved-image input ready: /home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg[0m
+[ERROR] [solution_joint_state_node-3]: process has died [pid 34561, exit code 1, cmd '/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node --ros-args -r __node:=solution_joint_states --params-file /tmp/launch_params_54mzkbl4'].
+[rviz2-4] [31m[ERROR] [1790620550.308258797] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available[0m
+[rviz2-4] [0m[INFO] [1790620550.336596503] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.[0m
+[rviz2-4] [0m[INFO] [1790620550.449054000] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.044831 seconds[0m
+[rviz2-4] [0m[INFO] [1790620550.450154656] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[rviz2-4] [0m[INFO] [1790620550.450184217] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[rviz2-4] [33m[WARN] [1790620550.479940930] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[rviz2-4] [0m[INFO] [1790620550.572471029] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[rviz2-4] [0m[INFO] [1790620550.573189967] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'[0m
+[rviz2-4] [0m[INFO] [1790620550.611124379] [interactive_marker_display_95949550522240]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic[0m
+[rviz2-4] [0m[INFO] [1790620550.624179588] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[rviz2-4] [0m[INFO] [1790620550.624207342] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''[0m
+[rviz2-4] [0m[INFO] [1790620550.639270675] [interactive_marker_display_95949550522240]: Sending request for interactive markers[0m
+[rviz2-4] [0m[INFO] [1790620550.671946467] [interactive_marker_display_95949550522240]: Service response received for initialization[0m
+[fruit_detection_node-8] [0m[INFO] [1790620556.615007861] [fruit_detection_node]: Requesting a camera snapshot...[0m
+[saved_image_capture_node-7] [0m[INFO] [1790620556.647563244] [saved_image_capture_node]: Prepared saved image: /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183545_177631/captures/latest_rgb.jpg[0m
+[fruit_detection_node-8] [0m[INFO] [1790620556.649470210] [fruit_detection_node]: Captured /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183545_177631/captures/latest_rgb.jpg; starting inference...[0m
+[fruit_detection_node-8] /home/user/.local/lib/python3.10/site-packages/inference_sdk/http/client.py:120: InferenceSDKGuidanceWarning: This client sends the Roboflow API key through the legacy channel (query parameter / request body). Sending it as the `Authorization: Bearer <api_key>` header is recommended and works with inference servers from release 1.5.0 onward. Opt in with InferenceConfiguration(api_key_transport='header'); use 'both' for a transition period safe with every server version. Set api_key_transport='legacy' explicitly to keep the current behaviour and silence this warning.
+[fruit_detection_node-8]   warnings.warn(
+[fruit_detection_node-8] [0m[INFO] [1790620558.594428168] [fruit_detection_node]: Roboflow detected 1 object(s)[0m
+[fruit_detection_node-8] [0m[INFO] [1790620558.594943406] [fruit_detection_node]:   Apple: 1[0m
+[fruit_detection_node-8] [0m[INFO] [1790620558.595443141] [fruit_detection_node]:     center=(494.5, 570.5), size=(305.0 x 85.0), confidence=0.536[0m
+[fruit_detection_node-8] [0m[INFO] [1790620558.595916587] [fruit_detection_node]: Saved detections to /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183545_177631/captures/latest_detections.json[0m
+[fruit_detection_node-8] [0m[INFO] [1790620558.596385826] [fruit_detection_node]: Saved annotated image to /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183545_177631/captures/latest_detections_annotated.jpg[0m
+[fruit_detection_node-8] [0m[INFO] [1790620558.596854199] [fruit_detection_node]: Results published for downstream processing[0m
+[camera_to_base_node-9] [0m[INFO] [1790620558.601473582] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620558.651834473] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).[0m
+[camera_to_base_node-9] [0m[INFO] [1790620558.652874667] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620558.748252001] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620558.847791109] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).[0m
+[camera_to_base_node-9] [0m[INFO] [1790620558.849138644] [camera_to_base_node]: EXECUTE: SENT: Servo angles published to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived. Sent NaN (hold, no servo) for: joint_1.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620558.851062561] [camera_to_base_node]: PIPELINE: COMPLETE: Servo angles sent to the arm.[0m
+[rviz2-4] [0m[INFO] [1790620610.666921513] [move_group_interface]: Ready to take commands for planning group arm.[0m
+[rviz2-4] [0m[INFO] [1790620610.668846053] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[rviz2-4] [33m[WARN] [1790620610.671574377] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 257 (expected) vs. 264 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.671821933] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 299 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.671864845] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 304 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.671897040] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 307 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.672586202] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 403 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.672771337] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 425 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.674576561] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 679 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.675442456] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 796 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.675500393] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 803 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.676425168] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 934 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.676483201] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 941 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.676518092] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 946 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.676551920] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 950 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.676581962] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 953 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677431472] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 963 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677518239] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 964 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677560368] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 965 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677588456] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 966 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677614679] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 967 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677640021] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 968 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677678145] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 969 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677710142] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 970 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677736241] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 971 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677766867] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 972 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677792928] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 973 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677818169] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 974 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677843378] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 975 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677869175] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 976 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677894436] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 977 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677919685] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 978 (received)[0m
+[rviz2-4] [33m[WARN] [1790620610.677945238] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 979 (received)[0m
+[rviz2-4] [0m[INFO] [1790620610.677969890] [interactive_marker_display_95949550522240]: Sending request for interactive markers[0m
+[rviz2-4] [33m[WARN] [1790620610.677984172] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 980 (received)[0m
+[rviz2-4] [0m[INFO] [1790620610.704655370] [interactive_marker_display_95949550522240]: Sending request for interactive markers[0m
+[rviz2-4] [0m[INFO] [1790620610.704679494] [interactive_marker_display_95949550522240]: Service response received for initialization[0m
+[rviz2-4] [0m[INFO] [1790620610.735919887] [interactive_marker_display_95949550522240]: Service response received for initialization[0m
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[rviz2-4] [0m[INFO] [1790620687.404031741] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[rviz2-4] [33m[WARN] [1790620687.409359243] [interactive_marker_display_95949550522240]: Server not available while running, resetting[0m
+[move_group-2] [0m[INFO] [1790620687.404327710] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[robot_state_publisher-1] [0m[INFO] [1790620687.404475053] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[static_transform_publisher-6] [0m[INFO] [1790620687.404626934] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[static_transform_publisher-5] [0m[INFO] [1790620687.406310786] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[move_group-2] [0m[INFO] [1790620687.520344707] [moveit.ros_planning_interface.moveit_cpp]: Deleting MoveItCpp[0m
+[move_group-2] [0m[INFO] [1790620687.525208302] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopped publishing maintained planning scene.[0m
+[move_group-2] [0m[INFO] [1790620687.525897744] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping world geometry monitor[0m
+[move_group-2] [0m[INFO] [1790620687.526158060] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor[0m
+[move_group-2] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[move_group-2]          at line 127 in ./src/class_loader.cpp
+[INFO] [robot_state_publisher-1]: process has finished cleanly [pid 34557]
+[INFO] [static_transform_publisher-5]: process has finished cleanly [pid 34565]
+[INFO] [static_transform_publisher-6]: process has finished cleanly [pid 34567]
+[move_group-2] Stack trace (most recent call last):
+[move_group-2] #16   Object "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", at 0xffffffffffffffff, in 
+[move_group-2] #15   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x55b75bdb5724, in 
+[move_group-2] #14   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x72ee047d0e3f, in __libc_start_main
+[rviz2-4] 
+[rviz2-4] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[rviz2-4] This error state is being overwritten:
+[rviz2-4] 
+[rviz2-4]   'rcl node's context is invalid, at ./src/rcl/node.c:428'
+[rviz2-4] 
+[rviz2-4] with this new error message:
+[rviz2-4] 
+[rviz2-4]   'publisher's context is invalid, at ./src/rcl/publisher.c:389'
+[rviz2-4] 
+[rviz2-4] rcutils_reset_error() should be called after error handling to avoid this.
+[rviz2-4] <<<
+[move_group-2] #13   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x72ee047d0d8f, in 
+[move_group-2] #12   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x55b75bdb465b, in 
+[move_group-2] #11   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x55b75bdb6709, in 
+[move_group-2] #10   Object "/opt/ros/humble/lib/libmoveit_cpp.so.2.5.9", at 0x72ee0513a876, in moveit_cpp::MoveItCpp::~MoveItCpp()
+[move_group-2] #9    Object "/opt/ros/humble/lib/libmoveit_cpp.so.2.5.9", at 0x72ee05138ba9, in 
+[move_group-2] #8    Object "/opt/ros/humble/lib/libmoveit_trajectory_execution_manager.so.2.5.9", at 0x72ee044c6495, in trajectory_execution_manager::TrajectoryExecutionManager::~TrajectoryExecutionManager()
+[move_group-2] #7    Object "/opt/ros/humble/lib/libmoveit_trajectory_execution_manager.so.2.5.9", at 0x72ee044d93a9, in 
+[move_group-2] #6    Object "/opt/ros/humble/lib/librclcpp.so", at 0x72ee04d98ebc, in rclcpp::Node::~Node()
+[move_group-2] #5    Object "/opt/ros/humble/lib/librclcpp.so", at 0x72ee04d98e5e, in rclcpp::Node::~Node()
+[move_group-2] #4    Object "/opt/ros/humble/lib/librclcpp.so", at 0x72ee04d73f59, in 
+[move_group-2] #3    Object "/opt/ros/humble/lib/librclcpp.so", at 0x72ee04da2509, in 
+[move_group-2] #2    Object "/opt/ros/humble/lib/librclcpp.so", at 0x72ee04da2450, in rclcpp::node_interfaces::NodeBase::~NodeBase()
+[move_group-2] #1    Object "/opt/ros/humble/lib/librclcpp.so", at 0x72ee04d73f59, in 
+[move_group-2] #0    Object "/opt/ros/humble/lib/librclcpp.so", at 0x72ee04d78dd1, in rclcpp::CallbackGroup::~CallbackGroup()
+[move_group-2] Segmentation fault (Address not mapped to object [0x72ede55ba798])
+[rviz2-4] [0m[INFO] [1790620687.623906483] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor[0m
+[INFO] [saved_image_capture_node-7]: process has finished cleanly [pid 34569]
+[INFO] [camera_to_base_node-9]: process has finished cleanly [pid 34573]
+[INFO] [fruit_detection_node-8]: process has finished cleanly [pid 34571]
+[ERROR] [move_group-2]: process has died [pid 34559, exit code -11, cmd '/opt/ros/humble/lib/moveit_ros_move_group/move_group --ros-args --params-file /tmp/launch_params_lr7i4jad --params-file /tmp/launch_params_83aal142'].
+[move_group-2] [0m
+[ERROR] [rviz2-4]: process has died [pid 34563, exit code -11, cmd '/opt/ros/humble/lib/rviz2/rviz2 -d /home/user/ros2_ws/install/robot_arm_movit_config/share/robot_arm_movit_config/config/moveit.rviz --ros-args -r __node:=vision_rviz --params-file /tmp/launch_params_r7dm3mof --params-file /tmp/launch_params_n3lcgp7t --params-file /tmp/launch_params_tc_us_y1 --params-file /tmp/launch_params_aavbibgj'].

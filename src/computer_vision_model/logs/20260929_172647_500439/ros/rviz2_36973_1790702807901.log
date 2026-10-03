@@ -1,0 +1,19 @@
+[INFO] [1790702808.613229532] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1790702808.613336214] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1790702808.670901689] [rviz2]: Stereo is NOT SUPPORTED
+[ERROR] [1790702812.177243787] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[INFO] [1790702812.212260971] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[INFO] [1790702812.322558391] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0435938 seconds
+[INFO] [1790702812.322610813] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...
+[INFO] [1790702812.322627600] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[WARN] [1790702812.347843910] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'
+[INFO] [1790702812.451235957] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[INFO] [1790702812.451911218] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[INFO] [1790702812.493374101] [interactive_marker_display_111287721871136]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[INFO] [1790702812.506004112] [moveit_ros_visualization.motion_planning_frame]: group arm
+[INFO] [1790702812.506036802] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[INFO] [1790702812.516650394] [interactive_marker_display_111287721871136]: Sending request for interactive markers
+[INFO] [1790702812.551162403] [interactive_marker_display_111287721871136]: Service response received for initialization
+[INFO] [1790702872.538128412] [move_group_interface]: Ready to take commands for planning group arm.
+[INFO] [1790702872.543185088] [moveit_ros_visualization.motion_planning_frame]: group arm
+[INFO] [1790703301.666281063] [rclcpp]: signal_handler(SIGINT/SIGTERM)

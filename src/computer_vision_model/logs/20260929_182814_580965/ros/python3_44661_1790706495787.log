@@ -1,0 +1,16 @@
+[INFO] [1790706496.168965582] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[INFO] [1790706496.204598940] [camera_to_base_node]: HOME: SENT: Homing: servo angles published to /esp32/joint_commands, settling for 3 s before the pipeline runs. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived.
+[INFO] [1790706499.306886135] [camera_to_base_node]: HOME: SUCCESS: Arm commanded home; starting the pipeline.
+[INFO] [1790706507.718325211] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.
+[INFO] [1790706507.817057380] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+[INFO] [1790706507.819644540] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+[INFO] [1790706507.908224391] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790706508.006524499] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).
+[INFO] [1790706508.009109729] [camera_to_base_node]: EXECUTE: SENT: Servo angles published to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived. Sent NaN (hold, no servo) for: joint_1, joint_6.
+[INFO] [1790706509.011583669] [camera_to_base_node]: STAB_POSE: SUCCESS: Descending 5.0 cm from the hover pose; solving IK for the stab target.
+[INFO] [1790706509.014098743] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790706509.105436383] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).
+[INFO] [1790706509.207499036] [camera_to_base_node]: STAB_PLAN: STARTED: Planning the descent with RRTConnectkConfigDefault via /plan_kinematic_path (planning only; MoveIt does not execute).
+[INFO] [1790706509.306403298] [camera_to_base_node]: STAB_PLAN: SUCCESS: 26 waypoints; streaming them over 2.0 s.
+[INFO] [1790706511.904959100] [camera_to_base_node]: STAB_EXECUTE: SENT: Descent complete: 26 waypoints sent to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the fork arrived.
+[INFO] [1790706511.906957743] [camera_to_base_node]: PIPELINE: COMPLETE: Hover reached and stab descent streamed to the arm.

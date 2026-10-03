@@ -1,0 +1,15 @@
+[INFO] [1790711271.265013735] [fruit_detection_node]: Fruit detection node ready
+[INFO] [1790711271.267054877] [fruit_detection_node]:   Model: sliced-fruits-and-vegetables-rnw8f/1
+[INFO] [1790711271.268810752] [fruit_detection_node]:   API: https://serverless.roboflow.com
+[INFO] [1790711271.270592986] [fruit_detection_node]:   API key source: ROBOFLOW_API_KEY environment variable
+[INFO] [1790711271.272297839] [fruit_detection_node]:   Detection results: /computer_vision/detections
+[INFO] [1790711281.178641609] [fruit_detection_node]: Requesting a camera snapshot...
+[INFO] [1790711281.227021970] [fruit_detection_node]: Captured /home/user/ros2_ws/src/computer_vision_model/logs/20260929_194743_508964/captures/latest_rgb.jpg; starting inference...
+[INFO] [1790711286.833042101] [fruit_detection_node]: Roboflow detected 3 object(s)
+[INFO] [1790711286.834992750] [fruit_detection_node]:   Lime: 3
+[INFO] [1790711286.837537112] [fruit_detection_node]:     center=(477.5, 231.0), size=(309.0 x 162.0), confidence=0.786
+[INFO] [1790711286.839836440] [fruit_detection_node]:     center=(262.0, 197.5), size=(286.0 x 135.0), confidence=0.757
+[INFO] [1790711286.842019952] [fruit_detection_node]:     center=(428.0, 112.5), size=(422.0 x 113.0), confidence=0.402
+[INFO] [1790711286.843745709] [fruit_detection_node]: Saved detections to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_194743_508964/captures/latest_detections.json
+[INFO] [1790711286.845414841] [fruit_detection_node]: Saved annotated image to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_194743_508964/captures/latest_detections_annotated.jpg
+[INFO] [1790711286.847403357] [fruit_detection_node]: Results published for downstream processing

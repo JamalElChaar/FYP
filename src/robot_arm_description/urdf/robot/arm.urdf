@@ -95,7 +95,7 @@
   </link>
   <joint
     name="joint_1"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0 0 0.05"
       rpy="0 0 0" />
@@ -105,7 +105,8 @@
       link="link_1" />
     <axis
       xyz="0 0 1" />
-  <limit lower="-1.570796" upper="1.570796" effort="10" velocity="1.5"/>
+  <!-- No position limits: the base rotates a full 360 deg. -->
+  <limit effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_2">
@@ -159,7 +160,7 @@
       link="link_2" />
     <axis
       xyz="0.778551124052 -0.627581187765668 0" />
-  <limit lower="-0.785398" upper="2.356194" effort="10" velocity="1.5"/>
+  <limit lower="-1.808796" upper="1.332796" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_3">
@@ -213,7 +214,7 @@
       link="link_3" />
     <axis
       xyz="-0.778551124051999 0.62758118776567 0" />
-  <limit lower="-2.007129" upper="1.134464" effort="10" velocity="1.5"/>
+  <limit lower="-1.943796" upper="1.197796" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_4">
@@ -321,7 +322,7 @@
       link="link_5" />
     <axis
       xyz="-0.7748550616 0.6320449991 0.00816229119891543" />
-  <limit lower="-3.490659" upper="-0.349066" effort="10" velocity="1.5"/>
+  <limit lower="-1.570796" upper="1.570796" effort="10" velocity="1.5"/>
   </joint>
   <link
     name="link_6">
@@ -363,12 +364,12 @@
       </geometry>
     </collision>
   </link>
-<joint name="joint_6" type="revolute">
+<joint name="joint_6" type="continuous">
   <origin xyz="0.0639420416 0.0759886404 0.0116150426" rpy="0 0 0"/>
   <parent link="link_5"/>
   <child link="link_6"/>
   <axis xyz="0.65067 0.75931 0.0081623"/>
-<limit lower="-1.570796" upper="1.570796" effort="10" velocity="1.5"/>
+<limit effort="10" velocity="1.5"/>
   </joint>
 
   <!-- ros2_control is added via arm.urdf.xacro + robot_arm_ros2_control.urdf.xacro -->

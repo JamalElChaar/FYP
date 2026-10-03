@@ -1,0 +1,2 @@
+[INFO] [1790708093.480515464] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[ERROR] [1790708103.461213769] [camera_to_base_node]: SELECTION: ERROR: No detections passed the confidence threshold

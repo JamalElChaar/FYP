@@ -1,0 +1,2 @@
+[INFO] [1790708012.251680506] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[INFO] [1790708022.801431073] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.

@@ -7,6 +7,39 @@ import numpy as np
 import yaml
 
 
+def correct_default_principal_point(metadata):
+    """Undo the Astra driver's 4:3 assumption in a recorded principal point.
+
+    When no calibration file is loaded, the driver synthesises intrinsics with
+    cy = width * 3/8 - 0.5 (astra_camera/src/utils.cpp). That is the true
+    centre only for a 4:3 mode; at 16:9 it is wrong by a quarter of the image
+    height -- 479.5 instead of 359.5 at 1280x720, about 8 degrees of ray tilt.
+    Because the plane intersection pins z, that tilt lands entirely in x and y:
+    roughly 150 mm of ground error at this camera's geometry.
+
+    Only a value matching the driver's formula is touched, and only when the
+    image is not 4:3, so a genuine calibration is never overwritten. Returns
+    (old, new) when a correction was made, otherwise None.
+    """
+    try:
+        width = int(metadata['rgb']['width'])
+        height = int(metadata['rgb']['height'])
+        recorded = float(metadata['camera_intrinsics']['cy'])
+    except (KeyError, TypeError, ValueError):
+        return None
+    if width <= 0 or height <= 0:
+        return None
+    driver_default = width * 3.0 / 8.0 - 0.5
+    true_centre = height / 2.0 - 0.5
+    # Nothing to do when the formula happens to be right (a 4:3 capture).
+    if abs(driver_default - true_centre) <= 1.0:
+        return None
+    if abs(recorded - driver_default) > 0.51:
+        return None          # a real calibration, not the synthesised default
+    metadata['camera_intrinsics']['cy'] = true_centre
+    return recorded, true_centre
+
+
 def prepare_saved_image(image_path, calibration_path, output_directory):
     source = Path(image_path).expanduser().resolve()
     if not source.is_file():
@@ -29,6 +62,13 @@ def prepare_saved_image(image_path, calibration_path, output_directory):
     if not isinstance(metadata, dict):
         raise ValueError('Calibration YAML must contain a mapping')
     metadata = deepcopy(metadata)
+    # Fix the driver's 4:3 principal point before anything reads the intrinsics.
+    corrected = correct_default_principal_point(metadata)
+    if corrected:
+        metadata.setdefault('_corrections', {})['cy'] = {
+            'recorded': corrected[0], 'used': corrected[1],
+            'reason': "Astra driver default assumes 4:3 (cy = width*3/8 - 0.5); "
+                      "replaced with the true centre for this image's aspect ratio"}
     try:
         width, height = int(metadata['rgb']['width']), int(metadata['rgb']['height'])
         frame = str(metadata['capture']['rgb_frame_id']).strip()

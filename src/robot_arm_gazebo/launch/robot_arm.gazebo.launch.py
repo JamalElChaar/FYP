@@ -170,10 +170,11 @@ def generate_launch_description():
 
     camera_arguments = [
         DeclareLaunchArgument('use_tray', default_value='true', choices=['true', 'false']),
-        DeclareLaunchArgument('camera_x', default_value='0.22'),
-        DeclareLaunchArgument('camera_y', default_value='-0.30'),
-        DeclareLaunchArgument('camera_z', default_value='0.434'),
-        DeclareLaunchArgument('camera_pitch', default_value='0.872664626'),
+        DeclareLaunchArgument('camera_x', default_value='-0.2469'),
+        DeclareLaunchArgument('camera_y', default_value='-0.5069'),
+        DeclareLaunchArgument('camera_z', default_value='0.228'),
+        DeclareLaunchArgument('camera_pitch', default_value='0.314159265'),
+        DeclareLaunchArgument('camera_yaw', default_value='0.785398163'),
     ]
 
     # Include Robot State Publisher launch file if enabled
@@ -190,6 +191,7 @@ def generate_launch_description():
             'camera_y': LaunchConfiguration('camera_y'),
             'camera_z': LaunchConfiguration('camera_z'),
             'camera_pitch': LaunchConfiguration('camera_pitch'),
+            'camera_yaw': LaunchConfiguration('camera_yaw'),
             'use_rviz': use_rviz,
             'use_sim_time': use_sim_time
         }.items(),

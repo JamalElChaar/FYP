@@ -1,0 +1,1262 @@
+VISION PIPELINE PHASE REPORT
+All Cartesian values are metres; joint solutions are ROS angles.
+
+[2026-09-29T18:15:17.870625+00:00] CONFIGURATION
+Camera body reference relative to base: (-0.2469, -0.5069, 0.228) m.
+Camera RPY: (0.0, 0.314159265, 0.785398163) rad.
+Fruit plane Z: -0.006 m. Camera extrinsics are configured values, not automatically calibrated.
+Joint angles will be PUBLISHED to /esp32/joint_commands; the arm will move.
+
+
+[2026-09-29T18:15:17.870867+00:00] IMAGE MODE
+Image: /home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg
+Calibration: auto-discover beside image
+Using the recorded optical-to-base transform from the calibration YAML; live camera mount arguments are ignored.
+
+[2026-09-29T18:15:19.161644+00:00] PROCESS EXIT
+solution_joint_state_node-3: exit code 1; see launch.log for driver/process error details.
+
+[2026-09-29T18:15:19.425170+00:00] STARTUP — READY
+Waiting for one capture and its detections.
+{
+  "transform_source": "tf",
+  "plane_frame": "base_link",
+  "plane_z_m": -0.006,
+  "target_offset_z_m": 0.15,
+  "target_link": "link_6",
+  "target_quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "execution_enabled": false
+}
+
+[2026-09-29T18:15:28.835664+00:00] CAPTURE — capturing
+
+
+[2026-09-29T18:15:28.877458+00:00] IMAGE_INPUT — SUCCESS
+Loaded image and matching calibration; passing copied RGB image to detection.
+{
+  "source_image": "/home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg",
+  "source_calibration": "/home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.yaml",
+  "image_dimensions": {
+    "width": 1280,
+    "height": 720,
+    "file": "latest_rgb.jpg"
+  },
+  "camera_intrinsics": {
+    "fx": 855.5133071122945,
+    "fy": 855.5133071122945,
+    "cx": 639.5,
+    "cy": 359.5,
+    "distortion_model": "plumb_bob",
+    "d": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "binning": [
+      0,
+      0
+    ],
+    "roi": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "recorded_transform": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.6625,
+      -0.3475,
+      0.244
+    ],
+    "quaternion_xyzw": [
+      -0.7474342423978176,
+      0.3095974003572531,
+      -0.2249356780043492,
+      0.5430427641944555
+    ]
+  },
+  "pipeline_image": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_181517_869825/captures/latest_rgb.jpg"
+}
+
+[2026-09-29T18:15:28.879677+00:00] CAPTURE — SUCCESS
+RGB image and CameraInfo saved; passing image to Roboflow.
+{
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_181517_869825/captures/latest_rgb.jpg",
+  "metadata_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_181517_869825/captures/latest_capture.yaml"
+}
+
+[2026-09-29T18:15:28.882095+00:00] DETECTION — inferencing
+/home/user/ros2_ws/src/computer_vision_model/logs/20260929_181517_869825/captures/latest_rgb.jpg
+
+[2026-09-29T18:15:31.001870+00:00] DETECTION — SUCCESS
+Passing all retained detections to plane transformation (pixel units).
+{
+  "schema_version": 1,
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_181517_869825/captures/latest_rgb.jpg",
+  "image": {
+    "width": 1280,
+    "height": 720
+  },
+  "detection_count": 1,
+  "detections": [
+    {
+      "id": 0,
+      "label": "Apple",
+      "confidence": 0.5356377363204956,
+      "center_x": 494.5,
+      "center_y": 570.5,
+      "width": 305.0,
+      "height": 85.0,
+      "x_min": 342.0,
+      "y_min": 528.0,
+      "x_max": 647.0,
+      "y_max": 613.0,
+      "class_id": 0
+    }
+  ],
+  "detections_by_label": {
+    "Apple": [
+      {
+        "id": 0,
+        "label": "Apple",
+        "confidence": 0.5356377363204956,
+        "center_x": 494.5,
+        "center_y": 570.5,
+        "width": 305.0,
+        "height": 85.0,
+        "x_min": 342.0,
+        "y_min": 528.0,
+        "x_max": 647.0,
+        "y_max": 613.0,
+        "class_id": 0
+      }
+    ]
+  }
+}
+
+[2026-09-29T18:15:31.005866+00:00] DETECTION — results_ready
+/home/user/ros2_ws/src/computer_vision_model/logs/20260929_181517_869825/captures/latest_detections.json
+
+[2026-09-29T18:15:31.009013+00:00] SELECTION — SUCCESS
+Highest-confidence detection; passing box centre to projection.
+{
+  "id": 0,
+  "label": "Apple",
+  "confidence": 0.5356377363204956,
+  "center_x": 494.5,
+  "center_y": 570.5,
+  "width": 305.0,
+  "height": 85.0,
+  "x_min": 342.0,
+  "y_min": 528.0,
+  "x_max": 647.0,
+  "y_max": 613.0,
+  "class_id": 0
+}
+
+[2026-09-29T18:15:31.029244+00:00] TRANSFORM — SUCCESS
+Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+{
+  "pixel_uv": [
+    494.5,
+    570.5
+  ],
+  "ray_camera": [
+    -0.16948888906174236,
+    0.24663555580708718,
+    1.0
+  ],
+  "point_camera_m": [
+    -0.07296129691988863,
+    0.10617126655238968,
+    0.4304783477181792
+  ],
+  "point_base_m": [
+    -0.03219465172844957,
+    -0.18901179643255595,
+    -0.006
+  ],
+  "transform": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.2469,
+      -0.5069,
+      0.228
+    ],
+    "quaternion_xyzw": [
+      -0.7474342424304403,
+      0.3095974004360107,
+      -0.22493567804925013,
+      0.5430427640860549
+    ]
+  },
+  "intrinsics": {
+    "fx": 855.5133071122945,
+    "fy": 855.5133071122945,
+    "cx": 639.5,
+    "cy": 359.5,
+    "distortion_model": "plumb_bob",
+    "d": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "binning": [
+      0,
+      0
+    ],
+    "roi": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
+
+[2026-09-29T18:15:31.030369+00:00] POSE — SUCCESS
+Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+{
+  "frame": "base_link",
+  "link": "link_6",
+  "position_m": [
+    -0.03219465172844957,
+    -0.18901179643255595,
+    0.144
+  ],
+  "quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ]
+}
+
+[2026-09-29T18:15:31.126362+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "1 of 40",
+  "orientation_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:33.225646+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (2 of 40).
+
+[2026-09-29T18:15:33.326143+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "2 of 40",
+  "orientation_xyzw": [
+    -0.4475843348754049,
+    0.5061428126732078,
+    0.058449240952852304,
+    0.7348955045347815
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:35.425895+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (3 of 40).
+
+[2026-09-29T18:15:35.527305+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "3 of 40",
+  "orientation_xyzw": [
+    -0.5603778560043299,
+    0.5360915360790225,
+    0.05949176295165879,
+    0.6285246642617363
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:37.625677+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (4 of 40).
+
+[2026-09-29T18:15:37.726678+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "4 of 40",
+  "orientation_xyzw": [
+    -0.513230546592912,
+    0.3848426805217722,
+    0.10188055824511438,
+    0.760336023837107
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:39.825468+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (5 of 40).
+
+[2026-09-29T18:15:39.926040+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "5 of 40",
+  "orientation_xyzw": [
+    -0.4809281705229807,
+    0.5252508654535156,
+    -0.07405694555689274,
+    0.6980939707177933
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:42.025648+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (6 of 40).
+
+[2026-09-29T18:15:42.127563+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "6 of 40",
+  "orientation_xyzw": [
+    -0.6406288537480861,
+    0.41752229917453587,
+    0.06377740191852174,
+    0.6412505317283925
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:44.225866+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (7 of 40).
+
+[2026-09-29T18:15:44.327503+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "7 of 40",
+  "orientation_xyzw": [
+    -0.4926207199072279,
+    0.3710498018188144,
+    -0.03870403974602637,
+    0.7862244388186119
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:46.425835+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (8 of 40).
+
+[2026-09-29T18:15:46.527384+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "8 of 40",
+  "orientation_xyzw": [
+    -0.5990698078771972,
+    0.46788021295076804,
+    -0.09382626488488308,
+    0.6429619768204602
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:48.625820+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (9 of 40).
+
+[2026-09-29T18:15:48.727372+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "9 of 40",
+  "orientation_xyzw": [
+    -0.6146193929509444,
+    0.34076663048336087,
+    -0.031048210039887572,
+    0.7107440566131725
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:50.825993+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (10 of 40).
+
+[2026-09-29T18:15:50.927455+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "10 of 40",
+  "orientation_xyzw": [
+    -0.3966960538425691,
+    0.6387118511609303,
+    0.0816136740456119,
+    0.6542313201468483
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:53.025873+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (11 of 40).
+
+[2026-09-29T18:15:53.127466+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "11 of 40",
+  "orientation_xyzw": [
+    -0.5845828373756232,
+    0.45612396782196407,
+    0.2501414353622353,
+    0.6226099055902775
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:55.225570+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (12 of 40).
+
+[2026-09-29T18:15:55.327447+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "12 of 40",
+  "orientation_xyzw": [
+    -0.3226698065825145,
+    0.43892611482210425,
+    0.008189843251550288,
+    0.8385469504533962
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:57.425908+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (13 of 40).
+
+[2026-09-29T18:15:57.527356+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "13 of 40",
+  "orientation_xyzw": [
+    -0.6104400791472083,
+    0.6038630851807826,
+    -0.032006479234248285,
+    0.5115543660391578
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:15:59.625863+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (14 of 40).
+
+[2026-09-29T18:15:59.727532+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "14 of 40",
+  "orientation_xyzw": [
+    -0.5775881675780853,
+    0.23565731388237202,
+    0.14328051464588978,
+    0.7683282066996786
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:01.825991+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (15 of 40).
+
+[2026-09-29T18:16:01.927780+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "15 of 40",
+  "orientation_xyzw": [
+    -0.4368406700286414,
+    0.48014911110071307,
+    -0.227093440471621,
+    0.7259859705344761
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:04.025864+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (16 of 40).
+
+[2026-09-29T18:16:04.127333+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "16 of 40",
+  "orientation_xyzw": [
+    -0.7437738831168821,
+    0.35734428541989155,
+    -0.030742774810921483,
+    0.5640570487706954
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:06.225885+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (17 of 40).
+
+[2026-09-29T18:16:06.327352+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "17 of 40",
+  "orientation_xyzw": [
+    -0.5715164919928203,
+    0.24161759071198669,
+    -0.13971004237656806,
+    0.7716676378453958
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:08.426175+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (18 of 40).
+
+[2026-09-29T18:16:08.527625+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "18 of 40",
+  "orientation_xyzw": [
+    -0.45394299151940615,
+    0.6841295866380669,
+    0.23476578071293586,
+    0.5203724602081532
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:10.625918+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (19 of 40).
+
+[2026-09-29T18:16:10.727530+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "19 of 40",
+  "orientation_xyzw": [
+    -0.3791240181167391,
+    0.3338053156076554,
+    0.32604600391171046,
+    0.7990825949126267
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:12.825927+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (20 of 40).
+
+[2026-09-29T18:16:12.927553+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "20 of 40",
+  "orientation_xyzw": [
+    -0.29122366456727744,
+    0.6919569397937316,
+    -0.1437633898985359,
+    0.6447607760962059
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:15.026366+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (21 of 40).
+
+[2026-09-29T18:16:15.127297+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "21 of 40",
+  "orientation_xyzw": [
+    -0.7488391925279325,
+    0.3901885330635902,
+    0.2427278952880438,
+    0.47757296955421824
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:17.226307+00:00] IK_RESULT — RETRY
+NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (22 of 40).
+
+[2026-09-29T18:16:17.327621+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "22 of 40",
+  "orientation_xyzw": [
+    -0.29995243687694534,
+    0.24460606422805575,
+    -0.05980204720485661,
+    0.9201196248882809
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      0.144
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:16:18.185413+00:00] IK_RESULT — INTERRUPTED
+Launch stopped before this phase completed.
+
+[2026-09-29T18:16:18.197629+00:00] LAUNCH SHUTDOWN
+ctrl-c (SIGINT)

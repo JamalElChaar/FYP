@@ -112,23 +112,23 @@ CustomHardwareInterface::on_init(const hardware_interface::HardwareInfo &info) {
   //
   // Joints 2-5 were calibrated against the real arm by matching the RViz pose
   // to the physical pose at two points, servo 0 deg and servo 90 deg:
-  //   joint_2: ros  60 -> servo 90, ros  -60 -> servo 0
+  //   joint_2: ros -78.782 -> servo 0 (re-measured after the servo was
+  //            reassembled; taken as the reference, direction forced to +1)
   //   joint_3: ros -30 -> servo 90, ros -110 -> servo 0
   //   joint_4: ros  90 -> servo 90, ros    0 -> servo 0
   //   joint_5: ros -110 -> servo 90, ros -20 -> servo 0
   //
-  // The servos are direct drive, so 180 deg of servo must equal 180 deg of
-  // joint: direction is +-1 by construction. The offsets are the
-  // least-squares fit of the two measured points at that fixed slope, so the
-  // pose estimates land within +-15 deg (joint_2) and +-5 deg (joint_3);
-  // joints 4 and 5 fit exactly. Re-measure joint_2 to tighten it.
+  // Joints 2-5 are direct drive: 180 deg of servo equals 180 deg of joint,
+  // so their direction is +-1 and the offsets are the least-squares fit at
+  // that fixed slope (joint_3 within +-5 deg; 4 and 5 exact).
+  //
   //
   // joint_1 and joint_6 are NOT calibrated yet and keep the old placeholder
   // (offset 90, direction +1). joint_1 is still disabled in the firmware.
   //
   // These values must stay in sync with servo_offsets_deg/servo_directions in
   // control_arm's direct_esp32_moveit_node and joint_target_node.
-  static constexpr double kJointOffsets[6] = {90.0, 45.0, 115.0, 0.0, -20.0, 90.0};
+  static constexpr double kJointOffsets[6] = {90.0, 103.6364, 111.3713, 0.0, 90.0, 90.0};
   static constexpr double kJointDirections[6] = {1.0, 1.0, 1.0, 1.0, -1.0, 1.0};
 
   for (size_t i = 0; i < num_joints; ++i) {

@@ -1,0 +1,416 @@
+[final_angles_sequential] Writing this run's full output to /home/user/ros2_ws/src/custom_hardware/logs/final_angles_sequential_20260928_171336.txt
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [robot_state_publisher-1]: process started with pid [27530]
+[INFO] [move_group-2]: process started with pid [27532]
+[INFO] [rviz2-3]: process started with pid [27534]
+[INFO] [joint_state_publisher-4]: process started with pid [27536]
+[INFO] [ros2_control_node-5]: process started with pid [27538]
+[INFO] [spawner-6]: process started with pid [27540]
+[INFO] [spawner-7]: process started with pid [27542]
+[rviz2-3] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-user'
+[ros2_control_node-5] [33m[WARN] [1790615617.028570291] [controller_manager]: [Deprecated] Passing the robot description parameter directly to the control_manager node is deprecated. Use '~/robot_description' topic from 'robot_state_publisher' instead.[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.036626929] [resource_manager]: Loading hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790615617.046555370] [resource_manager]: Initialize hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790615617.055827391] [CustomHardwareInterface]: Hardware parameters:[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.055848948] [CustomHardwareInterface]:   Simulation mode: false[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.055853345] [CustomHardwareInterface]:   Communication: micro-ROS (ROS2 topics)[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.055994322] [CustomHardwareInterface]: Joint 0: 'joint_1'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056001386] [CustomHardwareInterface]: Joint 1: 'joint_2'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056005299] [CustomHardwareInterface]: Joint 2: 'joint_3'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056008950] [CustomHardwareInterface]: Joint 3: 'joint_4'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056012537] [CustomHardwareInterface]: Joint 4: 'joint_5'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056016138] [CustomHardwareInterface]: Joint 5: 'joint_6'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056019795] [CustomHardwareInterface]: CustomHardwareInterface initialized with 6 joints[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056033098] [resource_manager]: Successful initialization of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056117573] [CustomHardwareInterface]: Exported 12 state interfaces[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056201793] [CustomHardwareInterface]: Exported 6 command interfaces[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056245111] [resource_manager]: 'configure' hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056251851] [CustomHardwareInterface]: Configuring CustomHardwareInterface...[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056259829] [CustomHardwareInterface]: CustomHardwareInterface configured successfully[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056267581] [resource_manager]: Successful 'configure' of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056275996] [resource_manager]: 'activate' hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790615617.056280546] [CustomHardwareInterface]: Activating CustomHardwareInterface...[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.181806514] [CustomHardwareInterface]: micro-ROS communication initialized[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.181831096] [CustomHardwareInterface]:   Publishing to: /esp32/joint_commands[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.181839220] [CustomHardwareInterface]:   Subscribing to: /esp32/joint_states[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.181848700] [CustomHardwareInterface]: CustomHardwareInterface activated successfully[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.181862853] [resource_manager]: Successful 'activate' of hardware 'RobotSystem'[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.279565821] [robot_state_publisher]: got segment base_link[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.280277313] [robot_state_publisher]: got segment link_1[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.280298137] [robot_state_publisher]: got segment link_2[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.280305461] [robot_state_publisher]: got segment link_3[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.280311586] [robot_state_publisher]: got segment link_4[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.280317582] [robot_state_publisher]: got segment link_5[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.280323061] [robot_state_publisher]: got segment link_6[0m
+[robot_state_publisher-1] [0m[INFO] [1790615617.280328657] [robot_state_publisher]: got segment world[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.286009757] [controller_manager]: update rate is 100 Hz[0m
+[ros2_control_node-5] [0m[INFO] [1790615617.286046512] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50[0m
+[ros2_control_node-5] [33m[WARN] [1790615617.286150624] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.[0m
+[ros2_control_node-5] [33m[WARN] [1790615617.286210937] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [0m[INFO] [1790615617.551374160] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.198309 seconds[0m
+[move_group-2] [0m[INFO] [1790615617.551461655] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[move_group-2] [0m[INFO] [1790615617.551471947] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[move_group-2] [33m[WARN] [1790615617.620641904] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[spawner-6] [0m[INFO] [1790615617.890659190] [spawner_arm_controller]: waiting for service /controller_manager/list_controllers to become available...[0m
+[move_group-2] [0m[INFO] [1790615617.894555867] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-2] [0m[INFO] [1790615617.894719558] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states[0m
+[move_group-2] [0m[INFO] [1790615617.896017195] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[move_group-2] [0m[INFO] [1790615617.896504086] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects[0m
+[move_group-2] [0m[INFO] [1790615617.896522522] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[move_group-2] [0m[INFO] [1790615617.900968194] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'[0m
+[move_group-2] [0m[INFO] [1790615617.900991636] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.[0m
+[move_group-2] [0m[INFO] [1790615617.903241917] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'[0m
+[move_group-2] [0m[INFO] [1790615617.903683686] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry[0m
+[move_group-2] [33m[WARN] [1790615617.904095822] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead[0m
+[move_group-2] [31m[ERROR] [1790615617.904109877] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates[0m
+[move_group-2] [0m[INFO] [1790615617.980085767] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'[0m
+[move_group-2] [0m[INFO] [1790615618.006300253] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'[0m
+[move_group-2] [0m[INFO] [1790615618.015038071] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790615618.015060361] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790615618.015066142] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790615618.015091216] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790615618.015108958] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790615618.015115490] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790615618.015128474] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790615618.015134707] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790615618.015140662] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790615618.015153867] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790615618.015159829] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790615618.015164246] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790615618.015168379] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790615618.015172215] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790615618.015209263] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[spawner-7] [0m[INFO] [1790615617.982022109] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...[0m
+[spawner-7] [33m[WARN] [1790615617.989537734] [spawner_joint_state_broadcaster]: [93mController already loaded, skipping load_controller[0m[0m
+[rviz2-3] [0m[INFO] [1790615618.022618722] [rviz2]: Stereo is NOT SUPPORTED[0m
+[rviz2-3] [0m[INFO] [1790615618.022705588] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)[0m
+[spawner-7] [31m[ERROR] [1790615618.025609353] [spawner_joint_state_broadcaster]: [91mFailed to configure controller[0m[0m
+[move_group-2] [0m[INFO] [1790615618.043708465] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'[0m
+[move_group-2] [0m[INFO] [1790615618.059808740] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[rviz2-3] [0m[INFO] [1790615618.063100317] [rviz2]: Stereo is NOT SUPPORTED[0m
+[move_group-2] [0m[INFO] [1790615618.084043238] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP [0m
+[move_group-2] [0m[INFO] [1790615618.084071303] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC[0m
+[move_group-2] [0m[INFO] [1790615618.085787693] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC][0m
+[move_group-2] [0m[INFO] [1790615618.085812934] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN[0m
+[move_group-2] [0m[INFO] [1790615618.087089050] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN][0m
+[move_group-2] [0m[INFO] [1790615618.087110389] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP[0m
+[move_group-2] [0m[INFO] [1790615618.088373169] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP][0m
+[move_group-2] [0m[INFO] [1790615618.088406235] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'[0m
+[move_group-2] [0m[INFO] [1790615618.094578022] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790615618.115040826] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'[0m
+[move_group-2] [0m[INFO] [1790615618.119532211] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790615618.119637762] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790615618.119645378] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790615618.119676469] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790615618.119695126] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790615618.119701405] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790615618.119715601] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790615618.119722079] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790615618.119727302] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790615618.119741839] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790615618.119747985] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790615618.119752363] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790615618.119756804] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790615618.119760796] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790615618.119764748] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[spawner-6] [33m[WARN] [1790615618.169028358] [spawner_arm_controller]: [93mController already loaded, skipping load_controller[0m[0m
+[ros2_control_node-5] [0m[INFO] [1790615618.190601021] [controller_manager]: Configuring controller 'arm_controller'[0m
+[ros2_control_node-5] [31m[ERROR] [1790615618.190656270] [controller_manager]: Could not configure controller with name 'arm_controller' because no controller with this name exists[0m
+[spawner-6] [31m[ERROR] [1790615618.190788715] [spawner_arm_controller]: [91mFailed to configure controller[0m[0m
+[move_group-2] [0m[INFO] [1790615618.279704523] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller[0m
+[move_group-2] [0m[INFO] [1790615618.280013097] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790615618.280073490] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790615618.282925016] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers[0m
+[move_group-2] [0m[INFO] [1790615618.282953889] [move_group.move_group]: MoveGroup debug mode is ON[0m
+[rviz2-3] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-3]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[move_group-2] [0m[INFO] [1790615618.418951791] [move_group.move_group]: 
+[move_group-2] 
+[move_group-2] ********************************************************
+[move_group-2] * MoveGroup using: 
+[move_group-2] *     - ApplyPlanningSceneService
+[move_group-2] *     - ClearOctomapService
+[move_group-2] *     - CartesianPathService
+[move_group-2] *     - ExecuteTrajectoryAction
+[move_group-2] *     - GetPlanningSceneService
+[move_group-2] *     - KinematicsService
+[move_group-2] *     - MoveAction
+[move_group-2] *     - MotionPlanService
+[move_group-2] *     - QueryPlannersService
+[move_group-2] *     - StateValidationService
+[move_group-2] ********************************************************
+[move_group-2] [0m
+[move_group-2] [0m[INFO] [1790615618.419007283] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner[0m
+[move_group-2] [0m[INFO] [1790615618.419021188] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete[0m
+[move_group-2] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupMoveAction'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-2] [0m[92m
+[move_group-2] You can start planning now!
+[move_group-2] 
+[ERROR] [spawner-7]: process has died [pid 27542, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner joint_state_broadcaster --ros-args'].
+[ERROR] [spawner-6]: process has died [pid 27540, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner arm_controller --ros-args'].
+[joint_state_publisher-4] [0m[INFO] [1790615618.605730389] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...[0m
+[rviz2-3] [31m[ERROR] [1790615621.439728676] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available[0m
+[rviz2-3] [0m[INFO] [1790615621.485209692] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.[0m
+[rviz2-3] [0m[INFO] [1790615621.704158616] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.135284 seconds[0m
+[rviz2-3] [0m[INFO] [1790615621.704209718] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[rviz2-3] [0m[INFO] [1790615621.704225398] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[rviz2-3] [33m[WARN] [1790615621.726074801] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[rviz2-3] [0m[INFO] [1790615621.812200961] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[rviz2-3] [0m[INFO] [1790615621.814706061] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'[0m
+[rviz2-3] [0m[INFO] [1790615621.876588708] [interactive_marker_display_106021499089104]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic[0m
+[rviz2-3] [0m[INFO] [1790615621.897773943] [interactive_marker_display_106021499089104]: Sending request for interactive markers[0m
+[rviz2-3] [0m[INFO] [1790615621.932482024] [interactive_marker_display_106021499089104]: Service response received for initialization[0m
+[rviz2-3] [0m[INFO] [1790615621.972614889] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[rviz2-3] [0m[INFO] [1790615621.972637823] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''[0m
+[rviz2-3] [0m[INFO] [1790615622.025302366] [move_group_interface]: Ready to take commands for planning group arm.[0m
+[rviz2-3] [0m[INFO] [1790615622.027237667] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[ros2_control_node-5] [33m[WARN] [1790615622.286326670] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[INFO] [direct_esp32_moveit_node-8]: process started with pid [27656]
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615622.952684655] [final_angles_sequential]: Waiting for an ESP32 subscriber on /esp32/joint_commands ...[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615622.952854943] [final_angles_sequential]: ESP32 command subscriber discovered[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615622.954225357] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.073998796] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.120947 seconds[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.074038676] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.074046873] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615623.095077337] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615623.098340718] [moveit_ros.robot_model_loader]: No kinematics plugins defined. Fill and load kinematics.yaml![0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.116784117] [move_group_interface]: Ready to take commands for planning group arm.[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.118022523] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.272064673] [final_angles_sequential]: Planning to the full pose (0.166, 0.132, 0.051); Pilz descent is disabled[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.272189954] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790615623.273419327] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615623.273728792] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615623.274741649] [move_group_interface]: Planning request accepted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615623.274874434] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[move_group-2] [0m[INFO] [1790615623.282537844] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615623.283151410] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615623.283570008] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615623.284150220] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[ros2_control_node-5] [33m[WARN] [1790615627.286266596] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615632.286267523] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615633.285701564] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615633.286701279] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615633.286776407] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615633.290396375] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615633.292279650] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.007189 seconds[0m
+[move_group-2] [0m[INFO] [1790615633.296923809] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615633.296986984] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615633.297890123] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615633.298224376] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615633.298250098] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615633.298257436] [final_angles_sequential]: Attempt 1/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615633.298360761] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790615633.299487921] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615633.299576842] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615633.299766262] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615633.302393472] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615633.302430723] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615633.302641058] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615633.302904688] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615633.314971475] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615637.286471697] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615642.286268128] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615643.303498746] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615643.309551580] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615643.310690818] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615643.310824886] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615643.311423146] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.008393 seconds[0m
+[move_group-2] [0m[INFO] [1790615643.315917488] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615643.315959215] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615643.316358958] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615643.317291921] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615643.317337725] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615643.317347057] [final_angles_sequential]: Attempt 2/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615643.317590501] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790615643.317913080] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615643.318142801] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615643.318605544] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615643.321666601] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615643.321692381] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615643.321916765] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615643.322451264] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615643.343786688] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615647.286268892] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615652.286276164] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615653.323369932] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615653.328485034] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615653.328573901] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615653.330474845] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615653.330559583] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.007615 seconds[0m
+[move_group-2] [0m[INFO] [1790615653.340698301] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615653.340736162] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615653.342067973] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615653.342419516] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615653.342441947] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615653.342449890] [final_angles_sequential]: Attempt 3/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615653.342554426] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790615653.343034074] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615653.343118384] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615653.343425173] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615653.351643569] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615653.351666734] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615653.351804269] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615653.352019968] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615653.378594156] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615657.286272253] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615662.286268112] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615663.355732448] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615663.355815722] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615663.359014176] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615663.359163102] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615663.359445357] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.007295 seconds[0m
+[move_group-2] [0m[INFO] [1790615663.384984842] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615663.385027797] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615663.385341390] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615663.386218388] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615663.386255288] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615663.386316867] [final_angles_sequential]: Attempt 4/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615663.386470329] [move_group_interface]: MoveGroup action client/server ready[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615663.387030474] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615663.386839938] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615663.386942083] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790615663.391529955] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615663.391550041] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615663.392097261] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615663.392318166] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615663.401316404] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615667.286266424] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615672.286264923] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615673.393219021] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615673.393821794] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615673.400541029] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615673.402138833] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615673.402539647] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.009953 seconds[0m
+[move_group-2] [0m[INFO] [1790615673.416380245] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615673.416430836] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615673.417438556] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615673.418422072] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615673.418445143] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615673.418453053] [final_angles_sequential]: Attempt 5/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615673.418563774] [move_group_interface]: MoveGroup action client/server ready[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615673.419345326] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615673.418824417] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615673.418938962] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790615673.422171698] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615673.422194281] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615673.422314946] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615673.422523966] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615673.424595163] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615677.286266831] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615682.286266670] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615683.424142627] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615683.424243122] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615683.425856086] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615683.426342028] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615683.426424184] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.003800 seconds[0m
+[move_group-2] [0m[INFO] [1790615683.439650843] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615683.439690536] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615683.440250857] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615683.441142811] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615683.441167966] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615683.441176174] [final_angles_sequential]: Attempt 6/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615683.441287769] [move_group_interface]: MoveGroup action client/server ready[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615683.441850136] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615683.441498266] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615683.441568209] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790615683.451936797] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615683.451985550] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615683.452103806] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615683.452283351] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615683.455944633] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615687.286552077] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615692.286328959] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615693.452600139] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615693.452708742] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615693.460655799] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615693.460750559] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615693.461425438] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.009031 seconds[0m
+[move_group-2] [0m[INFO] [1790615693.474434982] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615693.474474460] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615693.474901345] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615693.475931514] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615693.475958879] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615693.475966817] [final_angles_sequential]: Attempt 7/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615693.476076620] [move_group_interface]: MoveGroup action client/server ready[0m
+[move_group-2] [0m[INFO] [1790615693.476938678] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615693.477035816] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615693.477559472] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615693.482039762] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615693.482063416] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615693.482184242] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615693.482365982] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615693.485045088] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615697.286267668] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615702.286285593] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615703.485838120] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615703.486136025] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615703.486209803] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615703.486528132] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615703.486584084] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.004070 seconds[0m
+[move_group-2] [0m[INFO] [1790615703.493437906] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615703.494185529] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615703.496086284] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615703.496606314] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615703.496632021] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615703.496640730] [final_angles_sequential]: Attempt 8/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615703.496758656] [move_group_interface]: MoveGroup action client/server ready[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615703.497233249] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615703.496979909] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615703.497057126] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790615703.501842016] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615703.501867204] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615703.501987178] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615703.502163996] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615703.511897624] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615707.286274570] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615712.286284869] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615713.509046188] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615713.509147886] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615713.509305736] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615713.509354883] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615713.509416992] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.007142 seconds[0m
+[move_group-2] [0m[INFO] [1790615713.526444492] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615713.526489135] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615713.528074846] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615713.528640623] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615713.528666016] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615713.528674615] [final_angles_sequential]: Attempt 9/10: planning failed[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615713.528787825] [move_group_interface]: MoveGroup action client/server ready[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615713.529506015] [move_group_interface]: Planning request accepted[0m
+[move_group-2] [0m[INFO] [1790615713.529189096] [moveit_move_group_default_capabilities.move_action_capability]: Received request[0m
+[move_group-2] [0m[INFO] [1790615713.529290287] [moveit_move_group_default_capabilities.move_action_capability]: executing..[0m
+[move_group-2] [0m[INFO] [1790615713.532169086] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.[0m
+[move_group-2] [0m[INFO] [1790615713.532196979] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'[0m
+[move_group-2] [33m[WARN] [1790615713.532361923] [moveit.ompl_planning.planning_context_manager]: Cannot find planning configuration for group 'arm' using planner 'RRTConnectkConfigDefault'. Will use defaults instead.[0m
+[move_group-2] [0m[INFO] [1790615713.532775065] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615713.536655331] [final_angles_sequential.rclcpp_action]: unknown goal response, ignoring...[0m
+[ros2_control_node-5] [33m[WARN] [1790615717.286273312] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615722.286288967] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [31m[ERROR] [1790615723.533850033] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615723.533939121] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615723.534863145] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [31m[ERROR] [1790615723.538877534] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree[0m
+[move_group-2] [33m[WARN] [1790615723.539427604] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 10.006486 seconds[0m
+[move_group-2] [0m[INFO] [1790615723.555445558] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem[0m
+[move_group-2] [0m[INFO] [1790615723.555484878] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure[0m
+[direct_esp32_moveit_node-8] [0m[INFO] [1790615723.555791623] [move_group_interface]: Planning request aborted[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615723.555801496] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached[0m
+[direct_esp32_moveit_node-8] [31m[ERROR] [1790615723.555865700] [final_angles_sequential]: MoveIt planning failed with pipeline 'ompl' and planner 'RRTConnectkConfigDefault'[0m
+[direct_esp32_moveit_node-8] [33m[WARN] [1790615723.555874478] [final_angles_sequential]: Attempt 10/10: planning failed[0m
+[ERROR] [direct_esp32_moveit_node-8]: process has died [pid 27656, exit code 1, cmd '/home/user/ros2_ws/install/control_arm/lib/control_arm/direct_esp32_moveit_node --ros-args -r __node:=final_angles_sequential --params-file /tmp/launch_params_o17_fprr'].
+[ros2_control_node-5] [33m[WARN] [1790615727.286319542] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615732.286280632] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[ros2_control_node-5] [33m[WARN] [1790615737.286931383] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m

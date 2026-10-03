@@ -1,0 +1,164 @@
+[final_angles_sequential_pose3] Writing this run's full output to /home/user/ros2_ws/src/custom_hardware/logs/final_angles_sequential_pose3_20260927_204031.txt
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [robot_state_publisher-1]: process started with pid [27017]
+[INFO] [move_group-2]: process started with pid [27019]
+[INFO] [rviz2-3]: process started with pid [27021]
+[INFO] [joint_state_publisher-4]: process started with pid [27023]
+[INFO] [ros2_control_node-5]: process started with pid [27025]
+[INFO] [spawner-6]: process started with pid [27027]
+[INFO] [spawner-7]: process started with pid [27029]
+[rviz2-3] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-user'
+[robot_state_publisher-1] [0m[INFO] [1790541631.946750569] [robot_state_publisher]: got segment base_link[0m
+[robot_state_publisher-1] [0m[INFO] [1790541631.946868899] [robot_state_publisher]: got segment link_1[0m
+[robot_state_publisher-1] [0m[INFO] [1790541631.946880641] [robot_state_publisher]: got segment link_2[0m
+[robot_state_publisher-1] [0m[INFO] [1790541631.946887536] [robot_state_publisher]: got segment link_3[0m
+[robot_state_publisher-1] [0m[INFO] [1790541631.946893497] [robot_state_publisher]: got segment link_4[0m
+[robot_state_publisher-1] [0m[INFO] [1790541631.946899135] [robot_state_publisher]: got segment link_5[0m
+[robot_state_publisher-1] [0m[INFO] [1790541631.946905242] [robot_state_publisher]: got segment link_6[0m
+[robot_state_publisher-1] [0m[INFO] [1790541631.946911210] [robot_state_publisher]: got segment world[0m
+[ros2_control_node-5] [33m[WARN] [1790541632.019835800] [controller_manager]: [Deprecated] Passing the robot description parameter directly to the control_manager node is deprecated. Use '~/robot_description' topic from 'robot_state_publisher' instead.[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.020105060] [resource_manager]: Loading hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790541632.053931194] [resource_manager]: Initialize hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054267227] [CustomHardwareInterface]: Hardware parameters:[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054276933] [CustomHardwareInterface]:   Simulation mode: false[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054281202] [CustomHardwareInterface]:   Communication: micro-ROS (ROS2 topics)[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054400200] [CustomHardwareInterface]: Joint 0: 'joint_1'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054407328] [CustomHardwareInterface]: Joint 1: 'joint_2'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054411494] [CustomHardwareInterface]: Joint 2: 'joint_3'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054415729] [CustomHardwareInterface]: Joint 3: 'joint_4'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054419697] [CustomHardwareInterface]: Joint 4: 'joint_5'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054423614] [CustomHardwareInterface]: Joint 5: 'joint_6'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054427758] [CustomHardwareInterface]: CustomHardwareInterface initialized with 6 joints[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054438190] [resource_manager]: Successful initialization of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054514370] [CustomHardwareInterface]: Exported 12 state interfaces[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.054602146] [CustomHardwareInterface]: Exported 6 command interfaces[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.060653385] [resource_manager]: 'configure' hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790541632.061203319] [CustomHardwareInterface]: Configuring CustomHardwareInterface...[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.061222431] [CustomHardwareInterface]: CustomHardwareInterface configured successfully[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.061578210] [resource_manager]: Successful 'configure' of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.061592821] [resource_manager]: 'activate' hardware 'RobotSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1790541632.061599505] [CustomHardwareInterface]: Activating CustomHardwareInterface...[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.112417268] [CustomHardwareInterface]: micro-ROS communication initialized[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.113175933] [CustomHardwareInterface]:   Publishing to: /esp32/joint_commands[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.113184423] [CustomHardwareInterface]:   Subscribing to: /esp32/joint_states[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.113189284] [CustomHardwareInterface]: CustomHardwareInterface activated successfully[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.113201268] [resource_manager]: Successful 'activate' of hardware 'RobotSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.158145466] [controller_manager]: update rate is 100 Hz[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.158334083] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50[0m
+[ros2_control_node-5] [33m[WARN] [1790541632.158438602] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.[0m
+[ros2_control_node-5] [33m[WARN] [1790541632.158515810] [CustomHardwareInterface]: No /esp32/joint_states received yet. Reporting the assumed servo-90 pose; joint feedback is NOT live. Check that the ESP32 state publisher and micro-ROS Agent are running.[0m
+[move_group-2] [0m[INFO] [1790541632.166761553] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.144206 seconds[0m
+[move_group-2] [0m[INFO] [1790541632.166840851] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[move_group-2] [0m[INFO] [1790541632.166851471] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[move_group-2] [33m[WARN] [1790541632.213496857] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[move_group-2] [0m[INFO] [1790541632.377696640] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-2] [0m[INFO] [1790541632.377881146] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states[0m
+[move_group-2] [0m[INFO] [1790541632.381234151] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[move_group-2] [0m[INFO] [1790541632.384740101] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects[0m
+[move_group-2] [0m[INFO] [1790541632.384769068] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[move_group-2] [0m[INFO] [1790541632.387595979] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'[0m
+[move_group-2] [0m[INFO] [1790541632.387624416] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.[0m
+[move_group-2] [0m[INFO] [1790541632.388840128] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'[0m
+[move_group-2] [0m[INFO] [1790541632.391983888] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry[0m
+[move_group-2] [33m[WARN] [1790541632.392444907] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead[0m
+[move_group-2] [31m[ERROR] [1790541632.392461207] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates[0m
+[move_group-2] [0m[INFO] [1790541632.433945971] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'[0m
+[move_group-2] [0m[INFO] [1790541632.449722753] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'[0m
+[move_group-2] [0m[INFO] [1790541632.460507777] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790541632.461296594] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790541632.461304856] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790541632.461338881] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790541632.461358331] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790541632.461365765] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790541632.461379099] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790541632.461385719] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790541632.461392249] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790541632.461405212] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790541632.461411458] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790541632.461415708] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790541632.461419731] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790541632.461423823] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790541632.461460671] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[move_group-2] [0m[INFO] [1790541632.469312560] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'[0m
+[move_group-2] [0m[INFO] [1790541632.478980768] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-2] [0m[INFO] [1790541632.489410379] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP [0m
+[move_group-2] [0m[INFO] [1790541632.489440112] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC[0m
+[move_group-2] [0m[INFO] [1790541632.495891615] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC][0m
+[move_group-2] [0m[INFO] [1790541632.495925038] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN[0m
+[move_group-2] [0m[INFO] [1790541632.498193742] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN][0m
+[move_group-2] [0m[INFO] [1790541632.498220014] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP[0m
+[move_group-2] [0m[INFO] [1790541632.500429821] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP][0m
+[move_group-2] [0m[INFO] [1790541632.518027102] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'[0m
+[move_group-2] [0m[INFO] [1790541632.520786453] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790541632.713006782] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'[0m
+[move_group-2] [0m[INFO] [1790541632.722516620] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790541632.722543422] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790541632.724589734] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790541632.724632561] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790541632.724652140] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790541632.724658857] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790541632.724672799] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790541632.724679251] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790541632.724684536] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790541632.724698360] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790541632.724703500] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790541632.724707530] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790541632.724711761] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790541632.724715666] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790541632.724719422] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[rviz2-3] [0m[INFO] [1790541632.862541702] [rviz2]: Stereo is NOT SUPPORTED[0m
+[rviz2-3] [0m[INFO] [1790541632.863073938] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)[0m
+[ros2_control_node-5] [0m[INFO] [1790541632.869779353] [controller_manager]: Loading controller 'joint_state_broadcaster'[0m
+[rviz2-3] [0m[INFO] [1790541633.027514327] [rviz2]: Stereo is NOT SUPPORTED[0m
+[spawner-7] [0m[INFO] [1790541633.045257973] [spawner_joint_state_broadcaster]: [94mLoaded [1mjoint_state_broadcaster[0m[0m
+[ros2_control_node-5] [0m[INFO] [1790541633.155140994] [controller_manager]: Configuring controller 'joint_state_broadcaster'[0m
+[ros2_control_node-5] [0m[INFO] [1790541633.155258210] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published[0m
+[move_group-2] [0m[INFO] [1790541633.157211489] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller[0m
+[move_group-2] [0m[INFO] [1790541633.158600156] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790541633.158662055] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790541633.160762911] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers[0m
+[move_group-2] [0m[INFO] [1790541633.160786788] [move_group.move_group]: MoveGroup debug mode is ON[0m
+[spawner-7] [0m[INFO] [1790541633.324200790] [spawner_joint_state_broadcaster]: [92mConfigured and activated [1mjoint_state_broadcaster[0m[0m
+[joint_state_publisher-4] [0m[INFO] [1790541633.361503987] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...[0m
+[move_group-2] [0m[INFO] [1790541633.405864226] [move_group.move_group]: 
+[move_group-2] 
+[move_group-2] ********************************************************
+[move_group-2] * MoveGroup using: 
+[move_group-2] *     - ApplyPlanningSceneService
+[move_group-2] *     - ClearOctomapService
+[move_group-2] *     - CartesianPathService
+[move_group-2] *     - ExecuteTrajectoryAction
+[move_group-2] *     - GetPlanningSceneService
+[move_group-2] *     - KinematicsService
+[move_group-2] *     - MoveAction
+[move_group-2] *     - MotionPlanService
+[move_group-2] *     - QueryPlannersService
+[move_group-2] *     - StateValidationService
+[move_group-2] ********************************************************
+[move_group-2] [0m
+[move_group-2] [0m[INFO] [1790541633.405915744] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner[0m
+[move_group-2] [0m[INFO] [1790541633.405927690] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete[0m
+[move_group-2] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupMoveAction'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-2] [0m[92m
+[move_group-2] You can start planning now!
+[move_group-2] 
+[ros2_control_node-5] [0m[INFO] [1790541633.427004432] [controller_manager]: Loading controller 'arm_controller'[0m
+[rviz2-3] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-3]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[ros2_control_node-5] [33m[WARN] [1790541633.491646996] [arm_controller]: [Deprecated]: "allow_nonzero_velocity_at_trajectory_end" is set to true. The default behavior will change to false.[0m
+[spawner-6] [31m[FATAL] [1790541633.493230557] [spawner_arm_controller]: [91mFailed loading controller [1marm_controller[0m[0m
+[INFO] [spawner-7]: process has finished cleanly [pid 27029]
+[ERROR] [spawner-6]: process has died [pid 27027, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner arm_controller --ros-args'].

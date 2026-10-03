@@ -9,49 +9,51 @@ default_acceleration_scaling_factor: 0.1
 # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 joint_limits:
   joint_1:
-    has_position_limits: true
-    min_position: -1.570796   # -90 deg (servo 0-180 with calibrated offset)
-    max_position: 1.570796   # 90 deg
+    # Continuous in the URDF: the base rotates a full 360 deg, so there is no
+    # position window to enforce here.
+    # No servo calibrated on this joint; left unbounded.
+    has_position_limits: false
     has_velocity_limits: true
     max_velocity: 1.5
     has_acceleration_limits: true
     max_acceleration: 3.0
   joint_2:
     has_position_limits: true
-    min_position: -0.785398   # -45 deg (servo 0-180 with calibrated offset)
-    max_position: 2.356194   # 135 deg
+    min_position: -1.808796   # servo 0 or 180 (-103.64 .. +76.36 deg)
+    max_position: 1.332796
     has_velocity_limits: true
     max_velocity: 1.5
     has_acceleration_limits: true
     max_acceleration: 3.0
   joint_3:
     has_position_limits: true
-    min_position: -2.007129   # -115 deg (servo 0-180 with calibrated offset)
-    max_position: 1.134464   # 65 deg
+    min_position: -1.943796   # servo 0 or 180 (-111.37 .. +68.63 deg)
+    max_position: 1.197796
+    # Component physically rotated 180 deg, so the servo sense is reversed:
+    # servo = 90 - ros_deg. The ROS window is unchanged; only the mapping is.
     has_velocity_limits: true
     max_velocity: 1.5
     has_acceleration_limits: true
     max_acceleration: 3.0
   joint_4:
     has_position_limits: true
-    min_position: 0.000000   # 0 deg (servo 0-180 with calibrated offset)
-    max_position: 3.141593   # 180 deg
+    min_position: 0.000000   # servo 0 or 180 (0 .. +180 deg)
+    max_position: 3.141593
     has_velocity_limits: true
     max_velocity: 1.5
     has_acceleration_limits: true
     max_acceleration: 3.0
   joint_5:
     has_position_limits: true
-    min_position: -3.490659   # -200 deg (servo 0-180 with calibrated offset)
-    max_position: -0.349066   # -20 deg
+    min_position: -1.570796   # servo 0 or 180 (-90 .. +90 deg)
+    max_position: 1.570796
     has_velocity_limits: true
     max_velocity: 1.5
     has_acceleration_limits: true
     max_acceleration: 3.0
   joint_6:
-    has_position_limits: true
-    min_position: -1.570796   # -90 deg (servo 0-180 with calibrated offset)
-    max_position: 1.570796   # 90 deg
+    # No servo calibrated on this joint; left unbounded.
+    has_position_limits: false
     has_velocity_limits: true
     max_velocity: 1.5
     has_acceleration_limits: true

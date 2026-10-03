@@ -1,0 +1,6 @@
+[INFO] [1790529959.310388830] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[INFO] [1790529970.738451042] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.
+[INFO] [1790529970.773237406] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+[INFO] [1790529970.774165965] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+[INFO] [1790529970.872688787] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[ERROR] [1790529972.970878776] [camera_to_base_node]: IK_RESULT: ERROR: MoveIt IK returned NO_IK_SOLUTION (-31); target/orientation may be unreachable or in collision

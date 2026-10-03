@@ -1,0 +1,117 @@
+{
+  "class_filter": {
+    "allowed_classes": [],
+    "class_aliases": {
+      "apple": "banana",
+      "cucumber": "banana"
+    },
+    "excluded_classes": [
+      "carrot"
+    ],
+    "rejected_by_class": []
+  },
+  "detection_count": 3,
+  "detections": [
+    {
+      "center_x": 477.5,
+      "center_y": 231.0,
+      "class_id": 3,
+      "confidence": 0.7858334183692932,
+      "height": 162.0,
+      "id": 0,
+      "label": "Lime",
+      "original_label": "Lime",
+      "width": 309.0,
+      "x_max": 632.0,
+      "x_min": 323.0,
+      "y_max": 312.0,
+      "y_min": 150.0
+    },
+    {
+      "center_x": 262.0,
+      "center_y": 197.5,
+      "class_id": 3,
+      "confidence": 0.7568939328193665,
+      "height": 135.0,
+      "id": 1,
+      "label": "Lime",
+      "original_label": "Lime",
+      "width": 286.0,
+      "x_max": 405.0,
+      "x_min": 119.0,
+      "y_max": 265.0,
+      "y_min": 130.0
+    },
+    {
+      "center_x": 428.0,
+      "center_y": 112.5,
+      "class_id": 3,
+      "confidence": 0.401724636554718,
+      "height": 113.0,
+      "id": 2,
+      "label": "Lime",
+      "original_label": "Lime",
+      "width": 422.0,
+      "x_max": 639.0,
+      "x_min": 217.0,
+      "y_max": 169.0,
+      "y_min": 56.0
+    }
+  ],
+  "detections_by_label": {
+    "Lime": [
+      {
+        "center_x": 477.5,
+        "center_y": 231.0,
+        "class_id": 3,
+        "confidence": 0.7858334183692932,
+        "height": 162.0,
+        "id": 0,
+        "label": "Lime",
+        "original_label": "Lime",
+        "width": 309.0,
+        "x_max": 632.0,
+        "x_min": 323.0,
+        "y_max": 312.0,
+        "y_min": 150.0
+      },
+      {
+        "center_x": 262.0,
+        "center_y": 197.5,
+        "class_id": 3,
+        "confidence": 0.7568939328193665,
+        "height": 135.0,
+        "id": 1,
+        "label": "Lime",
+        "original_label": "Lime",
+        "width": 286.0,
+        "x_max": 405.0,
+        "x_min": 119.0,
+        "y_max": 265.0,
+        "y_min": 130.0
+      },
+      {
+        "center_x": 428.0,
+        "center_y": 112.5,
+        "class_id": 3,
+        "confidence": 0.401724636554718,
+        "height": 113.0,
+        "id": 2,
+        "label": "Lime",
+        "original_label": "Lime",
+        "width": 422.0,
+        "x_max": 639.0,
+        "x_min": 217.0,
+        "y_max": 169.0,
+        "y_min": 56.0
+      }
+    ]
+  },
+  "image": {
+    "height": 480,
+    "width": 640
+  },
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_194743_508964/captures/latest_rgb.jpg",
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "schema_version": 1
+}

@@ -1,0 +1,9 @@
+[INFO] [1790708198.576922699] [robot_state_publisher]: got segment base_link
+[INFO] [1790708198.578562891] [robot_state_publisher]: got segment link_1
+[INFO] [1790708198.579568980] [robot_state_publisher]: got segment link_2
+[INFO] [1790708198.579688570] [robot_state_publisher]: got segment link_3
+[INFO] [1790708198.579706597] [robot_state_publisher]: got segment link_4
+[INFO] [1790708198.579715891] [robot_state_publisher]: got segment link_5
+[INFO] [1790708198.579724770] [robot_state_publisher]: got segment link_6
+[INFO] [1790708198.579733480] [robot_state_publisher]: got segment world
+[INFO] [1790708241.021574118] [rclcpp]: signal_handler(SIGINT/SIGTERM)

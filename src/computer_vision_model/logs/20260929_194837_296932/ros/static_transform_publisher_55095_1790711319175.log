@@ -1,0 +1,5 @@
+[INFO] [1790711319.984482494] [vision_camera_optical_tf]: Spinning until stopped - publishing transform
+translation: ('0.000000', '0.000000', '0.000000')
+rotation: ('-0.500000', '0.500000', '-0.500000', '0.500000')
+from 'camera_link' to 'camera_color_optical_frame'
+[INFO] [1790711351.108242352] [rclcpp]: signal_handler(SIGINT/SIGTERM)

@@ -1,0 +1,44 @@
+{
+  "detection_count": 1,
+  "detections": [
+    {
+      "center_x": 494.5,
+      "center_y": 570.5,
+      "class_id": 0,
+      "confidence": 0.5356377363204956,
+      "height": 85.0,
+      "id": 0,
+      "label": "Apple",
+      "width": 305.0,
+      "x_max": 647.0,
+      "x_min": 342.0,
+      "y_max": 613.0,
+      "y_min": 528.0
+    }
+  ],
+  "detections_by_label": {
+    "Apple": [
+      {
+        "center_x": 494.5,
+        "center_y": 570.5,
+        "class_id": 0,
+        "confidence": 0.5356377363204956,
+        "height": 85.0,
+        "id": 0,
+        "label": "Apple",
+        "width": 305.0,
+        "x_max": 647.0,
+        "x_min": 342.0,
+        "y_max": 613.0,
+        "y_min": 528.0
+      }
+    ]
+  },
+  "image": {
+    "height": 720,
+    "width": 1280
+  },
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260928_183120_166674/captures/latest_rgb.jpg",
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "schema_version": 1
+}

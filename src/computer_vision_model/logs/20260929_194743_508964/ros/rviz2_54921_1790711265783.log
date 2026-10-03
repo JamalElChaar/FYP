@@ -1,0 +1,18 @@
+[INFO] [1790711267.732314370] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1790711267.732548244] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1790711268.434017604] [rviz2]: Stereo is NOT SUPPORTED
+[ERROR] [1790711273.202074254] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[INFO] [1790711273.547404829] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[INFO] [1790711273.816933420] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.154441 seconds
+[INFO] [1790711273.817324550] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...
+[INFO] [1790711273.817374345] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[WARN] [1790711273.899975211] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'
+[INFO] [1790711274.270123909] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[INFO] [1790711274.281002048] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[INFO] [1790711274.444080569] [interactive_marker_display_102156221309472]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[INFO] [1790711274.478032885] [interactive_marker_display_102156221309472]: Sending request for interactive markers
+[INFO] [1790711274.485740009] [moveit_ros_visualization.motion_planning_frame]: group arm
+[INFO] [1790711274.485805357] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[INFO] [1790711274.514475739] [interactive_marker_display_102156221309472]: Service response received for initialization
+[INFO] [1790711299.039007439] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ERROR] [1790711299.042194312] [vision_rviz.rclcpp_action]: Error in destruction of rcl action client handle: action client implementation is invalid, at ./src/rcl_action/action_client.c:472

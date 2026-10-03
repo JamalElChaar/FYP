@@ -1,0 +1,300 @@
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [launch.user]: Vision run logs: /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185805_026552
+[INFO] [robot_state_publisher-1]: process started with pid [49965]
+[INFO] [move_group-2]: process started with pid [49967]
+[INFO] [solution_joint_state_node-3]: process started with pid [49969]
+[INFO] [rviz2-4]: process started with pid [49971]
+[INFO] [static_transform_publisher-5]: process started with pid [49973]
+[INFO] [astra_camera_node-6]: process started with pid [49975]
+[INFO] [rgbd_capture_node-7]: process started with pid [49977]
+[INFO] [fruit_detection_node-8]: process started with pid [49979]
+[INFO] [camera_to_base_node-9]: process started with pid [49982]
+[rviz2-4] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-user'
+[static_transform_publisher-5] [0m[INFO] [1790708285.720964935] [vision_camera_mount_tf]: Spinning until stopped - publishing transform
+[static_transform_publisher-5] translation: ('-0.246900', '-0.506900', '0.228000')
+[static_transform_publisher-5] rotation: ('-0.059865', '0.144527', '0.377972', '0.912505')
+[static_transform_publisher-5] from 'base_link' to 'camera_link'[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.808212817] [robot_state_publisher]: got segment base_link[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.809379190] [robot_state_publisher]: got segment link_1[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.809410650] [robot_state_publisher]: got segment link_2[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.809420811] [robot_state_publisher]: got segment link_3[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.809429073] [robot_state_publisher]: got segment link_4[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.809447120] [robot_state_publisher]: got segment link_5[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.809456008] [robot_state_publisher]: got segment link_6[0m
+[robot_state_publisher-1] [0m[INFO] [1790708285.809463970] [robot_state_publisher]: got segment world[0m
+[move_group-2] [0m[INFO] [1790708285.929297704] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.104908 seconds[0m
+[move_group-2] [0m[INFO] [1790708285.929387996] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[move_group-2] [0m[INFO] [1790708285.929400888] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[move_group-2] [33m[WARN] [1790708285.960947757] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[rgbd_capture_node-7] [0m[INFO] [1790708286.077659326] [rgbd_capture_node]: RGB-only capture node ready[0m
+[rgbd_capture_node-7] [0m[INFO] [1790708286.077836865] [rgbd_capture_node]:   RGB:        /camera/color/image_raw[0m
+[rgbd_capture_node-7] [0m[INFO] [1790708286.077855077] [rgbd_capture_node]:   Depth:      /camera/depth/image_raw[0m
+[rgbd_capture_node-7] [0m[INFO] [1790708286.077866162] [rgbd_capture_node]:   CameraInfo: /camera/color/camera_info[0m
+[rgbd_capture_node-7] [0m[INFO] [1790708286.077876560] [rgbd_capture_node]:   Output:     /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185805_026552/captures[0m
+[move_group-2] [0m[INFO] [1790708286.217375260] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-2] [0m[INFO] [1790708286.217580835] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states[0m
+[move_group-2] [0m[INFO] [1790708286.223312063] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[move_group-2] [0m[INFO] [1790708286.225622162] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects[0m
+[move_group-2] [0m[INFO] [1790708286.225654015] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[move_group-2] [0m[INFO] [1790708286.228228210] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'[0m
+[move_group-2] [0m[INFO] [1790708286.228277660] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.[0m
+[move_group-2] [0m[INFO] [1790708286.231420063] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'[0m
+[move_group-2] [0m[INFO] [1790708286.233729467] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry[0m
+[move_group-2] [33m[WARN] [1790708286.235512050] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead[0m
+[move_group-2] [31m[ERROR] [1790708286.235546180] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates[0m
+[astra_camera_node-6] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rclcpp_components::NodeFactoryTemplate<astra_camera::OBCameraNodeFactory>. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[astra_camera_node-6]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[move_group-2] [0m[INFO] [1790708286.276136583] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'[0m
+[move_group-2] [0m[INFO] [1790708286.303725534] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'[0m
+[move_group-2] [0m[INFO] [1790708286.339229143] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790708286.339267579] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790708286.339277695] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790708286.339324674] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790708286.339350592] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790708286.339434798] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790708286.339460207] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790708286.339470501] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790708286.339480312] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790708286.339500596] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790708286.339509152] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790708286.339515643] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790708286.339522047] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790708286.339528034] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790708286.339597618] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[move_group-2] [0m[INFO] [1790708286.372651129] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'[0m
+[move_group-2] [0m[INFO] [1790708286.392334560] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-2] [0m[INFO] [1790708286.413555510] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP [0m
+[move_group-2] [0m[INFO] [1790708286.413596798] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC[0m
+[move_group-2] [0m[INFO] [1790708286.420900702] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC][0m
+[move_group-2] [0m[INFO] [1790708286.421996538] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN[0m
+[move_group-2] [0m[INFO] [1790708286.427847016] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN][0m
+[move_group-2] [0m[INFO] [1790708286.432037550] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP[0m
+[move_group-2] [0m[INFO] [1790708286.434044523] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP][0m
+[move_group-2] [0m[INFO] [1790708286.435232613] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'[0m
+[move_group-2] [0m[INFO] [1790708286.439737464] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790708286.532997791] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'[0m
+[move_group-2] [0m[INFO] [1790708286.538475335] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790708286.538511589] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790708286.538521106] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790708286.538561582] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790708286.538596665] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790708286.538607017] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790708286.538636087] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790708286.538646239] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790708286.538664240] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790708286.538685852] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790708286.538700645] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790708286.538707631] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790708286.538714000] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790708286.538719974] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790708286.538725917] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[move_group-2] [0m[INFO] [1790708286.675635821] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller[0m
+[move_group-2] [0m[INFO] [1790708286.679993426] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790708286.680437336] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790708286.683059215] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers[0m
+[move_group-2] [0m[INFO] [1790708286.683271518] [move_group.move_group]: MoveGroup debug mode is ON[0m
+[astra_camera_node-6] [0m[INFO] [1790708286.774611164] [camera.camera]: init done.[0m
+[astra_camera_node-6] [0m[INFO] [1790708286.776342287] [camera.camera]: Waiting for device connection...[0m
+[astra_camera_node-6] [0m[INFO] [1790708286.781319285] [device_listener]: Found 1 devices[0m
+[astra_camera_node-6] [0m[INFO] [1790708286.781352829] [camera.camera]: Trying to open device: 2bc5/0403@1/63[0m
+[move_group-2] [0m[INFO] [1790708286.823087743] [move_group.move_group]: 
+[move_group-2] 
+[move_group-2] ********************************************************
+[move_group-2] * MoveGroup using: 
+[move_group-2] *     - ApplyPlanningSceneService
+[move_group-2] *     - ClearOctomapService
+[move_group-2] *     - CartesianPathService
+[move_group-2] *     - GetPlanningSceneService
+[move_group-2] *     - KinematicsService
+[move_group-2] *     - MotionPlanService
+[move_group-2] *     - QueryPlannersService
+[move_group-2] *     - StateValidationService
+[move_group-2] ********************************************************
+[move_group-2] [0m
+[move_group-2] [0m[INFO] [1790708286.823149890] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner[0m
+[move_group-2] [0m[INFO] [1790708286.823166360] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete[0m
+[move_group-2] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-2] [0m[92m
+[move_group-2] You can start planning now!
+[move_group-2] 
+[astra_camera_node-6] [0m[INFO] [1790708287.022343261] [camera.camera]: Device connected: Astra serial number: 17122220365[0m
+[astra_camera_node-6] [0m[INFO] [1790708287.022420151] [camera.camera]: starting device [0m
+[astra_camera_node-6] [0m[INFO] [1790708287.033109341] [camera.camera]: depth is not enable[0m
+[astra_camera_node-6] [0m[INFO] [1790708287.033214414] [camera.camera]: ir is not enable[0m
+[rviz2-4] [0m[INFO] [1790708287.056304149] [rviz2]: Stereo is NOT SUPPORTED[0m
+[rviz2-4] [0m[INFO] [1790708287.056418935] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)[0m
+[rviz2-4] [0m[INFO] [1790708287.129279619] [rviz2]: Stereo is NOT SUPPORTED[0m
+[fruit_detection_node-8] [0m[INFO] [1790708287.262338587] [fruit_detection_node]: Fruit detection node ready[0m
+[fruit_detection_node-8] [0m[INFO] [1790708287.263029022] [fruit_detection_node]:   Model: sliced-fruits-and-vegetables-rnw8f/1[0m
+[fruit_detection_node-8] [0m[INFO] [1790708287.263943148] [fruit_detection_node]:   API: https://serverless.roboflow.com[0m
+[fruit_detection_node-8] [0m[INFO] [1790708287.264577407] [fruit_detection_node]:   API key source: ROBOFLOW_API_KEY environment variable[0m
+[fruit_detection_node-8] [0m[INFO] [1790708287.265181196] [fruit_detection_node]:   Detection results: /computer_vision/detections[0m
+[astra_camera_node-6] [0m[INFO] [1790708287.419503872] [camera.camera]: open uvc camera[0m
+[rviz2-4] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-4]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[astra_camera_node-6] [0m[INFO] [1790708287.496177543] [camera.camera]: uvc config: vendor_id: 2bc5
+[astra_camera_node-6] product_id: 501
+[astra_camera_node-6] width: 640
+[astra_camera_node-6] height: 480
+[astra_camera_node-6] fps: 30
+[astra_camera_node-6] serial_number: 17122220365
+[astra_camera_node-6] format: mjpeg
+[astra_camera_node-6] frame_id: camera_color_frame
+[astra_camera_node-6] optical_frame_id : camera_color_optical_frame
+[astra_camera_node-6] [0m
+[astra_camera_node-6] [0m[INFO] [1790708287.505532614] [camera.camera]: open camera success[0m
+[astra_camera_node-6] [31m[ERROR] [1790708287.522236301] [camera.camera]: Enabling image registration mode failed: 
+[astra_camera_node-6] 	Device.setProperty(5) failed
+[astra_camera_node-6] 
+[astra_camera_node-6] 
+[astra_camera_node-6] [0m
+[astra_camera_node-6] [0m[INFO] [1790708287.522293310] [camera.camera]: Start UVC camera[0m
+[astra_camera_node-6] [33m[WARN] [1790708287.523242653] [camera.camera]: Publishing dynamic camera transforms (/tf) at 10 Hz[0m
+[solution_joint_state_node-3] [0m[INFO] [1790708287.542074075] [solution_joint_states]: Publishing /joint_states at the seed pose; will switch to the IK solution when one is published. Held joints: joint_1, joint_6[0m
+[astra_camera_node-6] [0m[INFO] [1790708287.552374639] [camera.camera]: set uvc mode 640x480@30 format UVC_FRAME_FORMAT_MJPEG[0m
+[camera_to_base_node-9] [0m[INFO] [1790708287.873801225] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.[0m
+[astra_camera_node-6] [0m[INFO] [1790708288.197766535] [camera.camera]: device  started.[0m
+[rviz2-4] [31m[ERROR] [1790708290.585540678] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available[0m
+[rviz2-4] [0m[INFO] [1790708290.653066073] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.[0m
+[rviz2-4] [0m[INFO] [1790708290.882729633] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.159927 seconds[0m
+[rviz2-4] [0m[INFO] [1790708290.882810324] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[rviz2-4] [0m[INFO] [1790708290.882843615] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[rviz2-4] [33m[WARN] [1790708290.925651953] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[rviz2-4] [0m[INFO] [1790708291.095333775] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[rviz2-4] [0m[INFO] [1790708291.097439227] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'[0m
+[rviz2-4] [0m[INFO] [1790708291.159522324] [interactive_marker_display_100419416634176]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic[0m
+[rviz2-4] [0m[INFO] [1790708291.182149529] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[rviz2-4] [0m[INFO] [1790708291.182184947] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''[0m
+[rviz2-4] [0m[INFO] [1790708291.221731604] [interactive_marker_display_100419416634176]: Sending request for interactive markers[0m
+[rviz2-4] [0m[INFO] [1790708291.256948763] [interactive_marker_display_100419416634176]: Service response received for initialization[0m
+[fruit_detection_node-8] [0m[INFO] [1790708297.233683211] [fruit_detection_node]: Requesting a camera snapshot...[0m
+[rgbd_capture_node-7] [0m[INFO] [1790708297.284363284] [rgbd_capture_node]: Saved RGB-only capture: /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185805_026552/captures/latest_rgb.jpg[0m
+[fruit_detection_node-8] [0m[INFO] [1790708297.293160479] [fruit_detection_node]: Captured /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185805_026552/captures/latest_rgb.jpg; starting inference...[0m
+[fruit_detection_node-8] /home/user/.local/lib/python3.10/site-packages/inference_sdk/http/client.py:120: InferenceSDKGuidanceWarning: This client sends the Roboflow API key through the legacy channel (query parameter / request body). Sending it as the `Authorization: Bearer <api_key>` header is recommended and works with inference servers from release 1.5.0 onward. Opt in with InferenceConfiguration(api_key_transport='header'); use 'both' for a transition period safe with every server version. Set api_key_transport='legacy' explicitly to keep the current behaviour and silence this warning.
+[fruit_detection_node-8]   warnings.warn(
+[fruit_detection_node-8] [0m[INFO] [1790708298.945074512] [fruit_detection_node]: Roboflow detected 1 object(s)[0m
+[fruit_detection_node-8] [0m[INFO] [1790708298.945688795] [fruit_detection_node]:   Cucumber: 1[0m
+[fruit_detection_node-8] [0m[INFO] [1790708298.946264308] [fruit_detection_node]:     center=(194.0, 318.0), size=(94.0 x 82.0), confidence=0.597[0m
+[fruit_detection_node-8] [0m[INFO] [1790708298.946822274] [fruit_detection_node]: Saved detections to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185805_026552/captures/latest_detections.json[0m
+[fruit_detection_node-8] [0m[INFO] [1790708298.947377587] [fruit_detection_node]: Saved annotated image to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185805_026552/captures/latest_detections_annotated.jpg[0m
+[fruit_detection_node-8] [0m[INFO] [1790708298.947922708] [fruit_detection_node]: Results published for downstream processing[0m
+[camera_to_base_node-9] [0m[INFO] [1790708298.952864756] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.[0m
+[rviz2-4] [0m[INFO] [1790708351.278558180] [move_group_interface]: Ready to take commands for planning group arm.[0m
+[rviz2-4] [0m[INFO] [1790708351.282330462] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[static_transform_publisher-5] [0m[INFO] [1790708471.341931566] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[move_group-2] [0m[INFO] [1790708471.342102980] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[rviz2-4] [0m[INFO] [1790708471.343645911] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[robot_state_publisher-1] [0m[INFO] [1790708471.345332469] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[rgbd_capture_node-7] [0m[INFO] [1790708471.348897326] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[astra_camera_node-6] [0m[INFO] [1790708471.351256983] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[rviz2-4] [33m[WARN] [1790708471.395230364] [interactive_marker_display_100419416634176]: Server not available while running, resetting[0m
+[move_group-2] [0m[INFO] [1790708471.525697109] [moveit.ros_planning_interface.moveit_cpp]: Deleting MoveItCpp[0m
+[move_group-2] [0m[INFO] [1790708471.528530778] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopped publishing maintained planning scene.[0m
+[move_group-2] [0m[INFO] [1790708471.533364347] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping world geometry monitor[0m
+[move_group-2] [0m[INFO] [1790708471.535097790] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor[0m
+[move_group-2] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[move_group-2]          at line 127 in ./src/class_loader.cpp
+[move_group-2] Stack trace (most recent call last):
+[move_group-2] #16   Object "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", at 0xffffffffffffffff, in 
+[move_group-2] #15   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x5b93b8eba724, in 
+[move_group-2] #14   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x754e7c63ee3f, in __libc_start_main
+[move_group-2] #13   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x754e7c63ed8f, in 
+[move_group-2] #12   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x5b93b8eb965b, in 
+[move_group-2] #11   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x5b93b8ebb709, in 
+[move_group-2] #10   Object "/opt/ros/humble/lib/libmoveit_cpp.so.2.5.9", at 0x754e7cfa8876, in moveit_cpp::MoveItCpp::~MoveItCpp()
+[move_group-2] #9    Object "/opt/ros/humble/lib/libmoveit_cpp.so.2.5.9", at 0x754e7cfa6ba9, in 
+[move_group-2] #8    Object "/opt/ros/humble/lib/libmoveit_trajectory_execution_manager.so.2.5.9", at 0x754e7c334495, in trajectory_execution_manager::TrajectoryExecutionManager::~TrajectoryExecutionManager()
+[move_group-2] #7    Object "/opt/ros/humble/lib/libmoveit_trajectory_execution_manager.so.2.5.9", at 0x754e7c3473a9, in 
+[move_group-2] #6    Object "/opt/ros/humble/lib/librclcpp.so", at 0x754e7cc06ebc, in rclcpp::Node::~Node()
+[move_group-2] #5    Object "/opt/ros/humble/lib/librclcpp.so", at 0x754e7cc06e5e, in rclcpp::Node::~Node()
+[move_group-2] #4    Object "/opt/ros/humble/lib/librclcpp.so", at 0x754e7cbe1f59, in 
+[move_group-2] #3    Object "/opt/ros/humble/lib/librclcpp.so", at 0x754e7cc10509, in 
+[move_group-2] #2    Object "/opt/ros/humble/lib/librclcpp.so", at 0x754e7cc10450, in rclcpp::node_interfaces::NodeBase::~NodeBase()
+[move_group-2] #1    Object "/opt/ros/humble/lib/librclcpp.so", at 0x754e7cbe1f59, in 
+[move_group-2] #0    Object "/opt/ros/humble/lib/librclcpp.so", at 0x754e7cbe6dd1, in rclcpp::CallbackGroup::~CallbackGroup()
+[move_group-2] Segmentation fault (Address not mapped to object [0x754e652fe798])
+[INFO] [static_transform_publisher-5]: process has finished cleanly [pid 49973]
+[INFO] [robot_state_publisher-1]: process has finished cleanly [pid 49965]
+[rviz2-4] 
+[rviz2-4] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[rviz2-4] This error state is being overwritten:
+[rviz2-4] 
+[rviz2-4]   'rcl node's context is invalid, at ./src/rcl/node.c:428'
+[rviz2-4] 
+[rviz2-4] with this new error message:
+[rviz2-4] 
+[rviz2-4]   'publisher's context is invalid, at ./src/rcl/publisher.c:389'
+[rviz2-4] 
+[rviz2-4] rcutils_reset_error() should be called after error handling to avoid this.
+[rviz2-4] <<<
+[rviz2-4] [0m[INFO] [1790708471.719843585] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor[0m
+[INFO] [rgbd_capture_node-7]: process has finished cleanly [pid 49977]
+[INFO] [solution_joint_state_node-3]: process has finished cleanly [pid 49969]
+[INFO] [camera_to_base_node-9]: process has finished cleanly [pid 49982]
+[ERROR] [move_group-2]: process has died [pid 49967, exit code -11, cmd '/opt/ros/humble/lib/moveit_ros_move_group/move_group --ros-args --params-file /tmp/launch_params_ftexeixs --params-file /tmp/launch_params_qa4je7ht'].
+[move_group-2] [0m
+[INFO] [fruit_detection_node-8]: process has finished cleanly [pid 49979]
+[ERROR] [rviz2-4]: process has died [pid 49971, exit code -11, cmd '/opt/ros/humble/lib/rviz2/rviz2 -d /home/user/ros2_ws/install/robot_arm_movit_config/share/robot_arm_movit_config/config/moveit.rviz --ros-args -r __node:=vision_rviz --params-file /tmp/launch_params_6k7b9n65 --params-file /tmp/launch_params_6rnyvyw7 --params-file /tmp/launch_params_kg5wi39x --params-file /tmp/launch_params_0jnr40vo'].
+[astra_camera_node-6] [0m[INFO] [1790708472.557103056] [camera.camera]: stop uvc streaming[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708725573] [camera.camera]: parameter 'camera_link_frame_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708796760] [camera.camera]: parameter 'camera_name' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708825852] [camera.camera]: parameter 'color_camera_info_qos' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708850260] [camera.camera]: parameter 'color_depth_synchronization' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708873268] [camera.camera]: parameter 'color_fps' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708896110] [camera.camera]: parameter 'color_frame_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708918188] [camera.camera]: parameter 'color_height' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708940198] [camera.camera]: parameter 'color_info_url' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708962159] [camera.camera]: parameter 'color_optical_frame_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.708984322] [camera.camera]: parameter 'color_qos' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709006855] [camera.camera]: parameter 'color_roi_height' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709028356] [camera.camera]: parameter 'color_roi_width' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709049771] [camera.camera]: parameter 'color_roi_x' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709071762] [camera.camera]: parameter 'color_roi_y' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709093383] [camera.camera]: parameter 'color_width' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709116392] [camera.camera]: parameter 'depth_camera_info_qos' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709138515] [camera.camera]: parameter 'depth_fps' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709160566] [camera.camera]: parameter 'depth_frame_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709182203] [camera.camera]: parameter 'depth_height' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709228133] [camera.camera]: parameter 'depth_optical_frame_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709252108] [camera.camera]: parameter 'depth_qos' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709274433] [camera.camera]: parameter 'depth_registration' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709296112] [camera.camera]: parameter 'depth_roi_height' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709317669] [camera.camera]: parameter 'depth_roi_width' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709338987] [camera.camera]: parameter 'depth_roi_x' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709360896] [camera.camera]: parameter 'depth_roi_y' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709382459] [camera.camera]: parameter 'depth_scale' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709404116] [camera.camera]: parameter 'depth_width' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709426666] [camera.camera]: parameter 'device_num' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709448089] [camera.camera]: parameter 'enable_color' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709469620] [camera.camera]: parameter 'enable_colored_point_cloud' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709491764] [camera.camera]: parameter 'enable_depth' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709513144] [camera.camera]: parameter 'enable_ir' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709534774] [camera.camera]: parameter 'enable_point_cloud' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709556432] [camera.camera]: parameter 'enable_publish_extrinsic' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709578088] [camera.camera]: parameter 'ir_camera_info_qos' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709599841] [camera.camera]: parameter 'ir_fps' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709621577] [camera.camera]: parameter 'ir_frame_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709643056] [camera.camera]: parameter 'ir_height' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709666041] [camera.camera]: parameter 'ir_info_url' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709687943] [camera.camera]: parameter 'ir_optical_frame_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709709389] [camera.camera]: parameter 'ir_qos' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709736993] [camera.camera]: parameter 'ir_width' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709758901] [camera.camera]: parameter 'point_cloud_qos' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709780389] [camera.camera]: parameter 'publish_tf' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709802655] [camera.camera]: parameter 'rgb_info_qos_profile' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709824801] [camera.camera]: parameter 'rgb_qos_profile' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709846555] [camera.camera]: parameter 'tf_publish_rate' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709868298] [camera.camera]: parameter 'uvc_camera_format' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709889925] [camera.camera]: parameter 'uvc_product_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709911555] [camera.camera]: parameter 'uvc_retry_count' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] [31m[ERROR] [1790708472.709932705] [camera.camera]: parameter 'uvc_vendor_id' has invalid type: cannot undeclare an statically typed parameter[0m
+[astra_camera_node-6] Warning: USB events thread - failed to set priority. This might cause loss of data...
+[INFO] [astra_camera_node-6]: process has finished cleanly [pid 49975]

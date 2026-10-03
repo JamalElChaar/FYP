@@ -1,0 +1,84 @@
+[INFO] [1790618939.777644654] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[INFO] [1790618951.452150371] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.
+[INFO] [1790618951.523595759] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+[INFO] [1790618951.524511690] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+[INFO] [1790618951.620602048] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618953.720010070] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (2 of 40).
+[INFO] [1790618953.820585326] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618955.920038770] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (3 of 40).
+[INFO] [1790618956.020561295] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618958.119954368] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (4 of 40).
+[INFO] [1790618958.220552459] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618960.319954652] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (5 of 40).
+[INFO] [1790618960.420532068] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618962.519953193] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (6 of 40).
+[INFO] [1790618962.620531842] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618964.719945173] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (7 of 40).
+[INFO] [1790618964.820629452] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618966.919963461] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (8 of 40).
+[INFO] [1790618967.020544938] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618969.120063569] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (9 of 40).
+[INFO] [1790618969.220602446] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618971.319970230] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (10 of 40).
+[INFO] [1790618971.420541215] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618973.519964307] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (11 of 40).
+[INFO] [1790618973.620550836] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618975.720004531] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (12 of 40).
+[INFO] [1790618975.820542606] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618977.919959368] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (13 of 40).
+[INFO] [1790618978.020608192] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618980.119962522] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (14 of 40).
+[INFO] [1790618980.220535868] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618982.319982672] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (15 of 40).
+[INFO] [1790618982.420527598] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618984.519957028] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (16 of 40).
+[INFO] [1790618984.620526520] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618986.719971169] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (17 of 40).
+[INFO] [1790618986.820542508] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618988.919971456] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (18 of 40).
+[INFO] [1790618989.020553829] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618991.119972255] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (19 of 40).
+[INFO] [1790618991.220560859] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618993.319968177] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (20 of 40).
+[INFO] [1790618993.420534162] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618995.520002676] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (21 of 40).
+[INFO] [1790618995.620593453] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618997.719962033] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (22 of 40).
+[INFO] [1790618997.820575398] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790618999.919977723] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (23 of 40).
+[INFO] [1790619000.020576371] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619002.119952985] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (24 of 40).
+[INFO] [1790619002.221655559] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619004.320002931] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (25 of 40).
+[INFO] [1790619004.421344468] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619006.519964655] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (26 of 40).
+[INFO] [1790619006.620554402] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619008.719968387] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (27 of 40).
+[INFO] [1790619008.820570764] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619010.919912584] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (28 of 40).
+[INFO] [1790619011.020532906] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619013.119964434] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (29 of 40).
+[INFO] [1790619013.220525743] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619015.319957698] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (30 of 40).
+[INFO] [1790619015.420535934] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619017.519956822] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (31 of 40).
+[INFO] [1790619017.620510870] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619019.719965238] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (32 of 40).
+[INFO] [1790619019.820527750] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619021.919991941] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (33 of 40).
+[INFO] [1790619022.020613600] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619024.119949217] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (34 of 40).
+[INFO] [1790619024.220559480] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619026.319962655] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (35 of 40).
+[INFO] [1790619026.420542832] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619028.519956175] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (36 of 40).
+[INFO] [1790619028.620524552] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619030.719995595] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (37 of 40).
+[INFO] [1790619030.820567656] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619032.919947456] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (38 of 40).
+[INFO] [1790619033.020885570] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619035.120008159] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (39 of 40).
+[INFO] [1790619035.220510602] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619037.319953614] [camera_to_base_node]: IK_RESULT: RETRY: NO_IK_SOLUTION (-31) with this wrist orientation; relaxing it and retrying (40 of 40).
+[INFO] [1790619037.420511021] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[ERROR] [1790619039.519946575] [camera_to_base_node]: IK_RESULT: ERROR: MoveIt IK returned NO_IK_SOLUTION (-31); target/orientation may be unreachable or in collision

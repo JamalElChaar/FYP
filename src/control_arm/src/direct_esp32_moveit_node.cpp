@@ -121,7 +121,7 @@ public:
     // still the uncalibrated placeholder. Keep in sync with joint_offsets_/
     // joint_directions_ in custom_hardware.cpp and with joint_target_node.
     servo_offsets_deg_ = declare_parameter<std::vector<double>>(
-      "servo_offsets_deg", {90.0, 45.0, 115.0, 0.0, -20.0, 90.0});
+      "servo_offsets_deg", {90.0, 103.6364, 111.3713, 0.0, 90.0, 90.0});
     servo_directions_ = declare_parameter<std::vector<double>>(
       "servo_directions", {1.0, 1.0, 1.0, 1.0, -1.0, 1.0});
     servo_min_deg_ = declare_parameter<double>("servo_min_deg", 0.0);

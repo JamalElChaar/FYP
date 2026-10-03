@@ -1,0 +1,45 @@
+capture:
+  rgb_stamp_sec: 1790529968.5627215
+  rgb_stamp:
+  - 1790529968
+  - 562721474
+  rgb_frame_id: camera_color_optical_frame
+  require_depth: false
+rgb:
+  width: 1280
+  height: 720
+camera_intrinsics:
+  fx: 855.5133071122945
+  fy: 855.5133071122945
+  cx: 639.5
+  cy: 359.5
+  distortion_model: plumb_bob
+  d:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  binning:
+  - 0
+  - 0
+  roi:
+  - 0
+  - 0
+  - 0
+  - 0
+transform_camera_to_base:
+  parent_frame: base_link
+  child_frame: camera_color_optical_frame
+  translation_m:
+  - -0.6625
+  - -0.3475
+  - 0.244
+  quaternion_xyzw:
+  - -0.7474342423978176
+  - 0.3095974003572531
+  - -0.2249356780043492
+  - 0.5430427641944555
+_note: Intrinsics for banana_scene.jpg. transform_camera_to_base is kept only because
+  the loader requires it; when the pipeline runs in replay_as_live mode the transform
+  comes from live TF and this block is ignored.

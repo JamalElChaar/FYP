@@ -1,0 +1,6 @@
+[INFO] [1790707536.040563816] [rgbd_capture_node]: RGB-only capture node ready
+[INFO] [1790707536.041286903] [rgbd_capture_node]:   RGB:        /camera/color/image_raw
+[INFO] [1790707536.041313733] [rgbd_capture_node]:   Depth:      /camera/depth/image_raw
+[INFO] [1790707536.041324881] [rgbd_capture_node]:   CameraInfo: /camera/color/camera_info
+[INFO] [1790707536.041334347] [rgbd_capture_node]:   Output:     /home/user/ros2_ws/src/computer_vision_model/logs/20260929_184534_472705/captures
+[INFO] [1790707598.065699323] [rclcpp]: signal_handler(SIGINT/SIGTERM)

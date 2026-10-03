@@ -1,0 +1,17 @@
+[INFO] [1790705719.091134206] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1790705719.091233974] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1790705719.211297192] [rviz2]: Stereo is NOT SUPPORTED
+[ERROR] [1790705722.472265216] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[INFO] [1790705722.500286417] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[INFO] [1790705722.587756486] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0388825 seconds
+[INFO] [1790705722.587808666] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...
+[INFO] [1790705722.587824555] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[WARN] [1790705722.610240226] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'
+[INFO] [1790705722.698688574] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[INFO] [1790705722.699799860] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[INFO] [1790705722.733668797] [interactive_marker_display_107120040940928]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[INFO] [1790705722.745718962] [moveit_ros_visualization.motion_planning_frame]: group arm
+[INFO] [1790705722.745745767] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[INFO] [1790705722.751582518] [interactive_marker_display_107120040940928]: Sending request for interactive markers
+[INFO] [1790705722.764429969] [interactive_marker_display_107120040940928]: Service response received for initialization
+[INFO] [1790705778.180974562] [rclcpp]: signal_handler(SIGINT/SIGTERM)

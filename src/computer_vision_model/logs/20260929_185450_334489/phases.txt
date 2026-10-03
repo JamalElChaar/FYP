@@ -1,0 +1,73 @@
+VISION PIPELINE PHASE REPORT
+All Cartesian values are metres; joint solutions are ROS angles.
+
+[2026-09-29T18:54:50.335415+00:00] CONFIGURATION
+Camera body reference relative to base: (-0.2469, -0.5069, 0.228) m.
+Camera RPY: (0.0, 0.314159265, 0.785398163) rad.
+Fruit plane Z: -0.006 m. Camera extrinsics are configured values, not automatically calibrated.
+Joint angles will be PUBLISHED to /esp32/joint_commands; the arm will move.
+
+
+[2026-09-29T18:54:53.426031+00:00] STARTUP — READY
+Waiting for one capture and its detections.
+{
+  "transform_source": "tf",
+  "plane_frame": "base_link",
+  "plane_z_m": -0.006,
+  "target_offset_z_m": 0.0,
+  "target_link": "link_6",
+  "target_quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "execution_enabled": false
+}
+
+[2026-09-29T18:55:02.079998+00:00] CAPTURE — capturing
+
+
+[2026-09-29T18:55:02.176368+00:00] CAPTURE — SUCCESS
+RGB image and CameraInfo saved; passing image to Roboflow.
+{
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_185450_334489/captures/latest_rgb.jpg",
+  "metadata_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_185450_334489/captures/latest_capture.yaml"
+}
+
+[2026-09-29T18:55:02.179302+00:00] DETECTION — inferencing
+/home/user/ros2_ws/src/computer_vision_model/logs/20260929_185450_334489/captures/latest_rgb.jpg
+
+[2026-09-29T18:55:03.458931+00:00] DETECTION — SUCCESS
+Passing all retained detections to plane transformation (pixel units).
+{
+  "schema_version": 1,
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_185450_334489/captures/latest_rgb.jpg",
+  "image": {
+    "width": 640,
+    "height": 480
+  },
+  "detection_count": 0,
+  "detections": [],
+  "detections_by_label": {},
+  "class_filter": {
+    "excluded_classes": [
+      "carrot"
+    ],
+    "allowed_classes": [],
+    "rejected_by_class": [],
+    "class_aliases": {
+      "apple": "banana"
+    }
+  }
+}
+
+[2026-09-29T18:55:03.460225+00:00] SELECTION — ERROR
+No detections passed the confidence threshold
+
+[2026-09-29T18:55:03.466988+00:00] DETECTION — results_ready
+/home/user/ros2_ws/src/computer_vision_model/logs/20260929_185450_334489/captures/latest_detections.json
+
+[2026-09-29T18:55:25.007936+00:00] LAUNCH SHUTDOWN
+ctrl-c (SIGINT)

@@ -1,0 +1,29 @@
+[INFO] [1790711322.139846571] [camera.camera]: init done.
+[INFO] [1790711322.140503767] [camera.camera]: Waiting for device connection...
+[INFO] [1790711322.140693764] [device_listener]: Found 1 devices
+[INFO] [1790711322.140756152] [camera.camera]: Trying to open device: 2bc5/0403@1/63
+[INFO] [1790711322.413079843] [camera.camera]: Device connected: Astra serial number: 17122220365
+[INFO] [1790711322.413213688] [camera.camera]: starting device 
+[INFO] [1790711322.475909160] [camera.camera]: depth is not enable
+[INFO] [1790711322.476042562] [camera.camera]: ir is not enable
+[INFO] [1790711322.747951288] [camera.camera]: open uvc camera
+[INFO] [1790711322.862304863] [camera.camera]: uvc config: vendor_id: 2bc5
+product_id: 501
+width: 640
+height: 480
+fps: 30
+serial_number: 17122220365
+format: mjpeg
+frame_id: camera_color_frame
+optical_frame_id : camera_color_optical_frame
+
+[INFO] [1790711322.908089571] [camera.camera]: open camera success
+[ERROR] [1790711322.908264491] [camera.camera]: Enabling image registration mode failed: 
+	Device.setProperty(5) failed
+
+
+
+[INFO] [1790711322.908319328] [camera.camera]: Start UVC camera
+[INFO] [1790711323.517530906] [camera.camera]: set uvc mode 640x480@30 format UVC_FRAME_FORMAT_MJPEG
+[INFO] [1790711323.673253046] [camera.camera]: device  started.
+[INFO] [1790711351.107677778] [rclcpp]: signal_handler(SIGINT/SIGTERM)

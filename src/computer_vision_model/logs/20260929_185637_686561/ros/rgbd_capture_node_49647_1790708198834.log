@@ -1,0 +1,7 @@
+[INFO] [1790708199.047112344] [rgbd_capture_node]: RGB-only capture node ready
+[INFO] [1790708199.048338387] [rgbd_capture_node]:   RGB:        /camera/color/image_raw
+[INFO] [1790708199.048368842] [rgbd_capture_node]:   Depth:      /camera/depth/image_raw
+[INFO] [1790708199.048380379] [rgbd_capture_node]:   CameraInfo: /camera/color/camera_info
+[INFO] [1790708199.048390640] [rgbd_capture_node]:   Output:     /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185637_686561/captures
+[INFO] [1790708210.574534090] [rgbd_capture_node]: Saved RGB-only capture: /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185637_686561/captures/latest_rgb.jpg
+[INFO] [1790708241.021108641] [rclcpp]: signal_handler(SIGINT/SIGTERM)

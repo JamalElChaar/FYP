@@ -1,0 +1,2 @@
+[INFO] [1790705719.211610179] [saved_image_capture_node]: Saved-image input ready: /home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg
+[INFO] [1790705728.878496351] [saved_image_capture_node]: Prepared saved image: /home/user/ros2_ws/src/computer_vision_model/logs/20260929_181517_869825/captures/latest_rgb.jpg

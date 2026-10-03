@@ -1,0 +1,8 @@
+[INFO] [1790619975.036522961] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[INFO] [1790619987.365934889] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.
+[INFO] [1790619987.396571412] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+[INFO] [1790619987.397494792] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+[INFO] [1790619987.493056452] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790619987.592323737] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).
+[ERROR] [1790619987.593006551] [camera_to_base_node]: EXECUTE: ERROR: Refusing to send: servo angles outside 0.0-180.0 deg.
+[INFO] [1790619987.594482505] [camera_to_base_node]: PIPELINE: COMPLETE: Servo angles sent to the arm.

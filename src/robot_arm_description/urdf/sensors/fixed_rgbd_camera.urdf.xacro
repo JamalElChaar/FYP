@@ -1,20 +1,33 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!-- Eye-to-hand mount. Measure these values on the physical rig before motion. -->
-  <xacro:arg name="camera_x" default="0.22"/>
-  <xacro:arg name="camera_y" default="-0.30"/>
-  <xacro:arg name="camera_z" default="0.434"/>
-  <xacro:arg name="camera_pitch" default="0.872664626"/>
+  <!-- Measured 2026-09-27 from the GROUND, with x=y=0 at the centre of the
+       base: (-0.6625, -0.3475, 0.25) m. base_link sits 0.006 m above ground,
+       so camera_z here is 0.25 - 0.006 = 0.244 in base_link coordinates.
+       Orientation: yawed so the camera faces back toward the arm, then
+       pitched 18 deg down. -->
+  <!-- Fitted 2026-09-27 from the arm base visible in a capture: it must
+       project to (0,0), and the 121 mm base_link spanning ~170 px fixes
+       the range at 0.61 m. Replaces the measured (-0.6625,-0.3475,0.25),
+       which put the base 0.44 m from where it actually is. Orientation
+       (yaw 45, pitch 18) was held fixed during the fit and is NOT
+       independently verified. -->
+  <xacro:arg name="camera_x" default="-0.2469"/>
+  <xacro:arg name="camera_y" default="-0.5069"/>
+  <xacro:arg name="camera_z" default="0.228"/>
+  <xacro:arg name="camera_pitch" default="0.314159265"/>
+  <xacro:arg name="camera_yaw" default="0.785398163"/>
   <xacro:arg name="prefix" default=""/>
   <xacro:arg name="use_gazebo" default="false"/>
   <xacro:arg name="use_tray" default="false"/>
 
-  <!-- camera_link is 0.434 m above base_link = 0.440 m above the base support plane. -->
+  <!-- camera_link is 0.244 m above base_link = 0.250 m above the ground. -->
   <xacro:property name="mast_height" value="$(arg camera_z)"/>
 
-  <!-- The camera's +X axis points toward the work area (+Y of base_link).
-       Positive pitch points it downward. The Astra driver owns its internal
-       color/depth transforms on hardware, so these frames are simulated only. -->
+  <!-- The camera's +X axis is the viewing direction; camera_yaw aims it in
+       base_link's XY plane and positive camera_pitch tilts it downward. The
+       Astra driver owns its internal color/depth transforms on hardware, so
+       these frames are simulated only. -->
   <link name="camera_mast_link">
     <!-- The printed tray supplies the complete mast and cradle geometry. -->
     <xacro:unless value="$(arg use_tray)">
@@ -90,8 +103,8 @@
   <joint name="camera_mast_to_camera" type="fixed">
     <parent link="camera_mast_link"/>
     <child link="camera_link"/>
-    <origin xyz="0 0.01 $(arg camera_z)"
-            rpy="0 $(arg camera_pitch) 1.570796327"/>
+    <origin xyz="0 0 $(arg camera_z)"
+            rpy="0 $(arg camera_pitch) $(arg camera_yaw)"/>
   </joint>
 
   <xacro:if value="$(arg use_gazebo)">

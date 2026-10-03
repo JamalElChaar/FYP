@@ -1,0 +1,254 @@
+VISION PIPELINE PHASE REPORT
+All Cartesian values are metres; joint solutions are ROS angles.
+
+[2026-09-27T17:25:57.699368+00:00] CONFIGURATION
+Camera body reference relative to base: (-0.6625, -0.3475, 0.244) m.
+Camera RPY: (0.0, 0.314159265, 0.785398163) rad.
+Fruit plane Z: -0.006 m. Camera extrinsics are configured values, not automatically calibrated.
+Only joint-angle calculation is enabled. No motor or trajectory commands are sent.
+
+[2026-09-27T17:25:59.269170+00:00] STARTUP — READY
+Waiting for one capture and its detections.
+{
+  "transform_source": "tf",
+  "plane_frame": "base_link",
+  "plane_z_m": -0.006,
+  "target_offset_z_m": 0.0,
+  "target_link": "link_6",
+  "target_quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "execution_enabled": false
+}
+
+[2026-09-27T17:26:08.612736+00:00] CAPTURE — capturing
+
+
+[2026-09-27T17:26:08.652092+00:00] CAPTURE — SUCCESS
+RGB image and CameraInfo saved; passing image to Roboflow.
+{
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260927_172557_698561/captures/latest_rgb.jpg",
+  "metadata_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260927_172557_698561/captures/latest_capture.yaml"
+}
+
+[2026-09-27T17:26:08.653357+00:00] DETECTION — inferencing
+/home/user/ros2_ws/src/computer_vision_model/logs/20260927_172557_698561/captures/latest_rgb.jpg
+
+[2026-09-27T17:26:10.731835+00:00] DETECTION — SUCCESS
+Passing all retained detections to plane transformation (pixel units).
+{
+  "schema_version": 1,
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260927_172557_698561/captures/latest_rgb.jpg",
+  "image": {
+    "width": 1280,
+    "height": 720
+  },
+  "detection_count": 2,
+  "detections": [
+    {
+      "id": 0,
+      "label": "Apple",
+      "confidence": 0.5250232815742493,
+      "center_x": 495.0,
+      "center_y": 570.5,
+      "width": 306.0,
+      "height": 85.0,
+      "x_min": 342.0,
+      "y_min": 528.0,
+      "x_max": 648.0,
+      "y_max": 613.0,
+      "class_id": 0
+    },
+    {
+      "id": 1,
+      "label": "Carrot",
+      "confidence": 0.4902511239051819,
+      "center_x": 362.0,
+      "center_y": 363.5,
+      "width": 120.0,
+      "height": 37.0,
+      "x_min": 302.0,
+      "y_min": 345.0,
+      "x_max": 422.0,
+      "y_max": 382.0,
+      "class_id": 1
+    }
+  ],
+  "detections_by_label": {
+    "Apple": [
+      {
+        "id": 0,
+        "label": "Apple",
+        "confidence": 0.5250232815742493,
+        "center_x": 495.0,
+        "center_y": 570.5,
+        "width": 306.0,
+        "height": 85.0,
+        "x_min": 342.0,
+        "y_min": 528.0,
+        "x_max": 648.0,
+        "y_max": 613.0,
+        "class_id": 0
+      }
+    ],
+    "Carrot": [
+      {
+        "id": 1,
+        "label": "Carrot",
+        "confidence": 0.4902511239051819,
+        "center_x": 362.0,
+        "center_y": 363.5,
+        "width": 120.0,
+        "height": 37.0,
+        "x_min": 302.0,
+        "y_min": 345.0,
+        "x_max": 422.0,
+        "y_max": 382.0,
+        "class_id": 1
+      }
+    ]
+  }
+}
+
+[2026-09-27T17:26:10.736982+00:00] SELECTION — SUCCESS
+Highest-confidence detection; passing box centre to projection.
+{
+  "id": 0,
+  "label": "Apple",
+  "confidence": 0.5250232815742493,
+  "center_x": 495.0,
+  "center_y": 570.5,
+  "width": 306.0,
+  "height": 85.0,
+  "x_min": 342.0,
+  "y_min": 528.0,
+  "x_max": 648.0,
+  "y_max": 613.0,
+  "class_id": 0
+}
+
+[2026-09-27T17:26:10.738683+00:00] DETECTION — results_ready
+/home/user/ros2_ws/src/computer_vision_model/logs/20260927_172557_698561/captures/latest_detections.json
+
+[2026-09-27T17:26:10.772449+00:00] TRANSFORM — SUCCESS
+Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+{
+  "pixel_uv": [
+    495.0,
+    570.5
+  ],
+  "ray_camera": [
+    -0.16890444461670187,
+    0.10636888899736935,
+    1.0
+  ],
+  "point_camera_m": [
+    -0.10294536491633288,
+    0.06483064503381518,
+    0.6094887861000271
+  ],
+  "point_base_m": [
+    -0.3395790790409742,
+    0.12100765189259921,
+    -0.006
+  ],
+  "transform": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.6625,
+      -0.3475,
+      0.244
+    ],
+    "quaternion_xyzw": [
+      -0.7474342423978176,
+      0.3095974003572531,
+      -0.2249356780043492,
+      0.5430427641944555
+    ]
+  },
+  "intrinsics": {
+    "fx": 855.5133071122945,
+    "fy": 855.5133071122945,
+    "cx": 639.5,
+    "cy": 479.5,
+    "distortion_model": "plumb_bob",
+    "d": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "binning": [
+      0,
+      0
+    ],
+    "roi": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
+
+[2026-09-27T17:26:10.773460+00:00] POSE — SUCCESS
+Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+{
+  "frame": "base_link",
+  "link": "link_6",
+  "position_m": [
+    -0.3395790790409742,
+    0.12100765189259921,
+    -0.006
+  ],
+  "quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ]
+}
+
+[2026-09-27T17:26:10.870511+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": 0.785398,
+    "joint_3": -0.436332,
+    "joint_4": 1.570796,
+    "joint_5": -1.919862,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.3395790790409742,
+      0.12100765189259921,
+      -0.006
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-27T17:26:12.969678+00:00] IK_RESULT — ERROR
+MoveIt IK returned NO_IK_SOLUTION (-31); target/orientation may be unreachable or in collision
+
+[2026-09-27T17:26:21.252502+00:00] LAUNCH SHUTDOWN
+ctrl-c (SIGINT)

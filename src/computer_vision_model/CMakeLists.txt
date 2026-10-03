@@ -42,6 +42,8 @@ install(PROGRAMS scripts/camera_to_base_node.py
   DESTINATION lib/${PROJECT_NAME} RENAME camera_to_base_node)
 install(PROGRAMS scripts/saved_image_capture_node.py
   DESTINATION lib/${PROJECT_NAME} RENAME saved_image_capture_node)
+install(PROGRAMS scripts/solution_joint_state_node.py
+  DESTINATION lib/${PROJECT_NAME} RENAME solution_joint_state_node)
 install(FILES scripts/vision_pipeline_support.py scripts/saved_image_input.py
   DESTINATION lib/${PROJECT_NAME})
 

@@ -17,22 +17,21 @@
         drives the arm to at boot, converted through the calibrated
         offset/direction. This is the safe reference pose on hardware.-->
     <group_state name="home" group="arm">
-        <joint name="joint_1" value="0"/>
-        <joint name="joint_2" value="0.785398"/>
-        <joint name="joint_3" value="-0.436332"/>
+        <joint name="joint_1" value="0.000000"/>
+        <joint name="joint_2" value="-0.238000"/>
+        <joint name="joint_3" value="-0.373000"/>
         <joint name="joint_4" value="1.570796"/>
-        <joint name="joint_5" value="-1.919862"/>
-        <joint name="joint_6" value="0"/>
+        <joint name="joint_5" value="0.000000"/>
+        <joint name="joint_6" value="0.000000"/>
     </group_state>
-    <!--joint_5 cannot reach ROS 0 with the calibrated mapping (its range is
-        -200..-20 deg), so it is clamped here to its nearest reachable value,
-        -20 deg = servo 0. This state is therefore no longer all-zeros.-->
+    <!--All-zeros is inside every joint's window under the 2026-09-29
+        calibration, so this state is genuinely all-zeros again.-->
     <group_state name="zero" group="arm">
         <joint name="joint_1" value="0"/>
         <joint name="joint_2" value="0"/>
         <joint name="joint_3" value="0"/>
         <joint name="joint_4" value="0"/>
-        <joint name="joint_5" value="-0.349066"/>
+        <joint name="joint_5" value="0"/>
         <joint name="joint_6" value="0"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->

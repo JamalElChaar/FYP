@@ -1,0 +1,56 @@
+{
+  "class_filter": {
+    "allowed_classes": [],
+    "class_aliases": {
+      "apple": "banana"
+    },
+    "excluded_classes": [
+      "carrot"
+    ],
+    "rejected_by_class": []
+  },
+  "detection_count": 1,
+  "detections": [
+    {
+      "center_x": 194.0,
+      "center_y": 318.0,
+      "class_id": 2,
+      "confidence": 0.5970227122306824,
+      "height": 82.0,
+      "id": 0,
+      "label": "Cucumber",
+      "original_label": "Cucumber",
+      "width": 94.0,
+      "x_max": 241.0,
+      "x_min": 147.0,
+      "y_max": 359.0,
+      "y_min": 277.0
+    }
+  ],
+  "detections_by_label": {
+    "Cucumber": [
+      {
+        "center_x": 194.0,
+        "center_y": 318.0,
+        "class_id": 2,
+        "confidence": 0.5970227122306824,
+        "height": 82.0,
+        "id": 0,
+        "label": "Cucumber",
+        "original_label": "Cucumber",
+        "width": 94.0,
+        "x_max": 241.0,
+        "x_min": 147.0,
+        "y_max": 359.0,
+        "y_min": 277.0
+      }
+    ]
+  },
+  "image": {
+    "height": 480,
+    "width": 640
+  },
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_185805_026552/captures/latest_rgb.jpg",
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "schema_version": 1
+}

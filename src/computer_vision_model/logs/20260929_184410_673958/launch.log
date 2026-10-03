@@ -1,0 +1,3 @@
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [launch.user]: Vision run logs: /home/user/ros2_ws/src/computer_vision_model/logs/20260929_184410_673958
+[ERROR] [launch]: Caught exception in launch (see debug for traceback): Expected 'value' to be one of [<class 'float'>, <class 'int'>, <class 'str'>, <class 'bool'>, <class 'bytes'>], but got '()' of type '<class 'tuple'>'

@@ -43,7 +43,7 @@ public:
 
     // Must match custom_hardware.cpp and direct_esp32_moveit_node.
     servo_offsets_deg_ = declare_parameter<std::vector<double>>(
-      "servo_offsets_deg", {90.0, 45.0, 115.0, 0.0, -20.0, 90.0});
+      "servo_offsets_deg", {90.0, 103.6364, 111.3713, 0.0, 90.0, 90.0});
     servo_directions_ = declare_parameter<std::vector<double>>(
       "servo_directions", {1.0, 1.0, 1.0, 1.0, -1.0, 1.0});
 

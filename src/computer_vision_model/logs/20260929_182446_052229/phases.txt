@@ -1,0 +1,485 @@
+VISION PIPELINE PHASE REPORT
+All Cartesian values are metres; joint solutions are ROS angles.
+
+[2026-09-29T18:24:46.053079+00:00] CONFIGURATION
+Camera body reference relative to base: (-0.2469, -0.5069, 0.228) m.
+Camera RPY: (0.0, 0.314159265, 0.785398163) rad.
+Fruit plane Z: -0.006 m. Camera extrinsics are configured values, not automatically calibrated.
+Joint angles will be PUBLISHED to /esp32/joint_commands; the arm will move.
+
+
+[2026-09-29T18:24:46.053340+00:00] IMAGE MODE
+Image: /home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg
+Calibration: auto-discover beside image
+Using the recorded optical-to-base transform from the calibration YAML; live camera mount arguments are ignored.
+
+[2026-09-29T18:24:47.668033+00:00] PROCESS EXIT
+solution_joint_state_node-3: exit code 1; see launch.log for driver/process error details.
+
+[2026-09-29T18:24:47.795083+00:00] STARTUP — READY
+Waiting for one capture and its detections.
+{
+  "transform_source": "tf",
+  "plane_frame": "base_link",
+  "plane_z_m": -0.006,
+  "target_offset_z_m": 0.0,
+  "target_link": "link_6",
+  "target_quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "execution_enabled": false
+}
+
+[2026-09-29T18:24:56.946019+00:00] CAPTURE — capturing
+
+
+[2026-09-29T18:24:57.000998+00:00] IMAGE_INPUT — SUCCESS
+Loaded image and matching calibration; passing copied RGB image to detection.
+{
+  "source_image": "/home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg",
+  "source_calibration": "/home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.yaml",
+  "image_dimensions": {
+    "width": 1280,
+    "height": 720,
+    "file": "latest_rgb.jpg"
+  },
+  "camera_intrinsics": {
+    "fx": 855.5133071122945,
+    "fy": 855.5133071122945,
+    "cx": 639.5,
+    "cy": 359.5,
+    "distortion_model": "plumb_bob",
+    "d": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "binning": [
+      0,
+      0
+    ],
+    "roi": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "recorded_transform": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.6625,
+      -0.3475,
+      0.244
+    ],
+    "quaternion_xyzw": [
+      -0.7474342423978176,
+      0.3095974003572531,
+      -0.2249356780043492,
+      0.5430427641944555
+    ]
+  },
+  "pipeline_image": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_182446_052229/captures/latest_rgb.jpg"
+}
+
+[2026-09-29T18:24:57.002706+00:00] CAPTURE — SUCCESS
+RGB image and CameraInfo saved; passing image to Roboflow.
+{
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_182446_052229/captures/latest_rgb.jpg",
+  "metadata_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_182446_052229/captures/latest_capture.yaml"
+}
+
+[2026-09-29T18:24:57.003476+00:00] DETECTION — inferencing
+/home/user/ros2_ws/src/computer_vision_model/logs/20260929_182446_052229/captures/latest_rgb.jpg
+
+[2026-09-29T18:24:59.213636+00:00] DETECTION — SUCCESS
+Passing all retained detections to plane transformation (pixel units).
+{
+  "schema_version": 1,
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_182446_052229/captures/latest_rgb.jpg",
+  "image": {
+    "width": 1280,
+    "height": 720
+  },
+  "detection_count": 1,
+  "detections": [
+    {
+      "id": 0,
+      "label": "Apple",
+      "confidence": 0.5356377363204956,
+      "center_x": 494.5,
+      "center_y": 570.5,
+      "width": 305.0,
+      "height": 85.0,
+      "x_min": 342.0,
+      "y_min": 528.0,
+      "x_max": 647.0,
+      "y_max": 613.0,
+      "class_id": 0
+    }
+  ],
+  "detections_by_label": {
+    "Apple": [
+      {
+        "id": 0,
+        "label": "Apple",
+        "confidence": 0.5356377363204956,
+        "center_x": 494.5,
+        "center_y": 570.5,
+        "width": 305.0,
+        "height": 85.0,
+        "x_min": 342.0,
+        "y_min": 528.0,
+        "x_max": 647.0,
+        "y_max": 613.0,
+        "class_id": 0
+      }
+    ]
+  }
+}
+
+[2026-09-29T18:24:59.217505+00:00] DETECTION — results_ready
+/home/user/ros2_ws/src/computer_vision_model/logs/20260929_182446_052229/captures/latest_detections.json
+
+[2026-09-29T18:24:59.221492+00:00] SELECTION — SUCCESS
+Highest-confidence detection; passing box centre to projection.
+{
+  "id": 0,
+  "label": "Apple",
+  "confidence": 0.5356377363204956,
+  "center_x": 494.5,
+  "center_y": 570.5,
+  "width": 305.0,
+  "height": 85.0,
+  "x_min": 342.0,
+  "y_min": 528.0,
+  "x_max": 647.0,
+  "y_max": 613.0,
+  "class_id": 0
+}
+
+[2026-09-29T18:24:59.303449+00:00] TRANSFORM — SUCCESS
+Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+{
+  "pixel_uv": [
+    494.5,
+    570.5
+  ],
+  "ray_camera": [
+    -0.16948888906174236,
+    0.24663555580708718,
+    1.0
+  ],
+  "point_camera_m": [
+    -0.07296129691988863,
+    0.10617126655238968,
+    0.4304783477181792
+  ],
+  "point_base_m": [
+    -0.03219465172844957,
+    -0.18901179643255595,
+    -0.006
+  ],
+  "transform": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.2469,
+      -0.5069,
+      0.228
+    ],
+    "quaternion_xyzw": [
+      -0.7474342424304403,
+      0.3095974004360107,
+      -0.22493567804925013,
+      0.5430427640860549
+    ]
+  },
+  "intrinsics": {
+    "fx": 855.5133071122945,
+    "fy": 855.5133071122945,
+    "cx": 639.5,
+    "cy": 359.5,
+    "distortion_model": "plumb_bob",
+    "d": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "binning": [
+      0,
+      0
+    ],
+    "roi": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
+
+[2026-09-29T18:24:59.305607+00:00] POSE — SUCCESS
+Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+{
+  "frame": "base_link",
+  "link": "link_6",
+  "position_m": [
+    -0.03219465172844957,
+    -0.18901179643255595,
+    -0.006
+  ],
+  "quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ]
+}
+
+[2026-09-29T18:24:59.397330+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "1 of 40",
+  "orientation_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      -0.006
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:24:59.496008+00:00] IK_RESULT — SUCCESS
+MoveIt joint solution (ROS joint angles, not servo calibration values).
+{
+  "radians": {
+    "joint_1": -2.788996187274666,
+    "joint_2": -0.27690375175013576,
+    "joint_3": 0.7771859438921169,
+    "joint_4": 3.123729480035062,
+    "joint_5": -1.4998908814266503,
+    "joint_6": 0.3729086916337639
+  },
+  "degrees": {
+    "joint_1": -159.79771060891653,
+    "joint_2": -15.865416306621063,
+    "joint_3": 44.5294744819095,
+    "joint_4": 178.9765155466042,
+    "joint_5": -85.93741723590405,
+    "joint_6": 21.366094174360143
+  },
+  "orientation_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "orientation_attempts_used": 1,
+  "note": "configured wrist orientation was achievable"
+}
+
+[2026-09-29T18:24:59.499355+00:00] EXECUTE — SENT
+Servo angles published to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived. Sent NaN (hold, no servo) for: joint_1, joint_6.
+{
+  "servo_degrees": {
+    "joint_1": null,
+    "joint_2": 87.77,
+    "joint_3": 155.9,
+    "joint_4": 178.98,
+    "joint_5": 175.94,
+    "joint_6": null
+  },
+  "held_joints": [
+    "joint_1",
+    "joint_6"
+  ]
+}
+
+[2026-09-29T18:25:00.505429+00:00] STAB_POSE — SUCCESS
+Descending 5.0 cm from the hover pose; solving IK for the stab target.
+{
+  "frame": "base_link",
+  "link": "link_6",
+  "position_m": [
+    -0.03219465172844957,
+    -0.18901179643255595,
+    -0.056
+  ],
+  "quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ]
+}
+
+[2026-09-29T18:25:00.507217+00:00] IK_REQUEST — STARTED
+Requesting joint angles only; no trajectory execution.
+{
+  "group": "arm",
+  "link": "link_6",
+  "avoid_collisions": true,
+  "position_only": true,
+  "servo_range_constrained": {
+    "joint_6": "-90.00 .. +90.00 deg (servo 0-180)"
+  },
+  "orientation_attempt": "1 of 40",
+  "orientation_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "seed_source": "configured SRDF home seed (not measured)",
+  "seed_radians": {
+    "joint_1": 0.0,
+    "joint_2": -0.238,
+    "joint_3": -0.373,
+    "joint_4": 1.570796,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      -0.006
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  }
+}
+
+[2026-09-29T18:25:00.595463+00:00] IK_RESULT — SUCCESS
+MoveIt joint solution (ROS joint angles, not servo calibration values).
+{
+  "radians": {
+    "joint_1": -2.788612385165839,
+    "joint_2": -0.5803056052686576,
+    "joint_3": 0.6926084414919501,
+    "joint_4": 3.1190272823974428,
+    "joint_5": -1.2809478221018415,
+    "joint_6": 0.37768131973699814
+  },
+  "degrees": {
+    "joint_1": -159.7757203679125,
+    "joint_2": -33.24906200967879,
+    "joint_3": 39.683540552622354,
+    "joint_4": 178.70709946753223,
+    "joint_5": -73.39290398291011,
+    "joint_6": 21.639545621860993
+  },
+  "orientation_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "orientation_attempts_used": 1,
+  "note": "configured wrist orientation was achievable"
+}
+
+[2026-09-29T18:25:00.697010+00:00] STAB_PLAN — STARTED
+Planning the descent with RRTConnectkConfigDefault via /plan_kinematic_path (planning only; MoveIt does not execute).
+{
+  "group": "arm",
+  "planner_id": "RRTConnectkConfigDefault",
+  "allowed_planning_time_s": 5.0,
+  "start_radians": {
+    "joint_1": -2.788996187274666,
+    "joint_2": -0.27690375175013576,
+    "joint_3": 0.7771859438921169,
+    "joint_4": 3.123729480035062,
+    "joint_5": -1.4998908814266503,
+    "joint_6": 0.3729086916337639
+  },
+  "goal_radians": {
+    "joint_1": -2.788612385165839,
+    "joint_2": -0.5803056052686576,
+    "joint_3": 0.6926084414919501,
+    "joint_4": 3.1190272823974428,
+    "joint_5": -1.2809478221018415,
+    "joint_6": 0.37768131973699814
+  }
+}
+
+[2026-09-29T18:25:00.796090+00:00] STAB_PLAN — SUCCESS
+27 waypoints; streaming them over 2.0 s.
+{
+  "waypoints": 27,
+  "planner_id": "RRTConnectkConfigDefault",
+  "interval_s": 0.0769
+}
+
+[2026-09-29T18:25:03.496109+00:00] STAB_EXECUTE — SENT
+Descent complete: 27 waypoints sent to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the fork arrived.
+{
+  "final_servo_degrees": {
+    "joint_1": null,
+    "joint_2": 69.98418832238713,
+    "joint_3": 150.80224623206712,
+    "joint_4": 178.24047511101023,
+    "joint_5": 162.99275927004157,
+    "joint_6": null
+  },
+  "final_joint_degrees": {
+    "joint_1": -159.7603569224572,
+    "joint_2": -33.65221167761286,
+    "joint_3": 39.43094623206711,
+    "joint_4": 178.24047511101023,
+    "joint_5": -72.99275927004159,
+    "joint_6": 21.654195683405973
+  }
+}
+
+[2026-09-29T18:25:03.507764+00:00] PIPELINE — COMPLETE
+Hover reached and stab descent streamed to the arm.
+
+[2026-09-29T18:28:00.633185+00:00] LAUNCH SHUTDOWN
+ctrl-c (SIGINT)

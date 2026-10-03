@@ -1,0 +1,1 @@
+[INFO] [1790708044.950544866] [solution_joint_states]: Publishing /joint_states at the seed pose; will switch to the IK solution when one is published. Held joints: joint_1, joint_6

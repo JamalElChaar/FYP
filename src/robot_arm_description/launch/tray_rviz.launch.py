@@ -21,11 +21,13 @@ def generate_launch_description():
                 'use_jsp': 'true',
                 'jsp_gui': 'false',
                 'use_rviz': 'true',
-                # The printed cradle is generated at this fixed pose.
-                'camera_x': '0.22',
-                'camera_y': '-0.30',
-                'camera_z': '0.434',
-                'camera_pitch': '0.872664626',
+                # Measured from the ground, x=y=0 at the base centre:
+                # (-0.6625, -0.3475, 0.25); base_link is 0.006 m up -> z 0.244.
+                'camera_x': '-0.2469',
+                'camera_y': '-0.5069',
+                'camera_z': '0.228',
+                'camera_pitch': '0.314159265',
+                'camera_yaw': '0.785398163',
             }.items(),
         ),
     ])

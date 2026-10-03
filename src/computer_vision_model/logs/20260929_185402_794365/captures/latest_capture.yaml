@@ -1,0 +1,17 @@
+capture:
+  rgb_stamp_sec: 1790708055.4673324
+  rgb_stamp: [1790708055, 467332420]
+  rgb_frame_id: "camera_color_optical_frame"
+  require_depth: false
+rgb:
+  width: 640
+  height: 480
+camera_intrinsics:
+  fx: 570.34220474152971
+  fy: 570.34220474152971
+  cx: 319.5
+  cy: 239.5
+  distortion_model: "plumb_bob"
+  d: [0, 0, 0, 0, 0]
+  binning: [0, 0]
+  roi: [0, 0, 0, 0]

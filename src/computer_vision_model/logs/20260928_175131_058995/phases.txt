@@ -1,0 +1,36 @@
+VISION PIPELINE PHASE REPORT
+All Cartesian values are metres; joint solutions are ROS angles.
+
+[2026-09-28T17:51:31.059852+00:00] CONFIGURATION
+Camera body reference relative to base: (-0.2469, -0.5069, 0.228) m.
+Camera RPY: (0.0, 0.314159265, 0.785398163) rad.
+Fruit plane Z: -0.006 m. Camera extrinsics are configured values, not automatically calibrated.
+Only joint-angle calculation is enabled. No motor or trajectory commands are sent.
+
+[2026-09-28T17:51:31.060227+00:00] IMAGE MODE
+Image: /home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg
+Calibration: auto-discover beside image
+Using the recorded optical-to-base transform from the calibration YAML; live camera mount arguments are ignored.
+
+[2026-09-28T17:51:33.167309+00:00] STARTUP — READY
+Waiting for one capture and its detections.
+{
+  "transform_source": "tf",
+  "plane_frame": "base_link",
+  "plane_z_m": -0.006,
+  "target_offset_z_m": 0.0,
+  "target_link": "link_6",
+  "target_quaternion_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "execution_enabled": false
+}
+
+[2026-09-28T17:51:34.152817+00:00] WAITING_FOR_DETECTION — INTERRUPTED
+Launch stopped before this phase completed.
+
+[2026-09-28T17:51:34.155581+00:00] LAUNCH SHUTDOWN
+ctrl-c (SIGINT)

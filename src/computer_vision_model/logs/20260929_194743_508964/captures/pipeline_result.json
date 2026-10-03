@@ -1,0 +1,188 @@
+{
+  "selected_detection": {
+    "id": 0,
+    "label": "Lime",
+    "original_label": "Lime",
+    "confidence": 0.7858334183692932,
+    "center_x": 477.5,
+    "center_y": 231.0,
+    "width": 309.0,
+    "height": 162.0,
+    "x_min": 323.0,
+    "y_min": 150.0,
+    "x_max": 632.0,
+    "y_max": 312.0,
+    "class_id": 3
+  },
+  "plane_z_m": -0.006,
+  "base_frame": "base_link",
+  "camera_frame": "camera_color_optical_frame",
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_194743_508964/captures/latest_rgb.jpg",
+  "pixel_uv": [
+    477.5,
+    231.0
+  ],
+  "ray_camera": [
+    0.27702666694919265,
+    -0.014903333348532517,
+    1.0
+  ],
+  "point_camera_m": [
+    0.2198601359243221,
+    -0.01182791870478948,
+    0.7936424978344954
+  ],
+  "point_base_m": [
+    -0.03219465172844957,
+    -0.18901179643255595,
+    -0.006
+  ],
+  "transform_camera_to_base": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.2469,
+      -0.5069,
+      0.228
+    ],
+    "quaternion_xyzw": [
+      -0.7474342424304403,
+      0.3095974004360107,
+      -0.22493567804925013,
+      0.5430427640860549
+    ]
+  },
+  "transform_source": "tf",
+  "point_base_m_projected": [
+    0.4448724871162789,
+    -0.1260566995896032,
+    -0.006
+  ],
+  "point_base_m_source": "override_point_base",
+  "target_pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      -0.006
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  },
+  "moveit_error_code": 1,
+  "joint_angles_radians": {
+    "joint_1": -2.7886120094746345,
+    "joint_2": -0.5803047710387272,
+    "joint_3": 0.6926099742869654,
+    "joint_4": 3.1190268487527324,
+    "joint_5": -1.2809469594281429,
+    "joint_6": 0.37768224079026996
+  },
+  "joint_angles_degrees": {
+    "joint_1": -159.7756988423921,
+    "joint_2": -33.24901421182464,
+    "joint_3": 39.683628375307585,
+    "joint_4": 178.70707462152052,
+    "joint_5": -73.39285455534808,
+    "joint_6": 21.639598394326175
+  },
+  "ik_orientation_xyzw": [
+    -0.5480005480008221,
+    0.44700044700067054,
+    0.006000006000009,
+    0.7070007070010605
+  ],
+  "ik_orientation_attempts": 1,
+  "servo_degrees_sent": {
+    "joint_1": null,
+    "joint_2": 87.77095818785314,
+    "joint_3": 155.90073937952562,
+    "joint_4": 178.97646346107916,
+    "joint_5": 175.93746536171173,
+    "joint_6": null
+  },
+  "held_joints": [
+    "joint_1",
+    "joint_6"
+  ],
+  "hover_joint_angles_radians": {
+    "joint_1": -2.788995880051681,
+    "joint_2": -0.27690419690553836,
+    "joint_3": 0.7771853312399427,
+    "joint_4": 3.1237285709711573,
+    "joint_5": -1.4998917213804495,
+    "joint_6": 0.37290995555026873
+  },
+  "hover_joint_angles_degrees": {
+    "joint_1": -159.79769300633612,
+    "joint_2": -15.865441812146859,
+    "joint_3": 44.529439379525606,
+    "joint_4": 178.97646346107916,
+    "joint_5": -85.93746536171173,
+    "joint_6": 21.366166591441527
+  },
+  "hover_servo_degrees_sent": {
+    "joint_1": null,
+    "joint_2": 87.77095818785314,
+    "joint_3": 155.90073937952562,
+    "joint_4": 178.97646346107916,
+    "joint_5": 175.93746536171173,
+    "joint_6": null
+  },
+  "stab_target_pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      -0.03219465172844957,
+      -0.18901179643255595,
+      -0.056
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  },
+  "stab_ik_joint_angles_degrees": {
+    "joint_1": -159.7756988423921,
+    "joint_2": -33.24901421182464,
+    "joint_3": 39.683628375307585,
+    "joint_4": 178.70707462152052,
+    "joint_5": -73.39285455534808,
+    "joint_6": 21.639598394326175
+  },
+  "stab_waypoints": 11,
+  "stab_joint_angles_radians": {
+    "joint_1": -2.788612200534731,
+    "joint_2": -0.5803041676638747,
+    "joint_3": 0.6926119370796358,
+    "joint_4": 3.119027265568746,
+    "joint_5": -1.2809457455435471,
+    "joint_6": 0.3776814833401913
+  },
+  "stab_joint_angles_degrees": {
+    "joint_1": -159.77570978932926,
+    "joint_2": -33.248979640992125,
+    "joint_3": 39.68374083504366,
+    "joint_4": 178.70709850331895,
+    "joint_5": -73.39278500488393,
+    "joint_6": 21.639554995633475
+  },
+  "stab_servo_degrees_sent": {
+    "joint_1": null,
+    "joint_2": 70.38742035900788,
+    "joint_3": 151.05504083504366,
+    "joint_4": 178.70709850331895,
+    "joint_5": 163.39278500488393,
+    "joint_6": null
+  },
+  "status": "success",
+  "stage": "STAB_STREAM",
+  "detail": ""
+}

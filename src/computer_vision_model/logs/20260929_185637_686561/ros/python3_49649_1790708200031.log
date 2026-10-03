@@ -1,0 +1,11 @@
+[INFO] [1790708200.650792407] [fruit_detection_node]: Fruit detection node ready
+[INFO] [1790708200.652383022] [fruit_detection_node]:   Model: sliced-fruits-and-vegetables-rnw8f/1
+[INFO] [1790708200.653970874] [fruit_detection_node]:   API: https://serverless.roboflow.com
+[INFO] [1790708200.655449227] [fruit_detection_node]:   API key source: ROBOFLOW_API_KEY environment variable
+[INFO] [1790708200.658051739] [fruit_detection_node]:   Detection results: /computer_vision/detections
+[INFO] [1790708210.544259749] [fruit_detection_node]: Requesting a camera snapshot...
+[INFO] [1790708210.578990785] [fruit_detection_node]: Captured /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185637_686561/captures/latest_rgb.jpg; starting inference...
+[INFO] [1790708212.015391997] [fruit_detection_node]: Roboflow detected 0 object(s)
+[INFO] [1790708212.015975418] [fruit_detection_node]: Saved detections to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185637_686561/captures/latest_detections.json
+[INFO] [1790708212.016533933] [fruit_detection_node]: Saved annotated image to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_185637_686561/captures/latest_detections_annotated.jpg
+[INFO] [1790708212.017068234] [fruit_detection_node]: Results published for downstream processing

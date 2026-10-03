@@ -105,10 +105,13 @@ ARGUMENTS = [
     DeclareLaunchArgument('use_tray', default_value='true',
                           choices=['true', 'false'],
                           description='Show the printed tray, mast and camera cradle'),
-    DeclareLaunchArgument('camera_x', default_value='0.22'),
-    DeclareLaunchArgument('camera_y', default_value='-0.30'),
-    DeclareLaunchArgument('camera_z', default_value='0.434'),
-    DeclareLaunchArgument('camera_pitch', default_value='0.872664626'),
+    # Camera measured from the ground with x=y=0 at the base centre:
+    # (-0.6625, -0.3475, 0.25). base_link is 0.006 m up, so camera_z = 0.244.
+    DeclareLaunchArgument('camera_x', default_value='-0.2469'),
+    DeclareLaunchArgument('camera_y', default_value='-0.5069'),
+    DeclareLaunchArgument('camera_z', default_value='0.228'),
+    DeclareLaunchArgument('camera_pitch', default_value='0.314159265'),
+    DeclareLaunchArgument('camera_yaw', default_value='0.785398163'),
 ]
 
 
@@ -191,7 +194,8 @@ def generate_launch_description():
         'camera_x:=', LaunchConfiguration('camera_x'), ' ',
         'camera_y:=', LaunchConfiguration('camera_y'), ' ',
         'camera_z:=', LaunchConfiguration('camera_z'), ' ',
-        'camera_pitch:=', LaunchConfiguration('camera_pitch')
+        'camera_pitch:=', LaunchConfiguration('camera_pitch'), ' ',
+        'camera_yaw:=', LaunchConfiguration('camera_yaw')
     ]), value_type=str)
 
     # Subscribe to the joint states of the robot, and publish the 3D pose of each link.

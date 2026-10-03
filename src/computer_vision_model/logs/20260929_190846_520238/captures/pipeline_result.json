@@ -1,0 +1,74 @@
+{
+  "selected_detection": {
+    "id": 0,
+    "label": "banana",
+    "original_label": "Cucumber",
+    "confidence": 0.4650324583053589,
+    "center_x": 327.5,
+    "center_y": 380.5,
+    "width": 617.0,
+    "height": 197.0,
+    "x_min": 19.0,
+    "y_min": 282.0,
+    "x_max": 636.0,
+    "y_max": 479.0,
+    "class_id": 2
+  },
+  "plane_z_m": -0.006,
+  "base_frame": "base_link",
+  "camera_frame": "camera_color_optical_frame",
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_190846_520238/captures/latest_rgb.jpg",
+  "pixel_uv": [
+    327.5,
+    380.5
+  ],
+  "ray_camera": [
+    0.01402666668097178,
+    0.24722000025212765,
+    1.0
+  ],
+  "point_camera_m": [
+    0.006032008260334028,
+    0.10631414558838725,
+    0.43003861127725357
+  ],
+  "point_base_m": [
+    0.023335107683211453,
+    -0.24519544054305514,
+    -0.006
+  ],
+  "transform_camera_to_base": {
+    "parent_frame": "base_link",
+    "child_frame": "camera_color_optical_frame",
+    "translation_m": [
+      -0.2469,
+      -0.5069,
+      0.228
+    ],
+    "quaternion_xyzw": [
+      -0.7474342424304403,
+      0.3095974004360107,
+      -0.22493567804925013,
+      0.5430427640860549
+    ]
+  },
+  "transform_source": "tf",
+  "target_pose": {
+    "frame": "base_link",
+    "link": "link_6",
+    "position_m": [
+      0.023335107683211453,
+      -0.24519544054305514,
+      -0.006
+    ],
+    "quaternion_xyzw": [
+      -0.5480005480008221,
+      0.44700044700067054,
+      0.006000006000009,
+      0.7070007070010605
+    ]
+  },
+  "status": "pose_ready",
+  "stage": "TRANSFORM",
+  "detail": ""
+}

@@ -40,6 +40,42 @@ class FruitDetectionNode(Node):
         self.startup_delay_seconds = float(self.declare_parameter(
             "startup_delay_seconds", 2.0
         ).value)
+        # Class filtering. excluded_classes drops those labels; allowed_classes,
+        # when non-empty, keeps ONLY those. Matching is case-insensitive, since
+        # the model returns "Apple" but a launch argument is easier to type in
+        # lower case.
+        #
+        # The default is [""], not []: rclpy infers a parameter's type from its
+        # default value, and an empty list infers BYTE_ARRAY, which then
+        # rejects the STRING_ARRAY the launch file passes. A ParameterDescriptor
+        # does NOT override that inference. The placeholder is filtered out
+        # below, so the effective default is still "no filtering".
+        self.excluded_classes = {
+            str(n).strip().lower()
+            for n in (self.declare_parameter("excluded_classes", [""]).value or [])
+            if str(n).strip()}
+        self.allowed_classes = {
+            str(n).strip().lower()
+            for n in (self.declare_parameter("allowed_classes", [""]).value or [])
+            if str(n).strip()}
+        # Display renaming: "from:to" pairs, e.g. "apple:banana". Applied AFTER
+        # filtering, so excluded_classes/allowed_classes still match the label
+        # the model actually returned -- aliasing apple to banana does not stop
+        # allowed_classes:=apple from working. The original is kept on every
+        # detection as original_label so the log never loses what was really
+        # detected.
+        self.class_aliases = {}
+        for pair in (self.declare_parameter("class_aliases", [""]).value or []):
+            text = str(pair).strip()
+            if not text:
+                continue
+            if ":" not in text:
+                raise ValueError(
+                    f"class_aliases entry {text!r} must be 'from:to', e.g. 'apple:banana'")
+            source, _, target = text.partition(":")
+            if not source.strip() or not target.strip():
+                raise ValueError(f"class_aliases entry {text!r} has an empty side")
+            self.class_aliases[source.strip().lower()] = target.strip()
         self.minimum_confidence = float(self.declare_parameter(
             "minimum_confidence", 0.25
         ).value)
@@ -247,6 +283,7 @@ class FruitDetectionNode(Node):
 
         detections = []
         by_label = {}
+        rejected = []
         for prediction_value in response.get("predictions", []):
             prediction = self._as_dictionary(prediction_value)
             confidence = float(prediction.get("confidence", 0.0))
@@ -256,13 +293,27 @@ class FruitDetectionNode(Node):
             label = str(
                 prediction.get("class", prediction.get("class_name", "unknown"))
             )
+            # Dropped here rather than at selection, so a filtered class cannot
+            # reach the projection even if it is the most confident detection.
+            key = label.strip().lower()
+            if key in self.excluded_classes:
+                rejected.append({"label": label, "confidence": confidence,
+                                 "reason": "in excluded_classes"})
+                continue
+            if self.allowed_classes and key not in self.allowed_classes:
+                rejected.append({"label": label, "confidence": confidence,
+                                 "reason": "not in allowed_classes"})
+                continue
+            # Renamed only after it survived filtering.
+            display_label = self.class_aliases.get(key, label)
             center_x = float(prediction["x"])
             center_y = float(prediction["y"])
             width = float(prediction["width"])
             height = float(prediction["height"])
             detection = {
                 "id": len(detections),
-                "label": label,
+                "label": display_label,
+                "original_label": label,
                 "confidence": confidence,
                 "center_x": center_x,
                 "center_y": center_y,
@@ -276,7 +327,7 @@ class FruitDetectionNode(Node):
             if "class_id" in prediction:
                 detection["class_id"] = int(prediction["class_id"])
             detections.append(detection)
-            by_label.setdefault(label, []).append(detection)
+            by_label.setdefault(display_label, []).append(detection)
 
         return {
             "schema_version": 1,
@@ -289,6 +340,12 @@ class FruitDetectionNode(Node):
             "detection_count": len(detections),
             "detections": detections,
             "detections_by_label": by_label,
+            "class_filter": {
+                "excluded_classes": sorted(self.excluded_classes),
+                "allowed_classes": sorted(self.allowed_classes),
+                "rejected_by_class": rejected,
+                "class_aliases": dict(self.class_aliases),
+            },
         }
 
     @staticmethod
@@ -299,6 +356,64 @@ class FruitDetectionNode(Node):
             json.dumps(result, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
+        os.replace(temporary, destination)
+        return destination
+
+    @staticmethod
+    def _save_annotated_image(result, image_path):
+        """Draw the detection boxes onto a copy of the capture.
+
+        Purely diagnostic: it makes it obvious what the model actually
+        latched onto, which is otherwise only visible as pixel numbers in
+        the JSON. The highest-confidence detection is the one the pipeline
+        projects, so it is drawn differently from the rest.
+        """
+        import cv2  # local: keep the node importable if cv2 is unavailable
+
+        image = cv2.imread(str(image_path), cv2.IMREAD_COLOR)
+        if image is None:
+            raise ValueError(f"cannot read capture for annotation: {image_path}")
+
+        detections = result.get("detections", [])
+        # The pipeline selects by highest confidence; mark that one out.
+        chosen = max(detections, key=lambda d: d["confidence"], default=None)
+
+        for detection in detections:
+            selected = detection is chosen
+            colour = (0, 215, 255) if selected else (120, 120, 120)  # BGR
+            thickness = 2 if selected else 1
+            x_min = int(round(detection["x_min"]))
+            y_min = int(round(detection["y_min"]))
+            x_max = int(round(detection["x_max"]))
+            y_max = int(round(detection["y_max"]))
+            cv2.rectangle(image, (x_min, y_min), (x_max, y_max), colour, thickness)
+            cv2.drawMarker(
+                image,
+                (int(round(detection["center_x"])), int(round(detection["center_y"]))),
+                colour, cv2.MARKER_CROSS, 12, thickness)
+
+            caption = f"{detection['label']} {detection['confidence']:.2f}"
+            if selected:
+                caption += "  <- projected"
+            # Keep the caption inside the frame when the box hugs the top edge.
+            text_y = y_min - 6 if y_min - 6 > 10 else min(y_max + 16, image.shape[0] - 4)
+            cv2.putText(image, caption, (max(x_min, 2), text_y),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 3, cv2.LINE_AA)
+            cv2.putText(image, caption, (max(x_min, 2), text_y),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, colour, 1, cv2.LINE_AA)
+
+        summary = f"{len(detections)} detection(s)  {image.shape[1]}x{image.shape[0]}"
+        cv2.putText(image, summary, (6, image.shape[0] - 8),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 0), 3, cv2.LINE_AA)
+        cv2.putText(image, summary, (6, image.shape[0] - 8),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 1, cv2.LINE_AA)
+
+        destination = image_path.parent / "latest_detections_annotated.jpg"
+        # The temp name must keep the .jpg suffix: cv2.imwrite picks the
+        # encoder from the extension and rejects an unknown one.
+        temporary = image_path.parent / "latest_detections_annotated.tmp.jpg"
+        if not cv2.imwrite(str(temporary), image):
+            raise ValueError(f"cannot write annotated image: {temporary}")
         os.replace(temporary, destination)
         return destination
 
@@ -318,6 +433,13 @@ class FruitDetectionNode(Node):
             self._inference_started = None
             result = self._format_results(raw_result, image_path)
             result_path = self._save_results(result, image_path)
+            # Diagnostic only: never let annotation failure break a good run.
+            annotated_path = None
+            try:
+                annotated_path = self._save_annotated_image(result, image_path)
+            except Exception as annotation_error:
+                self.get_logger().warning(
+                    f"Could not write the annotated image: {annotation_error}")
             phase_log(self.phase_log_path, "DETECTION", "SUCCESS",
                       "Passing all retained detections to plane transformation (pixel units).", result)
             self.detection_publisher.publish(
@@ -344,6 +466,8 @@ class FruitDetectionNode(Node):
                         )
                     )
             self.get_logger().info(f"Saved detections to {result_path}")
+            if annotated_path is not None:
+                self.get_logger().info(f"Saved annotated image to {annotated_path}")
             self.get_logger().info(
                 "Results published for downstream processing"
             )

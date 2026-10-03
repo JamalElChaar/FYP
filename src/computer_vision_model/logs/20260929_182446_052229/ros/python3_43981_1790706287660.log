@@ -1,0 +1,14 @@
+[INFO] [1790706287.840553938] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.
+[INFO] [1790706299.222246848] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.
+[INFO] [1790706299.305139634] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).
+[INFO] [1790706299.307178670] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.
+[INFO] [1790706299.399851015] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790706299.498572446] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).
+[INFO] [1790706299.504138978] [camera_to_base_node]: EXECUTE: SENT: Servo angles published to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived. Sent NaN (hold, no servo) for: joint_1, joint_6.
+[INFO] [1790706300.506163542] [camera_to_base_node]: STAB_POSE: SUCCESS: Descending 5.0 cm from the hover pose; solving IK for the stab target.
+[INFO] [1790706300.507949172] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.
+[INFO] [1790706300.596241506] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).
+[INFO] [1790706300.699174248] [camera_to_base_node]: STAB_PLAN: STARTED: Planning the descent with RRTConnectkConfigDefault via /plan_kinematic_path (planning only; MoveIt does not execute).
+[INFO] [1790706300.798106766] [camera_to_base_node]: STAB_PLAN: SUCCESS: 27 waypoints; streaming them over 2.0 s.
+[INFO] [1790706303.499554073] [camera_to_base_node]: STAB_EXECUTE: SENT: Descent complete: 27 waypoints sent to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the fork arrived.
+[INFO] [1790706303.510051161] [camera_to_base_node]: PIPELINE: COMPLETE: Hover reached and stab descent streamed to the arm.

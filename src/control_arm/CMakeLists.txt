@@ -84,6 +84,12 @@ install(DIRECTORY include/
   DESTINATION include
 )
 
+# Standalone motion sequence (publishes servo commands directly)
+install(PROGRAMS scripts/stab_sequence.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME stab_sequence
+)
+
 # Install launch files
 install(DIRECTORY launch/
   DESTINATION share/${PROJECT_NAME}/launch

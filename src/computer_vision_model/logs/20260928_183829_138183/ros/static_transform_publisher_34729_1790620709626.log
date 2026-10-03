@@ -1,0 +1,5 @@
+[INFO] [1790620710.243628431] [vision_camera_mount_tf]: Spinning until stopped - publishing transform
+translation: ('-0.246900', '-0.506900', '0.228000')
+rotation: ('-0.059865', '0.144527', '0.377972', '0.912505')
+from 'base_link' to 'camera_link'
+[INFO] [1790701706.608030308] [rclcpp]: signal_handler(SIGINT/SIGTERM)

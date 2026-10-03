@@ -1,0 +1,55 @@
+[INFO] [1790620546.597436088] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1790620546.597526231] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1790620546.646322891] [rviz2]: Stereo is NOT SUPPORTED
+[ERROR] [1790620550.308258797] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[INFO] [1790620550.336596503] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[INFO] [1790620550.449054000] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.044831 seconds
+[INFO] [1790620550.450154656] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...
+[INFO] [1790620550.450184217] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[WARN] [1790620550.479940930] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'
+[INFO] [1790620550.572471029] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[INFO] [1790620550.573189967] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[INFO] [1790620550.611124379] [interactive_marker_display_95949550522240]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[INFO] [1790620550.624179588] [moveit_ros_visualization.motion_planning_frame]: group arm
+[INFO] [1790620550.624207342] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[INFO] [1790620550.639270675] [interactive_marker_display_95949550522240]: Sending request for interactive markers
+[INFO] [1790620550.671946467] [interactive_marker_display_95949550522240]: Service response received for initialization
+[INFO] [1790620610.666921513] [move_group_interface]: Ready to take commands for planning group arm.
+[INFO] [1790620610.668846053] [moveit_ros_visualization.motion_planning_frame]: group arm
+[WARN] [1790620610.671574377] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 257 (expected) vs. 264 (received)
+[WARN] [1790620610.671821933] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 299 (received)
+[WARN] [1790620610.671864845] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 304 (received)
+[WARN] [1790620610.671897040] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 307 (received)
+[WARN] [1790620610.672586202] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 403 (received)
+[WARN] [1790620610.672771337] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 425 (received)
+[WARN] [1790620610.674576561] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 679 (received)
+[WARN] [1790620610.675442456] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 796 (received)
+[WARN] [1790620610.675500393] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 803 (received)
+[WARN] [1790620610.676425168] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 934 (received)
+[WARN] [1790620610.676483201] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 941 (received)
+[WARN] [1790620610.676518092] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 946 (received)
+[WARN] [1790620610.676551920] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 950 (received)
+[WARN] [1790620610.676581962] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 953 (received)
+[WARN] [1790620610.677431472] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 963 (received)
+[WARN] [1790620610.677518239] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 964 (received)
+[WARN] [1790620610.677560368] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 965 (received)
+[WARN] [1790620610.677588456] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 966 (received)
+[WARN] [1790620610.677614679] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 967 (received)
+[WARN] [1790620610.677640021] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 968 (received)
+[WARN] [1790620610.677678145] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 969 (received)
+[WARN] [1790620610.677710142] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 970 (received)
+[WARN] [1790620610.677736241] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 971 (received)
+[WARN] [1790620610.677766867] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 972 (received)
+[WARN] [1790620610.677792928] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 973 (received)
+[WARN] [1790620610.677818169] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 974 (received)
+[WARN] [1790620610.677843378] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 975 (received)
+[WARN] [1790620610.677869175] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 976 (received)
+[WARN] [1790620610.677894436] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 977 (received)
+[WARN] [1790620610.677919685] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 978 (received)
+[WARN] [1790620610.677945238] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 979 (received)
+[INFO] [1790620610.677969890] [interactive_marker_display_95949550522240]: Sending request for interactive markers
+[WARN] [1790620610.677984172] [interactive_marker_display_95949550522240]: Update sequence number is out of order. 297 (expected) vs. 980 (received)
+[INFO] [1790620610.704655370] [interactive_marker_display_95949550522240]: Sending request for interactive markers
+[INFO] [1790620610.704679494] [interactive_marker_display_95949550522240]: Service response received for initialization
+[INFO] [1790620610.735919887] [interactive_marker_display_95949550522240]: Service response received for initialization
+[INFO] [1790620687.404031741] [rclcpp]: signal_handler(SIGINT/SIGTERM)

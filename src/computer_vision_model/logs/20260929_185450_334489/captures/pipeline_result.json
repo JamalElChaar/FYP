@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "stage": "SELECTION",
+  "detail": "No detections passed the confidence threshold"
+}

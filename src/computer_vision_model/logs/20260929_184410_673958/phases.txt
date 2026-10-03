@@ -1,0 +1,12 @@
+VISION PIPELINE PHASE REPORT
+All Cartesian values are metres; joint solutions are ROS angles.
+
+[2026-09-29T18:44:10.674946+00:00] CONFIGURATION
+Camera body reference relative to base: (-0.2469, -0.5069, 0.228) m.
+Camera RPY: (0.0, 0.314159265, 0.785398163) rad.
+Fruit plane Z: -0.006 m. Camera extrinsics are configured values, not automatically calibrated.
+Joint angles will be PUBLISHED to /esp32/joint_commands; the arm will move.
+
+
+[2026-09-29T18:44:11.201777+00:00] LAUNCH SHUTDOWN
+Caught exception in launch (see debug for traceback): Expected 'value' to be one of [<class 'float'>, <class 'int'>, <class 'str'>, <class 'bool'>, <class 'bytes'>], but got '()' of type '<class 'tuple'>'

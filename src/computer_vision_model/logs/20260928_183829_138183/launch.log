@@ -1,0 +1,369 @@
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [launch.user]: Vision run logs: /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183829_138183
+[INFO] [robot_state_publisher-1]: process started with pid [34721]
+[INFO] [move_group-2]: process started with pid [34723]
+[INFO] [solution_joint_state_node-3]: process started with pid [34725]
+[INFO] [rviz2-4]: process started with pid [34727]
+[INFO] [static_transform_publisher-5]: process started with pid [34729]
+[INFO] [static_transform_publisher-6]: process started with pid [34731]
+[INFO] [saved_image_capture_node-7]: process started with pid [34734]
+[INFO] [fruit_detection_node-8]: process started with pid [34736]
+[INFO] [camera_to_base_node-9]: process started with pid [34738]
+[rviz2-4] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-user'
+[robot_state_publisher-1] [0m[INFO] [1790620709.707842926] [robot_state_publisher]: got segment base_link[0m
+[robot_state_publisher-1] [0m[INFO] [1790620709.719946119] [robot_state_publisher]: got segment link_1[0m
+[robot_state_publisher-1] [0m[INFO] [1790620709.719965797] [robot_state_publisher]: got segment link_2[0m
+[robot_state_publisher-1] [0m[INFO] [1790620709.719973072] [robot_state_publisher]: got segment link_3[0m
+[robot_state_publisher-1] [0m[INFO] [1790620709.719979230] [robot_state_publisher]: got segment link_4[0m
+[robot_state_publisher-1] [0m[INFO] [1790620709.719985161] [robot_state_publisher]: got segment link_5[0m
+[robot_state_publisher-1] [0m[INFO] [1790620709.719991147] [robot_state_publisher]: got segment link_6[0m
+[robot_state_publisher-1] [0m[INFO] [1790620709.719997167] [robot_state_publisher]: got segment world[0m
+[move_group-2] [0m[INFO] [1790620709.933796759] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.307481 seconds[0m
+[move_group-2] [0m[INFO] [1790620709.933868793] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[move_group-2] [0m[INFO] [1790620709.933878599] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[move_group-2] [33m[WARN] [1790620710.024273539] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[static_transform_publisher-6] [0m[INFO] [1790620710.167758096] [vision_camera_optical_tf]: Spinning until stopped - publishing transform
+[static_transform_publisher-6] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-6] rotation: ('-0.500000', '0.500000', '-0.500000', '0.500000')
+[static_transform_publisher-6] from 'camera_link' to 'camera_color_optical_frame'[0m
+[static_transform_publisher-5] [0m[INFO] [1790620710.243628431] [vision_camera_mount_tf]: Spinning until stopped - publishing transform
+[static_transform_publisher-5] translation: ('-0.246900', '-0.506900', '0.228000')
+[static_transform_publisher-5] rotation: ('-0.059865', '0.144527', '0.377972', '0.912505')
+[static_transform_publisher-5] from 'base_link' to 'camera_link'[0m
+[move_group-2] [0m[INFO] [1790620710.621131916] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-2] [0m[INFO] [1790620710.621983020] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states[0m
+[move_group-2] [0m[INFO] [1790620710.626560675] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[move_group-2] [0m[INFO] [1790620710.628134767] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects[0m
+[move_group-2] [0m[INFO] [1790620710.628158907] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[move_group-2] [0m[INFO] [1790620710.630494329] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'[0m
+[move_group-2] [0m[INFO] [1790620710.630521264] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.[0m
+[move_group-2] [0m[INFO] [1790620710.633266608] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'[0m
+[move_group-2] [0m[INFO] [1790620710.634809901] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry[0m
+[move_group-2] [33m[WARN] [1790620710.635823460] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead[0m
+[move_group-2] [31m[ERROR] [1790620710.635844208] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates[0m
+[rviz2-4] [0m[INFO] [1790620710.634365566] [rviz2]: Stereo is NOT SUPPORTED[0m
+[rviz2-4] [0m[INFO] [1790620710.634459956] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)[0m
+[solution_joint_state_node-3] Traceback (most recent call last):
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 122, in <module>
+[solution_joint_state_node-3]     main()
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 110, in main
+[solution_joint_state_node-3]     node = SolutionJointStateNode()
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 48, in __init__
+[solution_joint_state_node-3]     self.held = [str(n) for n in param('held_joints', [])]
+[solution_joint_state_node-3]   File "/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node", line 38, in param
+[solution_joint_state_node-3]     return self.declare_parameter(name, default).value
+[solution_joint_state_node-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 367, in declare_parameter
+[solution_joint_state_node-3]     return self.declare_parameters('', [args], ignore_override)[0]
+[solution_joint_state_node-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 493, in declare_parameters
+[solution_joint_state_node-3]     self._set_parameters(
+[solution_joint_state_node-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 738, in _set_parameters
+[solution_joint_state_node-3]     raise InvalidParameterTypeException(
+[solution_joint_state_node-3] rclpy.exceptions.InvalidParameterTypeException: Trying to set parameter 'held_joints' to '['joint_1']' of type 'STRING_ARRAY', expecting type 'BYTE_ARRAY'
+[move_group-2] [0m[INFO] [1790620710.661720298] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'[0m
+[move_group-2] [0m[INFO] [1790620710.669058283] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'[0m
+[move_group-2] [0m[INFO] [1790620710.673143846] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620710.673169897] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620710.673176448] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790620710.673201616] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790620710.673219382] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790620710.673225904] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620710.673238636] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620710.673244575] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790620710.673250858] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790620710.673263791] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790620710.673268543] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790620710.673272554] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790620710.673276556] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790620710.673280311] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790620710.673318524] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[move_group-2] [0m[INFO] [1790620710.676974992] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'[0m
+[move_group-2] [0m[INFO] [1790620710.681059782] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-2] [0m[INFO] [1790620710.683239932] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP [0m
+[move_group-2] [0m[INFO] [1790620710.683259249] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC[0m
+[move_group-2] [0m[INFO] [1790620710.684840783] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC][0m
+[move_group-2] [0m[INFO] [1790620710.684863434] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN[0m
+[move_group-2] [0m[INFO] [1790620710.688148542] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN][0m
+[move_group-2] [0m[INFO] [1790620710.688178764] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP[0m
+[move_group-2] [0m[INFO] [1790620710.689351166] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP][0m
+[move_group-2] [0m[INFO] [1790620710.689374638] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'[0m
+[move_group-2] [0m[INFO] [1790620710.692646757] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'[0m
+[move_group-2] [0m[INFO] [1790620710.715655333] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'[0m
+[move_group-2] [0m[INFO] [1790620710.723104726] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620710.723132945] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000[0m
+[move_group-2] [0m[INFO] [1790620710.723140832] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000[0m
+[move_group-2] [0m[INFO] [1790620710.723173848] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000[0m
+[move_group-2] [0m[INFO] [1790620710.723195206] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000[0m
+[move_group-2] [0m[INFO] [1790620710.723202468] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620710.723219427] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000[0m
+[move_group-2] [0m[INFO] [1790620710.723226482] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000[0m
+[move_group-2] [0m[INFO] [1790620710.723232167] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100[0m
+[move_group-2] [0m[INFO] [1790620710.723248410] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'[0m
+[move_group-2] [0m[INFO] [1790620710.723253725] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'[0m
+[move_group-2] [0m[INFO] [1790620710.723258458] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'[0m
+[move_group-2] [0m[INFO] [1790620710.723263269] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'[0m
+[move_group-2] [0m[INFO] [1790620710.723267862] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'[0m
+[move_group-2] [0m[INFO] [1790620710.723272419] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'[0m
+[rviz2-4] [0m[INFO] [1790620710.828475190] [rviz2]: Stereo is NOT SUPPORTED[0m
+[move_group-2] [0m[INFO] [1790620710.897077043] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller[0m
+[move_group-2] [0m[INFO] [1790620710.897283425] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790620710.897336845] [moveit.plugins.moveit_simple_controller_manager]: Returned 1 controllers in list[0m
+[move_group-2] [0m[INFO] [1790620710.898487408] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers[0m
+[move_group-2] [0m[INFO] [1790620710.898553657] [move_group.move_group]: MoveGroup debug mode is ON[0m
+[move_group-2] [0m[INFO] [1790620710.933293158] [move_group.move_group]: 
+[move_group-2] 
+[move_group-2] ********************************************************
+[move_group-2] * MoveGroup using: 
+[move_group-2] *     - ApplyPlanningSceneService
+[move_group-2] *     - ClearOctomapService
+[move_group-2] *     - CartesianPathService
+[move_group-2] *     - GetPlanningSceneService
+[move_group-2] *     - KinematicsService
+[move_group-2] *     - MotionPlanService
+[move_group-2] *     - QueryPlannersService
+[move_group-2] *     - StateValidationService
+[move_group-2] ********************************************************
+[move_group-2] [0m
+[move_group-2] [0m[INFO] [1790620710.933338321] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner[0m
+[move_group-2] [0m[INFO] [1790620710.933349359] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete[0m
+[move_group-2] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-2] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-2] [0m[92m
+[move_group-2] You can start planning now!
+[move_group-2] 
+[fruit_detection_node-8] [0m[INFO] [1790620710.988177503] [fruit_detection_node]: Fruit detection node ready[0m
+[fruit_detection_node-8] [0m[INFO] [1790620710.989920568] [fruit_detection_node]:   Model: sliced-fruits-and-vegetables-rnw8f/1[0m
+[fruit_detection_node-8] [0m[INFO] [1790620710.991642026] [fruit_detection_node]:   API: https://serverless.roboflow.com[0m
+[fruit_detection_node-8] [0m[INFO] [1790620710.992249953] [fruit_detection_node]:   API key source: ROBOFLOW_API_KEY environment variable[0m
+[fruit_detection_node-8] [0m[INFO] [1790620710.993916756] [fruit_detection_node]:   Detection results: /computer_vision/detections[0m
+[ERROR] [solution_joint_state_node-3]: process has died [pid 34725, exit code 1, cmd '/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/solution_joint_state_node --ros-args -r __node:=solution_joint_states --params-file /tmp/launch_params_ii7bz0g9'].
+[saved_image_capture_node-7] [0m[INFO] [1790620711.203801738] [saved_image_capture_node]: Saved-image input ready: /home/user/ros2_ws/src/computer_vision_model/input_images/banana_scene.jpg[0m
+[rviz2-4] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-4]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[camera_to_base_node-9] [0m[INFO] [1790620711.919846516] [camera_to_base_node]: STARTUP: READY: Waiting for one capture and its detections.[0m
+[rviz2-4] [31m[ERROR] [1790620714.771150710] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available[0m
+[rviz2-4] [0m[INFO] [1790620714.804187649] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.[0m
+[rviz2-4] [0m[INFO] [1790620714.907034414] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0445515 seconds[0m
+[rviz2-4] [0m[INFO] [1790620714.907082434] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...[0m
+[rviz2-4] [0m[INFO] [1790620714.907098201] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[rviz2-4] [33m[WARN] [1790620714.930860751] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'[0m
+[rviz2-4] [0m[INFO] [1790620715.036104615] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor[0m
+[rviz2-4] [0m[INFO] [1790620715.036727204] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'[0m
+[rviz2-4] [0m[INFO] [1790620715.077848043] [interactive_marker_display_95867295582656]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic[0m
+[rviz2-4] [0m[INFO] [1790620715.090245700] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[rviz2-4] [0m[INFO] [1790620715.090276229] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''[0m
+[rviz2-4] [0m[INFO] [1790620715.099684468] [interactive_marker_display_95867295582656]: Sending request for interactive markers[0m
+[rviz2-4] [0m[INFO] [1790620715.133472461] [interactive_marker_display_95867295582656]: Service response received for initialization[0m
+[fruit_detection_node-8] [0m[INFO] [1790620720.832108275] [fruit_detection_node]: Requesting a camera snapshot...[0m
+[saved_image_capture_node-7] [0m[INFO] [1790620720.864254569] [saved_image_capture_node]: Prepared saved image: /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183829_138183/captures/latest_rgb.jpg[0m
+[fruit_detection_node-8] [0m[INFO] [1790620720.866904380] [fruit_detection_node]: Captured /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183829_138183/captures/latest_rgb.jpg; starting inference...[0m
+[fruit_detection_node-8] /home/user/.local/lib/python3.10/site-packages/inference_sdk/http/client.py:120: InferenceSDKGuidanceWarning: This client sends the Roboflow API key through the legacy channel (query parameter / request body). Sending it as the `Authorization: Bearer <api_key>` header is recommended and works with inference servers from release 1.5.0 onward. Opt in with InferenceConfiguration(api_key_transport='header'); use 'both' for a transition period safe with every server version. Set api_key_transport='legacy' explicitly to keep the current behaviour and silence this warning.
+[fruit_detection_node-8]   warnings.warn(
+[fruit_detection_node-8] [0m[INFO] [1790620722.961025256] [fruit_detection_node]: Roboflow detected 1 object(s)[0m
+[fruit_detection_node-8] [0m[INFO] [1790620722.961561889] [fruit_detection_node]:   Apple: 1[0m
+[fruit_detection_node-8] [0m[INFO] [1790620722.962044228] [fruit_detection_node]:     center=(494.5, 570.5), size=(305.0 x 85.0), confidence=0.536[0m
+[fruit_detection_node-8] [0m[INFO] [1790620722.962524486] [fruit_detection_node]: Saved detections to /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183829_138183/captures/latest_detections.json[0m
+[fruit_detection_node-8] [0m[INFO] [1790620722.962999805] [fruit_detection_node]: Saved annotated image to /home/user/ros2_ws/src/computer_vision_model/logs/20260928_183829_138183/captures/latest_detections_annotated.jpg[0m
+[fruit_detection_node-8] [0m[INFO] [1790620722.963482274] [fruit_detection_node]: Results published for downstream processing[0m
+[camera_to_base_node-9] [0m[INFO] [1790620722.968050510] [camera_to_base_node]: SELECTION: SUCCESS: Highest-confidence detection; passing box centre to projection.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620722.981346431] [camera_to_base_node]: TRANSFORM: SUCCESS: Camera optical point projected onto the known plane, then transformed into the arm base (metres).[0m
+[camera_to_base_node-9] [0m[INFO] [1790620722.982314829] [camera_to_base_node]: POSE: SUCCESS: Published /computer_vision/fruit_pose; passing pose to MoveIt IK.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620723.077706381] [camera_to_base_node]: IK_REQUEST: STARTED: Requesting joint angles only; no trajectory execution.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620723.177478175] [camera_to_base_node]: IK_RESULT: SUCCESS: MoveIt joint solution (ROS joint angles, not servo calibration values).[0m
+[camera_to_base_node-9] [0m[INFO] [1790620723.178749648] [camera_to_base_node]: EXECUTE: SENT: Servo angles published to /esp32/joint_commands. The ESP32 echoes commands rather than measuring them, so this is what was sent, not confirmation the arm arrived. Sent NaN (hold, no servo) for: joint_1.[0m
+[camera_to_base_node-9] [0m[INFO] [1790620723.180329315] [camera_to_base_node]: PIPELINE: COMPLETE: Servo angles sent to the arm.[0m
+[rviz2-4] [0m[INFO] [1790620775.115674037] [move_group_interface]: Ready to take commands for planning group arm.[0m
+[rviz2-4] [0m[INFO] [1790620775.118782422] [moveit_ros_visualization.motion_planning_frame]: group arm[0m
+[rviz2-4] [33m[WARN] [1790620775.123215697] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 102[0m
+[rviz2-4] [33m[WARN] [1790620775.123296512] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 103[0m
+[rviz2-4] [33m[WARN] [1790620775.123333651] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 104[0m
+[rviz2-4] [33m[WARN] [1790620775.123364411] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 105[0m
+[rviz2-4] [33m[WARN] [1790620775.123398177] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 106[0m
+[rviz2-4] [33m[WARN] [1790620775.123452714] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 107[0m
+[rviz2-4] [33m[WARN] [1790620775.123482353] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 108[0m
+[rviz2-4] [33m[WARN] [1790620775.123511613] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 109[0m
+[rviz2-4] [33m[WARN] [1790620775.123540454] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 110[0m
+[rviz2-4] [33m[WARN] [1790620775.123570757] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 111[0m
+[rviz2-4] [33m[WARN] [1790620775.123615495] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 112[0m
+[rviz2-4] [33m[WARN] [1790620775.123646757] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 113[0m
+[rviz2-4] [33m[WARN] [1790620775.123676319] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 114[0m
+[rviz2-4] [33m[WARN] [1790620775.123719532] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 115[0m
+[rviz2-4] [33m[WARN] [1790620775.123749132] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 116[0m
+[rviz2-4] [33m[WARN] [1790620775.123815612] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 117[0m
+[rviz2-4] [33m[WARN] [1790620775.123847049] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 118[0m
+[rviz2-4] [33m[WARN] [1790620775.123875346] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 119[0m
+[rviz2-4] [33m[WARN] [1790620775.123903872] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 120[0m
+[rviz2-4] [33m[WARN] [1790620775.123932215] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 121[0m
+[rviz2-4] [33m[WARN] [1790620775.123961223] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 122[0m
+[rviz2-4] [33m[WARN] [1790620775.123989761] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 123[0m
+[rviz2-4] [33m[WARN] [1790620775.124018774] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 124[0m
+[rviz2-4] [33m[WARN] [1790620775.124048246] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 125[0m
+[rviz2-4] [33m[WARN] [1790620775.124078785] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 126[0m
+[rviz2-4] [33m[WARN] [1790620775.124106208] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 127[0m
+[rviz2-4] [33m[WARN] [1790620775.124134565] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 128[0m
+[rviz2-4] [33m[WARN] [1790620775.124163651] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 129[0m
+[rviz2-4] [33m[WARN] [1790620775.124193510] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 130[0m
+[rviz2-4] [33m[WARN] [1790620775.124223204] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 131[0m
+[rviz2-4] [33m[WARN] [1790620775.124252961] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 132[0m
+[rviz2-4] [33m[WARN] [1790620775.124301945] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 133[0m
+[rviz2-4] [33m[WARN] [1790620775.124331940] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 134[0m
+[rviz2-4] [33m[WARN] [1790620775.124360768] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 135[0m
+[rviz2-4] [33m[WARN] [1790620775.124390509] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 136[0m
+[rviz2-4] [33m[WARN] [1790620775.126501444] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 138 (expected) vs. 153 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132469829] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 503 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132557355] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 504 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132593072] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 505 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132623542] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 506 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132653839] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 507 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132681850] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 508 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132712017] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 509 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132742094] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 510 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132813620] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 511 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132845947] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 512 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132875421] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 513 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132927908] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 514 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132957270] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 515 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.132986686] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 516 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133015646] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 517 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133045341] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 518 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133075240] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 519 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133106223] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 520 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133134921] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 521 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133162954] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 522 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133191915] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 523 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133220104] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 524 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133248343] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 525 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133276481] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 526 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133305857] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 527 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133335053] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 528 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133364218] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 529 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133393092] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 530 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133449005] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 531 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133479482] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 532 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133508983] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 533 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133537173] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 534 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133565522] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 535 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133593825] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 536 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133622206] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 537 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133650517] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 538 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133699348] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 539 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133729152] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 540 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133757071] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 541 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133785520] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 542 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133814570] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 543 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133853207] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 544 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133899442] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 545 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133926326] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 546 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133953607] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 547 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.133996943] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 548 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134024123] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 549 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134051057] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 550 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134078679] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 551 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134106018] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 552 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134132988] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 553 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134160533] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 554 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134188414] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 555 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134216138] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 556 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134244312] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 557 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134272374] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 558 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134299961] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 559 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134327169] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 560 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134355262] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 561 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.134383029] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 562 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.135805679] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 563 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.135904240] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 564 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.135971450] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 565 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136056385] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 566 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136092481] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 567 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136217080] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 568 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136258104] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 569 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136293811] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 570 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136324713] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 571 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136356517] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 572 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.136387935] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 573 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137554505] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 574 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137643409] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 575 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137676750] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 576 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137709847] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 577 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137740174] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 578 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137770812] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 579 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137800752] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 580 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137832926] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 581 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137900452] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 582 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137932150] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 583 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137962078] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 584 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.137992256] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 585 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138022415] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 586 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138052598] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 587 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138084816] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 588 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138114768] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 589 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138158756] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 590 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138192704] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 591 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138224892] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 592 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138257487] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 593 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138342076] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 594 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.138378617] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 595 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139476296] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 596 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139561237] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 597 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139594397] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 598 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139638969] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 599 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139688601] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 600 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139719191] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 601 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139748158] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 602 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139776983] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 603 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139806136] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 604 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139834511] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 605 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139863517] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 606 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139891717] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 607 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139920312] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 608 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139948694] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 609 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.139977247] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 610 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140006047] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 611 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140034259] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 612 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140069534] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 613 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140098135] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 614 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140126562] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 615 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140155669] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 616 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140197910] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 617 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140226328] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 618 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140255253] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 619 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140286344] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 620 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140348077] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 621 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.140378578] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 622 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.141456576] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 623 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.141531044] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 624 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.141561675] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 625 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.141590866] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 626 (received)[0m
+[rviz2-4] [33m[WARN] [1790620775.141619999] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 627 (received)[0m
+[rviz2-4] [0m[INFO] [1790620775.164277539] [interactive_marker_display_95867295582656]: Sending request for interactive markers[0m
+[rviz2-4] [33m[WARN] [1790620775.171039518] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 628 (received)[0m
+[rviz2-4] [0m[INFO] [1790620775.177334185] [interactive_marker_display_95867295582656]: Service response received for initialization[0m
+[rviz2-4] [0m[INFO] [1790620775.177618913] [interactive_marker_display_95867295582656]: Sending request for interactive markers[0m
+[rviz2-4] [0m[INFO] [1790620775.204450777] [interactive_marker_display_95867295582656]: Service response received for initialization[0m
+[rviz2-4] [0m[INFO] [1790701702.626222260] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor[0m
+[ERROR] [rviz2-4]: process has died [pid 34727, exit code -11, cmd '/opt/ros/humble/lib/rviz2/rviz2 -d /home/user/ros2_ws/install/robot_arm_movit_config/share/robot_arm_movit_config/config/moveit.rviz --ros-args -r __node:=vision_rviz --params-file /tmp/launch_params_bmqqsgof --params-file /tmp/launch_params_ht_i9lxg --params-file /tmp/launch_params_75v1zv35 --params-file /tmp/launch_params_tie56nf4'].
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[static_transform_publisher-5] [0m[INFO] [1790701706.608030308] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[robot_state_publisher-1] [0m[INFO] [1790701706.608285692] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[move_group-2] [0m[INFO] [1790701706.609349514] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[static_transform_publisher-6] [0m[INFO] [1790701706.610841216] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[move_group-2] [0m[INFO] [1790701706.709185870] [moveit.ros_planning_interface.moveit_cpp]: Deleting MoveItCpp[0m
+[move_group-2] [0m[INFO] [1790701706.715842950] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopped publishing maintained planning scene.[0m
+[move_group-2] [0m[INFO] [1790701706.720591374] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping world geometry monitor[0m
+[move_group-2] [0m[INFO] [1790701706.722878833] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor[0m
+[move_group-2] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[move_group-2]          at line 127 in ./src/class_loader.cpp
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT) again, ignoring...
+[ERROR] [static_transform_publisher-6]: process has died [pid 34731, exit code -2, cmd '/opt/ros/humble/lib/tf2_ros/static_transform_publisher --x 0 --y 0 --z 0 --roll -1.570796327 --pitch 0 --yaw -1.570796327 --frame-id camera_link --child-frame-id camera_color_optical_frame --ros-args -r __node:=vision_camera_optical_tf --params-file /tmp/launch_params_q_nt2nca'].
+[ERROR] [static_transform_publisher-5]: process has died [pid 34729, exit code -2, cmd '/opt/ros/humble/lib/tf2_ros/static_transform_publisher --x -0.2469 --y -0.5069 --z 0.228 --roll 0.0 --pitch 0.314159265 --yaw 0.785398163 --frame-id base_link --child-frame-id camera_link --ros-args -r __node:=vision_camera_mount_tf --params-file /tmp/launch_params_25vq9doa'].
+[ERROR] [robot_state_publisher-1]: process has died [pid 34721, exit code -2, cmd '/opt/ros/humble/lib/robot_state_publisher/robot_state_publisher --ros-args --params-file /tmp/launch_params_ar1sdkh1 --params-file /tmp/launch_params_ahnpiuhk'].
+[ERROR] [saved_image_capture_node-7]: process has died [pid 34734, exit code -2, cmd '/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/saved_image_capture_node --ros-args --params-file /tmp/launch_params_jysu9a0h'].
+[ERROR] [camera_to_base_node-9]: process has died [pid 34738, exit code -2, cmd '/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/camera_to_base_node --ros-args --params-file /tmp/launch_params_hr9g_4h1'].
+[ERROR] [move_group-2]: process has died [pid 34723, exit code -2, cmd '/opt/ros/humble/lib/moveit_ros_move_group/move_group --ros-args --params-file /tmp/launch_params_ak5lmxtd --params-file /tmp/launch_params_7uesd4zm'].
+[move_group-2] [0m
+[ERROR] [fruit_detection_node-8]: process has died [pid 34736, exit code -2, cmd '/home/user/ros2_ws/install/computer_vision_model/lib/computer_vision_model/fruit_detection_node --ros-args --params-file /tmp/launch_params_p082h7v9'].

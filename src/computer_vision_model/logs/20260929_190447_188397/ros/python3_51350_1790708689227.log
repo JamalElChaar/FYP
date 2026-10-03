@@ -1,0 +1,13 @@
+[INFO] [1790708689.519623691] [fruit_detection_node]: Fruit detection node ready
+[INFO] [1790708689.520872414] [fruit_detection_node]:   Model: sliced-fruits-and-vegetables-rnw8f/1
+[INFO] [1790708689.522024376] [fruit_detection_node]:   API: https://serverless.roboflow.com
+[INFO] [1790708689.522796776] [fruit_detection_node]:   API key source: ROBOFLOW_API_KEY environment variable
+[INFO] [1790708689.530437333] [fruit_detection_node]:   Detection results: /computer_vision/detections
+[INFO] [1790708699.479736359] [fruit_detection_node]: Requesting a camera snapshot...
+[INFO] [1790708699.556452645] [fruit_detection_node]: Captured /home/user/ros2_ws/src/computer_vision_model/logs/20260929_190447_188397/captures/latest_rgb.jpg; starting inference...
+[INFO] [1790708702.079700089] [fruit_detection_node]: Roboflow detected 1 object(s)
+[INFO] [1790708702.081233490] [fruit_detection_node]:   banana: 1
+[INFO] [1790708702.082677557] [fruit_detection_node]:     center=(194.0, 318.0), size=(94.0 x 82.0), confidence=0.709
+[INFO] [1790708702.084116832] [fruit_detection_node]: Saved detections to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_190447_188397/captures/latest_detections.json
+[INFO] [1790708702.087859172] [fruit_detection_node]: Saved annotated image to /home/user/ros2_ws/src/computer_vision_model/logs/20260929_190447_188397/captures/latest_detections_annotated.jpg
+[INFO] [1790708702.089429819] [fruit_detection_node]: Results published for downstream processing

@@ -1,0 +1,42 @@
+capture:
+  rgb_stamp_sec: 1790708938.6391525
+  rgb_stamp:
+  - 1790708938
+  - 639152555
+  rgb_frame_id: camera_color_optical_frame
+  require_depth: false
+rgb:
+  width: 640
+  height: 480
+camera_intrinsics:
+  fx: 570.3422047415297
+  fy: 570.3422047415297
+  cx: 319.5
+  cy: 239.5
+  distortion_model: plumb_bob
+  d:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  binning:
+  - 0
+  - 0
+  roi:
+  - 0
+  - 0
+  - 0
+  - 0
+transform_camera_to_base:
+  parent_frame: base_link
+  child_frame: camera_color_optical_frame
+  translation_m:
+  - -0.2469
+  - -0.5069
+  - 0.228
+  quaternion_xyzw:
+  - -0.7474342424304403
+  - 0.3095974004360107
+  - -0.22493567804925013
+  - 0.5430427640860549

@@ -1,0 +1,147 @@
+ARM MOTION SEQUENCE PHASE REPORT
+Servo angles are degrees (0-180) as sent to /esp32/joint_commands.
+The ESP32 echoes commands rather than measuring them, so these are
+the values SENT, not confirmation the arm reached them.
+
+[2026-09-28T17:36:03.369032+00:00] CONFIGURATION — READY
+Direct servo commands; no MoveIt, no planning, no collision checking.
+{
+  "dry_run": true,
+  "joint_names": [
+    "joint_1",
+    "joint_2",
+    "joint_3",
+    "joint_4",
+    "joint_5",
+    "joint_6"
+  ],
+  "servo_range_deg": [
+    0.0,
+    180.0
+  ],
+  "poses": [
+    {
+      "phase": "APPROACH",
+      "detail": "hover, tip at table level per the model",
+      "servo_degrees": [
+        115.21,
+        138.74,
+        56.99,
+        2.81,
+        96.73,
+        26.17
+      ],
+      "settle_seconds": 2.5
+    },
+    {
+      "phase": "DESCEND",
+      "detail": "3 cm below hover",
+      "servo_degrees": [
+        115.22,
+        140.78,
+        45.68,
+        2.69,
+        83.07,
+        30.02
+      ],
+      "settle_seconds": 1.0
+    },
+    {
+      "phase": "STAB",
+      "detail": "6 cm below hover; expected table contact",
+      "servo_degrees": [
+        115.31,
+        146.3,
+        40.75,
+        2.55,
+        72.07,
+        37.26
+      ],
+      "settle_seconds": 1.5
+    },
+    {
+      "phase": "RETRACT",
+      "detail": "back to the hover pose",
+      "servo_degrees": [
+        115.21,
+        138.74,
+        56.99,
+        2.81,
+        96.73,
+        26.17
+      ],
+      "settle_seconds": 1.5
+    },
+    {
+      "phase": "HOME",
+      "detail": "servo 90 on every joint, the firmware boot pose",
+      "servo_degrees": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "settle_seconds": 1.0
+    }
+  ]
+}
+
+[2026-09-28T17:36:03.429259+00:00] APPROACH — DRY_RUN
+hover, tip at table level per the model
+{
+  "joint_1": 115.21,
+  "joint_2": 138.74,
+  "joint_3": 56.99,
+  "joint_4": 2.81,
+  "joint_5": 96.73,
+  "joint_6": 26.17
+}
+
+[2026-09-28T17:36:03.429475+00:00] DESCEND — DRY_RUN
+3 cm below hover
+{
+  "joint_1": 115.22,
+  "joint_2": 140.78,
+  "joint_3": 45.68,
+  "joint_4": 2.69,
+  "joint_5": 83.07,
+  "joint_6": 30.02
+}
+
+[2026-09-28T17:36:03.429596+00:00] STAB — DRY_RUN
+6 cm below hover; expected table contact
+{
+  "joint_1": 115.31,
+  "joint_2": 146.3,
+  "joint_3": 40.75,
+  "joint_4": 2.55,
+  "joint_5": 72.07,
+  "joint_6": 37.26
+}
+
+[2026-09-28T17:36:03.429721+00:00] RETRACT — DRY_RUN
+back to the hover pose
+{
+  "joint_1": 115.21,
+  "joint_2": 138.74,
+  "joint_3": 56.99,
+  "joint_4": 2.81,
+  "joint_5": 96.73,
+  "joint_6": 26.17
+}
+
+[2026-09-28T17:36:03.429822+00:00] HOME — DRY_RUN
+servo 90 on every joint, the firmware boot pose
+{
+  "joint_1": 90.0,
+  "joint_2": 90.0,
+  "joint_3": 90.0,
+  "joint_4": 90.0,
+  "joint_5": 90.0,
+  "joint_6": 90.0
+}
+
+[2026-09-28T17:36:03.430090+00:00] SEQUENCE — DRY_RUN
+Nothing was published.

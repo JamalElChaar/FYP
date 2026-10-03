@@ -1,0 +1,184 @@
+[INFO] [1790620710.634365566] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1790620710.634459956] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1790620710.828475190] [rviz2]: Stereo is NOT SUPPORTED
+[ERROR] [1790620714.771150710] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[INFO] [1790620714.804187649] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[INFO] [1790620714.907034414] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0445515 seconds
+[INFO] [1790620714.907082434] [moveit_robot_model.robot_model]: Loading robot model 'robot_arm'...
+[INFO] [1790620714.907098201] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[WARN] [1790620714.930860751] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'fork'
+[INFO] [1790620715.036104615] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[INFO] [1790620715.036727204] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[INFO] [1790620715.077848043] [interactive_marker_display_95867295582656]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[INFO] [1790620715.090245700] [moveit_ros_visualization.motion_planning_frame]: group arm
+[INFO] [1790620715.090276229] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[INFO] [1790620715.099684468] [interactive_marker_display_95867295582656]: Sending request for interactive markers
+[INFO] [1790620715.133472461] [interactive_marker_display_95867295582656]: Service response received for initialization
+[INFO] [1790620775.115674037] [move_group_interface]: Ready to take commands for planning group arm.
+[INFO] [1790620775.118782422] [moveit_ros_visualization.motion_planning_frame]: group arm
+[WARN] [1790620775.123215697] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 102
+[WARN] [1790620775.123296512] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 103
+[WARN] [1790620775.123333651] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 104
+[WARN] [1790620775.123364411] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 105
+[WARN] [1790620775.123398177] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 106
+[WARN] [1790620775.123452714] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 107
+[WARN] [1790620775.123482353] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 108
+[WARN] [1790620775.123511613] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 109
+[WARN] [1790620775.123540454] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 110
+[WARN] [1790620775.123570757] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 111
+[WARN] [1790620775.123615495] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 112
+[WARN] [1790620775.123646757] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 113
+[WARN] [1790620775.123676319] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 114
+[WARN] [1790620775.123719532] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 115
+[WARN] [1790620775.123749132] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 116
+[WARN] [1790620775.123815612] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 117
+[WARN] [1790620775.123847049] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 118
+[WARN] [1790620775.123875346] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 119
+[WARN] [1790620775.123903872] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 120
+[WARN] [1790620775.123932215] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 121
+[WARN] [1790620775.123961223] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 122
+[WARN] [1790620775.123989761] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 123
+[WARN] [1790620775.124018774] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 124
+[WARN] [1790620775.124048246] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 125
+[WARN] [1790620775.124078785] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 126
+[WARN] [1790620775.124106208] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 127
+[WARN] [1790620775.124134565] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 128
+[WARN] [1790620775.124163651] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 129
+[WARN] [1790620775.124193510] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 130
+[WARN] [1790620775.124223204] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 131
+[WARN] [1790620775.124252961] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 132
+[WARN] [1790620775.124301945] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 133
+[WARN] [1790620775.124331940] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 134
+[WARN] [1790620775.124360768] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 135
+[WARN] [1790620775.124390509] [interactive_marker_display_95867295582656]: Update queue too large. Erasing message with sequence number 136
+[WARN] [1790620775.126501444] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 138 (expected) vs. 153 (received)
+[WARN] [1790620775.132469829] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 503 (received)
+[WARN] [1790620775.132557355] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 504 (received)
+[WARN] [1790620775.132593072] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 505 (received)
+[WARN] [1790620775.132623542] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 506 (received)
+[WARN] [1790620775.132653839] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 507 (received)
+[WARN] [1790620775.132681850] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 508 (received)
+[WARN] [1790620775.132712017] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 509 (received)
+[WARN] [1790620775.132742094] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 510 (received)
+[WARN] [1790620775.132813620] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 511 (received)
+[WARN] [1790620775.132845947] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 512 (received)
+[WARN] [1790620775.132875421] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 513 (received)
+[WARN] [1790620775.132927908] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 514 (received)
+[WARN] [1790620775.132957270] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 515 (received)
+[WARN] [1790620775.132986686] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 516 (received)
+[WARN] [1790620775.133015646] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 517 (received)
+[WARN] [1790620775.133045341] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 518 (received)
+[WARN] [1790620775.133075240] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 519 (received)
+[WARN] [1790620775.133106223] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 520 (received)
+[WARN] [1790620775.133134921] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 521 (received)
+[WARN] [1790620775.133162954] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 522 (received)
+[WARN] [1790620775.133191915] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 523 (received)
+[WARN] [1790620775.133220104] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 524 (received)
+[WARN] [1790620775.133248343] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 525 (received)
+[WARN] [1790620775.133276481] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 526 (received)
+[WARN] [1790620775.133305857] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 527 (received)
+[WARN] [1790620775.133335053] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 528 (received)
+[WARN] [1790620775.133364218] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 529 (received)
+[WARN] [1790620775.133393092] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 530 (received)
+[WARN] [1790620775.133449005] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 531 (received)
+[WARN] [1790620775.133479482] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 532 (received)
+[WARN] [1790620775.133508983] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 533 (received)
+[WARN] [1790620775.133537173] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 534 (received)
+[WARN] [1790620775.133565522] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 535 (received)
+[WARN] [1790620775.133593825] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 536 (received)
+[WARN] [1790620775.133622206] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 537 (received)
+[WARN] [1790620775.133650517] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 538 (received)
+[WARN] [1790620775.133699348] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 539 (received)
+[WARN] [1790620775.133729152] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 540 (received)
+[WARN] [1790620775.133757071] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 541 (received)
+[WARN] [1790620775.133785520] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 542 (received)
+[WARN] [1790620775.133814570] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 543 (received)
+[WARN] [1790620775.133853207] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 544 (received)
+[WARN] [1790620775.133899442] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 545 (received)
+[WARN] [1790620775.133926326] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 546 (received)
+[WARN] [1790620775.133953607] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 547 (received)
+[WARN] [1790620775.133996943] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 548 (received)
+[WARN] [1790620775.134024123] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 549 (received)
+[WARN] [1790620775.134051057] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 550 (received)
+[WARN] [1790620775.134078679] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 551 (received)
+[WARN] [1790620775.134106018] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 552 (received)
+[WARN] [1790620775.134132988] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 553 (received)
+[WARN] [1790620775.134160533] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 554 (received)
+[WARN] [1790620775.134188414] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 555 (received)
+[WARN] [1790620775.134216138] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 556 (received)
+[WARN] [1790620775.134244312] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 557 (received)
+[WARN] [1790620775.134272374] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 558 (received)
+[WARN] [1790620775.134299961] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 559 (received)
+[WARN] [1790620775.134327169] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 560 (received)
+[WARN] [1790620775.134355262] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 561 (received)
+[WARN] [1790620775.134383029] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 562 (received)
+[WARN] [1790620775.135805679] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 563 (received)
+[WARN] [1790620775.135904240] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 564 (received)
+[WARN] [1790620775.135971450] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 565 (received)
+[WARN] [1790620775.136056385] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 566 (received)
+[WARN] [1790620775.136092481] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 567 (received)
+[WARN] [1790620775.136217080] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 568 (received)
+[WARN] [1790620775.136258104] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 569 (received)
+[WARN] [1790620775.136293811] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 570 (received)
+[WARN] [1790620775.136324713] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 571 (received)
+[WARN] [1790620775.136356517] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 572 (received)
+[WARN] [1790620775.136387935] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 573 (received)
+[WARN] [1790620775.137554505] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 574 (received)
+[WARN] [1790620775.137643409] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 575 (received)
+[WARN] [1790620775.137676750] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 576 (received)
+[WARN] [1790620775.137709847] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 577 (received)
+[WARN] [1790620775.137740174] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 578 (received)
+[WARN] [1790620775.137770812] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 579 (received)
+[WARN] [1790620775.137800752] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 580 (received)
+[WARN] [1790620775.137832926] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 581 (received)
+[WARN] [1790620775.137900452] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 582 (received)
+[WARN] [1790620775.137932150] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 583 (received)
+[WARN] [1790620775.137962078] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 584 (received)
+[WARN] [1790620775.137992256] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 585 (received)
+[WARN] [1790620775.138022415] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 586 (received)
+[WARN] [1790620775.138052598] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 587 (received)
+[WARN] [1790620775.138084816] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 588 (received)
+[WARN] [1790620775.138114768] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 589 (received)
+[WARN] [1790620775.138158756] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 590 (received)
+[WARN] [1790620775.138192704] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 591 (received)
+[WARN] [1790620775.138224892] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 592 (received)
+[WARN] [1790620775.138257487] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 593 (received)
+[WARN] [1790620775.138342076] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 594 (received)
+[WARN] [1790620775.138378617] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 595 (received)
+[WARN] [1790620775.139476296] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 596 (received)
+[WARN] [1790620775.139561237] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 597 (received)
+[WARN] [1790620775.139594397] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 598 (received)
+[WARN] [1790620775.139638969] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 599 (received)
+[WARN] [1790620775.139688601] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 600 (received)
+[WARN] [1790620775.139719191] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 601 (received)
+[WARN] [1790620775.139748158] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 602 (received)
+[WARN] [1790620775.139776983] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 603 (received)
+[WARN] [1790620775.139806136] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 604 (received)
+[WARN] [1790620775.139834511] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 605 (received)
+[WARN] [1790620775.139863517] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 606 (received)
+[WARN] [1790620775.139891717] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 607 (received)
+[WARN] [1790620775.139920312] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 608 (received)
+[WARN] [1790620775.139948694] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 609 (received)
+[WARN] [1790620775.139977247] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 610 (received)
+[WARN] [1790620775.140006047] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 611 (received)
+[WARN] [1790620775.140034259] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 612 (received)
+[WARN] [1790620775.140069534] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 613 (received)
+[WARN] [1790620775.140098135] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 614 (received)
+[WARN] [1790620775.140126562] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 615 (received)
+[WARN] [1790620775.140155669] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 616 (received)
+[WARN] [1790620775.140197910] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 617 (received)
+[WARN] [1790620775.140226328] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 618 (received)
+[WARN] [1790620775.140255253] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 619 (received)
+[WARN] [1790620775.140286344] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 620 (received)
+[WARN] [1790620775.140348077] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 621 (received)
+[WARN] [1790620775.140378578] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 622 (received)
+[WARN] [1790620775.141456576] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 623 (received)
+[WARN] [1790620775.141531044] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 624 (received)
+[WARN] [1790620775.141561675] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 625 (received)
+[WARN] [1790620775.141590866] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 626 (received)
+[WARN] [1790620775.141619999] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 627 (received)
+[INFO] [1790620775.164277539] [interactive_marker_display_95867295582656]: Sending request for interactive markers
+[WARN] [1790620775.171039518] [interactive_marker_display_95867295582656]: Update sequence number is out of order. 174 (expected) vs. 628 (received)
+[INFO] [1790620775.177334185] [interactive_marker_display_95867295582656]: Service response received for initialization
+[INFO] [1790620775.177618913] [interactive_marker_display_95867295582656]: Sending request for interactive markers
+[INFO] [1790620775.204450777] [interactive_marker_display_95867295582656]: Service response received for initialization

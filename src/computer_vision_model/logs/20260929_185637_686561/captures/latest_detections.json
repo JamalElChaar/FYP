@@ -1,0 +1,22 @@
+{
+  "class_filter": {
+    "allowed_classes": [],
+    "class_aliases": {
+      "apple": "banana"
+    },
+    "excluded_classes": [
+      "carrot"
+    ],
+    "rejected_by_class": []
+  },
+  "detection_count": 0,
+  "detections": [],
+  "detections_by_label": {},
+  "image": {
+    "height": 480,
+    "width": 640
+  },
+  "image_path": "/home/user/ros2_ws/src/computer_vision_model/logs/20260929_185637_686561/captures/latest_rgb.jpg",
+  "model_id": "sliced-fruits-and-vegetables-rnw8f/1",
+  "schema_version": 1
+}
